@@ -14,3 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('about', function () {
+    return view('pages.about');
+});
+
+Route::get('/login', function () {
+    return view('pages.login1');
+});
+
+Route::get('/template', function () {
+    return view('layoutTemplate');
+});
+
+Route::get('/createleave', function () {
+    return view('pages.leave.create');
+});
+
+Route::get('/forms', function () {
+    return view('pages.forms');
+});
