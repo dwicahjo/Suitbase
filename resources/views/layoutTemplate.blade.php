@@ -39,9 +39,7 @@
 </head>
 
 <body>
-
     <div id="wrapper">
-
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -115,10 +113,10 @@
                             <a href="pages/index"><i class="fa fa-reorder fa-fw"></i> Leave<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">View My Leave</a>
+                                    <a href="mylistofleave">View My Leave</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">View List of Leave</a>
+                                    <a href="alllistofleave">View List of Leave</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -211,16 +209,22 @@
             <!-- /.navbar-static-side -->
         </nav>
 
+    @section('content')
+    @show        
+
         <div id="page-wrapper">
+
             <div class="row">
                 <div class="col-lg-12">
                     <!--judul page-->
                     <h1 class="page-header"></h1>
+
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
+
             </div>
             <!-- /.row -->
             <div class="row">
