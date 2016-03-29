@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Create Leave Request</h1>
+                <h1 class="page-header">Leave Detail</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -26,30 +26,25 @@
                             <div class="col-lg-6">
                                 <form role="form">
                                     <div class="form-group">
-                                        <label>Start Date</label>
-                                        <input class="form-control" name = "startdate" type = "date">
+                                        <label>Start Date: </label>
+                                        <p> content </p>
                                     </div>
                                     <div class="form-group">
-                                        <label>End Date</label>
-                                        <input class="form-control" name = "enddate" type = "date">
+                                        <label>End Date: </label>
+                                        <p> content </p>
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label>Leave Type</label>
-                                        <select class="form-control" name = "leavetype">
-                                            <option>Sick</option>
-                                            <option>Maternal</option>
-                                            <option>Marriage</option>
-                                            <option>Unpaid</option>
-                                        </select>
+                                        <label>Leave Type: </label>
+                                        <p> content </p>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Reason</label>
-                                        <textarea class ="form-control" name = "reason"> </textarea>
+                                        <label>Reason: </label>
+                                        <p> content </p>
                                     </div>
 
-                                    <button type="submit" class="btn btn-default">Submit Button</button>
+                                    <button type="submit" class="btn btn-default">Back</button>
                                 </form>
                             </div>
                             

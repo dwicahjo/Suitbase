@@ -352,3 +352,12 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+.filter_menu{
+    width: 25%;
+    margin-left: 15px;
+}
+
+.search_menu{
+    width: 25%;
+}

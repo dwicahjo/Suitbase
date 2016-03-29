@@ -113,10 +113,10 @@
                             <a href="pages/index"><i class="fa fa-reorder fa-fw"></i> Leave<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">View My Leave</a>
+                                    <a href="mylistofleave">View My Leave</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">View List of Leave</a>
+                                    <a href="alllistofleave">View List of Leave</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

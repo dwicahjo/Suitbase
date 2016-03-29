@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Create Leave Request</h1>
+                <h1 class="page-header">Edit Leave Request</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -27,11 +27,11 @@
                                 <form role="form">
                                     <div class="form-group">
                                         <label>Start Date</label>
-                                        <input class="form-control" name = "startdate" type = "date">
+                                        <input class="form-control" name = "startdate" type = "date" placeholder="Old content">
                                     </div>
                                     <div class="form-group">
                                         <label>End Date</label>
-                                        <input class="form-control" name = "enddate" type = "date">
+                                        <input class="form-control" name = "enddate" type = "date" placeholder="Old content">
                                     </div>
                                     
                                     <div class="form-group">
@@ -46,7 +46,7 @@
 
                                     <div class="form-group">
                                         <label>Reason</label>
-                                        <textarea class ="form-control" name = "reason"> </textarea>
+                                        <textarea class ="form-control" name = "reason" placeholder="Old content"> </textarea>
                                     </div>
 
                                     <button type="submit" class="btn btn-default">Submit Button</button>
