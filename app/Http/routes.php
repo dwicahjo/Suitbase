@@ -53,3 +53,7 @@ Route::get('/forms', function () {
     return view('pages.formsTemplate');
 });
 
+Route::get('/createAccount', function () {
+    return view('pages.user.createAccount');
+});
+
