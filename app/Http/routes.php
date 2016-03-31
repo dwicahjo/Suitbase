@@ -57,3 +57,10 @@ Route::get('/createAccount', function () {
     return view('pages.user.createAccount');
 });
 
+Route::get('/editProfile', function () {
+    return view('pages.user.editProfile');
+});
+
+Route::get('/listOfUser', function () {
+    return view('pages.user.listOfUser');
+});
