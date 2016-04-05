@@ -105,7 +105,7 @@
                                     <a href="createLeave">Create Leave</a>
                                 </li>
                                 <li>
-                                    <a href="myListOflLeave">View My Leave</a>
+                                    <a href="myListOfLeave">View My Leave</a>
                                 </li>
                                 <li>
                                     <a href="allListOfLeave">View List of Leave</a>
@@ -216,27 +216,6 @@
 
     @section('content')
     @show        
-
-        <div id="page-wrapper">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <!--judul page-->
-                    <h1 class="page-header"></h1>
-
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                        
-            </div>
-            <!-- /.row -->
-        </div>
         <!-- /#page-wrapper -->
 
     </div>

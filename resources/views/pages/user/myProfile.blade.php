@@ -27,121 +27,93 @@
                                     <span>
                                          <img alt="image" class="" width= 60% src="assets/foto.jpg">
                                      </span>
+                                    </div>
                                 </div>
-                                </div>
-        
+                
                 <div class="col-lg-6">
-                    <div class="col-data"></div>
-
-                    <div class="col-input"> </div>
                             <form role="form">
+                                <table class="table-view" id="dataTables-example">
                                     <div class="form-group">
-                                        <label>Email</label>
-                                        annisachibi@suitmedia.com
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Password</label>
-                                        <input class="form-control" name = "password" type = "password">
-                                    </div>
-                                    <!--belom selesai ya-->
-                                    <div class="form-group">
-                                        <label>Role</label>
-                                        <select class="form-control" name = "role">
-                                            <option>Creative</option>
-                                            <option>IT</option>
-                                            <option>HR</option>
-                                            <option>Unpaid</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Full Name</label>
-                                        <input class="form-control" name = "fullname" type = "text">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Birth Place</label>
-                                        <input class="form-control" name = "birthplace" type = "text">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Birth Date</label>
-                                        <input class="form-control" name = "startdate" type = "date">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Gender</label>
-                                        <select class="form-control" name = "gender">
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Religion</label>
-                                        <input class="form-control" name = "religion" type = "text">
+                                        <tr>
+                                        <td><label>Email:</label></td>
+                                        <td>annisachibi@suitmedia.com </td>
+                                        </tr>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>KTP Number</label>
-                                        <input class="form-control" name = "ktpnumber" type = "text">
+                                        <tr>
+                                        <td><label>Role:</label></td>
+                                        <td>HR Staff</td>
+                                        </tr>                                    
                                     </div>
                                     <div class="form-group">
-                                        <label>NPWP Number</label>
-                                        <input class="form-control" name = "npwpnumber" type = "text">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>KTP Address</label>
-                                        <textarea class ="form-control" name = "ktpAddress"> </textarea>
+                                        <tr>
+                                        <td><label>Full Name:</label></td>
+                                        <td>Annisa Chibi </td>
+                                        </tr>
                                     </div>
                                     <div class="form-group">
-                                        <label>Current Address</label>
-                                        <textarea class ="form-control" name = "currentAddress"> </textarea>
+                                        <tr>
+                                        <td><label>Birth Place:</label></td>
+                                        <td>London</td>
+                                        </tr>
                                     </div>
                                     <div class="form-group">
-                                        <label>Telephone Number</label>
-                                        <input class="form-control" name = "tlpnumber" type = "text">
+                                        <tr>
+                                        <td><label>Birth Date:</label></td>
+                                        <td>20 Maret 1995 </td>
+                                        </tr>
                                     </div>
-                                    <label>Curriculum Vitae</label>
-
-                                        <input onclick="myFunction()" type="file" class="upload" />
-                                        <script>
-                                        function myFunction() {
-                                            var x = document.getElementById("myFile");
-                                            x.disabled = true;
-                                        }
-                                        </script>
-                                    <br>
-                                    <label>KTP</label>
-                                        <input onclick="myFunction()" type="file" class="upload" />
-
-                                        <script>
-                                        function myFunction() {
-                                            var x = document.getElementById("myFile");
-                                            x.disabled = true;
-                                        }
-                                        </script>
-                                    <br>
-                                    <label>Ijazah</label>
-                                        <input onclick="myFunction()" type="file" class="upload" />
-
-                                        <script>
-                                        function myFunction() {
-                                            var x = document.getElementById("myFile");
-                                            x.disabled = true;
-                                        }
-                                        </script>
-                                    <br>
-                                    <label>Kartu Keluarga</label>
-                                        <input onclick="myFunction()" type="file" class="upload" />
-
-                                        <script>
-                                        function myFunction() {
-                                            var x = document.getElementById("myFile");
-                                            x.disabled = true;
-                                        }
-                                        </script>
-                                    <br>
-                                    <button type="submit" class="btn btn-default">Save</button>   
+                                    <div class="form-group">
+                                        <tr>
+                                        <td><label>Gender:</label></td>
+                                        <td>Female</td>
+                                        </tr>
+                                    </div>
+                                    <div class="form-group">
+                                        <tr>
+                                        <td><label>Religion:</label></td>
+                                        <td>Islam</td>
+                                        </tr>
+                                    </div>
+                                    <div class="form-group">
+                                        <tr>
+                                        <td><label>KTP Number:</label></td>
+                                        <td>123456789</td>
+                                        </tr>
+                                    </div>
+                                    <div class="form-group">
+                                        <tr>
+                                        <td><label>NPWP Number:</label></td>
+                                        <td>annisachibi@suitmedia.com </td>
+                                        </tr>
+                                    </div>
+                                    <div class="form-group">
+                                        <tr>
+                                        <td><label>KTP Address:</label></td>
+                                        <td>annisachibi@suitmedia.com </td>
+                                        </tr>
+                                    </div>
+                                    <div class="form-group">
+                                        <tr>
+                                        <td><label>Current Address:</label></td>
+                                        <td>annisachibi@suitmedia.com </td>
+                                        </tr>
+                                    </div>
+                                    <div class="form-group">
+                                        <tr>
+                                        <td><label>Telephone Number:</label></td>
+                                        <td>annisachibi@suitmedia.com </td>
+                                        </tr>
+                                    </div>
+                            </table>
                                 </form>
                 </div>
     </div>
+</div>
+</div>
+</div>
+</div>
     <!-- /#wrapper -->
     @endsection
     <!-- jQuery -->
