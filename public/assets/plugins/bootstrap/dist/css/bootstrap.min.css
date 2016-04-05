@@ -2097,7 +2097,7 @@ col-input{
 			    border-collapse: collapse;
 			    border: 1px solid black;
 			}
-			
+
 			table {
 				background-color:transparent
 			}
@@ -2278,6 +2278,11 @@ output {
 				line-height:1.42857143;
 				color:#555
 			}
+			.form-control2{
+				margin-left: 400px;
+				margin-right: 400px;
+			}
+
 			.form-control {
 				display:block;
 				width:100%;

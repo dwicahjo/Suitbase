@@ -25,8 +25,8 @@
                         <div class="row">
                             <div class="col-lg-6">
                                
-                                    <div class="form-group" style="text-alignment:center";>
-                                            <textarea class="form-control" rows="5"></textarea>
+                                    <div class="form-group" style="text-align:center">
+                                            <textarea class="form-control form-control2" rows="5"></textarea>
                                         </div>
                                     <button type="submit" class="btn btn-default">Submit</button>
                                      <div class="checkbox">

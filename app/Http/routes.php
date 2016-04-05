@@ -48,6 +48,17 @@ Route::get('/listOfUser', function () {
 Route::get('/myProfile', function () {
     return view('pages.user.myProfile');
 });
+Route::get('/resetUser', function () {
+    return view('pages.user.resetUser');
+});
+
+
+/*feedback*/
+Route::get('/createFeedback', function () {
+    return view('pages.feedback.createFeedback');
+});
+
+
 
 /* leave */
 Route::get('/createLeave', function () {
