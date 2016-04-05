@@ -18,6 +18,11 @@ class CreateTrainingsTable extends Migration
             $table->date('date_end');
             $table->string('title', 100);
             $table->integer('estimate_price');
+            $table->text('description');
+            $table->string('status', 100);
+            $table->integer('employees_id')->unsigned();
+            $table->foreign('employees_id')->references('id')->on('employees');
+            $table->timestamps();
         });
     }
 

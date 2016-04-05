@@ -16,8 +16,10 @@ class CreateRequestsTable extends Migration
             $table->increments('id')->unique();
             $table->text('description');
             $table->string('status', 100);
-            $table->string('type', 100);
+            $table->integer('employees_id')->unsigned();
             $table->foreign('employees_id')->references('id')->on('employees');
+            $table->string('type', 100);
+            $table->timestamps();
         });
     }
 

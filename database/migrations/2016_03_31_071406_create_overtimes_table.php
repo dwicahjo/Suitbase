@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFeedbacksTable extends Migration
+class CreateOvertimesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,17 @@ class CreateFeedbacksTable extends Migration
      */
     public function up()
     {
-        Schema::create('feedbacks', function (Blueprint $table) {
+        Schema::create('overtimes', function (Blueprint $table) {
             $table->increments('id')->unique();
+            $table->date('date');
+            $table->time('time_start');
+            $table->time('time_end');
+            $table->integer('total_hours');
             $table->text('description');
-            $table->string('title', 100);
-            $table->integer('is_anonim');
+            $table->string('status', 100);
+            $table->integer('employees_id')->unsigned();
             $table->foreign('employees_id')->references('id')->on('employees');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +33,6 @@ class CreateFeedbacksTable extends Migration
      */
     public function down()
     {
-        Schema::drop('feedbacks');
+        Schema::drop('overtimes');
     }
 }
