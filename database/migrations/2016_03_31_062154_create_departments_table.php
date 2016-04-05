@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOvertimesTable extends Migration
+class CreateDepartmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,10 @@ class CreateOvertimesTable extends Migration
      */
     public function up()
     {
-        Schema::create('overtimes', function (Blueprint $table) {
+        Schema::create('departments', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->date('date');
-            $table->time('time_start');
-            $table->time('time_end');
-            $table->integer('integer');
+            $table->string('name', 100);
+            $table->timestamps();
         });
     }
 
@@ -28,6 +26,6 @@ class CreateOvertimesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('overtimes');
+        Schema::drop('departments');
     }
 }

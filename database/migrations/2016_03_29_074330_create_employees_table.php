@@ -16,12 +16,11 @@ class CreateEmployeesTable extends Migration
             $table->increments('id')->unique();
             $table->string('name', 100);
             $table->string('email', 100);
-            $table->string('password', 255);
+            $table->string('password');
             $table->string('ktp_id', 100);
             $table->date('birth_date');
             $table->string('birth_place', 100);
             $table->integer('phone');
-            $table->foreign('super_id')->references('id')->on('employees');
             $table->string('type', 100);
             $table->text('CV');
             $table->text('KK');
@@ -31,10 +30,9 @@ class CreateEmployeesTable extends Migration
             $table->integer('overtime_hours');
             $table->integer('number_leave');
             $table->integer('last_avg_score');
-            $table->string('address', 255);
+            $table->string('address');
             $table->text('NPWP');
-            $table->foreign('departments_id')->references('id')->on('departments');
-            $table->foreign('divisions_id')->references('id')->on('divisions');
+            $table->timestamps();
         });
     }
 

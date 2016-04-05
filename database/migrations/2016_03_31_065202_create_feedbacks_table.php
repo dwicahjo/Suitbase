@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProcurementsTable extends Migration
+class CreateFeedbacksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,14 @@ class CreateProcurementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('procurements', function (Blueprint $table) {
+        Schema::create('feedbacks', function (Blueprint $table) {
             $table->increments('id')->unique();
+            $table->text('description');
             $table->string('title', 100);
-            $table->integer('estimate_price');
+            $table->integer('is_anonim');
+            $table->integer('employees_id')->unsigned();
+            $table->foreign('employees_id')->references('id')->on('employees')->onDelete('no action');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +30,6 @@ class CreateProcurementsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('procurements');
+        Schema::drop('feedbacks');
     }
 }

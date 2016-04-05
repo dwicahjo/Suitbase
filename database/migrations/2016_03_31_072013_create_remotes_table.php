@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLeavesTable extends Migration
+class CreateRemotesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,15 @@ class CreateLeavesTable extends Migration
      */
     public function up()
     {
-        Schema::create('leaves', function (Blueprint $table) {
+        Schema::create('remotes', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->date('date_start');
             $table->date('date_end');
-            $table->string('type', 100);
+            $table->text('description');
+            $table->string('status', 100);
+            $table->integer('employees_id')->unsigned();
+            $table->foreign('employees_id')->references('id')->on('employees');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +31,6 @@ class CreateLeavesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('leaves');
+        Schema::drop('remotes');
     }
 }
