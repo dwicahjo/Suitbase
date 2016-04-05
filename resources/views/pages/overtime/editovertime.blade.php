@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Leave Detail</h1>
+                <h1 class="page-header">Edit Overtime Request</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -25,29 +25,25 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <form role="form">
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                        <div class="form-group">
-                                            <tr><td><label>Start Date: </label></td>
-                                            <td><p> content </p></td></tr>
-                                        </div>
-                                        <div class="form-group">
-                                            <tr><td><label>End Date: </label></td>
-                                            <td><p> content </p></td></tr>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <tr><td><label>Leave Type: </label></td>
-                                            <td><p> content </p></td></tr>
-                                        </div>
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input class="form-control" name = "startdate" type = "date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Start Time</label>
+                                        <input class="form-control" name = "enddate" type = "time">
+                                    </div>
+                                     <div class="form-group">
+                                        <label>End Time</label>
+                                        <input class="form-control" name = "enddate" type = "time">
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea class ="form-control" name = "description"> </textarea>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <tr><td><label>Reason: </label></td>
-                                            <td><p> content </p></td></tr>
-                                        </div>
-
-                                    </table>
-                                    <button type="submit" class="btn btn-default">Back</button>
-
+                                    <button type="submit" class="btn btn-default">Submit Button</button>
                                 </form>
                             </div>
                             

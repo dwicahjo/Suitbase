@@ -105,10 +105,10 @@
                                     <a href="createLeave">Create Leave</a>
                                 </li>
                                 <li>
-                                    <a href="myListOfLeave">View My Leave</a>
+                                    <a href="myLeave">View My Leave</a>
                                 </li>
                                 <li>
-                                    <a href="allListOfLeave">View List of Leave</a>
+                                    <a href="listOfLeave">View List of Leave</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -163,13 +163,13 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i>Overtime<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="create">Create Overtime</a>
+                                    <a href="createOvertime">Create Overtime</a>
                                 </li>
                                 <li>
-                                    <a href="panels-wells.html">View My Overtime</a>
+                                    <a href="myListOfOvertime">View My Overtime</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">View List of Overtime</a>
+                                    <a href="allListOfOvertime">View List of Overtime</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

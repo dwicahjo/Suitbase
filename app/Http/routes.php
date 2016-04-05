@@ -66,7 +66,7 @@ Route::get('/myLeave', function () {
     return view('pages.leave.mylistofleave');
 });
 
-Route::get('/listOfleave', function () {
+Route::get('/listOfLeave', function () {
     return view('pages.leave.alllistofleave');
 });
 
@@ -163,17 +163,21 @@ Route::get('/overtimeApproval', function () {
 });
 
 Route::get('/myListOfOvertime', function () {
-    return view('pages.overtime.mylistofleave');
+    return view('pages.overtime.mylistofovertime');
 });
 
 Route::get('/allListOfOvertime', function () {
-    return view('pages.overtime.alllistofleave');
+    return view('pages.overtime.alllistofovertime');
 });
 
 Route::get('/editOvertime', function () {
-    return view('pages.overtime.editleave');
+    return view('pages.overtime.editovertime');
 }); 
 
+/* survey */
+Route::get('/createSurvey', function () {
+    return view('pages.survey.createSurvey');
+}); 
 
 /* ini form aslinya guys*/
 Route::get('/forms', function () {
