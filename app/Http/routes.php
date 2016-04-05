@@ -24,28 +24,50 @@ Route::get('/login', function () {
     return view('pages.login1');
 });
 
+Route::get('/logout', function () {
+    return view('pages.login1');
+});
+
 Route::get('/template', function () {
     return view('layoutTemplate');
 });
 
+/*user*/
+Route::get('/createAccount', function () {
+    return view('pages.user.createAccount');
+});
+
+Route::get('/editProfile', function () {
+    return view('pages.user.editProfile');
+});
+
+Route::get('/listOfUser', function () {
+    return view('pages.user.listOfUser');
+});
+
+
 /* leave */
-Route::get('/createleave', function () {
+Route::get('/createLeave', function () {
     return view('pages.leave.create');
 });
 
-Route::get('/leavedetails', function () {
+Route::get('/leaveDetails', function () {
     return view('pages.leave.viewdetails');
 });
 
-Route::get('/mylistofleave', function () {
+Route::get('/leaveApproval', function () {
+    return view('pages.leave.leaveApproval');
+});
+
+Route::get('/myLeave', function () {
     return view('pages.leave.mylistofleave');
 });
 
-Route::get('/alllistofleave', function () {
+Route::get('/listOfleave', function () {
     return view('pages.leave.alllistofleave');
 });
 
-Route::get('/editleave', function () {
+Route::get('/editLeave', function () {
     return view('pages.leave.editleave');
 }); 
 
@@ -56,6 +78,10 @@ Route::get('/createRemote', function () {
 
 Route::get('/remoteDetails', function () {
     return view('pages.remote.viewdetails');
+});
+
+Route::get('/remoteApproval', function () {
+    return view('pages.remote.remoteApproval');
 });
 
 Route::get('/myListOfRemote', function () {
@@ -79,6 +105,10 @@ Route::get('/trainingDetails', function () {
     return view('pages.training.viewdetails');
 });
 
+Route::get('/trainingApproval', function () {
+    return view('pages.training.trainingApproval');
+});
+
 Route::get('/myListOfTraining', function () {
     return view('pages.training.mylistofleave');
 });
@@ -98,6 +128,10 @@ Route::get('/createProcurement', function () {
 
 Route::get('/procurementDetails', function () {
     return view('pages.procurement.viewdetails');
+});
+
+Route::get('/procurementApproval', function () {
+    return view('pages.procurement.procurementApproval');
 });
 
 Route::get('/myListOfProcurement', function () {
@@ -121,6 +155,10 @@ Route::get('/overtimeDetails', function () {
     return view('pages.overtime.viewdetails');
 });
 
+Route::get('/overtimeApproval', function () {
+    return view('pages.overtime.overtimeApproval');
+});
+
 Route::get('/myListOfOvertime', function () {
     return view('pages.overtime.mylistofleave');
 });
@@ -139,15 +177,3 @@ Route::get('/forms', function () {
     return view('pages.formsTemplate');
 });
 
-/*user*/
-Route::get('/createAccount', function () {
-    return view('pages.user.createAccount');
-});
-
-Route::get('/editProfile', function () {
-    return view('pages.user.editProfile');
-});
-
-Route::get('/listOfUser', function () {
-    return view('pages.user.listOfUser');
-});

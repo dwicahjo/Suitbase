@@ -54,25 +54,9 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                <li><a href="#"><i></i> REMAINING DAY OF LEAVE: </a>
-                        </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
+                <li> 
+                REMAINING DAY OF LEAVE: 23 Days
                 </li>
-                <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
 
@@ -89,12 +73,17 @@
                                 <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
                                 </span>
                                 <br>
-                                <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                                <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span>
+
+
+                                <!--yang lama 
                                 <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                     <li><a href="pages/myProfile">Profile</a></li>
                                     <li><a href="pages/login">Logout</a></li>
                                 </ul>
+                                -->
                             </div>
+
                             <!-- /input-group -->
                         </li>
                         <li>
@@ -113,10 +102,13 @@
                             <a href="pages/index"><i class="fa fa-reorder fa-fw"></i> Leave<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="mylistofleave">View My Leave</a>
+                                    <a href="createLeave">Create Leave</a>
                                 </li>
                                 <li>
-                                    <a href="alllistofleave">View List of Leave</a>
+                                    <a href="myListOflLeave">View My Leave</a>
+                                </li>
+                                <li>
+                                    <a href="allListOfLeave">View List of Leave</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -125,7 +117,10 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Remote <span class="fa arrow"></span></a>
                                <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">View My Remote</a>
+                                    <a href="createRemote">Create Remote</a>
+                                </li>
+                                <li>
+                                    <a href="???">View My Remote</a>
                                 </li>
                                 <li>
                                     <a href="buttons.html">View List of Remote</a>
@@ -137,6 +132,10 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Training<span class="fa arrow"></span></a>
                                <ul class="nav nav-second-level">
                                 <li>
+                                    <a href="create">Create Training</a>
+                                </li>
+
+                                <li>
                                     <a href="panels-wells.html">View My Training</a>
                                 </li>
                                 <li>
@@ -147,7 +146,10 @@
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Procurement<span class="fa arrow"></span></a>
-                             <ul class="nav nav-second-level">
+                             <ul class="nav nav-second-level">                                
+                                <li>
+                                    <a href="create">Create Procurement</a>
+                                </li>
                                 <li>
                                     <a href="panels-wells.html">View My Procurement</a>
                                 </li>
@@ -160,6 +162,9 @@
                         <li>
                             <a href="#"><i class="fa fa-reorder fa-fw"></i>Overtime<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="create">Create Overtime</a>
+                                </li>
                                 <li>
                                     <a href="panels-wells.html">View My Overtime</a>
                                 </li>
