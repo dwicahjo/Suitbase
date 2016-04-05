@@ -101,7 +101,7 @@
                             <a href="/"><i class="fa fa-dashboard fa-fw"></i> Home</a>
                         </li>
                         <li>
-                            <a href="pages/index"><i class="fa fa-user fa-fw"></i>My Profile</a>
+                            <a href="/"><i class="fa fa-user fa-fw"></i>My Profile</a>
                         </li>
                         <li>
                             <a href="tables.html"><i class="fa fa-users fa-fw"></i> Users</a>

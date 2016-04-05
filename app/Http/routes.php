@@ -11,8 +11,9 @@
 |
 */
 
+/*sementara aja kok*/
 Route::get('/', function () {
-    return view('welcome');
+    return view('layoutTemplate');
 });
 
 Route::get('about', function () {
@@ -48,11 +49,97 @@ Route::get('/editleave', function () {
     return view('pages.leave.editleave');
 }); 
 
+/* remote */
+Route::get('/createRemote', function () {
+    return view('pages.remote.create');
+});
+
+Route::get('/remoteDetails', function () {
+    return view('pages.remote.viewdetails');
+});
+
+Route::get('/myListOfRemote', function () {
+    return view('pages.remote.mylistofleave');
+});
+
+Route::get('/allListOfRemote', function () {
+    return view('pages.remote.alllistofleave');
+});
+
+Route::get('/editRemote', function () {
+    return view('pages.remote.editleave');
+}); 
+
+/* training */
+Route::get('/createTraining', function () {
+    return view('pages.training.create');
+});
+
+Route::get('/trainingDetails', function () {
+    return view('pages.training.viewdetails');
+});
+
+Route::get('/myListOfTraining', function () {
+    return view('pages.training.mylistofleave');
+});
+
+Route::get('/allListOfTraining', function () {
+    return view('pages.training.alllistofleave');
+});
+
+Route::get('/editTraining', function () {
+    return view('pages.training.editleave');
+}); 
+
+/* procurement */
+Route::get('/createProcurement', function () {
+    return view('pages.procurement.create');
+});
+
+Route::get('/procurementDetails', function () {
+    return view('pages.procurement.viewdetails');
+});
+
+Route::get('/myListOfProcurement', function () {
+    return view('pages.procurement.mylistofleave');
+});
+
+Route::get('/allListOfProcurement', function () {
+    return view('pages.procurement.alllistofleave');
+});
+
+Route::get('/editProcurement', function () {
+    return view('pages.procurement.editleave');
+}); 
+
+/* overtime */
+Route::get('/createOvertime', function () {
+    return view('pages.overtime.create');
+});
+
+Route::get('/overtimeDetails', function () {
+    return view('pages.overtime.viewdetails');
+});
+
+Route::get('/myListOfOvertime', function () {
+    return view('pages.overtime.mylistofleave');
+});
+
+Route::get('/allListOfOvertime', function () {
+    return view('pages.overtime.alllistofleave');
+});
+
+Route::get('/editOvertime', function () {
+    return view('pages.overtime.editleave');
+}); 
+
+
 /* ini form aslinya guys*/
 Route::get('/forms', function () {
     return view('pages.formsTemplate');
 });
 
+/*user*/
 Route::get('/createAccount', function () {
     return view('pages.user.createAccount');
 });
