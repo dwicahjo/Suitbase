@@ -45,6 +45,9 @@ Route::get('/listOfUser', function () {
     return view('pages.user.listOfUser');
 });
 
+Route::get('/myProfile', function () {
+    return view('pages.user.myProfile');
+});
 
 /* leave */
 Route::get('/createLeave', function () {
@@ -175,5 +178,9 @@ Route::get('/editOvertime', function () {
 /* ini form aslinya guys*/
 Route::get('/forms', function () {
     return view('pages.formsTemplate');
+});
+
+Route::get('/a', function () {
+    return view('pages.panels-wells');
 });
 

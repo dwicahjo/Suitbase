@@ -90,16 +90,16 @@
                             <a href="/"><i class="fa fa-dashboard fa-fw"></i> Home</a>
                         </li>
                         <li>
-                            <a href="/"><i class="fa fa-user fa-fw"></i>My Profile</a>
+                            <a href="myProfile"><i class="fa fa-user fa-fw"></i>My Profile</a>
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-users fa-fw"></i> Users</a>
+                            <a href="listOfUser"><i class="fa fa-users fa-fw"></i> Users</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-table fa-fw"></i> Request</a>
                         </li>
                         <li>
-                            <a href="pages/index"><i class="fa fa-reorder fa-fw"></i> Leave<span class="fa arrow"></span></a>
+                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Leave<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="createLeave">Create Leave</a>

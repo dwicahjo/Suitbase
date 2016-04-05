@@ -8,23 +8,39 @@
 
 <body>
 	@section('content')
-    <div id="page-wrapper">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Edit Profile</h1>
+
+<div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Edit Profile</h1>
+                </div>
+                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <form role="form">
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6" style= "width:500px">
+                                    <div class="col-image">
+                                    <span>
+                                         <img alt="image" class="" width= 60% src="assets/foto.jpg">
+                                     </span>
+                                     
+                                    <input onclick="myFunction()" type="file" class="upload" />
+
+                                        <script>
+                                            function myFunction() {
+                                                var x = document.getElementById("myFile");
+                                                x.disabled = true;
+                                            }
+                                    </script>
+                                </div>
+                                </div>
+        
+                <div class="col-lg-6">
+                            <form role="form">
                                     <div class="form-group">
                                         <label>Email</label>
                                         <input class="form-control" name = "email" type = "email">
@@ -130,18 +146,7 @@
                                     <br>
                                     <button type="submit" class="btn btn-default">Save</button>   
                                 </form>
-                            </div>
-                            
-                        </div>
-                        <!-- /.row (nested) -->
-                    </div>
-                    <!-- /.panel-body -->
                 </div>
-                <!-- /.panel -->
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
     </div>
     <!-- /#wrapper -->
     @endsection
