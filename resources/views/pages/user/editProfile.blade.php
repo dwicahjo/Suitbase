@@ -43,29 +43,39 @@
                             <form role="form">
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input class="form-control" name = "email" type = "email">
+                                        <input class="form-control" name = "email" type = "email" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input class="form-control" name = "password" type = "password">
+                                        <input class="form-control" name = "password" type = "password" required>
                                     </div>
                                     <!--belom selesai ya-->
                                     <div class="form-group">
-                                        <label>Role</label>
+                                        <label>Division</label>
                                         <select class="form-control" name = "role">
                                             <option>Creative</option>
                                             <option>IT</option>
                                             <option>HR</option>
-                                            <option>Unpaid</option>
+                                            <option>??</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Role</label>
+                                        <select class="form-control" name = "role">
+                                            <option>Finance</option>
+                                            <option>HR</option>
+                                            <option>SUpervisor</option>
+                                            <option>Employee</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Full Name</label>
-                                        <input class="form-control" name = "fullname" type = "text">
+                                        <input class="form-control" name = "fullname" type = "text" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Birth Place</label>
-                                        <input class="form-control" name = "birthplace" type = "text">
+                                        <input class="form-control" name = "birthplace" type = "text" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Birth Date</label>
@@ -80,29 +90,29 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Religion</label>
-                                        <input class="form-control" name = "religion" type = "text">
+                                        <input class="form-control" name = "religion" type = "text" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label>KTP Number</label>
-                                        <input class="form-control" name = "ktpnumber" type = "text">
+                                        <input class="form-control" name = "ktpnumber" type = "text" required>
                                     </div>
                                     <div class="form-group">
                                         <label>NPWP Number</label>
-                                        <input class="form-control" name = "npwpnumber" type = "text">
+                                        <input class="form-control" name = "npwpnumber" type = "text" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label>KTP Address</label>
-                                        <textarea class ="form-control" name = "ktpAddress"> </textarea>
+                                        <textarea class ="form-control" name = "ktpAddress" required> </textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Current Address</label>
-                                        <textarea class ="form-control" name = "currentAddress"> </textarea>
+                                        <textarea class ="form-control" name = "currentAddress" required> </textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Telephone Number</label>
-                                        <input class="form-control" name = "tlpnumber" type = "text">
+                                        <input class="form-control" name = "tlpnumber" type = "text" required>
                                     </div>
                                     <label>Curriculum Vitae</label>
 

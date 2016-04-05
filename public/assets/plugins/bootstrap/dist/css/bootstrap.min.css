@@ -2093,10 +2093,11 @@ col-input{
 			}
 
 			table-view{
+
 			    border-collapse: collapse;
 			    border: 1px solid black;
 			}
-
+			
 			table {
 				background-color:transparent
 			}

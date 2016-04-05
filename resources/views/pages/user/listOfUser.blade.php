@@ -58,37 +58,43 @@
                                         <td>1</td>
                                         <td>Internet Explorer 4.0</td>
                                         <td>Win 95+</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default" role="button">Reset</a></th>
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
                                         <td>Internet Explorer 5.0</td>
                                         <td>Win 95+</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
+                                            <a href="reset" class="btn btn-default" role="button">Reset</a></th>
                                     </tr>
                                     <tr class="odd gradeA">
                                         <td>3</td>
                                         <td>Internet Explorer 5.5</td>
                                         <td>Win 95+</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetProfile" class="btn btn-default" role="button">Reset</a></th>
                                     </tr>
                                     <tr class="even gradeA">
                                         <td>4</td>
                                         <td>Internet Explorer 6</td>
                                         <td>Win 98+</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetProfile" class="btn btn-default" role="button">Reset</a></th>
                                     </tr>
                                     <tr class="odd gradeA">
                                         <td>5</td>
                                         <td>Internet Explorer 7</td>
                                         <td>Win XP SP2+</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetProfile" class="btn btn-default" role="button">Reset</a></th>
                                     </tr>
                                     <tr class="even gradeA">
                                         <td>6</td>
                                         <td>AOL browser (AOL desktop)</td>
                                         <td>Win XP</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetProfile" class="btn btn-default" role="button">Reset</a></th>
                                     </tr>
                                     
                                 </tbody>

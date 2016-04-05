@@ -27,6 +27,8 @@
                                     <span>
                                          <img alt="image" class="" width= 60% src="assets/foto.jpg">
                                      </span>
+                                     <br><br>
+                                       <a href="editProfile" class="btn btn-default" role="button">Change Profile</a>  
                                     </div>
                                 </div>
                 
@@ -35,75 +37,80 @@
                                 <table class="table-view" id="dataTables-example">
                                     <div class="form-group">
                                         <tr>
-                                        <td><label>Email:</label></td>
+                                        <td><label>Email</label></td>
                                         <td>annisachibi@suitmedia.com </td>
                                         </tr>
                                     </div>
-
                                     <div class="form-group">
                                         <tr>
-                                        <td><label>Role:</label></td>
-                                        <td>HR Staff</td>
+                                        <td><label>Diviison</label></td>
+                                        <td>IT</td>
                                         </tr>                                    
                                     </div>
                                     <div class="form-group">
                                         <tr>
-                                        <td><label>Full Name:</label></td>
+                                        <td><label>Role</label></td>
+                                        <td>employee</td>
+                                        </tr>                                    
+                                    </div>
+                                    <div class="form-group">
+                                        <tr>
+                                        <td><label>Full Name</label></td>
                                         <td>Annisa Chibi </td>
                                         </tr>
                                     </div>
                                     <div class="form-group">
                                         <tr>
-                                        <td><label>Birth Place:</label></td>
+                                        <td><label>Birth Place</label></td>
                                         <td>London</td>
                                         </tr>
                                     </div>
                                     <div class="form-group">
                                         <tr>
-                                        <td><label>Birth Date:</label></td>
+                                        <td><label>Birth Date</label></td>
                                         <td>20 Maret 1995 </td>
                                         </tr>
                                     </div>
                                     <div class="form-group">
                                         <tr>
-                                        <td><label>Gender:</label></td>
+                                        <td><label>Gender</label></td>
                                         <td>Female</td>
                                         </tr>
                                     </div>
                                     <div class="form-group">
                                         <tr>
-                                        <td><label>Religion:</label></td>
+                                        <td><label>Religion</label></td>
                                         <td>Islam</td>
                                         </tr>
                                     </div>
                                     <div class="form-group">
                                         <tr>
-                                        <td><label>KTP Number:</label></td>
+                                        <td><label>KTP Number</label></td>
                                         <td>123456789</td>
                                         </tr>
                                     </div>
                                     <div class="form-group">
                                         <tr>
-                                        <td><label>NPWP Number:</label></td>
-                                        <td>annisachibi@suitmedia.com </td>
+                                        <td><label>NPWP Number</label></td>
+                                        <td>987654321 </td>
                                         </tr>
                                     </div>
                                     <div class="form-group">
                                         <tr>
                                         <td><label>KTP Address:</label></td>
-                                        <td>annisachibi@suitmedia.com </td>
+                                        <td>Jl. Pejaten Barat II No.3A, RT.2/RW.8, Pejaten Bar., Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta </td>
                                         </tr>
                                     </div>
                                     <div class="form-group">
                                         <tr>
                                         <td><label>Current Address:</label></td>
-                                        <td>annisachibi@suitmedia.com </td>
+                                        <td>Jl. Pejaten Barat II No.3A, RT.2/RW.8, Pejaten Bar., Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta </td>
                                         </tr>
                                     </div>
                                     <div class="form-group">
                                         <tr>
                                         <td><label>Telephone Number:</label></td>
-                                        <td>annisachibi@suitmedia.com </td>
+                                        <td>(021) 7196877</td>
                                         </tr>
                                     </div>
                             </table>
