@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">My Leave Requests</h1>
+                <h1 class="page-header">My Overtime Requests</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -29,10 +29,10 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Leave Type</th>
-                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Start Time</th>
+                                        <th>End Time</th>
+                                        <th>Total Hours</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -43,7 +43,7 @@
                                         <td>Win 95+</td>
                                         <td class="center">4</td>
                                         <td class="center">X</td>
-                                        <th><form method = "link" action="editLeave"><button>Edit</button></form> <button>Cancel</button></th>
+                                        <th><form method = "link" action="editleave"><button>Edit</button></form> <button>Cancel</button></th>
                                         
                                     </tr>
                                     <tr class="even gradeC">

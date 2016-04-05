@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Leave Detail</h1>
+                <h1 class="page-header">Log Detail</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -27,21 +27,26 @@
                                 <form role="form">
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                         <div class="form-group">
-                                            <tr><td><label>Start Date: </label></td>
+                                            <tr><td><label>Date: </label></td>
                                             <td><p> content </p></td></tr>
                                         </div>
                                         <div class="form-group">
-                                            <tr><td><label>End Date: </label></td>
+                                            <tr><td><label>Time: </label></td>
                                             <td><p> content </p></td></tr>
                                         </div>
                                         
                                         <div class="form-group">
-                                            <tr><td><label>Leave Type: </label></td>
+                                            <tr><td><label>Total Hours: </label></td>
                                             <td><p> content </p></td></tr>
                                         </div>
 
                                         <div class="form-group">
-                                            <tr><td><label>Reason: </label></td>
+                                            <tr><td><label>Description: </label></td>
+                                            <td><p> content </p></td></tr>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <tr><td><label>Status: </label></td>
                                             <td><p> content </p></td></tr>
                                         </div>
 

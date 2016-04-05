@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Create Feedback</h1>
+                <h1 class="page-header">Create Overtime Request</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -24,17 +24,27 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6">
-                               
-                                    <div class="form-group" style="text-alignment:center";>
-                                            <textarea class="form-control" rows="5"></textarea>
-                                        </div>
-                                    <button type="submit" class="btn btn-default">Submit</button>
-                                     <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value="">Anonymous
-                                                </label>
-                                            </div>
-                             
+                                <form role="form">
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input class="form-control" name = "date" type = "date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Start Time</label>
+                                        <input class="form-control" name = "starttime" type = "time">
+                                    </div>
+                                     <div class="form-group">
+                                        <label>End Time</label>
+                                        <input class="form-control" name = "endtime" type = "time">
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea class ="form-control" name = "description"> </textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-default">Submit Button</button>
+                                </form>
                             </div>
                             
                         </div>
