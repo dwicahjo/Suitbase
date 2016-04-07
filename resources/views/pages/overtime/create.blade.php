@@ -27,15 +27,15 @@
                                 <form role="form">
                                     <div class="form-group">
                                         <label>Date</label>
-                                        <input class="form-control" name = "date" type = "date">
+                                        <input class="form-control" name = "date" type = "date" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Start Time</label>
-                                        <input class="form-control" name = "starttime" type = "time">
+                                        <input class="form-control" name = "starttime" type = "time" required>
                                     </div>
                                      <div class="form-group">
                                         <label>End Time</label>
-                                        <input class="form-control" name = "endtime" type = "time">
+                                        <input class="form-control" name = "endtime" type = "time" required>
                                     </div>
         
                                     <div class="form-group">

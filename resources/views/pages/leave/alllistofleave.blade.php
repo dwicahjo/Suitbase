@@ -23,6 +23,7 @@
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
+                    
                     <div class="filter_menu">
                     <label>Choose Division:</label>
                         <select class="form-control" name = "leavetype">
@@ -32,13 +33,15 @@
                             <option>HR</option>
                         </select>
                     </div>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
-                        </span>
-                    </div><!-- /input-group -->
 
+                    <div class = "search_menu">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Go!</button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </div>
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
