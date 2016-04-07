@@ -23,20 +23,42 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-lg-6">
-                               
-                                    <div class="form-group" style="text-align:center">
-                                            <textarea class="form-control form-control2" rows="5"></textarea>
-                                        </div>
-                                    <button type="submit" class="btn btn-default">Submit</button>
-                                     <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value="">Anonymous
-                                                </label>
-                                            </div>
-                             
+                            <div class="col-lg-3">
                             </div>
-                            
+                            <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="5"></textarea>
+                                    </div>
+                                    
+                                    <div class="row"> 
+                                        <div class="col-lg-10">
+                                          <label>
+                                            <input type="checkbox" value=""> Anonymous
+                                          </label>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <button type="submit" class="btn btn-default">Submit</button>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <di class="row">
+                            <div class="col-lg-3">
+                            </div>
+                            <div class="col-lg-6">
+                                    <div class="form-group">
+                                        Lorem ipsum dolor sit amet, no eam vero lucilius tacimates, cum id suavitate honestatis. No mel sanctus democritum. Omnes decore noluisse te mei, idque aperiri rationibus at eos, in nam ferri assueverit. Ne aliquid vocibus vim, mel causae scribentur at, quo dictas omnesque interesset eu. Voluptua sapientem in eam, et sea essent eligendi rationibus.
+                                    <div class="row"> 
+                                        <div class="col-lg-9">
+                                          
+                                        </div>
+                                        <div class="col-lg-3">
+                                          20-03-2016; 22:33  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <!-- /.row (nested) -->
                     </div>

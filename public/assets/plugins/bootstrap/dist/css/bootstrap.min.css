@@ -1257,6 +1257,7 @@ a.bg-danger:focus,a.bg-danger:hover {
 .page-header {
 				padding-bottom:9px;
 				margin:40px 0 20px;
+				text-align: center;
 				border-bottom:1px solid #eee
 			}
 			ol,ul {
@@ -2278,11 +2279,6 @@ output {
 				line-height:1.42857143;
 				color:#555
 			}
-			.form-control2{
-				margin-left: 400px;
-				margin-right: 400px;
-			}
-
 			.form-control {
 				display:block;
 				width:100%;
@@ -2653,6 +2649,10 @@ select[multiple].input-sm,textarea.input-sm {
 					font-size:12px
 				}
 			}
+			.btnFeedback{
+				margin-left: 87px;
+			}
+
 			.btn {
 				display:inline-block;
 				padding:6px 12px;
