@@ -384,3 +384,14 @@ table.dataTable thead .sorting:after {
     padding: 15px;
     margin-top: 25px;
 }
+
+.right-side{
+    margin-top: 7px;
+}
+
+.content {
+    margin-left: 250px;
+    padding-left: 70px;
+    padding-right: 160px;
+    text-align: justify;
+}

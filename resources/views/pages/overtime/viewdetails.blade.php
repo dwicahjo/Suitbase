@@ -22,42 +22,41 @@
                     <div class="panel-heading">
                     </div>
                     <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <form role="form">
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                        <div class="form-group">
-                                            <tr><td><label>Date: </label></td>
-                                            <td><p> content </p></td></tr>
-                                        </div>
-                                        <div class="form-group">
-                                            <tr><td><label>Time: </label></td>
-                                            <td><p> content </p></td></tr>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <tr><td><label>Total Hours: </label></td>
-                                            <td><p> content </p></td></tr>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <tr><td><label>Description: </label></td>
-                                            <td><p> content </p></td></tr>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <tr><td><label>Status: </label></td>
-                                            <td><p> content </p></td></tr>
-                                        </div>
-
-                                    </table>
-                                    <button type="submit" class="btn btn-default">Back</button>
-
-                                </form>
-                            </div>
-                            
+                        <div class = "content">
+                            <form class = "form-horizontal">
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Date: </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">2/2/2016</label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Time: </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">21.00-24.00</label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Total Hours: </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">3 Hours </label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Status: </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">Rejected </label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                        <label class="col-md-4 control-label">Description: </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">Sequence Diagram:  terlampir sequence diagram parent use case melihat detil.
+    Sequence diagram melihat detil pengajuan kerja remote mengikuti sequence diagram parent-nya, yaitu melihat detil. Beberapa hal yang harus disesuaikan adalah </label>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <!-- /.row (nested) -->
                     </div>
                     <!-- /.panel-body -->
                 </div>
