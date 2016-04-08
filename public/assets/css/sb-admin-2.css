@@ -382,7 +382,6 @@ table.dataTable thead .sorting:after {
     float: right;
     width: 50%;
     padding: 15px;
-    margin-top: 25px;
 }
 
 .right-side{
@@ -413,7 +412,7 @@ table.dataTable thead .sorting:after {
 .content-form {
     margin-left: 200px;
     padding: 30px;
-} 
+}
 
 .button{
     margin-left: 441px;

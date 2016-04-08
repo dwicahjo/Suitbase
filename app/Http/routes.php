@@ -194,6 +194,7 @@ Route::get('/createSurvey', function () {
 /* feedback */
 Route::get('/createFeedback', 'FeedbackController@index');
 Route::post('/createFeedback', 'FeedbackController@postFeedback');
+Route::get('/listOfFeedback', 'FeedbackController@showListOfFeedback');
 
 /* appraisal */
 Route::get('/viewListAppraisalTemplate', function () {
