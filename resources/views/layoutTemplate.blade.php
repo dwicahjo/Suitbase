@@ -112,10 +112,10 @@
                                     <a href="createLeave">Create Leave</a>
                                 </li>
                                 <li>
-                                    <a href="myListOfLeave">View My Leave</a>
+                                    <a href="myLeave">View My Leave</a>
                                 </li>
                                 <li>
-                                    <a href="allListOfLeave">View List of Leave</a>
+                                    <a href="listOfLeave">View List of Leave</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -127,10 +127,10 @@
                                     <a href="createRemote">Create Remote</a>
                                 </li>
                                 <li>
-                                    <a href="???">View My Remote</a>
+                                    <a href="myRemote">View My Remote</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">View List of Remote</a>
+                                    <a href="listOfRemote">View List of Remote</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -139,14 +139,14 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Training<span class="fa arrow"></span></a>
                                <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="create">Create Training</a>
+                                    <a href="createTraining">Create Training</a>
                                 </li>
 
                                 <li>
-                                    <a href="panels-wells.html">View My Training</a>
+                                    <a href="myTraining">View My Training</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">View List of Training</a>
+                                    <a href="listOfTraining">View List of Training</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -155,13 +155,13 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Procurement<span class="fa arrow"></span></a>
                              <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="create">Create Procurement</a>
+                                    <a href="createProcurement">Create Procurement</a>
                                 </li>
                                 <li>
-                                    <a href="panels-wells.html">View My Procurement</a>
+                                    <a href="myProcurement">View My Procurement</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">View List of Procurement</a>
+                                    <a href="listOfProcurement">View List of Procurement</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -170,13 +170,13 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i>Overtime<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="create">Create Overtime</a>
+                                    <a href="createOvertime">Create Overtime</a>
                                 </li>
                                 <li>
-                                    <a href="panels-wells.html">View My Overtime</a>
+                                    <a href="myOvertime">View My Overtime</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">View List of Overtime</a>
+                                    <a href="listOfOvertime">View List of Overtime</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
