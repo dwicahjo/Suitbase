@@ -184,6 +184,10 @@ Route::get('/createSurvey', function () {
     return view('pages.survey.createSurvey');
 });
 
+/* feedback */
+Route::get('/createFeedback', 'FeedbackController@index');
+Route::post('/createFeedback', 'FeedbackController@postFeedback');
+
 /* ini form aslinya guys*/
 Route::get('/forms', function () {
     return view('pages.formsTemplate');

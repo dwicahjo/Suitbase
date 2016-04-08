@@ -15,12 +15,11 @@ class Feedback extends Model
 
     protected $fillable = [
         'description',
-        'title',
         'is_anonim',
         'employees_id'
     ];
 
     protected $guarded = [];
 
-        
+
 }
