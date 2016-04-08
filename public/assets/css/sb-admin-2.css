@@ -385,7 +385,6 @@ table.dataTable thead .sorting:after {
     margin-top: 25px;
 }
 
-<<<<<<< Updated upstream
 .right-side{
     margin-top: 7px;
 }
@@ -396,7 +395,7 @@ table.dataTable thead .sorting:after {
     padding-right: 160px;
     text-align: justify;
 }
-=======
+
 .image-profile{
     margin-left: 200px;
 }
@@ -409,4 +408,13 @@ table.dataTable thead .sorting:after {
     margin-left: 350px;
     margin-top: 30px;
 }
->>>>>>> Stashed changes
+
+
+.content-form {
+    margin-left: 200px;
+    padding: 30px;
+} 
+
+.button{
+    margin-left: 441px;
+}
