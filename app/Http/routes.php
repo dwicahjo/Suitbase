@@ -96,7 +96,7 @@ Route::get('/myListofRemote', function () {
     return view('pages.remote.myListofRemote');
 });
 
-Route::get('/allListOfRemote', function () {
+Route::get('/allListofRemote', function () {
     return view('pages.remote.allListofRemote');
 });
 
@@ -121,8 +121,8 @@ Route::get('/myListofTraining', function () {
     return view('pages.training.myListofTraining');
 });
 
-Route::get('/allListOfTraining', function () {
-    return view('pages.training.allListOfTraining');
+Route::get('/allListofTraining', function () {
+    return view('pages.training.allListofTraining');
 });
 
 Route::get('/editTraining', function () {
@@ -184,17 +184,21 @@ Route::get('/createSurvey', function () {
     return view('pages.survey.createSurvey');
 });
 
+/* feedback */
+Route::get('/createFeedback', 'FeedbackController@index');
+Route::post('/createFeedback', 'FeedbackController@postFeedback');
+
 /* appraisal */
 Route::get('/viewListAppraisalTemplate', function () {
-    return view('pages.survey.viewListAppraisalTemplate');
+    return view('pages.appraisal.viewListAppraisalTemplate');
 });
 
 Route::get('/myAppraisal', function () {
-    return view('pages.survey.myAppraisal');
+    return view('pages.appraisal.myAppraisal');
 });
 
 Route::get('/allListofAppraisal', function () {
-    return view('pages.survey.allListofAppraisal');
+    return view('pages.appraisal.allListofAppraisal');
 });
 
 /* ini form aslinya guys*/

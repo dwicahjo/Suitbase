@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">My Remote Working Requests</h1>
+                <h1 class="page-header">List of Remote Working Requests</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -23,16 +23,24 @@
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                        </span>
+                    </div><!-- /input-group -->
+
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
                                         <th>No. </th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
+                                        <th>Employee Name </th>
+                                        <th>Division </th>
+                                        <th>Start Date </th>
+                                        <th>End Date </th>
                                         <th>Status</th>
-                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -42,8 +50,8 @@
                                         <td>Win 95+</td>
                                         <td class="center">4</td>
                                         <td class="center">X</td>
-                                        <th><form method = "link" action="editLeave"><button>Edit</button></form> <button>Cancel</button></th>
-                                        
+                                        <td>Maternity </td>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
@@ -51,7 +59,8 @@
                                         <td>Win 95+</td>
                                         <td class="center">5</td>
                                         <td class="center">C</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <td>Maternity </td>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="odd gradeA">
                                         <td>3</td>
@@ -59,7 +68,8 @@
                                         <td>Win 95+</td>
                                         <td class="center">5.5</td>
                                         <td class="center">A</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <td>Maternity </td>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="even gradeA">
                                         <td>4</td>
@@ -67,7 +77,8 @@
                                         <td>Win 98+</td>
                                         <td class="center">6</td>
                                         <td class="center">A</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <td>Maternity </td>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="odd gradeA">
                                         <td>5</td>
@@ -75,7 +86,8 @@
                                         <td>Win XP SP2+</td>
                                         <td class="center">7</td>
                                         <td class="center">A</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <td>Maternity </td>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="even gradeA">
                                         <td>6</td>
@@ -83,7 +95,8 @@
                                         <td>Win XP</td>
                                         <td class="center">6</td>
                                         <td class="center">A</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <td>Maternity </td>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>7</td>
@@ -91,7 +104,8 @@
                                         <td>Win 98+ / OSX.2+</td>
                                         <td class="center">1.7</td>
                                         <td class="center">A</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <td>Maternity </td>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>8</td>
@@ -99,7 +113,8 @@
                                         <td>Win 98+ / OSX.2+</td>
                                         <td class="center">1.8</td>
                                         <td class="center">A</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <td>Maternity </td>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>9</td>
@@ -107,7 +122,8 @@
                                         <td>Win 98+ / OSX.2+</td>
                                         <td class="center">1.8</td>
                                         <td class="center">A</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <td>Maternity </td>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>10</td>
@@ -115,7 +131,8 @@
                                         <td>Win 2k+ / OSX.3+</td>
                                         <td class="center">1.9</td>
                                         <td class="center">A</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <td>Maternity </td>
+                                        <td>Approved </td>
 
                                     </tr>
                                     <tr class="gradeA">
@@ -124,9 +141,10 @@
                                         <td>OSX.2+</td>
                                         <td class="center">1.8</td>
                                         <td class="center">A</td>
-                                        <th><button>Edit</button> <button>Cancel</button></th>
+                                        <td>Maternity </td>
+                                        <td>Approved </td>
                                     </tr>
-                                    
+
                                 </tbody>
                             </table>
                         </div>
@@ -144,7 +162,7 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-      
+
         </div>
         <!-- /#page-wrapper -->
         @endsection
