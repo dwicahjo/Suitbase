@@ -193,6 +193,10 @@ Route::get('/myAppraisal', function () {
     return view('pages.survey.myAppraisal');
 });
 
+Route::get('/allListofAppraisal', function () {
+    return view('pages.survey.allListofAppraisal');
+});
+
 /* ini form aslinya guys*/
 Route::get('/forms', function () {
     return view('pages.formsTemplate');
