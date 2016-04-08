@@ -49,18 +49,6 @@ Route::get('/resetUser', function () {
 });
 
 
-/*feedback*/
-Route::get('/createFeedback', function () {
-    return view('pages.feedback.createFeedback');
-});
-Route::get('/detailFeedback', function () {
-    return view('pages.feedback.detailFeedback');
-});
-Route::get('/listOfFeedback', function () {
-    return view('pages.feedback.listOfFeedback');
-});
-
-
 /* leave */
 Route::get('/createLeave', function () {
     return view('pages.leave.create');
@@ -195,6 +183,7 @@ Route::get('/createSurvey', function () {
 Route::get('/createFeedback', 'FeedbackController@index');
 Route::post('/createFeedback', 'FeedbackController@postFeedback');
 Route::get('/listOfFeedback', 'FeedbackController@showListOfFeedback');
+Route::get('/detailFeedback:{id}', 'FeedbackController@showDetail');
 
 /* appraisal */
 Route::get('/viewListAppraisalTemplate', function () {

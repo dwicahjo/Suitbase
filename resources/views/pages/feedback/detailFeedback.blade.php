@@ -17,7 +17,7 @@
         </div>
 
         <div class="row">
-            
+
         </div>
 
         <!-- /.row -->
@@ -34,9 +34,9 @@
                             </div>
                             <div class="col-lg-8">
                                     <div class="form-group">
-                                        Lorem ipsum dolor sit amet, no eam vero lucilius tacimates, cum id suavitate honestatis. No mel sanctus democritum. Omnes decore noluisse te mei, idque aperiri rationibus at eos, in nam ferri assueverit. Ne aliquid vocibus vim, mel causae scribentur at, quo dictas omnesque interesset eu. Voluptua sapientem in eam, et sea essent eligendi rationibus.
+                                        {{$feedback[0]->description}}
                                     <div class="row">
-                                    <br> 
+                                    <br>
                                         <div class="col-lg-5">
                                         </div>
                                         <div class="col-lg-7">

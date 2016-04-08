@@ -55,7 +55,7 @@
                                     @foreach ($feedbacks as $feedback)
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
-                                        <td><a href="detailFeedback">{{$feedback->description}}</a></td>
+                                        <td><a href="/detailFeedback:{{$feedback->id}}">{{str_limit($feedback->description, $limit = 20, $end = '...')}}</a></td>
                                         <td>{{$feedback->created_at}}</td>
                                         <td>{{$feedback->employees_id}}</td>
                                     </tr>
