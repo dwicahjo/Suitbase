@@ -41,6 +41,7 @@
         
                 <div class="col-lg-6">
                             <form role="form">
+                                    <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                     <div class="form-group">
                                         <label>Email</label>
                                         <input class="form-control" name = "email" type = "email" required>

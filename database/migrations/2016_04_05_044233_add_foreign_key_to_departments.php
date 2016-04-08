@@ -29,7 +29,6 @@ class AddForeignKeyToDepartments extends Migration
         Schema::table('departments', function (Blueprint $table) {
             $table->dropForeign('departments_companies_id_foreign');
             $table->dropColumn('companies_id');
-
         });
     }
 }

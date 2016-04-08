@@ -18,6 +18,7 @@ class Employee extends Model
         'email',
         'password',
         'ktp_id',
+        'ktp_address',
         'birth_date',
         'birth_place',
         'phone',
@@ -38,5 +39,8 @@ class Employee extends Model
 
     protected $guarded = [];
 
-        
+    public function division()
+    {
+        return $this->hasOne('App\Models\Division', 'id', 'divisions_id');
+    }
 }
