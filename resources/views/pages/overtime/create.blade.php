@@ -7,11 +7,11 @@
 </head>
 
 <body>
-	@section('content')
+    @section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Create Overtime Request</h1>
+                <h1 class="page-header">Create Training Request</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -23,28 +23,41 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-lg-6">
-                                <form role="form">
-                                    <div class="form-group">
-                                        <label>Date</label>
-                                        <input class="form-control" name = "date" type = "date" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Start Time</label>
-                                        <input class="form-control" name = "starttime" type = "time" required>
-                                    </div>
-                                     <div class="form-group">
-                                        <label>End Time</label>
-                                        <input class="form-control" name = "endtime" type = "time" required>
-                                    </div>
-        
-                                    <div class="form-group">
-                                        <label>Description</label>
-                                        <textarea class ="form-control" name = "description"> </textarea>
-                                    </div>
+                            <div class="col-lg-12">
+                                <div class = "content-form">
+                                    <form class = "form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                            <label class="col-md-4 control-label">Date</label>
+                                            <div class = "col-md-6">
+                                                <input class="form-control" name = "date" type = "date" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Start Time</label>
+                                            <div class = "col-md-6">
+                                                <input class="form-control" name = "starttime" type = "time" required>
+                                            </div> 
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">End Time</label>
+                                            <div class = "col-md-6">
+                                                <input class="form-control" name = "endtime" type = "time" required>
+                                            </div>
+                                        </div>
 
-                                    <button type="submit" class="btn btn-default">Submit Button</button>
-                                </form>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Reason</label>
+                                            <div class = "col-md-6">
+                                                <textarea class ="form-control" name = "reason" required> </textarea>
+                                            </div>
+                                        </div>
+                                    <div class = "button">
+                                        <button type="submit" class="btn btn-default">Submit Button</button>
+                                    </div>
+                                    </form>
+                                </div>
                             </div>
                             
                         </div>
