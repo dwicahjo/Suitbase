@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 use App\Http\Requests;
 use App\Models\Feedback;
 
@@ -11,7 +11,9 @@ class FeedbackController extends Controller
 {
     public function index()
     {
-        return view('pages.feedback.createFeedback');
+        $user = Auth::user()->id;
+        $feedbacks = Feedback::where('employees_id', $user)->orderBy('created_at','desc')->take(5)->get();
+        return view('pages.feedback.createFeedback',['feedbacks'=>$feedbacks]);
     }
 
     public function postFeedback(Request $request){
@@ -25,6 +27,7 @@ class FeedbackController extends Controller
             'is_anonim' => $data['is_anonim'],
             'employees_id' => $data['employees_id'],
         ]);
-        return view('pages.feedback.createFeedback');
+        return $this->index();
     }
+
 }
