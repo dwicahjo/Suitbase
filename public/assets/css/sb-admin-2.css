@@ -395,3 +395,12 @@ table.dataTable thead .sorting:after {
     padding-right: 160px;
     text-align: justify;
 }
+
+.content-form {
+    margin-left: 200px;
+    padding: 30px;
+} 
+
+.button{
+    margin-left: 441px;
+}
