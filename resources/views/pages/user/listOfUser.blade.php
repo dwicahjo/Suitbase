@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">List of Users</h1>
+                <h1 class="page-header">List of User</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -23,23 +23,50 @@
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
-                    <div class="filter_menu">
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" placeholder="Search for..." type="button" data-toggle="dropdown">Choose Division
-                        <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">PR</a></li>
-                          <li><a href="#">Creative</a></li>
-                          <li><a href="#">IT</a></li>
-                        </ul>
-                    </div>
-                    </div>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
-                        </span>
-                    </div><!-- /input-group -->
+                    
+                    <div class="row">
+                            <div class="col-lg-7">
+                                <div class="row"> 
+                                        <div class="col-lg-4">
+                                          <label>Choose Division:</label>
+                                            <select class="form-control" name = "leavetype">
+                                                <option>PR</option>
+                                                <option>Creative</option>
+                                                <option>IT</option>
+                                                <option>HR</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class= "upper-menu">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Search">
+                                                    <span class="input-group-btn">
+                                                    <button class="btn btn-default" type="button">Go!</button>
+                                                    </span>
+                                                </div><!-- /input-group -->
+                                            </div>
+                                        </div>
+                                    </div> <!--row-->
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="upper-menu">
+                                    <div class="upper-menu-right">
+                                        <a href="createAccount">
+                                            <i class="fa fa-plus fa-fw"></i>
+                                            <label>
+                                                Add Account
+                                            </label>
+                                        </a>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+             
+                    
+                    
+
+
 
                     <div class="panel-body">
                         <div class="dataTable_wrapper">

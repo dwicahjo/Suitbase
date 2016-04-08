@@ -1053,8 +1053,9 @@ img {
 }
 .carousel-inner>.item>a>img,.carousel-inner>.item>img,.img-responsive,.thumbnail a>img,.thumbnail>img {
 				display:block;
-				max-width:100%;
-				height:auto
+				max-width:80%;
+				height:auto;
+				border: 4px double black;
 			}
 			.img-rounded {
 				border-radius:6px
@@ -1432,7 +1433,7 @@ code,kbd,pre,samp {
 }
 .row {
 	margin-right:-15px;
-	margin-left:-15px
+	margin-left:-7px
 }
 
 .col-image{
