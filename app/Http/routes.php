@@ -81,27 +81,27 @@ Route::get('/editLeave', function () {
 
 /* remote */
 Route::get('/createRemote', function () {
-    return view('pages.remote.create');
+    return view('pages.remote.createRemote');
 });
 
-Route::get('/remoteDetails', function () {
-    return view('pages.remote.viewdetails');
+Route::get('/viewDetailsRemote', function () {
+    return view('pages.remote.viewDetailsRemote');
 });
 
 Route::get('/remoteApproval', function () {
     return view('pages.remote.remoteApproval');
 });
 
-Route::get('/myRemote', function () {
-    return view('pages.remote.mylistofleave');
+Route::get('/myListofRemote', function () {
+    return view('pages.remote.myListofRemote');
 });
 
-Route::get('/listOfRemote', function () {
-    return view('pages.remote.alllistofleave');
+Route::get('/allListOfRemote', function () {
+    return view('pages.remote.allListofRemote');
 });
 
 Route::get('/editRemote', function () {
-    return view('pages.remote.editleave');
+    return view('pages.remote.editRemote');
 });
 
 /* training */
@@ -109,24 +109,24 @@ Route::get('/createTraining', function () {
     return view('pages.training.createTraining');
 });
 
-Route::get('/trainingDetails', function () {
-    return view('pages.training.viewdetails');
+Route::get('/viewDetailsTraining', function () {
+    return view('pages.training.viewDetailsTraining');
 });
 
 Route::get('/trainingApproval', function () {
     return view('pages.training.trainingApproval');
 });
 
-Route::get('/myTraining', function () {
-    return view('pages.training.mylistofleave');
+Route::get('/myListofTraining', function () {
+    return view('pages.training.myListofTraining');
 });
 
-Route::get('/listOfTraining', function () {
-    return view('pages.training.alllistofleave');
+Route::get('/allListOfTraining', function () {
+    return view('pages.training.allListOfTraining');
 });
 
 Route::get('/editTraining', function () {
-    return view('pages.training.editleave');
+    return view('pages.training.editTraining');
 });
 
 /* procurement */
@@ -187,6 +187,19 @@ Route::get('/createSurvey', function () {
 /* feedback */
 Route::get('/createFeedback', 'FeedbackController@index');
 Route::post('/createFeedback', 'FeedbackController@postFeedback');
+
+/* appraisal */
+Route::get('/viewListAppraisalTemplate', function () {
+    return view('pages.survey.viewListAppraisalTemplate');
+});
+
+Route::get('/myAppraisal', function () {
+    return view('pages.survey.myAppraisal');
+});
+
+Route::get('/allListofAppraisal', function () {
+    return view('pages.survey.allListofAppraisal');
+});
 
 /* ini form aslinya guys*/
 Route::get('/forms', function () {
