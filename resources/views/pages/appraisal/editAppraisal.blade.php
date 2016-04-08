@@ -7,11 +7,11 @@
 </head>
 
 <body>
-	@section('content')
+    @section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Create Appraisal Form</h1>
+                <h1 class="page-header">Create Appraisal Request</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -27,7 +27,7 @@
                                 <form role="form">
                                     <div class="form-group">
                                         <label>Title</label>
-                                        <input class="form-control" name = "title" required>
+                                        <input class="form-control" name = "title" placeholder = "Old Content">
                                     </div>
                                     <div class="form-group">
                                         <label>Division</label>
@@ -41,15 +41,15 @@
                                     
                                     <div class="form-group">
                                         <label>Question 1</label>
-                                        <textarea class ="form-control" name = "question" required> </textarea>
+                                        <textarea class ="form-control" name = "question" placeholder = "Old Content"> </textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Question 2</label>
-                                        <textarea class ="form-control" name = "question" required> </textarea>
+                                        <textarea class ="form-control" name = "question" placeholder = "Old Content"> </textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Question 3</label>
-                                        <textarea class ="form-control" name = "question" required> </textarea>
+                                        <textarea class ="form-control" name = "question" placeholder = "Old Content"> </textarea>
                                     </div>
 
                                     <button type="submit" class="btn btn-default">Add more questions</button>

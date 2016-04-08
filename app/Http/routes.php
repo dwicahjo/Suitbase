@@ -92,11 +92,11 @@ Route::get('/remoteApproval', function () {
     return view('pages.remote.remoteApproval');
 });
 
-Route::get('/myListOfRemote', function () {
+Route::get('/myRemote', function () {
     return view('pages.remote.mylistofleave');
 });
 
-Route::get('/allListOfRemote', function () {
+Route::get('/listOfRemote', function () {
     return view('pages.remote.alllistofleave');
 });
 
@@ -117,11 +117,11 @@ Route::get('/trainingApproval', function () {
     return view('pages.training.trainingApproval');
 });
 
-Route::get('/myListOfTraining', function () {
+Route::get('/myTraining', function () {
     return view('pages.training.mylistofleave');
 });
 
-Route::get('/allListOfTraining', function () {
+Route::get('/listOfTraining', function () {
     return view('pages.training.alllistofleave');
 });
 
@@ -142,11 +142,11 @@ Route::get('/procurementApproval', function () {
     return view('pages.procurement.procurementApproval');
 });
 
-Route::get('/myListOfProcurement', function () {
+Route::get('/myProcurement', function () {
     return view('pages.procurement.mylistofleave');
 });
 
-Route::get('/allListOfProcurement', function () {
+Route::get('/listOfProcurement', function () {
     return view('pages.procurement.alllistofleave');
 });
 
@@ -167,11 +167,11 @@ Route::get('/overtimeApproval', function () {
     return view('pages.overtime.overtimeApproval');
 });
 
-Route::get('/myListOfOvertime', function () {
+Route::get('/myOvertime', function () {
     return view('pages.overtime.mylistofovertime');
 });
 
-Route::get('/allListOfOvertime', function () {
+Route::get('/listOfOvertime', function () {
     return view('pages.overtime.alllistofovertime');
 });
 
