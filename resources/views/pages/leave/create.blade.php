@@ -26,6 +26,7 @@
                             <div class="col-lg-6">
                                 <form role="form">
                                     <div class="form-group">
+                                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                         <label>Start Date</label>
                                         <input class="form-control" name = "startdate" type = "date" required>
                                     </div>
