@@ -53,6 +53,13 @@ Route::get('/resetUser', function () {
 Route::get('/createFeedback', function () {
     return view('pages.feedback.createFeedback');
 });
+Route::get('/detailFeedback', function () {
+    return view('pages.feedback.detailFeedback');
+});
+Route::get('/listOfFeedback', function () {
+    return view('pages.feedback.listOfFeedback');
+});
+
 
 /* leave */
 Route::get('/createLeave', function () {
