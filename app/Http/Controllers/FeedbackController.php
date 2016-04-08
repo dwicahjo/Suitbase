@@ -30,4 +30,9 @@ class FeedbackController extends Controller
         return $this->index();
     }
 
+    public function showListOfFeedback(){
+        $feedbacks = Feedback::orderBy('created_at','desc')->get();
+        return view('pages.feedback.listOfFeedback',['feedbacks'=>$feedbacks]);
+    }
+
 }

@@ -19,11 +19,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
+                    <div class="row">
                     <!--<div class="panel-heading">
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
-
+                    <div class="col-lg-5">
+                    </div>
+                    <div class="col-lg-7">
                     <div class = "search_menu">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search for...">
@@ -32,6 +35,8 @@
                             </span>
                         </div><!-- /input-group -->
                     </div>
+                    </div>
+                    </div>
 
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
@@ -39,52 +44,23 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
-                                        <th>Timestamp</th>
-                                        <th>Name </th>
+                                        <th>Description</th>
+                                        <th>Timestamp </th>
                                         <th>Division</th>
-                                        
+
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   <a href="detailFeedback">
-                                    <tr class="odd gradeX">
-                                        <td>1</td>
-                                        <td><a href="detailFeedback">Internet Explorer 4.0</a></td>
-                                        <td>Win 95+</td>
-                                        <td>Win 95+</td>
-                                    </tr>
-                            
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td>Win 95+</td>                                   
-                                    </tr>
+                                    <?php $i=1; ?>
+                                    @foreach ($feedbacks as $feedback)
                                     <tr class="odd gradeA">
-                                        <td>3</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <<td>Win 95+</td>
+                                        <td>{{$i}}</td>
+                                        <td><a href="detailFeedback">{{$feedback->description}}</a></td>
+                                        <td>{{$feedback->created_at}}</td>
+                                        <td>{{$feedback->employees_id}}</td>
                                     </tr>
-                                    <tr class="even gradeA">
-                                        <td>4</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <td>Win 95+</td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>5</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <td>Win 95+</td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>6</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <td>Win XP</td>
-                                    </tr>
-                                    
+                                    <?php $i++; ?>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -97,7 +73,7 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-      
+
         </div>
         <!-- /#page-wrapper -->
         @endsection
