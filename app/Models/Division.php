@@ -11,7 +11,7 @@ class Division extends Model
 {
     protected $table = 'divisions';
 
-    public $timestamps = true;
+    public $timestamps = false;
 
     protected $fillable = [
         'name',
@@ -19,4 +19,6 @@ class Division extends Model
     ];
 
     protected $guarded = [];
+
+        
 }

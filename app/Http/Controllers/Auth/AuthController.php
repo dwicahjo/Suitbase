@@ -77,6 +77,7 @@ class AuthController extends Controller
             'birth_place' => $data['birth_place'],
             'phone' => $data['phone'],
             'ktp_id' => $data['ktp_id'],
+            'ktp_address' => $data['ktp_address'],
             'KK' => $data['KK'],
             'CV' => $data['CV'],
             'NPWP' => $data['NPWP'],

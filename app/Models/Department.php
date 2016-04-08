@@ -11,12 +11,11 @@ class Department extends Model
 {
     protected $table = 'departments';
 
-    public $timestamps = true;
+    public $timestamps = false;
 
     protected $fillable = [
         'name',
-        'companies_id',
-        'employees_id'
+        'companies_id'
     ];
 
     protected $guarded = [];

@@ -138,7 +138,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label">KTP Address</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" name = "address" type = "text">
+                                    <input class="form-control" name = "ktp_address" type = "text">
                                 </div>
                         </div>
 
@@ -146,6 +146,13 @@
                             <label class="col-md-4 control-label">Phone</label>
                                 <div class="col-md-6">
                                     <input class="form-control" name = "phone" type = "text">
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Current Address</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" name = "address" type = "text">
                                 </div>
                         </div>
 

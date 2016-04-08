@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Employee
+ * Class User
  */
-class Employee extends Model
+class User extends Model
 {
-    protected $table = 'employees';
+    protected $table = 'users';
 
     public $timestamps = true;
 
@@ -33,14 +33,13 @@ class Employee extends Model
         'last_avg_score',
         'address',
         'NPWP',
+        'KTP',
+        'remember_token',
         'departments_id',
         'divisions_id'
     ];
 
     protected $guarded = [];
 
-    public function division()
-    {
-        return $this->hasOne('App\Models\Division', 'id', 'divisions_id');
-    }
+        
 }
