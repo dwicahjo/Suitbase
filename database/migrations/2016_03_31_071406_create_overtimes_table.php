@@ -21,7 +21,7 @@ class CreateOvertimesTable extends Migration
             $table->text('description');
             $table->string('status', 100);
             $table->integer('employees_id')->unsigned();
-            $table->foreign('employees_id')->references('id')->on('employees');
+            $table->foreign('employees_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

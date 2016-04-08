@@ -52,38 +52,45 @@
                 <a class="navbar-brand" href="index.html">SUITBASE</a>
             </div>
             <!-- /.navbar-header -->
-
+             @if (Auth::user())
             <ul class="nav navbar-top-links navbar-right">
-                <li> 
-                REMAINING DAY OF LEAVE: 23 Days
+                <li>
+                REMAINING DAY OF LEAVE:  {{ Auth::user()->number_leave }} Days
                 </li>
+                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
             </ul>
+            @else
+            <ul class="nav navbar-top-links navbar-right">
+                <li><a href="{{ url('/login') }}">Login</a></li>
+            </ul>
+            @endif
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
+                            @if (Auth::user())
                             <div class="input-group custom-search-form">
                                 <span>
                                     <img alt="image" class="img-circle" src="img/profile_small.jpg">
                                 </span>
                                 <br>
-                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
+                                {{-- <a data-toggle="dropdown" class="dropdown-toggle" href="#"> --}}
+                                <span class="clear">
+                                <span class="block m-t-xs">
+                                {{-- <strong class="font-bold">David Williams</strong> --}}
+                                {{ Auth::user()->name }}
                                 </span>
                                 <br>
-                                <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span>
-
-
-                                <!--yang lama 
-                                <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <span class="text-muted text-xs block"> {{ Auth::user()->divisions_id }} </span>
+                                <span class="text-muted text-xs block"> {{ Auth::user()->departments_id }} </span>
+                                {{-- <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                     <li><a href="pages/myProfile">Profile</a></li>
                                     <li><a href="pages/login">Logout</a></li>
-                                </ul>
-                                -->
+                                </ul> --}}
                             </div>
-
+                            @endif
                             <!-- /input-group -->
                         </li>
                         <li>
@@ -105,10 +112,10 @@
                                     <a href="createLeave">Create Leave</a>
                                 </li>
                                 <li>
-                                    <a href="myLeave">View My Leave</a>
+                                    <a href="myListOfLeave">View My Leave</a>
                                 </li>
                                 <li>
-                                    <a href="listOfLeave">View List of Leave</a>
+                                    <a href="allListOfLeave">View List of Leave</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -146,7 +153,7 @@
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Procurement<span class="fa arrow"></span></a>
-                             <ul class="nav nav-second-level">                                
+                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="create">Create Procurement</a>
                                 </li>
@@ -163,13 +170,13 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i>Overtime<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createOvertime">Create Overtime</a>
+                                    <a href="create">Create Overtime</a>
                                 </li>
                                 <li>
-                                    <a href="myListOfOvertime">View My Overtime</a>
+                                    <a href="panels-wells.html">View My Overtime</a>
                                 </li>
                                 <li>
-                                    <a href="allListOfOvertime">View List of Overtime</a>
+                                    <a href="buttons.html">View List of Overtime</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -215,7 +222,7 @@
         </nav>
 
     @section('content')
-    @show        
+    @show
         <!-- /#page-wrapper -->
 
     </div>

@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Validator;
+use App\Models\Department;
+use App\Models\Division;
+use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -67,6 +70,33 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'gender' => $data['gender'],
+            'religion' => $data['religion'],
+            'address' => $data['address'],
+            'birth_date' => $data['birth_date'],
+            'birth_place' => $data['birth_place'],
+            'phone' => $data['phone'],
+            'ktp_id' => $data['ktp_id'],
+            'KK' => $data['KK'],
+            'CV' => $data['CV'],
+            'NPWP' => $data['NPWP'],
+            'KTP' => $data['KTP'],
+            'ijazah' => $data['ijazah'],
+            'departments_id' => $data['departments_id'],
+            'divisions_id' => $data['divisions_id']
         ]);
     }
+
+    public function showRegistrationForm()
+    {
+        $departments = Department::all();
+        $divisions = Division::all();
+
+        if (property_exists($this, 'registerView')) {
+            return view($this->registerView);
+        }
+
+        return view('auth.register',['divisions' => $divisions],['departments' => $departments]);
+    }
+
 }

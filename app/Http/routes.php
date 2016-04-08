@@ -11,21 +11,17 @@
 |
 */
 
-/*sementara aja kok*/
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
 Route::get('/', function () {
-    return view('layoutTemplate');
-});
-
-Route::get('about', function () {
-    return view('pages.about');
-});
-
-Route::get('/login', function () {
-    return view('pages.login');
-});
-
-Route::get('/logout', function () {
-    return view('pages.login1');
+    if (Auth::user()) {
+        return view('layoutTemplate'); //Page which you want to show for loged user.
+    } else {
+        return view('auth.login'); //You can redirect from here, if user is not logged in
+    }
 });
 
 Route::get('/template', function () {
@@ -58,8 +54,6 @@ Route::get('/createFeedback', function () {
     return view('pages.feedback.createFeedback');
 });
 
-
-
 /* leave */
 Route::get('/createLeave', function () {
     return view('pages.leave.create');
@@ -83,7 +77,7 @@ Route::get('/listOfLeave', function () {
 
 Route::get('/editLeave', function () {
     return view('pages.leave.editleave');
-}); 
+});
 
 /* remote */
 Route::get('/createRemote', function () {
@@ -108,11 +102,11 @@ Route::get('/allListOfRemote', function () {
 
 Route::get('/editRemote', function () {
     return view('pages.remote.editleave');
-}); 
+});
 
 /* training */
 Route::get('/createTraining', function () {
-    return view('pages.training.create');
+    return view('pages.training.createTraining');
 });
 
 Route::get('/trainingDetails', function () {
@@ -133,7 +127,7 @@ Route::get('/allListOfTraining', function () {
 
 Route::get('/editTraining', function () {
     return view('pages.training.editleave');
-}); 
+});
 
 /* procurement */
 Route::get('/createProcurement', function () {
@@ -158,7 +152,7 @@ Route::get('/allListOfProcurement', function () {
 
 Route::get('/editProcurement', function () {
     return view('pages.procurement.editleave');
-}); 
+});
 
 /* overtime */
 Route::get('/createOvertime', function () {
@@ -183,12 +177,12 @@ Route::get('/allListOfOvertime', function () {
 
 Route::get('/editOvertime', function () {
     return view('pages.overtime.editovertime');
-}); 
+});
 
 /* survey */
 Route::get('/createSurvey', function () {
     return view('pages.survey.createSurvey');
-}); 
+});
 
 /* ini form aslinya guys*/
 Route::get('/forms', function () {
