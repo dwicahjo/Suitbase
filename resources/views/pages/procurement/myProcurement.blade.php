@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">My Overtime Requests</h1>
+                <h1 class="page-header">My Procurement Requests</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -29,48 +29,36 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
-                                        <th>Date</th>
-                                        <th>Start Time</th>
-                                        <th>End Time</th>
-                                        <th>Total Hours</th>
+                                        <th>Procurement Title</th>
+                                        <th>Status</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="odd gradeX">
-                                        <td>1</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <td class="center">1</td>
+                                        <td class="center">Internet Explorer 4.0</td>
+                                        <td class="center">Win 95+</td>
+                                        <th><a href="editProcurement" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                        
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
                                         <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <td>Win 95+</td><th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="odd gradeA">
                                         <td>3</td>
                                         <td>Internet Explorer 5.5</td>
                                         <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <th><a href="editTraining" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="even gradeA">
                                         <td>4</td>
                                         <td>Internet Explorer 6</td>
                                         <td>Win 98+</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
                                         <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
@@ -78,8 +66,6 @@
                                         <td>5</td>
                                         <td>Internet Explorer 7</td>
                                         <td>Win XP SP2+</td>
-                                        <td class="center">7</td>
-                                        <td class="center">A</td>
                                         <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
@@ -87,8 +73,6 @@
                                         <td>6</td>
                                         <td>AOL browser (AOL desktop)</td>
                                         <td>Win XP</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
                                         <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
@@ -96,8 +80,6 @@
                                         <td>7</td>
                                         <td>Firefox 1.0</td>
                                         <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
                                         <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
@@ -105,40 +87,9 @@
                                         <td>8</td>
                                         <td>Firefox 1.5</td>
                                         <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
                                         <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
-                                    <tr class="gradeA">
-                                        <td>9</td>
-                                        <td>Firefox 2.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>10</td>
-                                        <td>Firefox 3.0</td>
-                                        <td>Win 2k+ / OSX.3+</td>
-                                        <td class="center">1.9</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>11</td>
-                                        <td>Camino 1.0</td>
-                                        <td>OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    
                                 </tbody>
                             </table>
                         </div>

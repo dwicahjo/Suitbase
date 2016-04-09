@@ -53,7 +53,7 @@ Route::get('/resetUser', function () {
 Route::get('/createFeedback', function () {
     return view('pages.feedback.createFeedback');
 });
-Route::get('/detailFeedback', function () {
+Route::get('/feedbackDetail', function () {
     return view('pages.feedback.detailFeedback');
 });
 Route::get('/listOfFeedback', function () {
@@ -66,7 +66,7 @@ Route::get('/createLeave', function () {
     return view('pages.leave.create');
 });
 
-Route::get('/leaveDetails', function () {
+Route::get('/leaveDetail', function () {
     return view('pages.leave.viewdetails');
 });
 
@@ -91,7 +91,7 @@ Route::get('/createRemote', function () {
     return view('pages.remote.createRemote');
 });
 
-Route::get('/viewDetailsRemote', function () {
+Route::get('/remoteDetail', function () {
     return view('pages.remote.viewDetailsRemote');
 });
 
@@ -99,7 +99,7 @@ Route::get('/remoteApproval', function () {
     return view('pages.remote.remoteApproval');
 });
 
-Route::get('/myListofRemote', function () {
+Route::get('/myRemote', function () {
     return view('pages.remote.myListofRemote');
 });
 
@@ -116,7 +116,7 @@ Route::get('/createTraining', function () {
     return view('pages.training.createTraining');
 });
 
-Route::get('/viewDetailsTraining', function () {
+Route::get('/trainingDetail', function () {
     return view('pages.training.viewDetailsTraining');
 });
 
@@ -124,7 +124,7 @@ Route::get('/trainingApproval', function () {
     return view('pages.training.trainingApproval');
 });
 
-Route::get('/myListofTraining', function () {
+Route::get('/mye2Training', function () {
     return view('pages.training.myListofTraining');
 });
 
@@ -138,11 +138,11 @@ Route::get('/editTraining', function () {
 
 /* procurement */
 Route::get('/createProcurement', function () {
-    return view('pages.procurement.create');
+    return view('pages.procurement.createProcurement');
 });
 
-Route::get('/procurementDetails', function () {
-    return view('pages.procurement.viewdetails');
+Route::get('/procurementDetail', function () {
+    return view('pages.procurement.detailProcurement');
 });
 
 Route::get('/procurementApproval', function () {
@@ -166,7 +166,7 @@ Route::get('/createOvertime', function () {
     return view('pages.overtime.create');
 });
 
-Route::get('/overtimeDetails', function () {
+Route::get('/overtimeDetail', function () {
     return view('pages.overtime.viewdetails');
 });
 
