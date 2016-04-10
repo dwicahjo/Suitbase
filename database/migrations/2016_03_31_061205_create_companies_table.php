@@ -16,7 +16,7 @@ class CreateCompaniesTable extends Migration
             $table->increments('id')->unique();
             $table->string('name', 100);
             $table->string('address');
-            $table->timestamps();
+
         });
     }
 

@@ -26,17 +26,18 @@
                             <div class="col-lg-6">
                                 <form role="form">
                                     <div class="form-group">
+                                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                         <label>Start Date</label>
-                                        <input class="form-control" name = "startdate" type = "date">
+                                        <input class="form-control" name = "startdate" type = "date" required>
                                     </div>
                                     <div class="form-group">
                                         <label>End Date</label>
-                                        <input class="form-control" name = "enddate" type = "date">
+                                        <input class="form-control" name = "enddate" type = "date" required>
                                     </div>
                                     
                                     <div class="form-group">
                                         <label>Leave Type</label>
-                                        <select class="form-control" name = "leavetype">
+                                        <select class="form-control" name = "leavetype" required>
                                             <option>Sick</option>
                                             <option>Maternal</option>
                                             <option>Marriage</option>
@@ -46,7 +47,7 @@
 
                                     <div class="form-group">
                                         <label>Reason</label>
-                                        <textarea class ="form-control" name = "reason"> </textarea>
+                                        <textarea class ="form-control" name = "reason" required> </textarea>
                                     </div>
 
                                     <button type="submit" class="btn btn-default">Submit Button</button>

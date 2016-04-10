@@ -15,8 +15,7 @@ class AddForeignKeyToDepartments extends Migration
         Schema::table('departments', function (Blueprint $table) {
             $table->integer('companies_id')->unsigned();
             $table->foreign('companies_id')->references('id')->on('companies')->onDelete('no action');
-            $table->integer('employees_id')->unsigned();
-            $table->foreign('employees_id')->references('id')->on('employees')->onDelete('no action');
+
         });
     }
 
@@ -30,8 +29,6 @@ class AddForeignKeyToDepartments extends Migration
         Schema::table('departments', function (Blueprint $table) {
             $table->dropForeign('departments_companies_id_foreign');
             $table->dropColumn('companies_id');
-            $table->dropForeign('departments_employees_id_foreign');
-            $table->dropColumn('employees_id');
         });
     }
 }

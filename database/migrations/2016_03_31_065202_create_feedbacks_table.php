@@ -18,7 +18,7 @@ class CreateFeedbacksTable extends Migration
             $table->string('title', 100);
             $table->integer('is_anonim');
             $table->integer('employees_id')->unsigned();
-            $table->foreign('employees_id')->references('id')->on('employees')->onDelete('no action');
+            $table->foreign('employees_id')->references('id')->on('users')->onDelete('no action');
             $table->timestamps();
         });
     }

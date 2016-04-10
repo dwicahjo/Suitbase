@@ -22,100 +22,122 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-6" style= "width:500px">
-                                    <div class="col-image">
-                                    <span>
-                                         <img alt="image" class="" width= 60% src="assets/foto.jpg">
-                                     </span>
-                                     <br><br>
-                                       <a href="editProfile" class="btn btn-default" role="button">Change Profile</a>  
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <img alt="image" class="img-responsive" src="assets/foto.jpg">
+                                        </div>
                                     </div>
                                 </div>
-                
+
                 <div class="col-lg-6">
-                            <form role="form">
-                                <table class="table-view" id="dataTables-example">
+                        <div class="form-group">
+                                <div class="row">
                                     <div class="form-group">
-                                        <tr>
-                                        <td><label>Email</label></td>
-                                        <td>annisachibi@suitmedia.com </td>
-                                        </tr>
+                                        <label class="col-md-4 control-label">Email</label>
+                                        <div class="col-md-4">
+                                            {{ Auth::user()->email }}
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="form-group">
-                                        <tr>
-                                        <td><label>Diviison</label></td>
-                                        <td>IT</td>
-                                        </tr>                                    
+                                        <label class="col-md-4 control-label">Role</label>
+                                        <div class="col-md-6">
+                                            {{ Auth::user()->divisions_id}}
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="form-group">
-                                        <tr>
-                                        <td><label>Role</label></td>
-                                        <td>employee</td>
-                                        </tr>                                    
+                                        <label class="col-md-4 control-label">Full Name</label>
+                                        <div class="col-md-6">
+                                            {{ Auth::user()->name }}
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="form-group">
-                                        <tr>
-                                        <td><label>Full Name</label></td>
-                                        <td>Annisa Chibi </td>
-                                        </tr>
+                                        <label class="col-md-4 control-label">Birth Place</label>
+                                        <div class="col-md-6">
+                                            {{ Auth::user()->birth_place }}
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="form-group">
-                                        <tr>
-                                        <td><label>Birth Place</label></td>
-                                        <td>London</td>
-                                        </tr>
+                                        <label class="col-md-4 control-label">Birth Date</label>
+                                        <div class="col-md-6">
+                                            {{ Auth::user()->birth_date }}
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="form-group">
-                                        <tr>
-                                        <td><label>Birth Date</label></td>
-                                        <td>20 Maret 1995 </td>
-                                        </tr>
+                                        <label class="col-md-4 control-label">Gender</label>
+                                        <div class="col-md-6">
+                                            {{ Auth::user()->gender }}
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="form-group">
-                                        <tr>
-                                        <td><label>Gender</label></td>
-                                        <td>Female</td>
-                                        </tr>
+                                        <label class="col-md-4 control-label">Religion</label>
+                                        <div class="col-md-6">
+                                            {{ Auth::user()->religion }}
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="form-group">
-                                        <tr>
-                                        <td><label>Religion</label></td>
-                                        <td>Islam</td>
-                                        </tr>
+                                        <label class="col-md-4 control-label">KTP Number</label>
+                                        <div class="col-md-6">
+                                            {{ Auth::user()->ktp_id }}
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="form-group">
-                                        <tr>
-                                        <td><label>KTP Number</label></td>
-                                        <td>123456789</td>
-                                        </tr>
+                                        <label class="col-md-4 control-label">NPWP Number</label>
+                                        <div class="col-md-6">
+                                            {{ Auth::user()->NPWP }}
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="form-group">
-                                        <tr>
-                                        <td><label>NPWP Number</label></td>
-                                        <td>987654321 </td>
-                                        </tr>
+                                        <label class="col-md-4 control-label">KTP Address</label>
+                                        <div class="col-md-6">
+                                            {{ Auth::user()->address }}
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="form-group">
-                                        <tr>
-                                        <td><label>KTP Address:</label></td>
-                                        <td>Jl. Pejaten Barat II No.3A, RT.2/RW.8, Pejaten Bar., Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta </td>
-                                        </tr>
+                                        <label class="col-md-4 control-label">Current Address</label>
+                                        <div class="col-md-6">
+                                            {{ Auth::user()->address }}
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="form-group">
-                                        <tr>
-                                        <td><label>Current Address:</label></td>
-                                        <td>Jl. Pejaten Barat II No.3A, RT.2/RW.8, Pejaten Bar., Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta </td>
-                                        </tr>
+                                        <label class="col-md-4 control-label">Phone Number</label>
+                                        <div class="col-md-6">
+                                            {{ Auth::user()->phone }}
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="form-group">
-                                        <tr>
-                                        <td><label>Telephone Number:</label></td>
-                                        <td>(021) 7196877</td>
-                                        </tr>
-                                    </div>
-                            </table>
-                                </form>
-                </div>
+                                            <div class="col-md-6">
+                                                <a href="editProfile" class="btn btn-default" role="button">Change Profile</a>
+                                            </div>
+                                   </div>
+                                </div>
+                        </div>
     </div>
 </div>
 </div>

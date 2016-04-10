@@ -27,6 +27,9 @@ body {
     }
 }
 
+.header{
+    text-align: center;
+}
 .fileUpload {
     position: relative;
     overflow: hidden;
@@ -371,9 +374,24 @@ table.dataTable thead .sorting:after {
 
 .filter_menu{
     width: 25%;
-    margin-left: 15px;
+    padding: 15px;
+    float: left;
 }
 
 .search_menu{
-    width: 25%;
+    float: right;
+    width: 50%;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+.right-side{
+    margin-top: 7px;
+}
+
+.content {
+    margin-left: 250px;
+    padding-left: 70px;
+    padding-right: 160px;
+    text-align: justify;
 }
