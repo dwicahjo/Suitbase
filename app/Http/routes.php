@@ -44,22 +44,22 @@ Route::get('/resetUser', function () {
 
 /* leave */
 Route::get('/createLeave', function () {
-    return view('pages.leave.create');
+    return view('pages.leave.createLeave');
 });
 Route::get('/leaveDetails', function () {
-    return view('pages.leave.viewdetails');
+    return view('pages.leave.leaveDetails');
 });
 Route::get('/leaveApproval', function () {
     return view('pages.leave.leaveApproval');
 });
 Route::get('/myLeave', function () {
-    return view('pages.leave.mylistofleave');
+    return view('pages.leave.myLeave');
 });
 Route::get('/listOfLeave', function () {
-    return view('pages.leave.alllistofleave');
+    return view('pages.leave.listOfLeave');
 });
 Route::get('/editLeave', function () {
-    return view('pages.leave.editleave');
+    return view('pages.leave.editLeave');
 });
 
 /* remote */

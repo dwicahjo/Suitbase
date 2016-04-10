@@ -399,12 +399,16 @@ table.dataTable thead .sorting:after {
 }
 
 .upper-menu{
-    margin-top: 25px;
+    margin-top: 14%;
 }
 
 .upper-menu-right{
-    margin-left: 350px;
-    margin-top: 30px;
+    margin-left: 73%;
+    margin-top: 1%;
+}
+.upper-menu-left{
+    margin-left:-5%;
+    margin-top: 2%;
 }
 
 .content-form {
@@ -431,4 +435,15 @@ table.dataTable thead .sorting:after {
 .buttonApproval{
     margin-left: 10%;
     margin-right:10%;
+}
+
+.createFeedback{
+    margin-right: 25%;
+    margin-left: 25%
+}
+.feedbackDate{
+    margin-left: 60%;
+}
+.feedbackSubmit{
+    margin-left: -3%;
 }

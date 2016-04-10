@@ -24,9 +24,7 @@
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
-                    <div class="col-lg-5">
-                    </div>
-                    <div class="col-lg-7">
+                    <div class="col-lg-12">
                     <div class = "search_menu">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search for...">

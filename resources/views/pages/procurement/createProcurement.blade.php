@@ -47,7 +47,7 @@
                                                 <textarea class ="form-control" name = "reason" required> </textarea>
                                             </div>
                                         </div>
-                                    <div class="form-group">
+                                        <div class="form-group">
                                             <div class="col-md-6 control-label"></div>
                                             <div class = "col-md-2 col-md-offset-2">
                                                 <button type="submit" class="btn btn-default">Submit</button>
