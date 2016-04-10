@@ -96,7 +96,7 @@ Route::get('/myTraining', function () {
     return view('pages.training.myTraining');
 });
 Route::get('/listOfTraining', function () {
-    return view('pages.training.listOfTrainin');
+    return view('pages.training.listOfTraining');
 });
 Route::get('/editTraining', function () {
     return view('pages.training.editTraining');

@@ -49,26 +49,23 @@
                                     <tr>
                                         <th>No. </th>
                                         <th>Employee Name</th>
-                                        <th>Date </th>
                                         <th>Division </th>
-                                        <th>Training Title</th>
+                                        <th>Title</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>1</td>
-                                        <th><a href="trainingApproval">Alisha ZB</a></th>
-                                        <td> 2/2/2016</td>
+                                        <th><a href="procurementApproval">Alisha ZB</a></th>
                                         <td>Creative</td>
-                                        <td>Cisco Training</td>
+                                        <td>Membeli ATK baru</td>
                                         <td>Rejected</td>
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
                                         <td>Internet Explorer 5.0</td>
                                         <td>Win 95+</td>
-                                        <td class="center">5</td>
                                         <td class="center">C</td>
                                         <td>Approved </td>
                                     </tr>
@@ -76,7 +73,6 @@
                                         <td>3</td>
                                         <td>Internet Explorer 5.5</td>
                                         <td>Win 95+</td>
-                                        <td class="center">5.5</td>
                                         <td class="center">A</td>
                                         <td>Approved </td>
                                     </tr>
@@ -84,7 +80,6 @@
                                         <td>4</td>
                                         <td>Internet Explorer 6</td>
                                         <td>Win 98+</td>
-                                        <td class="center">6</td>
                                         <td class="center">A</td>
                                         <td>Approved </td>
                                     </tr>
@@ -92,7 +87,6 @@
                                         <td>5</td>
                                         <td>Internet Explorer 7</td>
                                         <td>Win XP SP2+</td>
-                                        <td class="center">7</td>
                                         <td class="center">A</td>
                                         <td>Approved </td>
                                     </tr>
@@ -100,14 +94,12 @@
                                         <td>6</td>
                                         <td>AOL browser (AOL desktop)</td>
                                         <td>Win XP</td>
-                                        <td class="center">6</td>
                                         <td class="center">A</td>
                                         <td>Approved </td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>7</td>
                                         <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
                                         <td class="center">1.7</td>
                                         <td class="center">A</td>
                                         <td>Approved </td>

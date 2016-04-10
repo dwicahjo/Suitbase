@@ -17,55 +17,73 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-8 detail">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     </div>
                     <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <form role="form">
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                        <div class="form-group">
-                                            <tr><td><label>Procurement Title: </label></td>
-                                            <td><p> content </p></td></tr>
+                        <div class = "content">
+                            <form class = "form-horizontal">
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Name</label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: Alisha ZB</label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Divison</label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: Creative</label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label"> Title </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: Membeli ATK baru </label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Price Estimate</label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: Rp 200.000 </label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Status </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: Rejected by HR </label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                        <label class="col-md-4 control-label">Description </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: Sequence Diagram:  terlampir sequence diagram parent use case melihat detil.
+                                        Sequence diagram melihat detil pengajuan kerja remote mengikuti sequence diagram parent-nya, yaitu melihat detil. Beberapa hal yang harus disesuaikan adalah </label>
+                                    </div>
+                                </div>
+                            </form>
+                                    <div class="row buttonApproval">
+                                        <div class="col-lg-3">
+                                            <a href="listOfProcurement" class="btn btn-default" role="button">Back</a>
                                         </div>
-                                        <div class="form-group">
-                                            <tr><td><label>Date: </label></td>
-                                            <td><p> content </p></td></tr>
+                                        <div class="col-lg-3">
+                                             <a href="listOfProcurement" class="btn btn-default" role="button">Reject</a>
                                         </div>
-                                        
-                                        <div class="form-group">
-                                            <tr><td><label>Price Estimate: </label></td>
-                                            <td><p> content </p></td></tr>
+                                        <div class="col-lg-3">
+                                            <a href="listOfProcurement" class="btn btn-default" role="button">Approve</a>                                        
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <tr><td><label>Status: </label></td>
-                                            <td><p> content </p></td></tr>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <tr><td><label>Reason: </label></td>
-                                            <td><p> content </p></td></tr>
-                                        </div>
-
-                                    </table>
-                                    <button type="submit" class="btn btn-default">Back</button>
-                                    <button type="submit" class="btn btn-default">Back</button>
-                                    <button type="submit" class="btn btn-default">Back</button>
-
-                                </form>
-                            </div>
-                            
-                        </div>
-                        <!-- /.row (nested) -->
+                                    <!--row-->
+                        </div><!--content-->
                     </div>
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
             </div>
-            <!-- /.col-lg-12 -->
+            <!-- /.col-lg-8 -->
         </div>
         <!-- /.row -->
     </div>

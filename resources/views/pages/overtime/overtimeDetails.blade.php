@@ -27,18 +27,6 @@
                         <div class = "content">
                             <form class = "form-horizontal">
                                 <div class = "form-group">
-                                    <label class="col-md-4 control-label">Name</label>
-                                    <div class = "right-side">
-                                        <label class="col-md-6">: Alisha ZB</label>
-                                    </div>
-                                </div>
-                                <div class = "form-group">
-                                    <label class="col-md-4 control-label">Divison</label>
-                                    <div class = "right-side">
-                                        <label class="col-md-6">: Creative</label>
-                                    </div>
-                                </div>
-                                <div class = "form-group">
                                     <label class="col-md-4 control-label">Date </label>
                                     <div class = "right-side">
                                         <label class="col-md-6">: 2/2/2016</label>
@@ -70,17 +58,12 @@
                                     </div>
                                 </div>
                             </form>
-                                    <div class="row buttonApproval">
-                                        <div class="col-lg-3">
-                                            <a href="listOfOvertime" class="btn btn-default" role="button">Back</a>
+                                    <div class="form-group">
+                                            <div class="col-md-6 control-label"></div>
+                                            <div class = "col-md-2 col-md-offset-3">
+                                                <a href="myOvertime" class="btn btn-default" role="button">Back</a>
+                                            </div>
                                         </div>
-                                        <div class="col-lg-3">
-                                             <a href="listOfOvertime" class="btn btn-default" role="button">Reject</a>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <a href="listOfOvertime" class="btn btn-default" role="button">Approve</a>                                        
-                                        </div>
-                                    </div>
 
                                     <!--row-->
                         </div><!--content-->

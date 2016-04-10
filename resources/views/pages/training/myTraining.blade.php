@@ -36,16 +36,17 @@
                                 </thead>
                                 <tbody>
                                     <tr class="odd gradeX">
-                                        <td class="center">1</td>
-                                        <td class="center">Internet Explorer 4.0</td>
-                                        <td class="center">Win 95+</td>
+                                        <td> 1</td>
+                                        <td><a href="trainingDetails"> Cisco training</a></td>
+                                        <td> Submitted</td>
                                         <th><a href="editTraining" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
+                                            <a href="#" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
                                         <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td><th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <td>Win 95+</td>
+                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="odd gradeA">

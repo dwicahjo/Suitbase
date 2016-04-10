@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">List of Overtime Requests</h1>
+                <h1 class="page-header">My Overtime Requests</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -23,46 +23,29 @@
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
-                    <div class="filter_menu">
-                    <label>Choose Division:</label>
-                        <select class="form-control" name = "leavetype">
-                            <option>PR</option>
-                            <option>Creative</option>
-                            <option>IT</option>
-                            <option>HR</option>
-                        </select>
-                    </div>
-                    <div class = "search_menu">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for...">
-                            <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
-                            </span>
-                        </div><!-- /input-group -->
-                    </div>
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
                                         <th>No. </th>
-                                        <th>Date </th>
-                                        <th>Employee Name </th>
-                                        <th>Division</th>
-                                        <th>Time</th>
+                                        <th>Date</th>
+                                        <th>Start Time</th>
+                                        <th>End Time</th>
                                         <th>Total Hours</th>
-                                        <th>Status</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>1</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
+                                        <td><a href="overtimeDetails"> 2/2/2016 </a></td>
+                                        <td>18:00:00</td>
+                                        <td>20:00:00</td>
+                                        <td>2 hours</td>
+                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
+                                        
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
@@ -70,8 +53,8 @@
                                         <td>Win 95+</td>
                                         <td class="center">5</td>
                                         <td class="center">C</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
+                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="odd gradeA">
                                         <td>3</td>
@@ -79,8 +62,8 @@
                                         <td>Win 95+</td>
                                         <td class="center">5.5</td>
                                         <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
+                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="even gradeA">
                                         <td>4</td>
@@ -88,8 +71,8 @@
                                         <td>Win 98+</td>
                                         <td class="center">6</td>
                                         <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
+                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="odd gradeA">
                                         <td>5</td>
@@ -97,8 +80,8 @@
                                         <td>Win XP SP2+</td>
                                         <td class="center">7</td>
                                         <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
+                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="even gradeA">
                                         <td>6</td>
@@ -106,8 +89,8 @@
                                         <td>Win XP</td>
                                         <td class="center">6</td>
                                         <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
+                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>7</td>
@@ -115,8 +98,8 @@
                                         <td>Win 98+ / OSX.2+</td>
                                         <td class="center">1.7</td>
                                         <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
+                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>8</td>
@@ -124,8 +107,8 @@
                                         <td>Win 98+ / OSX.2+</td>
                                         <td class="center">1.8</td>
                                         <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
+                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>9</td>
@@ -133,8 +116,8 @@
                                         <td>Win 98+ / OSX.2+</td>
                                         <td class="center">1.8</td>
                                         <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
+                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>10</td>
@@ -142,8 +125,8 @@
                                         <td>Win 2k+ / OSX.3+</td>
                                         <td class="center">1.9</td>
                                         <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
+                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
 
                                     </tr>
                                     <tr class="gradeA">
@@ -152,19 +135,14 @@
                                         <td>OSX.2+</td>
                                         <td class="center">1.8</td>
                                         <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
+                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     
                                 </tbody>
                             </table>
                         </div>
                         <!-- /.table-responsive -->
-                        <div class="well">
-                            <h4>DataTables Usage Information</h4>
-                            <p>DataTables is a very flexible, advanced tables plugin for jQuery. In SB Admin, we are using a specialized version of DataTables built for Bootstrap 3. We have also customized the table headings to use Font Awesome icons in place of images. For complete documentation on DataTables, visit their website at <a target="_blank" href="https://datatables.net/">https://datatables.net/</a>.</p>
-                            <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>
-                        </div>
                     </div>
                     <!-- /.panel-body -->
                 </div>
