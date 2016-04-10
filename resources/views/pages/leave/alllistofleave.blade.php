@@ -59,11 +59,11 @@
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>1</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <td>Maternity </td>
+                                        <td><a href="leaveApproval">Alisha ZB</a></td>
+                                        <td>Creative</td>
+                                        <td class="center">2-2-2016</td>
+                                        <td class="center">4-2-2016</td>
+                                        <td>Sick</td>
                                         <td>Approved </td>
                                     </tr>
                                     <tr class="even gradeC">

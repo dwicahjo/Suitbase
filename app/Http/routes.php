@@ -35,6 +35,9 @@ Route::get('/listOfUser', function () {
 Route::get('/myProfile', function () {
     return view('pages.user.myProfile');
 });
+Route::get('/userDetails', function () {
+    return view('pages.user.userDetails');
+});
 Route::get('/resetUser', function () {
     return view('pages.user.resetUser');
 });
@@ -63,17 +66,17 @@ Route::get('/editLeave', function () {
 Route::get('/createRemote', function () {
     return view('pages.remote.createRemote');
 });
-Route::get('/viewDetailsRemote', function () {
-    return view('pages.remote.viewDetailsRemote');
+Route::get('/remoteDetails', function () {
+    return view('pages.remote.remoteDetails');
 });
 Route::get('/remoteApproval', function () {
     return view('pages.remote.remoteApproval');
 });
-Route::get('/myListofRemote', function () {
-    return view('pages.remote.myListofRemote');
+Route::get('/myRemote', function () {
+    return view('pages.remote.myRemote');
 });
-Route::get('/allListofRemote', function () {
-    return view('pages.remote.allListofRemote');
+Route::get('/listOfRemote', function () {
+    return view('pages.remote.listOfRemote');
 });
 Route::get('/editRemote', function () {
     return view('pages.remote.editRemote');
@@ -83,16 +86,16 @@ Route::get('/editRemote', function () {
 Route::get('/createTraining', function () {
     return view('pages.training.createTraining');
 });
-Route::get('/viewDetailsTraining', function () {
+Route::get('/trainingDetails', function () {
     return view('pages.training.viewDetailsTraining');
 });
 Route::get('/trainingApproval', function () {
     return view('pages.training.trainingApproval');
 });
-Route::get('/myListofTraining', function () {
+Route::get('/myTraining', function () {
     return view('pages.training.myListofTraining');
 });
-Route::get('/allListofTraining', function () {
+Route::get('/listOfTraining', function () {
     return view('pages.training.allListofTraining');
 });
 Route::get('/editTraining', function () {

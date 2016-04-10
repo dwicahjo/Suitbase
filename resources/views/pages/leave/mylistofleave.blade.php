@@ -39,12 +39,12 @@
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>1</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
+                                        <td><a href="leaveDetails">11-04-2016</a></td>
+                                        <td>15-04-2015</td>
+                                        <td class="center">Sick</td>
+                                        <td class="center">Submitted</td>
                                         <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
+                                            <a href="#" class="btn btn-default" role="button">Cancel</a></th>
                                         
                                     </tr>
                                     <tr class="even gradeC">
