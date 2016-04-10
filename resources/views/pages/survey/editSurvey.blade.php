@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	@section('content')
+    @section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -30,27 +30,27 @@
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                             <label class="col-md-4 control-label">Survey Title</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "title" required>
+                                                <input class="form-control" name = "title" placeholder = "Old content" required> 
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Author</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "author" required>
+                                                <input class="form-control" name = "author" placeholder = "Old content" required>
                                             </div> 
                                         </div>
                                         
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "author" type = "date"required>             
+                                                <input class="form-control" name = "author" type = "date" placeholder = "Old content" required>             
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Question 1</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "reason" required> </textarea>
+                                                <textarea class ="form-control" name = "reason"  placeholder = "Old content" required> </textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -67,7 +67,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Question 2</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "reason" required> </textarea>
+                                                <textarea class ="form-control" name = "reason"  placeholder = "Old content" required> </textarea>
                                             </div>
                                         </div>
 
@@ -85,13 +85,13 @@
                                                 <div class="radio">
                                                     <label>
                                                         <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Option 1
-                                                        <input class="form-control" name = "option1" required>
+                                                        <input class="form-control" name = "option1"  placeholder = "Old content" required>
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
                                                         <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Option 2
-                                                        <input class="form-control" name = "option2" required>
+                                                        <input class="form-control" name = "option2"  placeholder = "Old content" required>
                                                     </label>
                                                 </div>
                                                 <div class="radio">
@@ -105,7 +105,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Question 3</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "reason" required> </textarea>
+                                                <textarea class ="form-control" name = "reason"  placeholder = "Old content" required> </textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -122,13 +122,13 @@
                                             <div class="checkbox">
                                                 <label>
                                                     <input type="checkbox" value="">Checkbox 1
-                                                    <input class="form-control" name = "checkbox1" required>
+                                                    <input class="form-control" name = "checkbox1"  placeholder = "Old content" required>
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
                                                     <input type="checkbox" value="">Checkbox 2
-                                                    <input class="form-control" name = "checkbox2" required>
+                                                    <input class="form-control" name = "checkbox2"  placeholder = "Old content" required>
                                                 </label>
                                             </div>
                                             <div class="checkbox">
@@ -140,11 +140,8 @@
                                     </div>
                                     </form>
                                 </div>
-                                <button type="submit" class="btn btn-default">Add more questions</button>
                                 <div class = "button-right">
-                                    <button type="submit" class="btn btn-default">Close</button>
                                     <button type="submit" class="btn btn-default">Save</button>
-                                    <button type="submit" class="btn btn-default">Submit</button>
                                 </div>
                                 </form>
                             </div>
