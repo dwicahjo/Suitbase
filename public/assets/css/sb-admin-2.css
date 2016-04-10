@@ -419,7 +419,9 @@ table.dataTable thead .sorting:after {
 .button{
     margin-left: 68%;
 }
-
+.button-right {
+    float: right;
+}
 .titleProfile{
     padding-bottom:9px;
     text-align: center;
