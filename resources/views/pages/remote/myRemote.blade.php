@@ -38,8 +38,8 @@
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>1</td>
-                                        <td><a href="remoteDetails">2-2-2016</a></td>
-                                        <td>4-2-2016</td>
+                                        <td><a href="remoteDetails">2/2/2016</a></td>
+                                        <td>4/2/2016</td>
                                         <td class="center">Rejected</td>
                                         <th><a href="editRemote" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>

@@ -39,8 +39,8 @@
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>1</td>
-                                        <td><a href="leaveDetails">11-04-2016</a></td>
-                                        <td>15-04-2015</td>
+                                        <td><a href="leaveDetails">11/04/2016</a></td>
+                                        <td>15/04/2016</td>
                                         <td class="center">Sick</td>
                                         <td class="center">Submitted</td>
                                         <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>

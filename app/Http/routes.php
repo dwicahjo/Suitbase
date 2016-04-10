@@ -87,16 +87,16 @@ Route::get('/createTraining', function () {
     return view('pages.training.createTraining');
 });
 Route::get('/trainingDetails', function () {
-    return view('pages.training.viewDetailsTraining');
+    return view('pages.training.trainingDetails');
 });
 Route::get('/trainingApproval', function () {
     return view('pages.training.trainingApproval');
 });
 Route::get('/myTraining', function () {
-    return view('pages.training.myListofTraining');
+    return view('pages.training.myTraining');
 });
 Route::get('/listOfTraining', function () {
-    return view('pages.training.allListofTraining');
+    return view('pages.training.listOfTrainin');
 });
 Route::get('/editTraining', function () {
     return view('pages.training.editTraining');
@@ -104,42 +104,42 @@ Route::get('/editTraining', function () {
 
 /* procurement */
 Route::get('/createProcurement', function () {
-    return view('pages.procurement.create');
+    return view('pages.procurement.createProcurement');
 });
 Route::get('/procurementDetails', function () {
-    return view('pages.procurement.viewdetails');
+    return view('pages.procurement.procurementDetails');
 });
 Route::get('/procurementApproval', function () {
     return view('pages.procurement.procurementApproval');
 });
 Route::get('/myProcurement', function () {
-    return view('pages.procurement.mylistofleave');
+    return view('pages.procurement.myProcurement');
 });
 Route::get('/listOfProcurement', function () {
-    return view('pages.procurement.alllistofleave');
+    return view('pages.procurement.listOfProcurement');
 });
 Route::get('/editProcurement', function () {
-    return view('pages.procurement.editleave');
+    return view('pages.procurement.editProcurement');
 });
 
 /* overtime */
 Route::get('/createOvertime', function () {
-    return view('pages.overtime.create');
+    return view('pages.overtime.createOvertime');
 });
 Route::get('/overtimeDetails', function () {
-    return view('pages.overtime.viewdetails');
+    return view('pages.overtime.overtimeDetails');
 });
 Route::get('/overtimeApproval', function () {
     return view('pages.overtime.overtimeApproval');
 });
 Route::get('/myOvertime', function () {
-    return view('pages.overtime.mylistofovertime');
+    return view('pages.overtime.myOvertime');
 });
 Route::get('/listOfOvertime', function () {
-    return view('pages.overtime.alllistofovertime');
+    return view('pages.overtime.listOfOvertime');
 });
 Route::get('/editOvertime', function () {
-    return view('pages.overtime.editovertime');
+    return view('pages.overtime.editOvertime');
 });
 
 /* survey */
@@ -160,8 +160,8 @@ Route::get('/viewListAppraisalTemplate', function () {
 Route::get('/myAppraisal', function () {
     return view('pages.appraisal.myAppraisal');
 });
-Route::get('/allListofAppraisal', function () {
-    return view('pages.appraisal.allListofAppraisal');
+Route::get('/listofAppraisal', function () {
+    return view('pages.appraisal.listofAppraisal');
 });
 
 /* ini form aslinya guys*/

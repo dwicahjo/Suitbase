@@ -55,7 +55,7 @@
                                     <div class="form-group">
                                             <div class="col-md-6 control-label"></div>
                                             <div class = "col-md-2 col-md-offset-3">
-                                                <button type="listOfLeave" class="btn btn-default">Back</button>
+                                                <a href="myLeave" class="btn btn-default" role="button">Back</a>
                                             </div>
                                         </div>
 

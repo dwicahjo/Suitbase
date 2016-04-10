@@ -61,8 +61,8 @@
                                         <td>1</td>
                                         <td><a href="leaveApproval">Alisha ZB</a></td>
                                         <td>Creative</td>
-                                        <td class="center">2-2-2016</td>
-                                        <td class="center">4-2-2016</td>
+                                        <td class="center">2/2/2016</td>
+                                        <td class="center">4/2/2016</td>
                                         <td>Sick</td>
                                         <td>Approved </td>
                                     </tr>
