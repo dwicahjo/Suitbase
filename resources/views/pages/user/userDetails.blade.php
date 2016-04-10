@@ -6,7 +6,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">My Profile</h1>
+            <h1 class="page-header"></h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -15,6 +15,10 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-body">
+                    <div class="titleProfile">
+                        <label>Alisha ZB</label>
+                    </div>
+
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="row">
@@ -124,10 +128,12 @@
                                         <div class="col-md-6">nama file tapi kalo di klik jd muncul pdfnya / download-able</div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                   <div class="row">
                                     <div class="form-group">
-                                        <div class="col-md-6">
-                                            <a href="editProfile" class="btn btn-default" role="button">Edit Profile</a>
+                                        <div class="col-md-8">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <a href="listOfuser" class="btn btn-default" role="button">Back</a>
                                         </div>
                                     </div>
                                 </div>

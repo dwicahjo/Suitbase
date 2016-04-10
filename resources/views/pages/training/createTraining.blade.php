@@ -28,9 +28,9 @@
                                     <form class = "form-horizontal" role="form">
                                         <div class="form-group">
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                                            <label class="col-md-4 control-label">Start Date</label>
+                                            <label class="col-md-4 control-label">Training Title</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "startdate" type = "date" required>
+                                                <input class="form-control" name = "title" type = "text" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -53,9 +53,12 @@
                                                 <textarea class ="form-control" name = "reason" required> </textarea>
                                             </div>
                                         </div>
-                                    <div class = "button">
-                                        <button type="submit" class="btn btn-default">Submit Button</button>
-                                    </div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 control-label"></div>
+                                            <div class = "col-md-2 col-md-offset-2">
+                                                <button type="submit" class="btn btn-default">Submit</button>
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>

@@ -25,15 +25,13 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/createFeedback') }}">
                         {!! csrf_field() !!}
                         <div class="row">
-                            <div class="col-lg-3">
-                            </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 createFeedback">
                                     <div class="form-group">
                                         <textarea name="description" class="form-control" rows="5"></textarea>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-10">
+                                        <div class="col-lg-10 feedbackSubmit">
                                           <label>
                                             <input type="hidden" name="is_anonim" value="0" />
                                             <input type="checkbox" name="is_anonim" value="1"> Anonymous
@@ -45,6 +43,7 @@
                                         </div>
                                     </div>
                             </div>
+
                         </div>
                     </form>
 
@@ -52,13 +51,13 @@
                         <div class="row">
                             <div class="col-lg-3">
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 createFeedback">
                                     <div class="form-group" style="text-align: justify">
                                         {{$feedback->description}}
                                     <div class="row">
                                         <div class="col-lg-7">
                                         </div>
-                                        <div class="col-lg-5" style="text-align: right">
+                                        <div class="col-lg-5 feedbackDate" style="text-align: right">
                                           {{$feedback->created_at}}
                                         </div>
                                     </div>

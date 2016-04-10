@@ -7,68 +7,89 @@
 </head>
 
 <body>
-	@section('content')
+    @section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Request Detail</h1>
+                <h1 class="page-header">Training Detail</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-8 detail">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     </div>
                     <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <form role="form">
-                                    <div class="form-group">
-                                        <label>Name: </label>
-                                        <p> content </p>
+                        <div class = "content">
+                            <form class = "form-horizontal">
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Name</label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: Alisha ZB</label>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Division: </label>
-                                        <p> content </p>
+                                </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Divison</label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: Creative</label>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Training Title: </label>
-                                        <p> content </p>
+                                </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Training Title </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: Training cisco </label>
                                     </div>
-                                    
-                                    <div class="form-group">
-                                        <label>Date: </label>
-                                        <p> content </p>
+                                </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Date </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: 4/2/2016</label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Price Estimate</label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: Rp 200.000 </label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Status </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: Rejected by HR </label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                        <label class="col-md-4 control-label">Description </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: Sequence Diagram:  terlampir sequence diagram parent use case melihat detil.
+                                        Sequence diagram melihat detil pengajuan kerja remote mengikuti sequence diagram parent-nya, yaitu melihat detil. Beberapa hal yang harus disesuaikan adalah </label>
+                                    </div>
+                                </div>
+                            </form>
+                                    <div class="row buttonApproval">
+                                        <div class="col-lg-3">
+                                            <a href="listOfTraining" class="btn btn-default" role="button">Back</a>
+                                        </div>
+                                        <div class="col-lg-3">
+                                             <a href="listOfTraining" class="btn btn-default" role="button">Reject</a>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <a href="listOfTraining" class="btn btn-default" role="button">Approve</a>                                        
+                                        </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label>Price Estimate: </label>
-                                        <p> content </p>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Description: </label>
-                                        <p> content </p>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-default">Back</button>
-                                    <button type="submit" class="btn btn-default">Reject</button>
-                                    <button type="submit" class="btn btn-default">Approve</button>
-
-
-                                </form>
-                            </div>
-                            
-                        </div>
-                        <!-- /.row (nested) -->
+                                    <!--row-->
+                        </div><!--content-->
                     </div>
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
             </div>
-            <!-- /.col-lg-12 -->
+            <!-- /.col-lg-8 -->
         </div>
         <!-- /.row -->
     </div>
