@@ -35,4 +35,11 @@ class FeedbackController extends Controller
         return view('pages.feedback.listOfFeedback',['feedbacks'=>$feedbacks]);
     }
 
+    public function showDetail($id){
+
+        $feedback = Feedback::where('id',$id)->get();
+
+        return view('pages.feedback.detailFeedback',['feedback'=>$feedback]);
+    }
+
 }
