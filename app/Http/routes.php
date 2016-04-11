@@ -152,6 +152,9 @@ Route::get('/myAppraisal', function () {
 Route::get('/listofAppraisal', function () {
     return view('pages.appraisal.listofAppraisal');
 });
+Route::get('/createAppraisal', function () {
+    return view('pages.appraisal.createAppraisal');
+});
 /* ini form aslinya guys*/
 Route::get('/forms', function () {
     return view('pages.formsTemplate');
