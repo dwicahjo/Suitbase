@@ -47,7 +47,7 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>No. </th>
+                                        <!-- <th>No. </th> -->
                                         <th>Name </th>
                                         <th>Division </th>
                                         <th>Start Date </th>
@@ -57,107 +57,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($leaves as $leave)
                                     <tr class="odd gradeX">
-                                        <td>1</td>
-                                        <td><a href="leaveApproval">Alisha ZB</a></td>
-                                        <td>Creative</td>
-                                        <td class="center">2/2/2016</td>
-                                        <td class="center">4/2/2016</td>
-                                        <td>Sick</td>
-                                        <td>Approved </td>
+                                        <!-- <td>1</td> -->
+                                        <td><a href="leaves/{{ $leave->id }}">{{ $leave->employee->name }}</td>
+                                        <td>{{ $leave->employee->division->name }}</td>
+                                        <td class="center"> {{ $leave->date_start }}</td>
+                                        <td class="center"> {{ $leave->date_end }} </td>
+                                        <td> {{ $leave->type }} </td>
+                                        <td> {{ $leave->status }} </td>
                                     </tr>
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                        <td>Maternity </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>3</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                        <td>Maternity </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>4</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                        <td>Maternity </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>5</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <td class="center">7</td>
-                                        <td class="center">A</td>
-                                        <td>Maternity </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>6</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                        <td>Maternity </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>7</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                        <td>Maternity </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>8</td>
-                                        <td>Firefox 1.5</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <td>Maternity </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>9</td>
-                                        <td>Firefox 2.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <td>Maternity </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>10</td>
-                                        <td>Firefox 3.0</td>
-                                        <td>Win 2k+ / OSX.3+</td>
-                                        <td class="center">1.9</td>
-                                        <td class="center">A</td>
-                                        <td>Maternity </td>
-                                        <td>Approved </td>
-
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>11</td>
-                                        <td>Camino 1.0</td>
-                                        <td>OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <td>Maternity </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

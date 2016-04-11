@@ -41,5 +41,8 @@ class User extends Model
 
     protected $guarded = [];
 
-        
+    public function division()
+    {
+        return $this->hasOne('App\Models\Division', 'id', 'divisions_id');
+    }
 }
