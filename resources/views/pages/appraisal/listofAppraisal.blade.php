@@ -25,8 +25,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-3">
-                        <div class="filter_menu">
+                        <div class="filter_menu" style="margin-top: -25px">
                             <label>Choose Division:</label>
                                 <select class="form-control" name = "leavetype">
                                     <option>PR</option>
@@ -35,9 +34,7 @@
                                     <option>HR</option>
                                 </select>
                         </div>
-                        </div>
 
-                        <div class="col-lg-3">
                         <div class="filter_menu" style="margin-top: -25px">
                             <label>Choose Period:</label>
                                 <select class="form-control" name = "leavetype">
@@ -46,7 +43,6 @@
                                     <option>2013</option>
                                     <option>2012</option>
                                 </select>
-                        </div>
                         </div>
 
                         <div class="col-lg-3">

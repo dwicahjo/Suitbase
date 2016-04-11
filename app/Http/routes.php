@@ -149,8 +149,8 @@ Route::get('/viewListAppraisalTemplate', function () {
 Route::get('/myAppraisal', function () {
     return view('pages.appraisal.myAppraisal');
 });
-Route::get('/listOfAppraisal', function () {
-    return view('pages.appraisal.listOfAppraisal');
+Route::get('/listofAppraisal', function () {
+    return view('pages.appraisal.listofAppraisal');
 });
 /* ini form aslinya guys*/
 Route::get('/forms', function () {
