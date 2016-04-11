@@ -36,6 +36,7 @@
                                 </thead>
                                 <tbody>
                                     <tr class="odd gradeX">
+<<<<<<< HEAD:resources/views/pages/training/myListofTraining.blade.php
 <<<<<<< HEAD
                                         <td>1</td>
                                         <td>Internet Explorer 4.0</td>
@@ -51,10 +52,18 @@
                                         <th><a href="editTraining" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
 >>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
+=======
+                                        <td> 1</td>
+                                        <td><a href="trainingDetails"> Cisco training</a></td>
+                                        <td> Submitted</td>
+                                        <th><a href="editTraining" class="btn btn-default" role="button">Edit</a>
+                                            <a href="#" class="btn btn-default" role="button">Cancel</a></th>
+>>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc:resources/views/pages/training/myTraining.blade.php
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
                                         <td>Internet Explorer 5.0</td>
+<<<<<<< HEAD:resources/views/pages/training/myListofTraining.blade.php
 <<<<<<< HEAD
                                         <td>Win 95+</td>
                                         <td class="center">5</td>
@@ -62,6 +71,10 @@
                                         <th><button>Edit</button> <button>Cancel</button></th>
 =======
                                         <td>Win 95+</td><th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+=======
+                                        <td>Win 95+</td>
+                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+>>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc:resources/views/pages/training/myTraining.blade.php
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
 >>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                                     </tr>

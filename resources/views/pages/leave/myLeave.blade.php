@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">My Overtime Requests</h1>
+                <h1 class="page-header">My Leave Requests</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -29,22 +29,22 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
-                                        <th>Date</th>
-                                        <th>Start Time</th>
-                                        <th>End Time</th>
-                                        <th>Total Hours</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Leave Type</th>
+                                        <th>Status</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>1</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
+                                        <td><a href="leaveDetails">11/04/2016</a></td>
+                                        <td>15/04/2016</td>
+                                        <td class="center">Sick</td>
+                                        <td class="center">Submitted</td>
+                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
+                                            <a href="#" class="btn btn-default" role="button">Cancel</a></th>
                                         
                                     </tr>
                                     <tr class="even gradeC">
@@ -53,7 +53,7 @@
                                         <td>Win 95+</td>
                                         <td class="center">5</td>
                                         <td class="center">C</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="odd gradeA">
@@ -62,7 +62,7 @@
                                         <td>Win 95+</td>
                                         <td class="center">5.5</td>
                                         <td class="center">A</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="even gradeA">
@@ -71,7 +71,7 @@
                                         <td>Win 98+</td>
                                         <td class="center">6</td>
                                         <td class="center">A</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="odd gradeA">
@@ -80,7 +80,7 @@
                                         <td>Win XP SP2+</td>
                                         <td class="center">7</td>
                                         <td class="center">A</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="even gradeA">
@@ -89,7 +89,7 @@
                                         <td>Win XP</td>
                                         <td class="center">6</td>
                                         <td class="center">A</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="gradeA">
@@ -98,7 +98,7 @@
                                         <td>Win 98+ / OSX.2+</td>
                                         <td class="center">1.7</td>
                                         <td class="center">A</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <th><<a href="editLeave" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="gradeA">
@@ -107,7 +107,7 @@
                                         <td>Win 98+ / OSX.2+</td>
                                         <td class="center">1.8</td>
                                         <td class="center">A</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="gradeA">
@@ -116,7 +116,7 @@
                                         <td>Win 98+ / OSX.2+</td>
                                         <td class="center">1.8</td>
                                         <td class="center">A</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     <tr class="gradeA">
@@ -125,7 +125,7 @@
                                         <td>Win 2k+ / OSX.3+</td>
                                         <td class="center">1.9</td>
                                         <td class="center">A</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
 
                                     </tr>
@@ -135,7 +135,7 @@
                                         <td>OSX.2+</td>
                                         <td class="center">1.8</td>
                                         <td class="center">A</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
+                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
                                     </tr>
                                     
@@ -143,14 +143,7 @@
                             </table>
                         </div>
                         <!-- /.table-responsive -->
-<<<<<<< HEAD
-                        <div class="well">
-                            <h4>DataTables Usage Information</h4>
-                            <p>DataTables is a very flexible, advanced tables plugin for jQuery. In SB Admin, we are using a specialized version of DataTables built for Bootstrap 3. We have also customized the table headings to use Font Awesome icons in place of images. For complete documentation on DataTables, visit their website at <a target="_blank" href="https://datatables.net/">https://datatables.net/</a>.</p>
-                            <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>
-                        </div>
-=======
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
+                        
                     </div>
                     <!-- /.panel-body -->
                 </div>

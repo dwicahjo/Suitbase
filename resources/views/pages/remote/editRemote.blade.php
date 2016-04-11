@@ -7,11 +7,11 @@
 </head>
 
 <body>
-	@section('content')
+    @section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Edit Remote-Working Request</h1>
+                <h1 class="page-header">Edit Remote Request</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -23,23 +23,36 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-lg-6">
-                                <form role="form">
-                                    <div class="form-group">
-                                        <label>Start Date</label>
-                                        <input class="form-control" name = "startdate" type = "date" placeholder="Old content">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>End Date</label>
-                                        <input class="form-control" name = "enddate" type = "date" placeholder="Old content">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Description</label>
-                                        <textarea class ="form-control" name = "reason" placeholder="Old content"> </textarea>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-default">Submit Button</button>
-                                </form>
+                            <div class="col-lg-12">
+                                <div class = "content-form">
+                                    <form class = "form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                            <label class="col-md-4 control-label">Start Date</label>
+                                            <div class = "col-md-6">
+                                                <input class="form-control" name = "startdate" type = "date" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">End Date</label>
+                                            <div class = "col-md-6">
+                                                <input class="form-control" name = "enddate" type = "date" required>
+                                            </div> 
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Reason</label>
+                                            <div class = "col-md-6">
+                                                <textarea class ="form-control" name = "reason" required> </textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 control-label"></div>
+                                            <div class = "col-md-2 col-md-offset-2">
+                                                <button type="submit" class="btn btn-default">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             
                         </div>

@@ -16,6 +16,15 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -24,8 +33,13 @@
                     <div class="panel-body">
                         <div class="row">
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <div class="col-lg-6">
                                 <form role="form">
+=======
+                            <div class="col-lg-6">
+                                <form role="form" method="post" action="/storeLeave">
+>>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc
                                     <div class="form-group">
                                         <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                         <label>Start Date</label>
@@ -45,6 +59,7 @@
                                             <option>Unpaid</option>
                                         </select>
                                     </div>
+<<<<<<< HEAD
 
                                     <div class="form-group">
                                         <label>Reason</label>
@@ -82,19 +97,22 @@
                                                 </select>
                                             </div>
                                         </div>
+=======
+>>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc
 
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label">Reason</label>
-                                            <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "reason" required> </textarea>
-                                            </div>
-                                        </div>
-                                    <div class = "button">
-                                        <button type="submit" class="btn btn-default">Submit Button</button>
+                                    <div class="form-group">
+                                        <label>Reason</label>
+                                        <textarea class ="form-control" name = "reason" required> </textarea>
                                     </div>
+<<<<<<< HEAD
                                     </form>
                                 </div>
 >>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
+=======
+
+                                    <button type="submit" class="btn btn-default">Submit Button</button>
+                                </form>
+>>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc
                             </div>
                             
                         </div>

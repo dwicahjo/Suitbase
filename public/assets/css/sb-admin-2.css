@@ -379,8 +379,9 @@ table.dataTable thead .sorting:after {
 }
 
 .search_menu{
+    margin-top: 23px;
     float: right;
-    width: 50%;
+    width: 30%;
     padding: 15px;
 <<<<<<< HEAD
     margin-top: 25px;
@@ -394,6 +395,7 @@ table.dataTable thead .sorting:after {
 
 .content {
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin-left: 250px;
     padding-left: 70px;
     padding-right: 160px;
@@ -401,6 +403,9 @@ table.dataTable thead .sorting:after {
 }
 =======
     margin-left: 180px;
+=======
+    margin-left: 20%;
+>>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc
     text-align: justify;
 }
 
@@ -409,20 +414,54 @@ table.dataTable thead .sorting:after {
 }
 
 .upper-menu{
-    margin-top: 25px;
+    margin-top: 14%;
 }
 
 .upper-menu-right{
-    margin-left: 350px;
-    margin-top: 30px;
+    margin-left: 73%;
+    margin-top: 1%;
+}
+.upper-menu-left{
+    margin-left:-5%;
+    margin-top: 2%;
 }
 
 .content-form {
-    margin-left: 200px;
-    padding: 30px;
+    margin-left: 20%;
+    padding: 2%;
 }
 
 .button{
-    margin-left: 441px;
+    margin-left: 68%;
+}
+.button-right {
+    float: right;
+}
+.titleProfile{
+    padding-bottom:9px;
+    text-align: center;
+    border-bottom:1px solid #eee;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.detail{
+    margin-left: 16%;
+}
+
+.buttonApproval{
+    margin-left: 10%;
+    margin-right:10%;
+}
+
+.createFeedback{
+    margin-right: 25%;
+    margin-left: 25%
+}
+.feedbackDate{
+    margin-left: 60%;
+}
+.feedbackSubmit{
+    margin-left: -3%;
 }
 >>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a

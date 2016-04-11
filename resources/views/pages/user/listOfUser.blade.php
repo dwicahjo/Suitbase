@@ -48,7 +48,7 @@
 =======
                     
                     <div class="row">
-                            <div class="col-lg-7">
+                            <div class="col-lg-7 upper-menu-left">
                                 <div class="row"> 
                                         <div class="col-lg-4">
                                           <label>Choose Division:</label>
@@ -107,8 +107,8 @@
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>1</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
+                                        <td>Creative</td>
+                                        <td><a href="userDetails">Alisha ZB</a></td>
                                         <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Reset</a></th>
                                     </tr>

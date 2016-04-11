@@ -108,6 +108,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'startdate' => 'starting date',
+        'enddate' => 'ending date'
+    ],
 
 ];

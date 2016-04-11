@@ -17,25 +17,13 @@
         </div>
         <!-- /.row -->
         <div class="row">
-<<<<<<< HEAD
-            <div class="panel panel-default">
-=======
             <div class="col-lg-12">
                 <div class="panel panel-default">
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                     <!--<div class="panel-heading">
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
                     <div class="panel-body">
-<<<<<<< HEAD
-                        <div class="row">
-                           
-                        <div class="filter_menu">
-             
-                            <div class="dropdown">
-                            <div class="col-lg-4">
-=======
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
@@ -50,7 +38,6 @@
 
                         <div class="filter_menu">
                             <div class="dropdown">
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                                 <button class="btn btn-primary dropdown-toggle" placeholder="Search for..." type="button" data-toggle="dropdown">Choose Periode
                                 <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
@@ -59,14 +46,7 @@
                                   <li><a href="#">2014</a></li>
                                 </ul>
                             </div>
-<<<<<<< HEAD
-                            </div>
-                           
                             <div class="dropdown">
-                                <div class="col-lg-4">
-=======
-                            <div class="dropdown">
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                                 <button class="btn btn-primary dropdown-toggle" placeholder="Search for..." type="button" data-toggle="dropdown">Choose Division
                                 <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
@@ -76,52 +56,6 @@
                                 </ul>
                             </div>
                         </div>
-<<<<<<< HEAD
-                        </div>
-
-                        <div class="col-lg-4">
-                        <input type="text" class="form-control" placeholder="Search for..">
-                            <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
-                            </span>
-                        </input>
-                        </div>
-                        
-                        <div class="col-lg-4">
-                        <button style="margin-left: 100px" type="submit" class="btn btn-default">View Recap</button>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                            <div class="dataTable_wrapper">
-                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th style="text-align: center">Period</th>
-                                        <th style="text-align: center">Employee Name</th>
-                                        <th style="text-align: center">Division</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                            </div>         
-                    </div>
-                        
-                        <div class="row">
-                        <!-- /.table-responsive -->
-                        <div class="well">
-                            <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>
-                        </div>
-                        </div>
-                    <!-- /.panel-body -->
-                </div>
-                <!-- /.panel-body -->
-            </div>
-            <!-- /.panel-default -->
-        </div>
-        <!-- /.row -->
-      
-    </div>
-=======
                          <input type="text" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
                         <button class="btn btn-default" type="button">Go!</button>
@@ -144,7 +78,6 @@
         <!-- /.row -->
       
         </div>
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
         <!-- /#page-wrapper -->
         @endsection
 

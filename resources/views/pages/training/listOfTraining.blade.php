@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">My Leave Requests</h1>
+                <h1 class="page-header">List of Training Requests</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -23,29 +23,46 @@
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
+                    <div class="filter_menu">
+                    <label>Choose Division:</label>
+                        <select class="form-control" name = "leavetype">
+                            <option>PR</option>
+                            <option>Creative</option>
+                            <option>IT</option>
+                            <option>HR</option>
+                        </select>
+                    </div>
+
+                    <div class = "search_menu">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Go!</button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </div>
+
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
                                         <th>No. </th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Leave Type</th>
+                                        <th>Employee Name</th>
+                                        <th>Date </th>
+                                        <th>Division </th>
+                                        <th>Training Title</th>
                                         <th>Status</th>
-                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>1</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                        
+                                        <th><a href="trainingApproval">Alisha ZB</a></th>
+                                        <td> 2/2/2016</td>
+                                        <td>Creative</td>
+                                        <td>Cisco Training</td>
+                                        <td>Rejected</td>
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
@@ -53,8 +70,7 @@
                                         <td>Win 95+</td>
                                         <td class="center">5</td>
                                         <td class="center">C</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="odd gradeA">
                                         <td>3</td>
@@ -62,8 +78,7 @@
                                         <td>Win 95+</td>
                                         <td class="center">5.5</td>
                                         <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="even gradeA">
                                         <td>4</td>
@@ -71,8 +86,7 @@
                                         <td>Win 98+</td>
                                         <td class="center">6</td>
                                         <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="odd gradeA">
                                         <td>5</td>
@@ -80,8 +94,7 @@
                                         <td>Win XP SP2+</td>
                                         <td class="center">7</td>
                                         <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="even gradeA">
                                         <td>6</td>
@@ -89,8 +102,7 @@
                                         <td>Win XP</td>
                                         <td class="center">6</td>
                                         <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>7</td>
@@ -98,52 +110,12 @@
                                         <td>Win 98+ / OSX.2+</td>
                                         <td class="center">1.7</td>
                                         <td class="center">A</td>
-                                        <th><<a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
+                                        <td>Approved </td>
                                     </tr>
-                                    <tr class="gradeA">
-                                        <td>8</td>
-                                        <td>Firefox 1.5</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>9</td>
-                                        <td>Firefox 2.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>10</td>
-                                        <td>Firefox 3.0</td>
-                                        <td>Win 2k+ / OSX.3+</td>
-                                        <td class="center">1.9</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>11</td>
-                                        <td>Camino 1.0</td>
-                                        <td>OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    
                                 </tbody>
                             </table>
                         </div>
                         <!-- /.table-responsive -->
-                        
                     </div>
                     <!-- /.panel-body -->
                 </div>
@@ -152,7 +124,7 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-      
+
         </div>
         <!-- /#page-wrapper -->
         @endsection

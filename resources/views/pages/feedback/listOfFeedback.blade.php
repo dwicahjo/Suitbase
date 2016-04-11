@@ -28,12 +28,16 @@
                     </div>-->
                     <!-- /.panel-heading -->
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
                     <div class="col-lg-5">
                     </div>
                     <div class="col-lg-7">
 >>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
+=======
+                    <div class="col-lg-12">
+>>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc
                     <div class = "search_menu">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search for...">

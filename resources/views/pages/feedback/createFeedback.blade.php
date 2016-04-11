@@ -25,15 +25,13 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/createFeedback') }}">
                         {!! csrf_field() !!}
                         <div class="row">
-                            <div class="col-lg-3">
-                            </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 createFeedback">
                                     <div class="form-group">
                                         <textarea name="description" class="form-control" rows="5"></textarea>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-10">
+                                        <div class="col-lg-10 feedbackSubmit">
                                           <label>
 <<<<<<< HEAD
                                             <input type="checkbox" name="is_anonim" value=""> Anonymous
@@ -49,6 +47,7 @@
                                         </div>
                                     </div>
                             </div>
+
                         </div>
                     </form>
 <<<<<<< HEAD
@@ -59,6 +58,7 @@
                         <div class="row">
                             <div class="col-lg-3">
                             </div>
+<<<<<<< HEAD
                             <div class="col-lg-6">
 <<<<<<< HEAD
                                     <div class="form-group">
@@ -70,12 +70,15 @@
                                         <div class="col-lg-3">
                                           20-03-2016; 22:33
 =======
+=======
+                            <div class="col-lg-6 createFeedback">
+>>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc
                                     <div class="form-group" style="text-align: justify">
                                         {{$feedback->description}}
                                     <div class="row">
                                         <div class="col-lg-7">
                                         </div>
-                                        <div class="col-lg-5" style="text-align: right">
+                                        <div class="col-lg-5 feedbackDate" style="text-align: right">
                                           {{$feedback->created_at}}
 >>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                                         </div>
