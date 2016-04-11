@@ -59,6 +59,8 @@ Route::get('/createLeave', function () {
     return view('pages.leave.create');
 });
 
+Route::post('/storeLeave', 'LeavesController@create');
+
 Route::get('/leaveDetails', function () {
     return view('pages.leave.viewdetails');
 });
@@ -71,13 +73,13 @@ Route::get('/myLeave', function () {
     return view('pages.leave.mylistofleave');
 });
 
-Route::get('/listOfLeave', function () {
-    return view('pages.leave.alllistofleave');
-});
+Route::get('/listOfLeave', 'LeavesController@viewListof');
 
 Route::get('/editLeave', function () {
     return view('pages.leave.editleave');
 });
+
+Route::get('/leaves/{{ $leaves->id }}', 'LeavesController@viewListof');
 
 /* remote */
 Route::get('/createRemote', function () {

@@ -16,6 +16,15 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -24,7 +33,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6">
-                                <form role="form">
+                                <form role="form" method="post" action="/storeLeave">
                                     <div class="form-group">
                                         <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                         <label>Start Date</label>
