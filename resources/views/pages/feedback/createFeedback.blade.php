@@ -35,7 +35,12 @@
                                     <div class="row">
                                         <div class="col-lg-10">
                                           <label>
+<<<<<<< HEAD
                                             <input type="checkbox" name="is_anonim" value=""> Anonymous
+=======
+                                            <input type="hidden" name="is_anonim" value="0" />
+                                            <input type="checkbox" name="is_anonim" value="1"> Anonymous
+>>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                                           </label>
                                         </div>
                                            <input type="hidden" name="employees_id" value="{{ Auth::user()->id }}">
@@ -46,10 +51,16 @@
                             </div>
                         </div>
                     </form>
+<<<<<<< HEAD
+=======
+
+                    @foreach ($feedbacks as $feedback)
+>>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                         <div class="row">
                             <div class="col-lg-3">
                             </div>
                             <div class="col-lg-6">
+<<<<<<< HEAD
                                     <div class="form-group">
                                         Lorem ipsum dolor sit amet, no eam vero lucilius tacimates, cum id suavitate honestatis. No mel sanctus democritum. Omnes decore noluisse te mei, idque aperiri rationibus at eos, in nam ferri assueverit. Ne aliquid vocibus vim, mel causae scribentur at, quo dictas omnesque interesset eu. Voluptua sapientem in eam, et sea essent eligendi rationibus.
                                     <div class="row">
@@ -58,12 +69,27 @@
                                         </div>
                                         <div class="col-lg-3">
                                           20-03-2016; 22:33
+=======
+                                    <div class="form-group" style="text-align: justify">
+                                        {{$feedback->description}}
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                        </div>
+                                        <div class="col-lg-5" style="text-align: right">
+                                          {{$feedback->created_at}}
+>>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
+<<<<<<< HEAD
+=======
+
+                    @endforeach
+
+>>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                         <!-- /.row (nested) -->
                     </div>
                     <!-- /.panel-body -->

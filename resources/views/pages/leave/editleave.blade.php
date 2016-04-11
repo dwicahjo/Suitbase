@@ -7,7 +7,11 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 	@section('content')
+=======
+    @section('content')
+>>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -23,6 +27,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
+<<<<<<< HEAD
                             <div class="col-lg-6">
                                 <form role="form">
                                     <div class="form-group">
@@ -52,6 +57,48 @@
 
                                     <button type="submit" class="btn btn-default">Submit Button</button>
                                 </form>
+=======
+                            <div class="col-lg-12">
+                                <div class = "content-form">
+                                    <form class = "form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                            <label class="col-md-4 control-label">Start Date</label>
+                                            <div class = "col-md-6">
+                                                <input class="form-control" name = "startdate" type = "date" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">End Date</label>
+                                            <div class = "col-md-6">
+                                                <input class="form-control" name = "enddate" type = "date" required>
+                                            </div> 
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Leave Type</label>
+                                            <div class = "col-md-6">
+                                                <select class="form-control" name = "leavetype" required>
+                                                    <option>Sick</option>
+                                                    <option>Maternal</option>
+                                                    <option>Marriage</option>
+                                                    <option>Unpaid</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Reason</label>
+                                            <div class = "col-md-6">
+                                                <textarea class ="form-control" name = "reason" required> </textarea>
+                                            </div>
+                                        </div>
+                                    <div class = "button">
+                                        <button type="submit" class="btn btn-default">Submit Button</button>
+                                    </div>
+                                    </form>
+                                </div>
+>>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                             </div>
                             
                         </div>

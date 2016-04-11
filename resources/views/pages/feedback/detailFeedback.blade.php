@@ -17,7 +17,11 @@
         </div>
 
         <div class="row">
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
         </div>
 
         <!-- /.row -->
@@ -34,9 +38,15 @@
                             </div>
                             <div class="col-lg-8">
                                     <div class="form-group">
+<<<<<<< HEAD
                                         Lorem ipsum dolor sit amet, no eam vero lucilius tacimates, cum id suavitate honestatis. No mel sanctus democritum. Omnes decore noluisse te mei, idque aperiri rationibus at eos, in nam ferri assueverit. Ne aliquid vocibus vim, mel causae scribentur at, quo dictas omnesque interesset eu. Voluptua sapientem in eam, et sea essent eligendi rationibus.
                                     <div class="row">
                                     <br> 
+=======
+                                        {{$feedback[0]->description}}
+                                    <div class="row">
+                                    <br>
+>>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                                         <div class="col-lg-5">
                                         </div>
                                         <div class="col-lg-7">

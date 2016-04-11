@@ -1053,8 +1053,14 @@ img {
 }
 .carousel-inner>.item>a>img,.carousel-inner>.item>img,.img-responsive,.thumbnail a>img,.thumbnail>img {
 				display:block;
+<<<<<<< HEAD
 				max-width:100%;
 				height:auto
+=======
+				max-width:80%;
+				height:auto;
+				border: 4px double black;
+>>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
 			}
 			.img-rounded {
 				border-radius:6px
@@ -1432,7 +1438,11 @@ code,kbd,pre,samp {
 }
 .row {
 	margin-right:-15px;
+<<<<<<< HEAD
 	margin-left:-15px
+=======
+	margin-left:-7px
+>>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
 }
 
 .col-image{
