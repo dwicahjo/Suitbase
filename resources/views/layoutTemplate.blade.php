@@ -197,7 +197,10 @@
                             <a href="#"><i class="fa fa-pencil fa-fw"></i>Feedback<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">View List of Feedback</a>
+                                    <a href="createFeedback">Create Feedback</a>
+                                </li>
+                                <li>
+                                    <a href="listOfFeedback">View List of Feedback</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

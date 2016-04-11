@@ -7,17 +7,17 @@
 </head>
 
 <body>
-    @section('content')
+	@section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Edit Training Request</h1>
+                <h1 class="page-header">Create Leave Request</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 ">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     </div>
@@ -28,9 +28,9 @@
                                     <form class = "form-horizontal" role="form">
                                         <div class="form-group">
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                                            <label class="col-md-4 control-label">Training Title</label>
+                                            <label class="col-md-4 control-label">Start Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "title" type = "text" required>
+                                                <input class="form-control" name = "startdate" type = "date" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -41,9 +41,14 @@
                                         </div>
                                         
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">Price Estimate</label>
+                                            <label class="col-md-4 control-label">Leave Type</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "price_estimate" type = "price_estimate">
+                                                <select class="form-control" name = "leavetype" required>
+                                                    <option>Sick</option>
+                                                    <option>Maternal</option>
+                                                    <option>Marriage</option>
+                                                    <option>Unpaid</option>
+                                                </select>
                                             </div>
                                         </div>
 
@@ -59,6 +64,8 @@
                                                 <button type="submit" class="btn btn-default">Submit</button>
                                             </div>
                                         </div>
+
+                                    
                                     </form>
                                 </div>
                             </div>

@@ -379,8 +379,73 @@ table.dataTable thead .sorting:after {
 }
 
 .search_menu{
+    margin-top: 23px;
     float: right;
-    width: 50%;
+    width: 30%;
     padding: 15px;
-    margin-top: 25px;
+}
+
+.right-side{
+    margin-top: 7px;
+}
+
+.content {
+    margin-left: 20%;
+    text-align: justify;
+}
+
+.image-profile{
+    margin-left: 200px;
+}
+
+.upper-menu{
+    margin-top: 14%;
+}
+
+.upper-menu-right{
+    margin-left: 73%;
+    margin-top: 1%;
+}
+.upper-menu-left{
+    margin-left:-5%;
+    margin-top: 2%;
+}
+
+.content-form {
+    margin-left: 20%;
+    padding: 2%;
+}
+
+.button{
+    margin-left: 68%;
+}
+.button-right {
+    float: right;
+}
+.titleProfile{
+    padding-bottom:9px;
+    text-align: center;
+    border-bottom:1px solid #eee;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.detail{
+    margin-left: 16%;
+}
+
+.buttonApproval{
+    margin-left: 10%;
+    margin-right:10%;
+}
+
+.createFeedback{
+    margin-right: 25%;
+    margin-left: 25%
+}
+.feedbackDate{
+    margin-left: 60%;
+}
+.feedbackSubmit{
+    margin-left: -3%;
 }

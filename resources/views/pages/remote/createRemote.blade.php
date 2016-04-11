@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Edit Training Request</h1>
+                <h1 class="page-header">Create Remote Request</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -28,9 +28,9 @@
                                     <form class = "form-horizontal" role="form">
                                         <div class="form-group">
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                                            <label class="col-md-4 control-label">Training Title</label>
+                                            <label class="col-md-4 control-label">Start Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "title" type = "text" required>
+                                                <input class="form-control" name = "startdate" type = "date" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -39,14 +39,6 @@
                                                 <input class="form-control" name = "enddate" type = "date" required>
                                             </div> 
                                         </div>
-                                        
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label">Price Estimate</label>
-                                            <div class = "col-md-6">
-                                                <input class="form-control" name = "price_estimate" type = "price_estimate">
-                                            </div>
-                                        </div>
-
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Reason</label>
                                             <div class = "col-md-6">

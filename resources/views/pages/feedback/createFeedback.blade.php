@@ -22,44 +22,52 @@
                     <div class="panel-heading">
                     </div>
                     <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/createFeedback') }}">
+                        {!! csrf_field() !!}
                         <div class="row">
-                            <div class="col-lg-3">
-                            </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 createFeedback">
                                     <div class="form-group">
-                                        <textarea class="form-control" rows="5"></textarea>
+                                        <textarea name="description" class="form-control" rows="5"></textarea>
                                     </div>
-                                    
-                                    <div class="row"> 
-                                        <div class="col-lg-10">
+
+                                    <div class="row">
+                                        <div class="col-lg-10 feedbackSubmit">
                                           <label>
-                                            <input type="checkbox" value=""> Anonymous
+                                            <input type="hidden" name="is_anonim" value="0" />
+                                            <input type="checkbox" name="is_anonim" value="1"> Anonymous
                                           </label>
                                         </div>
+                                           <input type="hidden" name="employees_id" value="{{ Auth::user()->id }}">
                                         <div class="col-lg-2">
                                             <button type="submit" class="btn btn-default">Submit</button>
                                         </div>
                                     </div>
                             </div>
+
                         </div>
-                        <di class="row">
+                    </form>
+
+                    @foreach ($feedbacks as $feedback)
+                        <div class="row">
                             <div class="col-lg-3">
                             </div>
-                            <div class="col-lg-6">
-                                    <div class="form-group">
-                                        Lorem ipsum dolor sit amet, no eam vero lucilius tacimates, cum id suavitate honestatis. No mel sanctus democritum. Omnes decore noluisse te mei, idque aperiri rationibus at eos, in nam ferri assueverit. Ne aliquid vocibus vim, mel causae scribentur at, quo dictas omnesque interesset eu. Voluptua sapientem in eam, et sea essent eligendi rationibus.
-                                    <div class="row"> 
-                                        <div class="col-lg-9">
-                                          
+                            <div class="col-lg-6 createFeedback">
+                                    <div class="form-group" style="text-align: justify">
+                                        {{$feedback->description}}
+                                    <div class="row">
+                                        <div class="col-lg-7">
                                         </div>
-                                        <div class="col-lg-3">
-                                          20-03-2016; 22:33  
+                                        <div class="col-lg-5 feedbackDate" style="text-align: right">
+                                          {{$feedback->created_at}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
+
+                    @endforeach
+
                         <!-- /.row (nested) -->
                     </div>
                     <!-- /.panel-body -->

@@ -27,49 +27,52 @@
                                     <span>
                                          <img alt="image" class="" width= 60% src="assets/foto.jpg">
                                      </span>
-                                     <br>
-                                    <select class="form-control" name = "role" style="width: 214px";
->
+                                     <br><br>
+                                        <select class="form-control" name = "role" style="width: 214px";>
                                             <option>Active</option>
-                                            <option>Deactive</option>
+                                             <option>Deactive</option>
                                         </select>
-                                </div>
+                                    </div>
                                 </div>
         
-                <div class="col-lg-6">
-                            <form role="form">
-                                    <div class="form-group">
-                                        <label>Division</label>
-                                        <select class="form-control" name = "role">
-                                            <option>Creative</option>
-                                            <option>IT</option>
-                                            <option>HR</option>
-                                            <option>??</option>
-                                        </select>
-                                    </div>
+                                <div class="col-lg-6">
+                                            <form role="form">
+                                                    <div class="form-group">
+                                                        <label>Division</label>
+                                                        <select class="form-control" name = "role">
+                                                            <option>Creative</option>
+                                                            <option>IT</option>
+                                                            <option>HR</option>
+                                                            <option>??</option>
+                                                        </select>
+                                                    </div>
 
-                                    <div class="form-group">
-                                        <label>Role</label>
-                                        <select class="form-control" name = "role">
-                                            <option>Finance</option>
-                                            <option>HR</option>
-                                            <option>SUpervisor</option>
-                                            <option>Employee</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>New Password</label>
-                                        <input class="form-control" name = "newPassword" type = "password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Repeat Password</label>
-                                        <input class="form-control" name = "repeatPassword" type = "password">
-                                    </div>
-                                    
-                                    <br>
-                                    <button type="submit" class="btn btn-default">Save</button>   
-                                </form>
+                                                    <div class="form-group">
+                                                        <label>Role</label>
+                                                        <select class="form-control" name = "role">
+                                                            <option>Finance</option>
+                                                            <option>HR</option>
+                                                            <option>SUpervisor</option>
+                                                            <option>Employee</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>New Password</label>
+                                                        <input class="form-control" name = "newPassword" type = "password">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Repeat Password</label>
+                                                        <input class="form-control" name = "repeatPassword" type = "password">
+                                                    </div>
+                                                    
+                                                    <br>
+                                                    <button type="submit" class="btn btn-default">Save</button>   
+                                            </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
     </div>
     <!-- /#wrapper -->
     @endsection

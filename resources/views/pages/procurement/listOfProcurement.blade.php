@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">List of User</h1>
+                <h1 class="page-header">List of Training Requests</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -23,50 +23,24 @@
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
-                    
-                    <div class="row">
-                            <div class="col-lg-7 upper-menu-left">
-                                <div class="row"> 
-                                        <div class="col-lg-4">
-                                          <label>Choose Division:</label>
-                                            <select class="form-control" name = "leavetype">
-                                                <option>PR</option>
-                                                <option>Creative</option>
-                                                <option>IT</option>
-                                                <option>HR</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class= "upper-menu">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" placeholder="Search">
-                                                    <span class="input-group-btn">
-                                                    <button class="btn btn-default" type="button">Go!</button>
-                                                    </span>
-                                                </div><!-- /input-group -->
-                                            </div>
-                                        </div>
-                                    </div> <!--row-->
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="upper-menu">
-                                    <div class="upper-menu-right">
-                                        <a href="createAccount">
-                                            <i class="fa fa-plus fa-fw"></i>
-                                            <label>
-                                                Add Account
-                                            </label>
-                                        </a>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="filter_menu">
+                    <label>Choose Division:</label>
+                        <select class="form-control" name = "leavetype">
+                            <option>PR</option>
+                            <option>Creative</option>
+                            <option>IT</option>
+                            <option>HR</option>
+                        </select>
+                    </div>
 
-             
-                    
-                    
-
-
+                    <div class = "search_menu">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Go!</button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </div>
 
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
@@ -74,56 +48,62 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Employee Name</th>
                                         <th>Division </th>
-                                        <th>Name </th>
-                                        <th> </th>
-                                        
+                                        <th>Title</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>1</td>
+                                        <th><a href="procurementApproval">Alisha ZB</a></th>
                                         <td>Creative</td>
-                                        <td><a href="userDetails">Alisha ZB</a></td>
-                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Reset</a></th>
+                                        <td>Membeli ATK baru</td>
+                                        <td>Rejected</td>
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
                                         <td>Internet Explorer 5.0</td>
                                         <td>Win 95+</td>
-                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
-                                            <a href="reset" class="btn btn-default" role="button">Reset</a></th>
+                                        <td class="center">C</td>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="odd gradeA">
                                         <td>3</td>
                                         <td>Internet Explorer 5.5</td>
                                         <td>Win 95+</td>
-                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetProfile" class="btn btn-default" role="button">Reset</a></th>
+                                        <td class="center">A</td>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="even gradeA">
                                         <td>4</td>
                                         <td>Internet Explorer 6</td>
                                         <td>Win 98+</td>
-                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetProfile" class="btn btn-default" role="button">Reset</a></th>
+                                        <td class="center">A</td>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="odd gradeA">
                                         <td>5</td>
                                         <td>Internet Explorer 7</td>
                                         <td>Win XP SP2+</td>
-                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetProfile" class="btn btn-default" role="button">Reset</a></th>
+                                        <td class="center">A</td>
+                                        <td>Approved </td>
                                     </tr>
                                     <tr class="even gradeA">
                                         <td>6</td>
                                         <td>AOL browser (AOL desktop)</td>
                                         <td>Win XP</td>
-                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetProfile" class="btn btn-default" role="button">Reset</a></th>
+                                        <td class="center">A</td>
+                                        <td>Approved </td>
                                     </tr>
-                                    
+                                    <tr class="gradeA">
+                                        <td>7</td>
+                                        <td>Firefox 1.0</td>
+                                        <td class="center">1.7</td>
+                                        <td class="center">A</td>
+                                        <td>Approved </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -136,7 +116,7 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-      
+
         </div>
         <!-- /#page-wrapper -->
         @endsection

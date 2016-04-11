@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Overtime Detail</h1>
+                <h1 class="page-header">Training Detail</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -39,27 +39,27 @@
                                     </div>
                                 </div>
                                 <div class = "form-group">
+                                    <label class="col-md-4 control-label">Training Title </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: Training cisco </label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
                                     <label class="col-md-4 control-label">Date </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: 2/2/2016</label>
-                                    </div>
-                                </div>
-                                <div class = "form-group">
-                                    <label class="col-md-4 control-label">Time </label>
-                                    <div class = "right-side">
                                         <label class="col-md-6">: 4/2/2016</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
-                                    <label class="col-md-4 control-label">Total Hours </label>
+                                    <label class="col-md-4 control-label">Price Estimate</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: 4/2/2016</label>
+                                        <label class="col-md-6">: Rp 200.000 </label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Status </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Approved by HR </label>
+                                        <label class="col-md-6">: Rejected by HR </label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
@@ -72,13 +72,13 @@
                             </form>
                                     <div class="row buttonApproval">
                                         <div class="col-lg-3">
-                                            <a href="listOfOvertime" class="btn btn-default" role="button">Back</a>
+                                            <a href="listOfTraining" class="btn btn-default" role="button">Back</a>
                                         </div>
                                         <div class="col-lg-3">
-                                             <a href="listOfOvertime" class="btn btn-default" role="button">Reject</a>
+                                             <a href="listOfTraining" class="btn btn-default" role="button">Reject</a>
                                         </div>
                                         <div class="col-lg-3">
-                                            <a href="listOfOvertime" class="btn btn-default" role="button">Approve</a>                                        
+                                            <a href="listOfTraining" class="btn btn-default" role="button">Approve</a>                                        
                                         </div>
                                     </div>
 

@@ -11,13 +11,13 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Overtime Detail</h1>
+                <h1 class="page-header">Remote Detail</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-2">
             </div>
             <div class="col-lg-8 detail">
                 <div class="panel panel-default">
@@ -39,57 +39,45 @@
                                     </div>
                                 </div>
                                 <div class = "form-group">
-                                    <label class="col-md-4 control-label">Date </label>
+                                    <label class="col-md-4 control-label">Start Date</label>
                                     <div class = "right-side">
                                         <label class="col-md-6">: 2/2/2016</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
-                                    <label class="col-md-4 control-label">Time </label>
+                                    <label class="col-md-4 control-label">End Date</label>
                                     <div class = "right-side">
                                         <label class="col-md-6">: 4/2/2016</label>
-                                    </div>
-                                </div>
-                                <div class = "form-group">
-                                    <label class="col-md-4 control-label">Total Hours </label>
-                                    <div class = "right-side">
-                                        <label class="col-md-6">: 4/2/2016</label>
-                                    </div>
-                                </div>
-                                <div class = "form-group">
-                                    <label class="col-md-4 control-label">Status </label>
-                                    <div class = "right-side">
-                                        <label class="col-md-6">: Approved by HR </label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                         <label class="col-md-4 control-label">Description </label>
                                     <div class = "right-side">
                                         <label class="col-md-6">: Sequence Diagram:  terlampir sequence diagram parent use case melihat detil.
-                                        Sequence diagram melihat detil pengajuan kerja remote mengikuti sequence diagram parent-nya, yaitu melihat detil. Beberapa hal yang harus disesuaikan adalah </label>
+    Sequence diagram melihat detil pengajuan kerja remote mengikuti sequence diagram parent-nya, yaitu melihat detil. Beberapa hal yang harus disesuaikan adalah </label>
                                     </div>
                                 </div>
+
                             </form>
                                     <div class="row buttonApproval">
                                         <div class="col-lg-3">
-                                            <a href="listOfOvertime" class="btn btn-default" role="button">Back</a>
+                                            <a href="listOfRemote" class="btn btn-default" role="button">Back</a>
                                         </div>
                                         <div class="col-lg-3">
-                                             <a href="listOfOvertime" class="btn btn-default" role="button">Reject</a>
+                                             <a href="listOfRemote" class="btn btn-default" role="button">Reject</a>
                                         </div>
                                         <div class="col-lg-3">
-                                            <a href="listOfOvertime" class="btn btn-default" role="button">Approve</a>                                        
+                                            <a href="listOfRemote" class="btn btn-default" role="button">Approve</a>                                        
                                         </div>
                                     </div>
-
                                     <!--row-->
-                        </div><!--content-->
+                        </div>
                     </div>
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
             </div>
-            <!-- /.col-lg-8 -->
+            <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
     </div>

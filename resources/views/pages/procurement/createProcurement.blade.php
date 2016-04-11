@@ -7,11 +7,11 @@
 </head>
 
 <body>
-	@section('content')
+    @section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Leave Detail</h1>
+                <h1 class="page-header">Create Procurement Request</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -23,37 +23,38 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-lg-6">
-                                <form role="form">
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <div class="col-lg-12">
+                                <div class = "content-form">
+                                    <form class = "form-horizontal" role="form">
                                         <div class="form-group">
-                                            <tr><td><label>Training Title: </label></td>
-                                            <td><p> content </p></td></tr>
-                                        </div>
-                                        <div class="form-group">
-                                            <tr><td><label>Date: </label></td>
-                                            <td><p> content </p></td></tr>
+                                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                            <label class="col-md-4 control-label">Title</label>
+                                            <div class = "col-md-6">
+                                                <input class="form-control" name = "title" type = "text" required>
+                                            </div>
                                         </div>
                                         
                                         <div class="form-group">
-                                            <tr><td><label>Price Estimate: </label></td>
-                                            <td><p> content </p></td></tr>
+                                            <label class="col-md-4 control-label">Price Estimate</label>
+                                            <div class = "col-md-6">
+                                                <input class="form-control" name = "price_estimate" type = "price_estimate" requiews>
+                                            </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <tr><td><label>Description: </label></td>
-                                            <td><p> content </p></td></tr>
+                                            <label class="col-md-4 control-label">Description</label>
+                                            <div class = "col-md-6">
+                                                <textarea class ="form-control" name = "reason" required> </textarea>
+                                            </div>
                                         </div>
-
                                         <div class="form-group">
-                                            <tr><td><label>Status: </label></td>
-                                            <td><p> content </p></td></tr>
+                                            <div class="col-md-6 control-label"></div>
+                                            <div class = "col-md-2 col-md-offset-2">
+                                                <button type="submit" class="btn btn-default">Submit</button>
+                                            </div>
                                         </div>
-
-                                    </table>
-                                    <button type="submit" class="btn btn-default">Back</button>
-
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                             
                         </div>
