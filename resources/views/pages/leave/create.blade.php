@@ -32,8 +32,14 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
+<<<<<<< HEAD
+<<<<<<< HEAD
+                            <div class="col-lg-6">
+                                <form role="form">
+=======
                             <div class="col-lg-6">
                                 <form role="form" method="post" action="/storeLeave">
+>>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc
                                     <div class="form-group">
                                         <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                         <label>Start Date</label>
@@ -53,6 +59,7 @@
                                             <option>Unpaid</option>
                                         </select>
                                     </div>
+<<<<<<< HEAD
 
                                     <div class="form-group">
                                         <label>Reason</label>
@@ -61,6 +68,51 @@
 
                                     <button type="submit" class="btn btn-default">Submit Button</button>
                                 </form>
+=======
+                            <div class="col-lg-12">
+                                <div class = "content-form">
+                                    <form class = "form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                            <label class="col-md-4 control-label">Start Date</label>
+                                            <div class = "col-md-6">
+                                                <input class="form-control" name = "startdate" type = "date" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">End Date</label>
+                                            <div class = "col-md-6">
+                                                <input class="form-control" name = "enddate" type = "date" required>
+                                            </div> 
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Leave Type</label>
+                                            <div class = "col-md-6">
+                                                <select class="form-control" name = "leavetype" required>
+                                                    <option>Sick</option>
+                                                    <option>Maternal</option>
+                                                    <option>Marriage</option>
+                                                    <option>Unpaid</option>
+                                                </select>
+                                            </div>
+                                        </div>
+=======
+>>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc
+
+                                    <div class="form-group">
+                                        <label>Reason</label>
+                                        <textarea class ="form-control" name = "reason" required> </textarea>
+                                    </div>
+<<<<<<< HEAD
+                                    </form>
+                                </div>
+>>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
+=======
+
+                                    <button type="submit" class="btn btn-default">Submit Button</button>
+                                </form>
+>>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc
                             </div>
                             
                         </div>

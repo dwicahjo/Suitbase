@@ -7,7 +7,11 @@
 </head>
 
 <body>
+<<<<<<< HEAD
+	@section('content')
+=======
     @section('content')
+>>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -23,6 +27,30 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
+<<<<<<< HEAD
+                            <div class="col-lg-6">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input class="form-control" name = "date" type = "date" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Start Time</label>
+                                        <input class="form-control" name = "starttime" type = "time" required>
+                                    </div>
+                                     <div class="form-group">
+                                        <label>End Time</label>
+                                        <input class="form-control" name = "endtime" type = "time" required>
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea class ="form-control" name = "description"> </textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-default">Submit Button</button>
+                                </form>
+=======
                             <div class="col-lg-12">
                                 <div class = "content-form">
                                     <form class = "form-horizontal" role="form">
@@ -61,6 +89,7 @@
                                         </div>
                                     </form>
                                 </div>
+>>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                             </div>
                             
                         </div>

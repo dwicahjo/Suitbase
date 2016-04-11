@@ -106,118 +106,122 @@
                             <a href="forms.html"><i class="fa fa-table fa-fw"></i> Request</a>
                         </li>
                         <li>
-                           <a href="#"><i class="fa fa-reorder fa-fw"></i> Leave<span class="fa arrow"></span></a>
-                           <ul class="nav nav-second-level">
-                            <li>
-                                <a href="createLeave">Create Leave</a>
-                            </li>
-                            <li>
-                                <a href="myLeave">View My Leave</a>
-                            </li>
-                            <li>
-                                <a href="listOfLeave">View List of Leave</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-reorder fa-fw"></i> Remote <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="createRemote">Create Remote</a>
-                            </li>
-                            <li>
-                                <a href="myRemote">View My Remote</a>
-                            </li>
-                            <li>
-                                <a href="listOfRemote">View List of Remote</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-reorder fa-fw"></i> Training<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="createTraining">Create Training</a>
-                            </li>
+                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Leave<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="createLeave">Create Leave</a>
+                                </li>
+                                <li>
+                                    <a href="myLeave">View My Leave</a>
+                                </li>
+                                <li>
+                                    <a href="listOfLeave">View List of Leave</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-reorder fa-fw"></i> Remote <span class="fa arrow"></span></a>
+                               <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="createRemote">Create Remote</a>
+                                </li>
+                                <li>
+                                    <a href="myRemote">View My Remote</a>
+                                </li>
+                                <li>
+                                    <a href="listOfRemote">View List of Remote</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-reorder fa-fw"></i> Training<span class="fa arrow"></span></a>
+                               <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="createTraining">Create Training</a>
+                                </li>
 
-                            <li>
-                                <a href="myTraining">View My Training</a>
-                            </li>
-                            <li>
-                                <a href="listOfTraining">View List of Training</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-reorder fa-fw"></i> Procurement<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="createProcurement">Create Procurement</a>
-                            </li>
-                            <li>
-                                <a href="myProcurement">View My Procurement</a>
-                            </li>
-                            <li>
-                                <a href="listOfProcurement">View List of Procurement</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-reorder fa-fw"></i>Overtime<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="createOvertime">Create Overtime</a>
-                            </li>
-                            <li>
-                                <a href="myOvertime">View My Overtime</a>
-                            </li>
-                            <li>
-                                <a href="listOfOvertime">View List of Overtime</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-files-o fa-fw"></i>Appraisal<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="panels-wells.html">View My Appraisal</a>
-                            </li>
-                            <li>
-                                <a href="buttons.html">View List of Appraisal</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-pencil fa-fw"></i>Feedback<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="createFeedback">Create Feedback</a>
-                            </li>
-                            <li>
-                                <a href="listOfFeedback">View List of Feedback</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="blank.html">View List of Survey</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
+                                <li>
+                                    <a href="myTraining">View My Training</a>
+                                </li>
+                                <li>
+                                    <a href="listOfTraining">View List of Training</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-reorder fa-fw"></i> Procurement<span class="fa arrow"></span></a>
+                             <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="createProcurement">Create Procurement</a>
+                                </li>
+                                <li>
+                                    <a href="myProcurement">View My Procurement</a>
+                                </li>
+                                <li>
+                                    <a href="listOfProcurement">View List of Procurement</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-reorder fa-fw"></i>Overtime<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="createOvertime">Create Overtime</a>
+                                </li>
+                                <li>
+                                    <a href="myOvertime">View My Overtime</a>
+                                </li>
+                                <li>
+                                    <a href="listOfOvertime">View List of Overtime</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Appraisal<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="myAppraisal">View My Appraisal</a>
+                                </li>
+                                <li>
+                                    <a href="listofAppraisal">View List of Appraisal</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-pencil fa-fw"></i>Feedback<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="createFeedback">Create Feedback</a>
+                                </li>
+                                <li>
+                                    <a href="listOfFeedback">View List of Feedback</a>
+
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="blank.html">View List of Survey</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
 
 
 
-                </ul>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+
             </div>
             <!-- /.sidebar-collapse -->
         </div>
