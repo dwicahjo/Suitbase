@@ -185,10 +185,10 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>Appraisal<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">View My Appraisal</a>
+                                    <a href="myAppraisal">View My Appraisal</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">View List of Appraisal</a>
+                                    <a href="listofAppraisal">View List of Appraisal</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

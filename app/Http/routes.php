@@ -160,8 +160,8 @@ Route::get('/viewListAppraisalTemplate', function () {
 Route::get('/myAppraisal', function () {
     return view('pages.appraisal.myAppraisal');
 });
-Route::get('/listofAppraisal', function () {
-    return view('pages.appraisal.listofAppraisal');
+Route::get('/listOfAppraisal', function () {
+    return view('pages.appraisal.listOfAppraisal');
 });
 
 /* ini form aslinya guys*/
