@@ -22,21 +22,19 @@ Route::get('/template', function () {
     return view('layoutTemplate');
 });
 /*user*/
-Route::get('/createAccount', function () {
+/*Route::get('/createAccount', function () {
     return view('pages.user.createAccount');
-});
+});*/
+Route::get('/createAccount', 'UserController@index');
+Route::post('/createAccount', 'UserController@postCreate');
 Route::get('/editProfile', function () {
     return view('pages.user.editProfile');
 });
-Route::get('/listOfUser', function () {
-    return view('pages.user.listOfUser');
-});
+Route::get('/listOfUser', 'UserController@showListOfUser');
 Route::get('/myProfile', function () {
     return view('pages.user.myProfile');
 });
-Route::get('/userDetails', function () {
-    return view('pages.user.userDetails');
-});
+Route::get('/userDetails:{id}', 'UserController@showDetail');
 Route::get('/resetUser', function () {
     return view('pages.user.resetUser');
 });
@@ -151,8 +149,8 @@ Route::get('/viewListAppraisalTemplate', function () {
 Route::get('/myAppraisal', function () {
     return view('pages.appraisal.myAppraisal');
 });
-Route::get('/listofAppraisal', function () {
-    return view('pages.appraisal.listofAppraisal');
+Route::get('/listOfAppraisal', function () {
+    return view('pages.appraisal.listOfAppraisal');
 });
 /* ini form aslinya guys*/
 Route::get('/forms', function () {

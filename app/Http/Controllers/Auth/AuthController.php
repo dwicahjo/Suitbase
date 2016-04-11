@@ -55,7 +55,7 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-        ]);
+            ]);
     }
 
     /**
@@ -85,7 +85,7 @@ class AuthController extends Controller
             'ijazah' => $data['ijazah'],
             'departments_id' => $data['departments_id'],
             'divisions_id' => $data['divisions_id']
-        ]);
+            ]);
     }
 
     public function showRegistrationForm()

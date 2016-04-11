@@ -34,57 +34,57 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <![endif]-->
 
-</head>
+    </head>
 
-<body>
-    <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">SUITBASE</a>
-            </div>
-            <!-- /.navbar-header -->
-             @if (Auth::user())
-            <ul class="nav navbar-top-links navbar-right">
-                <li>
-                REMAINING DAY OF LEAVE:  {{ Auth::user()->number_leave }} Days
-                </li>
+    <body>
+        <div id="wrapper">
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">SUITBASE</a>
+                </div>
+                <!-- /.navbar-header -->
+                @if (Auth::user())
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        REMAINING DAY OF LEAVE:  {{ Auth::user()->number_leave }} Days
+                    </li>
                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-            </ul>
-            @else
-            <ul class="nav navbar-top-links navbar-right">
-                <li><a href="{{ url('/login') }}">Login</a></li>
-            </ul>
-            @endif
-            <!-- /.navbar-top-links -->
+                </ul>
+                @else
+                <ul class="nav navbar-top-links navbar-right">
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                </ul>
+                @endif
+                <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            @if (Auth::user())
-                            <div class="input-group custom-search-form">
-                                <span>
-                                    <img alt="image" class="img-circle" src="img/profile_small.jpg">
-                                </span>
-                                <br>
-                                {{-- <a data-toggle="dropdown" class="dropdown-toggle" href="#"> --}}
-                                <span class="clear">
-                                <span class="block m-t-xs">
-                                {{-- <strong class="font-bold">David Williams</strong> --}}
-                                {{ Auth::user()->name }}
-                                </span>
-                                <br>
-                                <span class="text-muted text-xs block"> {{ Auth::user()->divisions_id }} </span>
-                                <span class="text-muted text-xs block"> {{ Auth::user()->departments_id }} </span>
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <li class="sidebar-search">
+                                @if (Auth::user())
+                                <div class="input-group custom-search-form">
+                                    <span>
+                                        <img alt="image" class="img-circle" src="img/profile_small.jpg">
+                                    </span>
+                                    <br>
+                                    {{-- <a data-toggle="dropdown" class="dropdown-toggle" href="#"> --}}
+                                    <span class="clear">
+                                        <span class="block m-t-xs">
+                                            {{-- <strong class="font-bold">David Williams</strong> --}}
+                                            {{ Auth::user()->name }}
+                                        </span>
+                                        <br>
+                                        <span class="text-muted text-xs block"> {{ Auth::user()->divisions_id }} </span>
+                                        <span class="text-muted text-xs block"> {{ Auth::user()->departments_id }} </span>
                                 {{-- <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                     <li><a href="pages/myProfile">Profile</a></li>
                                     <li><a href="pages/login">Logout</a></li>
@@ -185,10 +185,10 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>Appraisal<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">View My Appraisal</a>
+                                    <a href="myAppraisal">View My Appraisal</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">View List of Appraisal</a>
+                                    <a href="listofAppraisal">View List of Appraisal</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -197,14 +197,11 @@
                             <a href="#"><i class="fa fa-pencil fa-fw"></i>Feedback<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-<<<<<<< HEAD
-                                    <a href="blank.html">View List of Feedback</a>
-=======
                                     <a href="createFeedback">Create Feedback</a>
                                 </li>
                                 <li>
                                     <a href="listOfFeedback">View List of Feedback</a>
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
+
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -224,33 +221,36 @@
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
+
             </div>
-            <!-- /.navbar-static-side -->
-        </nav>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.navbar-static-side -->
+    </nav>
 
     @section('content')
     @show
-        <!-- /#page-wrapper -->
+    <!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+</div>
+<!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+<script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="/assets/plugins/raphael/raphael-min.js"></script>
-    <script src="/assets/plugins/morrisjs/morris.min.js"></script>
-    <!-- // <script src="../js/morris-data.js"></script> -->
+<!-- Morris Charts JavaScript -->
+<script src="/assets/plugins/raphael/raphael-min.js"></script>
+<script src="/assets/plugins/morrisjs/morris.min.js"></script>
+<!-- // <script src="../js/morris-data.js"></script> -->
 
-    <!-- Custom Theme JavaScript -->
-    <script src="/assets/js/sb-admin-2.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/assets/js/sb-admin-2.js"></script>
 
 </body>
 

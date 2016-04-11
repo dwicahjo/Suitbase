@@ -40,10 +40,9 @@
                         <button class="btn btn-default" type="button">Go!</button>
                         </span>
                     </div><!-- /input-group -->
-                    
                     <div class="row">
                             <div class="col-lg-7 upper-menu-left">
-                                <div class="row"> 
+                                <div class="row">
                                         <div class="col-lg-4">
                                           <label>Choose Division:</label>
                                             <select class="form-control" name = "leavetype">
@@ -77,7 +76,7 @@
                                 </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>                    
 
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
@@ -88,53 +87,21 @@
                                         <th>Division </th>
                                         <th>Name </th>
                                         <th> </th>
-                                        
+
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>1</td>
-                                        <td>Creative</td>
-                                        <td><a href="userDetails">Alisha ZB</a></td>
+                                <?php $i=1; ?>
+                                    @foreach($users as $user)
+                                    <tr class="odd gradeA">
+                                        <td>{{$i}}</td>
+                                        <td>{{$user->divisions_id}}</td>
+                                        <td><a href="userDetails:{{$user->id}}">{{$user->name}}</a></td>
                                         <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default" role="button">Reset</a></th>
                                     </tr>
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
-                                            <a href="reset" class="btn btn-default" role="button">Reset</a></th>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>3</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetProfile" class="btn btn-default" role="button">Reset</a></th>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>4</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetProfile" class="btn btn-default" role="button">Reset</a></th>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>5</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetProfile" class="btn btn-default" role="button">Reset</a></th>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>6</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <th><a href="editProfile" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetProfile" class="btn btn-default" role="button">Reset</a></th>
-                                    </tr>
-                                    
+                                    <?php $i++; ?>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -147,7 +114,7 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-      
+
         </div>
         <!-- /#page-wrapper -->
         @endsection
