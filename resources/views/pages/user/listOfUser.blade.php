@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">List of Users</h1>
+            <h1 class="page-header">List of Users</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -23,7 +23,23 @@
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
-
+                    <div class="filter_menu">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" placeholder="Search for..." type="button" data-toggle="dropdown">Choose Division
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">PR</a></li>
+                          <li><a href="#">Creative</a></li>
+                          <li><a href="#">IT</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                        </span>
+                    </div><!-- /input-group -->
                     <div class="row">
                         <div class="col-lg-7 upper-menu-left">
                             <div class="row">
@@ -46,6 +62,21 @@
                                     </div><!-- /input-group -->
                                 </div>
                             </div>
+                        </div>                    
+
+                    <div class="panel-body">
+                        <div class="dataTable_wrapper">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>No. </th>
+                                        <th>Division </th>
+                                        <th>Name </th>
+                                        <th> </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
                         </div> <!--row-->
                     </div>
                     <div class="col-lg-5">

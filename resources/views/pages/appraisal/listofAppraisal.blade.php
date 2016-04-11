@@ -24,51 +24,112 @@
                     </div>-->
                     <!-- /.panel-heading -->
                     <div class="panel-body">
-                        <div class="dataTable_wrapper">
-                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>Period</th>
-                                        <th>Employee Name</th>
-                                        <th>Division</th>
-                                    </tr>
-                                </thead>
-                            </table>
+                    <div class="row">
+                        <div class="filter_menu" style="margin-top: -25px">
+                            <label>Choose Division:</label>
+                                <select class="form-control" name = "leavetype">
+                                    <option>PR</option>
+                                    <option>Creative</option>
+                                    <option>IT</option>
+                                    <option>HR</option>
+                                </select>
                         </div>
 
-                        <div class="filter_menu">
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" placeholder="Search for..." type="button" data-toggle="dropdown">Choose Periode
-                                <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                  <li><a href="#">2016</a></li>
-                                  <li><a href="#">2015</a></li>
-                                  <li><a href="#">2014</a></li>
-                                </ul>
-                            </div>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" placeholder="Search for..." type="button" data-toggle="dropdown">Choose Division
-                                <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                  <li><a href="#">PR</a></li>
-                                  <li><a href="#">Creative</a></li>
-                                  <li><a href="#">IT</a></li>
-                                </ul>
-                            </div>
+                        <div class="filter_menu" style="margin-top: -25px">
+                            <label>Choose Period:</label>
+                                <select class="form-control" name = "leavetype">
+                                    <option>2015</option>
+                                    <option>2014</option>
+                                    <option>2013</option>
+                                    <option>2012</option>
+                                </select>
                         </div>
-                         <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
-                        </span>
 
-                         <button type="submit" class="btn btn-default">View Recap</button>
-                        <!-- /.table-responsive -->
-                        <div class="well">
-                            <h4>DataTables Usage Information</h4>
-                            <p>DataTables is a very flexible, advanced tables plugin for jQuery. In SB Admin, we are using a specialized version of DataTables built for Bootstrap 3. We have also customized the table headings to use Font Awesome icons in place of images. For complete documentation on DataTables, visit their website at <a target="_blank" href="https://datatables.net/">https://datatables.net/</a>.</p>
-                            <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>
+                        <div class="col-md-3">
+                        <div class="input-group" style="margin-top: 14px">
+                           <input type="text" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Go!</button>
+                                </span>
+                        </div><!-- /input-group -->
+                        </div>
+                   
+                        <div class="col-md-3">
+                            <button style="margin-top: 14px" type="submit" class="btn btn-default">View Recap</button>
                         </div>
                     </div>
+
+                    <div class="row">
+                    <div class="dataTable_wrapper">
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center">Period</th>
+                                    <th style="text-align: center">Employee Name</th>
+                                    <th style="text-align: center">Division</th>
+                                </tr>
+                            </thead>
+                             <tbody style="text-align: center">
+                                    <tr class="odd gradeX">
+                                        <td>1</td>
+                                        <td>Internet Explorer 4.0</td>
+                                        <td>Win 95+</td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>2</td>
+                                        <td>Internet Explorer 5.0</td>
+                                        <td>Win 95+</td>
+                                    </tr>
+                                    <tr class="odd gradeA">
+                                        <td>3</td>
+                                        <td>Internet Explorer 5.5</td>
+                                        <td>Win 95+</td>
+                                    </tr>
+                                    <tr class="even gradeA">
+                                        <td>4</td>
+                                        <td>Internet Explorer 6</td>
+                                        <td>Win 98+</td>
+                                    </tr>
+                                    <tr class="odd gradeA">
+                                        <td>5</td>
+                                        <td>Internet Explorer 7</td>
+                                        <td>Win XP SP2+</td>
+                                    </tr>
+                                    <tr class="even gradeA">
+                                        <td>6</td>
+                                        <td>AOL browser (AOL desktop)</td>
+                                        <td>Win XP</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>7</td>
+                                        <td>Firefox 1.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>8</td>
+                                        <td>Firefox 1.5</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>9</td>
+                                        <td>Firefox 2.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>10</td>
+                                        <td>Firefox 3.0</td>
+                                        <td>Win 2k+ / OSX.3+</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>11</td>
+                                        <td>Camino 1.0</td>
+                                        <td>OSX.2+</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div> 
+                    </div> 
+                        <!-- /.table-responsive -->
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
@@ -77,7 +138,7 @@
         </div>
         <!-- /.row -->
       
-        </div>
+    </div>
         <!-- /#page-wrapper -->
         @endsection
 

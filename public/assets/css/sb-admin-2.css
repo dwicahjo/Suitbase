@@ -383,10 +383,7 @@ table.dataTable thead .sorting:after {
     float: right;
     width: 30%;
     padding: 15px;
-<<<<<<< HEAD
     margin-top: 25px;
-=======
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
 }
 
 .right-side{
@@ -394,18 +391,9 @@ table.dataTable thead .sorting:after {
 }
 
 .content {
-<<<<<<< HEAD
-<<<<<<< HEAD
     margin-left: 250px;
     padding-left: 70px;
     padding-right: 160px;
-    text-align: justify;
-}
-=======
-    margin-left: 180px;
-=======
-    margin-left: 20%;
->>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc
     text-align: justify;
 }
 

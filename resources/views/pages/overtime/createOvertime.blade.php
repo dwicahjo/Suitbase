@@ -17,7 +17,7 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 ">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     </div>
@@ -44,13 +44,13 @@
                                             <label class="col-md-4 control-label">End Time</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "endtime" type = "time" required>
-                                            </div>
+                                            </div> 
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">Reason</label>
+                                            <label class="col-md-4 control-label">Description</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "reason" required> </textarea>
+                                                <textarea class ="form-control" name = "description" required> </textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -59,6 +59,8 @@
                                                 <button type="submit" class="btn btn-default">Submit</button>
                                             </div>
                                         </div>
+
+                                    
                                     </form>
                                 </div>
                             </div>

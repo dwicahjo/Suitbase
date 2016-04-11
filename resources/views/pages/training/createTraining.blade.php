@@ -33,24 +33,26 @@
                                                 <input class="form-control" name = "title" type = "text" required>
                                             </div>
                                         </div>
+
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">End Date</label>
+                                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                            <label class="col-md-4 control-label">Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "enddate" type = "date" required>
+                                                <input class="form-control" name = "date" type = "date" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Price Estimate</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "price_estimate" type = "price_estimate">
+                                                <input class="form-control" name = "price_estimate" type = "price_estimate" requiews>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">Reason</label>
+                                            <label class="col-md-4 control-label">Description</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "reason" required> </textarea>
+                                                <textarea class ="form-control" name = "description" required> </textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">

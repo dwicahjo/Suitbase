@@ -15,18 +15,6 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
-<<<<<<< HEAD
-
-        <div class="row">
-<<<<<<< HEAD
-            
-=======
-
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
-        </div>
-
-=======
->>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc
         <!-- /.row -->
         <div class="row">
             <div class="col-lg-4">
@@ -43,26 +31,13 @@
                                 </div>
                             </form>
                                     <div class="form-group">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                        Lorem ipsum dolor sit amet, no eam vero lucilius tacimates, cum id suavitate honestatis. No mel sanctus democritum. Omnes decore noluisse te mei, idque aperiri rationibus at eos, in nam ferri assueverit. Ne aliquid vocibus vim, mel causae scribentur at, quo dictas omnesque interesset eu. Voluptua sapientem in eam, et sea essent eligendi rationibus.
-                                    <div class="row">
-                                    <br> 
-=======
                                         {{$feedback[0]->description}}
                                     <div class="row">
                                     <br>
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                                         <div class="col-lg-5">
                                         </div>
                                         <div class="col-lg-7">
                                           <a href="listOfFeedback" class="btn btn-default" role="button">Back</a>
-=======
-                                            <div class="col-md-6 control-label"></div>
-                                            <div class = "col-md-2 col-md-offset-3">
-                                                <a href="listOfFeedback" class="btn btn-default" role="button">Back</a>
-                                            </div>
->>>>>>> 315374fbeca3037a61b981f8166a7cacbe3801bc
                                         </div>
 
                                     <!--row-->
