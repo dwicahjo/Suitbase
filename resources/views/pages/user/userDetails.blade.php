@@ -16,7 +16,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="titleProfile">
-                        <label>Alisha ZB</label>
+                        <label>Profile</label>
                     </div>
 
                     <div class="row">
@@ -28,79 +28,79 @@
                                 </div>
                             </div> <!--row-->
                         </div> <!--col-lg-6-->
-                    
+
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Email</label>
-                                        <div class="col-md-4">{{ Auth::user()->email }}</div>
+                                        <div class="col-md-4">{{ $user[0]->email }}</div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Role</label>
-                                        <div class="col-md-6">{{ Auth::user()->divisions_id}}</div>
+                                        <div class="col-md-6">{{ $user[0]->divisions_id}}</div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Full Name</label>
-                                        <div class="col-md-6">{{ Auth::user()->name }}</div>
+                                        <div class="col-md-6">{{ $user[0]->name }}</div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Birth Place</label>
-                                        <div class="col-md-6">{{ Auth::user()->birth_place }}</div>
+                                        <div class="col-md-6">{{ $user[0]->birth_place }}</div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Birth Date</label>
-                                        <div class="col-md-6">{{ Auth::user()->birth_date }}</div>
+                                        <div class="col-md-6">{{ $user[0]->birth_date }}</div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Gender</label>
-                                        <div class="col-md-6">{{ Auth::user()->gender }}</div>
+                                        <div class="col-md-6">{{ $user[0]->gender }}</div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Religion</label>
-                                        <div class="col-md-6">{{ Auth::user()->religion }}</div>
+                                        <div class="col-md-6">{{ $user[0]->religion }}</div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">KTP Number</label>
-                                        <div class="col-md-6">{{ Auth::user()->ktp_id }}</div>
+                                        <div class="col-md-6">{{ $user[0]->ktp_id }}</div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">NPWP Number</label>
-                                        <div class="col-md-6">{{ Auth::user()->NPWP }}</div>
+                                        <div class="col-md-6">{{ $user[0]->NPWP }}</div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">KTP Address</label>
-                                        <div class="col-md-6">{{ Auth::user()->address }}</div>
+                                        <div class="col-md-6">{{ $user[0]->address }}</div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Current Address</label>
-                                        <div class="col-md-6">{{ Auth::user()->address }}</div>
+                                        <div class="col-md-6">{{ $user[0]->address }}</div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Phone Number</label>
-                                        <div class="col-md-6">{{ Auth::user()->phone }}</div>
+                                        <div class="col-md-6">{{ $user[0]->phone }}</div>
                                     </div>
                                 </div>
                                 <!-- msh bingung ada atau ngga -->
@@ -133,7 +133,7 @@
                                         <div class="col-md-8">
                                         </div>
                                         <div class="col-md-2">
-                                            <a href="listOfuser" class="btn btn-default" role="button">Back</a>
+                                            <a href="/listOfUser" class="btn btn-default" role="button">Back</a>
                                         </div>
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@
                 </div>
             </div>
             <!-- /#wrapper -->
-             @endsection 
+             @endsection
             <!-- jQuery -->
             <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
             <!-- Bootstrap Core JavaScript -->

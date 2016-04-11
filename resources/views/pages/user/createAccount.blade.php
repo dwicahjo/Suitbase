@@ -23,126 +23,194 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-lg-6">
-                                <form role="form">
-                                    <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                                    <div class="form-group">
-                                        <label>Email</label>
-                                        <input class="form-control" name = "email" type = "email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Password</label>
-                                        <input class="form-control" name = "password" type = "password" required>
-                                    </div>
-                                    <!--belom selesai ya-->
-                                    <div class="form-group">
-                                        <label>Division</label>
-                                        <select class="form-control" name = "role">
-                                            <option>Creative</option>
-                                            <option>IT</option>
-                                            <option>HR</option>
-                                            <option>??</option>
-                                        </select>
-                                    </div>
+                            <div class="col-lg-12">
+                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/createAccount') }}">
+                        {!! csrf_field() !!}
 
-                                    <div class="form-group">
-                                        <label>Role</label>
-                                        <select class="form-control" name = "role">
-                                            <option>Finance</option>
-                                            <option>HR</option>
-                                            <option>SUpervisor</option>
-                                            <option>Employee</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Full Name</label>
-                                        <input class="form-control" name = "fullname" type = "text" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Birth Place</label>
-                                        <input class="form-control" name = "birthplace" type = "text" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Birth Date</label>
-                                        <input class="form-control" name = "startdate" type = "date">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Gender</label>
-                                        <select class="form-control" name = "gender">
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Religion</label>
-                                        <input class="form-control" name = "religion" type = "text" required>
-                                    </div>
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Name</label>
 
-                                    <div class="form-group">
-                                        <label>KTP Number</label>
-                                        <input class="form-control" name = "ktpnumber" type = "text" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>NPWP Number</label>
-                                        <input class="form-control" name = "npwpnumber" type = "text" required>
-                                    </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
 
-                                    <div class="form-group">
-                                        <label>KTP Address</label>
-                                        <textarea class ="form-control" name = "ktpAddress" required> </textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Current Address</label>
-                                        <textarea class ="form-control" name = "currentAddress" required> </textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Telephone Number</label>
-                                        <input class="form-control" name = "tlpnumber" type = "text" required>
-                                    </div>
-                                    <label>Curriculum Vitae</label>
-
-                                        <input onclick="myFunction()" type="file" class="upload" />
-                                        <script>
-                                        function myFunction() {
-                                            var x = document.getElementById("myFile");
-                                            x.disabled = true;
-                                        }
-                                        </script>
-                                    <br>
-                                    <label>KTP</label>
-                                        <input onclick="myFunction()" type="file" class="upload" />
-
-                                        <script>
-                                        function myFunction() {
-                                            var x = document.getElementById("myFile");
-                                            x.disabled = true;
-                                        }
-                                        </script>
-                                    <br>
-                                    <label>Ijazah</label>
-                                        <input onclick="myFunction()" type="file" class="upload" />
-
-                                        <script>
-                                        function myFunction() {
-                                            var x = document.getElementById("myFile");
-                                            x.disabled = true;
-                                        }
-                                        </script>
-                                    <br>
-                                    <label>Kartu Keluarga</label>
-                                        <input onclick="myFunction()" type="file" class="upload" />
-
-                                        <script>
-                                        function myFunction() {
-                                            var x = document.getElementById("myFile");
-                                            x.disabled = true;
-                                        }
-                                        </script>
-                                    <br>
-                                    <button type="submit" class="btn btn-default">Create</button>   
-                                </form>
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
                             </div>
-                            
+                        </div>
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">E-Mail Address</label>
+
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Password</label>
+
+                            <div class="col-md-6">
+                                <input type="password" class="form-control" name="password">
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Confirm Password</label>
+
+                            <div class="col-md-6">
+                                <input type="password" class="form-control" name="password_confirmation">
+
+                                @if ($errors->has('password_confirmation'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Department</label>
+                                <div class="col-md-6">
+                                    <select class="form-control" name = "departments_id">
+                                        <?php
+                                            foreach ($departments as $department) {
+                                            echo '<option value="'.$department->id.'">'.$department->name.'</option>';
+                                        }?>
+                                    </select>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Division</label>
+                                <div class="col-md-6">
+                                    <select class="form-control" name = "divisions_id">
+                                        <?php
+                                            foreach ($divisions as $division) {
+                                            echo '<option value="'.$division->id.'">'.$division->name.'</option>';
+                                        }?>
+                                    </select>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Birth Place</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" name = "birth_place" type = "text">
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Birth Date</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" name = "birth_date" type ="date">
+                                </div>
+                        </div>
+
+                       <div class="form-group">
+                            <label class="col-md-4 control-label">Gender</label>
+                             <div class="col-md-6">
+                                <select class="form-control" name = "gender">
+                                   <option value="Male">Male</option>
+                                   <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Religion</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" name = "religion" type = "text">
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">KTP Number</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" name = "ktp_id" type = "text">
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">NPWP Number</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" name = "NPWP" type = "text">
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">KTP Address</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" name = "ktp_address" type = "text">
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Phone</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" name = "phone" type = "text">
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Current Address</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" name = "address" type = "text">
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Curricullum Vitae</label>
+                                <div class="col-md-6">
+                                    <input name="CV" type="file" class="upload" />
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">KTP</label>
+                                <div class="col-md-6">
+                                    <input name="KTP" type="file" class="upload" />
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Ijazah</label>
+                                <div class="col-md-6">
+                                    <input name="ijazah" type="file" class="upload" />
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Kartu Keluarga</label>
+                                <div class="col-md-6">
+                                    <input name="KK" type="file" class="upload" />
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-user"></i>Create
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                            </div>
+
                         </div>
                         <!-- /.row (nested) -->
                     </div>

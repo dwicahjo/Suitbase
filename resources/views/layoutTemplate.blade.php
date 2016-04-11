@@ -34,57 +34,57 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <![endif]-->
 
-</head>
+    </head>
 
-<body>
-    <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">SUITBASE</a>
-            </div>
-            <!-- /.navbar-header -->
-             @if (Auth::user())
-            <ul class="nav navbar-top-links navbar-right">
-                <li>
-                REMAINING DAY OF LEAVE:  {{ Auth::user()->number_leave }} Days
-                </li>
+    <body>
+        <div id="wrapper">
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">SUITBASE</a>
+                </div>
+                <!-- /.navbar-header -->
+                @if (Auth::user())
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        REMAINING DAY OF LEAVE:  {{ Auth::user()->number_leave }} Days
+                    </li>
                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-            </ul>
-            @else
-            <ul class="nav navbar-top-links navbar-right">
-                <li><a href="{{ url('/login') }}">Login</a></li>
-            </ul>
-            @endif
-            <!-- /.navbar-top-links -->
+                </ul>
+                @else
+                <ul class="nav navbar-top-links navbar-right">
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                </ul>
+                @endif
+                <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            @if (Auth::user())
-                            <div class="input-group custom-search-form">
-                                <span>
-                                    <img alt="image" class="img-circle" src="img/profile_small.jpg">
-                                </span>
-                                <br>
-                                {{-- <a data-toggle="dropdown" class="dropdown-toggle" href="#"> --}}
-                                <span class="clear">
-                                <span class="block m-t-xs">
-                                {{-- <strong class="font-bold">David Williams</strong> --}}
-                                {{ Auth::user()->name }}
-                                </span>
-                                <br>
-                                <span class="text-muted text-xs block"> {{ Auth::user()->divisions_id }} </span>
-                                <span class="text-muted text-xs block"> {{ Auth::user()->departments_id }} </span>
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <li class="sidebar-search">
+                                @if (Auth::user())
+                                <div class="input-group custom-search-form">
+                                    <span>
+                                        <img alt="image" class="img-circle" src="img/profile_small.jpg">
+                                    </span>
+                                    <br>
+                                    {{-- <a data-toggle="dropdown" class="dropdown-toggle" href="#"> --}}
+                                    <span class="clear">
+                                        <span class="block m-t-xs">
+                                            {{-- <strong class="font-bold">David Williams</strong> --}}
+                                            {{ Auth::user()->name }}
+                                        </span>
+                                        <br>
+                                        <span class="text-muted text-xs block"> {{ Auth::user()->divisions_id }} </span>
+                                        <span class="text-muted text-xs block"> {{ Auth::user()->departments_id }} </span>
                                 {{-- <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                     <li><a href="pages/myProfile">Profile</a></li>
                                     <li><a href="pages/login">Logout</a></li>
@@ -106,147 +106,147 @@
                             <a href="forms.html"><i class="fa fa-table fa-fw"></i> Request</a>
                         </li>
                         <li>
-                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Leave<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="createLeave">Create Leave</a>
-                                </li>
-                                <li>
-                                    <a href="myLeave">View My Leave</a>
-                                </li>
-                                <li>
-                                    <a href="listOfLeave">View List of Leave</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-reorder fa-fw"></i> Remote <span class="fa arrow"></span></a>
-                               <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="createRemote">Create Remote</a>
-                                </li>
-                                <li>
-                                    <a href="myRemote">View My Remote</a>
-                                </li>
-                                <li>
-                                    <a href="listOfRemote">View List of Remote</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-reorder fa-fw"></i> Training<span class="fa arrow"></span></a>
-                               <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="createTraining">Create Training</a>
-                                </li>
+                           <a href="#"><i class="fa fa-reorder fa-fw"></i> Leave<span class="fa arrow"></span></a>
+                           <ul class="nav nav-second-level">
+                            <li>
+                                <a href="createLeave">Create Leave</a>
+                            </li>
+                            <li>
+                                <a href="myLeave">View My Leave</a>
+                            </li>
+                            <li>
+                                <a href="listOfLeave">View List of Leave</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-reorder fa-fw"></i> Remote <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="createRemote">Create Remote</a>
+                            </li>
+                            <li>
+                                <a href="myRemote">View My Remote</a>
+                            </li>
+                            <li>
+                                <a href="listOfRemote">View List of Remote</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-reorder fa-fw"></i> Training<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="createTraining">Create Training</a>
+                            </li>
 
-                                <li>
-                                    <a href="myTraining">View My Training</a>
-                                </li>
-                                <li>
-                                    <a href="listOfTraining">View List of Training</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-reorder fa-fw"></i> Procurement<span class="fa arrow"></span></a>
-                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="createProcurement">Create Procurement</a>
-                                </li>
-                                <li>
-                                    <a href="myProcurement">View My Procurement</a>
-                                </li>
-                                <li>
-                                    <a href="listOfProcurement">View List of Procurement</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-reorder fa-fw"></i>Overtime<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="createOvertime">Create Overtime</a>
-                                </li>
-                                <li>
-                                    <a href="myOvertime">View My Overtime</a>
-                                </li>
-                                <li>
-                                    <a href="listOfOvertime">View List of Overtime</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Appraisal<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="panels-wells.html">View My Appraisal</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">View List of Appraisal</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-pencil fa-fw"></i>Feedback<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="createFeedback">Create Feedback</a>
-                                </li>
-                                <li>
-                                    <a href="listOfFeedback">View List of Feedback</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">View List of Survey</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+                            <li>
+                                <a href="myTraining">View My Training</a>
+                            </li>
+                            <li>
+                                <a href="listOfTraining">View List of Training</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-reorder fa-fw"></i> Procurement<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="createProcurement">Create Procurement</a>
+                            </li>
+                            <li>
+                                <a href="myProcurement">View My Procurement</a>
+                            </li>
+                            <li>
+                                <a href="listOfProcurement">View List of Procurement</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-reorder fa-fw"></i>Overtime<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="createOvertime">Create Overtime</a>
+                            </li>
+                            <li>
+                                <a href="myOvertime">View My Overtime</a>
+                            </li>
+                            <li>
+                                <a href="listOfOvertime">View List of Overtime</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-files-o fa-fw"></i>Appraisal<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="panels-wells.html">View My Appraisal</a>
+                            </li>
+                            <li>
+                                <a href="buttons.html">View List of Appraisal</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-pencil fa-fw"></i>Feedback<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="createFeedback">Create Feedback</a>
+                            </li>
+                            <li>
+                                <a href="listOfFeedback">View List of Feedback</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="blank.html">View List of Survey</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
 
 
 
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
+                </ul>
             </div>
-            <!-- /.navbar-static-side -->
-        </nav>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.navbar-static-side -->
+    </nav>
 
     @section('content')
     @show
-        <!-- /#page-wrapper -->
+    <!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+</div>
+<!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+<script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="/assets/plugins/raphael/raphael-min.js"></script>
-    <script src="/assets/plugins/morrisjs/morris.min.js"></script>
-    <!-- // <script src="../js/morris-data.js"></script> -->
+<!-- Morris Charts JavaScript -->
+<script src="/assets/plugins/raphael/raphael-min.js"></script>
+<script src="/assets/plugins/morrisjs/morris.min.js"></script>
+<!-- // <script src="../js/morris-data.js"></script> -->
 
-    <!-- Custom Theme JavaScript -->
-    <script src="/assets/js/sb-admin-2.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/assets/js/sb-admin-2.js"></script>
 
 </body>
 
