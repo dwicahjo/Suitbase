@@ -9,17 +9,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-<<<<<<< HEAD
-
-
-Route::auth();
-
-Route::get('/home', 'HomeController@index');
-
-=======
 Route::auth();
 Route::get('/home', 'HomeController@index');
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
 Route::get('/', function () {
     if (Auth::user()) {
         return view('layoutTemplate'); //Page which you want to show for loged user.
@@ -27,317 +18,132 @@ Route::get('/', function () {
         return view('auth.login'); //You can redirect from here, if user is not logged in
     }
 });
-<<<<<<< HEAD
-
-=======
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
 Route::get('/template', function () {
     return view('layoutTemplate');
 });
-
 /*user*/
 Route::get('/createAccount', function () {
     return view('pages.user.createAccount');
 });
-<<<<<<< HEAD
-
-Route::get('/editProfile', function () {
-    return view('pages.user.editProfile');
-});
-
-Route::get('/listOfUser', function () {
-    return view('pages.user.listOfUser');
-});
-
-=======
 Route::get('/editProfile', function () {
     return view('pages.user.editProfile');
 });
 Route::get('/listOfUser', function () {
     return view('pages.user.listOfUser');
 });
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
 Route::get('/myProfile', function () {
     return view('pages.user.myProfile');
+});
+Route::get('/userDetails', function () {
+    return view('pages.user.userDetails');
 });
 Route::get('/resetUser', function () {
     return view('pages.user.resetUser');
 });
-
-<<<<<<< HEAD
-
-/*feedback*/
-Route::get('/createFeedback', function () {
-    return view('pages.feedback.createFeedback');
-});
-
-=======
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
 /* leave */
 Route::get('/createLeave', function () {
-    return view('pages.leave.create');
+    return view('pages.leave.createLeave');
 });
-<<<<<<< HEAD
-
+Route::post('/storeLeave', 'LeavesController@create');
 Route::get('/leaveDetails', function () {
-    return view('pages.leave.viewdetails');
-});
-
-Route::get('/leaveApproval', function () {
-    return view('pages.leave.leaveApproval');
-});
-
-Route::get('/myLeave', function () {
-    return view('pages.leave.mylistofleave');
-});
-
-Route::get('/listOfLeave', function () {
-    return view('pages.leave.alllistofleave');
-});
-
-Route::get('/editLeave', function () {
-    return view('pages.leave.editleave');
-});
-
-/* remote */
-Route::get('/createRemote', function () {
-    return view('pages.remote.createRemote');
-});
-
-Route::get('/viewDetailsRemote', function () {
-    return view('pages.remote.viewDetailsRemote');
-});
-
-Route::get('/remoteApproval', function () {
-    return view('pages.remote.remoteApproval');
-});
-
-Route::get('/myListofRemote', function () {
-    return view('pages.remote.myListofRemote');
-});
-
-Route::get('/allListofRemote', function () {
-    return view('pages.remote.allListofRemote');
-});
-
-Route::get('/editRemote', function () {
-    return view('pages.remote.editRemote');
-});
-
-/* training */
-Route::get('/createTraining', function () {
-    return view('pages.training.createTraining');
-});
-
-Route::get('/viewDetailsTraining', function () {
-    return view('pages.training.viewDetailsTraining');
-});
-
-Route::get('/trainingApproval', function () {
-    return view('pages.training.trainingApproval');
-});
-
-Route::get('/myListofTraining', function () {
-    return view('pages.training.myListofTraining');
-});
-
-Route::get('/allListofTraining', function () {
-    return view('pages.training.allListofTraining');
-});
-
-Route::get('/editTraining', function () {
-    return view('pages.training.editTraining');
-});
-
-/* procurement */
-Route::get('/createProcurement', function () {
-    return view('pages.procurement.create');
-});
-
-Route::get('/procurementDetails', function () {
-    return view('pages.procurement.viewdetails');
-});
-
-Route::get('/procurementApproval', function () {
-    return view('pages.procurement.procurementApproval');
-});
-
-Route::get('/myProcurement', function () {
-    return view('pages.procurement.mylistofleave');
-});
-
-Route::get('/listOfProcurement', function () {
-    return view('pages.procurement.alllistofleave');
-});
-
-Route::get('/editProcurement', function () {
-    return view('pages.procurement.editleave');
-});
-
-/* overtime */
-Route::get('/createOvertime', function () {
-    return view('pages.overtime.create');
-});
-
-Route::get('/overtimeDetails', function () {
-    return view('pages.overtime.viewdetails');
-});
-
-Route::get('/overtimeApproval', function () {
-    return view('pages.overtime.overtimeApproval');
-});
-
-Route::get('/myOvertime', function () {
-    return view('pages.overtime.mylistofovertime');
-});
-
-Route::get('/listOfOvertime', function () {
-    return view('pages.overtime.alllistofovertime');
-});
-
-Route::get('/editOvertime', function () {
-    return view('pages.overtime.editovertime');
-});
-
-/* survey */
-Route::get('/createSurvey', function () {
-    return view('pages.survey.createSurvey');
-});
-
-/* feedback */
-Route::get('/createFeedback', 'FeedbackController@index');
-Route::post('/createFeedback', 'FeedbackController@postFeedback');
-
-/* appraisal */
-Route::get('/viewListAppraisalTemplate', function () {
-    return view('pages.appraisal.viewListAppraisalTemplate');
-});
-
-Route::get('/myAppraisal', function () {
-    return view('pages.appraisal.myAppraisal');
-});
-
-Route::get('/allListofAppraisal', function () {
-    return view('pages.appraisal.allListofAppraisal');
-});
-
-/* ini form aslinya guys*/
-Route::get('/forms', function () {
-    return view('pages.formsTemplate');
-});
-
-Route::get('/a', function () {
-    return view('pages.panels-wells');
-});
-
-=======
-Route::get('/leaveDetails', function () {
-    return view('pages.leave.viewdetails');
+    return view('pages.leave.leaveDetails');
 });
 Route::get('/leaveApproval', function () {
     return view('pages.leave.leaveApproval');
 });
 Route::get('/myLeave', function () {
-    return view('pages.leave.mylistofleave');
+    return view('pages.leave.myLeave');
 });
-Route::get('/listOfLeave', function () {
-    return view('pages.leave.alllistofleave');
-});
+Route::get('/listOfLeave', 'LeavesController@viewListof');
 Route::get('/editLeave', function () {
-    return view('pages.leave.editleave');
+    return view('pages.leave.editLeave');
 });
-
+Route::get('/leaves/{{ $leaves->id }}', 'LeavesController@viewListof');
 /* remote */
 Route::get('/createRemote', function () {
     return view('pages.remote.createRemote');
 });
-Route::get('/viewDetailsRemote', function () {
-    return view('pages.remote.viewDetailsRemote');
+Route::get('/remoteDetails', function () {
+    return view('pages.remote.remoteDetails');
 });
 Route::get('/remoteApproval', function () {
     return view('pages.remote.remoteApproval');
 });
-Route::get('/myListofRemote', function () {
-    return view('pages.remote.myListofRemote');
+Route::get('/myRemote', function () {
+    return view('pages.remote.myRemote');
 });
-Route::get('/allListofRemote', function () {
-    return view('pages.remote.allListofRemote');
+Route::get('/listOfRemote', function () {
+    return view('pages.remote.listOfRemote');
 });
 Route::get('/editRemote', function () {
     return view('pages.remote.editRemote');
 });
-
 /* training */
 Route::get('/createTraining', function () {
     return view('pages.training.createTraining');
 });
-Route::get('/viewDetailsTraining', function () {
-    return view('pages.training.viewDetailsTraining');
+Route::get('/trainingDetails', function () {
+    return view('pages.training.trainingDetails');
 });
 Route::get('/trainingApproval', function () {
     return view('pages.training.trainingApproval');
 });
-Route::get('/myListofTraining', function () {
-    return view('pages.training.myListofTraining');
+Route::get('/myTraining', function () {
+    return view('pages.training.myTraining');
 });
-Route::get('/allListofTraining', function () {
-    return view('pages.training.allListofTraining');
+Route::get('/listOfTraining', function () {
+    return view('pages.training.listOfTraining');
 });
 Route::get('/editTraining', function () {
     return view('pages.training.editTraining');
 });
-
 /* procurement */
 Route::get('/createProcurement', function () {
-    return view('pages.procurement.create');
+    return view('pages.procurement.createProcurement');
 });
 Route::get('/procurementDetails', function () {
-    return view('pages.procurement.viewdetails');
+    return view('pages.procurement.procurementDetails');
 });
 Route::get('/procurementApproval', function () {
     return view('pages.procurement.procurementApproval');
 });
 Route::get('/myProcurement', function () {
-    return view('pages.procurement.mylistofleave');
+    return view('pages.procurement.myProcurement');
 });
 Route::get('/listOfProcurement', function () {
-    return view('pages.procurement.alllistofleave');
+    return view('pages.procurement.listOfProcurement');
 });
 Route::get('/editProcurement', function () {
-    return view('pages.procurement.editleave');
+    return view('pages.procurement.editProcurement');
 });
-
 /* overtime */
 Route::get('/createOvertime', function () {
-    return view('pages.overtime.create');
+    return view('pages.overtime.createOvertime');
 });
 Route::get('/overtimeDetails', function () {
-    return view('pages.overtime.viewdetails');
+    return view('pages.overtime.overtimeDetails');
 });
 Route::get('/overtimeApproval', function () {
     return view('pages.overtime.overtimeApproval');
 });
 Route::get('/myOvertime', function () {
-    return view('pages.overtime.mylistofovertime');
+    return view('pages.overtime.myOvertime');
 });
 Route::get('/listOfOvertime', function () {
-    return view('pages.overtime.alllistofovertime');
+    return view('pages.overtime.listOfOvertime');
 });
 Route::get('/editOvertime', function () {
-    return view('pages.overtime.editovertime');
+    return view('pages.overtime.editOvertime');
 });
-
 /* survey */
 Route::get('/createSurvey', function () {
     return view('pages.survey.createSurvey');
 });
-
 /* feedback */
 Route::get('/createFeedback', 'FeedbackController@index');
 Route::post('/createFeedback', 'FeedbackController@postFeedback');
 Route::get('/listOfFeedback', 'FeedbackController@showListOfFeedback');
 Route::get('/detailFeedback:{id}', 'FeedbackController@showDetail');
-
 /* appraisal */
 Route::get('/viewListAppraisalTemplate', function () {
     return view('pages.appraisal.viewListAppraisalTemplate');
@@ -345,10 +151,9 @@ Route::get('/viewListAppraisalTemplate', function () {
 Route::get('/myAppraisal', function () {
     return view('pages.appraisal.myAppraisal');
 });
-Route::get('/allListofAppraisal', function () {
-    return view('pages.appraisal.allListofAppraisal');
+Route::get('/listofAppraisal', function () {
+    return view('pages.appraisal.listofAppraisal');
 });
-
 /* ini form aslinya guys*/
 Route::get('/forms', function () {
     return view('pages.formsTemplate');
@@ -356,4 +161,3 @@ Route::get('/forms', function () {
 Route::get('/a', function () {
     return view('pages.panels-wells');
 });
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
