@@ -34,9 +34,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">End Date</label>
+                                            <label class="col-md-4 control-label">Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "enddate" type = "date" required>
+                                                <input class="form-control" name = "date" type = "date" required>
                                             </div> 
                                         </div>
                                         
