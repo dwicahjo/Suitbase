@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">View List of Appraisal Templates</h1>
+                <h1 class="page-header">Appraisal Templates</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -28,90 +28,71 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Date</th>
-                                        <th>Appraisal Title</th>
+                                        <th style="text-align: center">No</th>
+                                        <th style="text-align: center">Date</th>
+                                        <th style="text-align: center">Appraisal Title</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
-                                 <tbody>
+                                 <tbody style="text-align: center">
                                     <tr class="odd gradeX">
                                         <td>1</td>
                                         <td>Internet Explorer 4.0</td>
                                         <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
                                         <th><form method = "link" action="editAppraisal"><button>Edit</button></form></th>
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
                                         <td>Internet Explorer 5.0</td>
                                         <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
                                         <th><button>Edit</button></th>
                                     </tr>
                                     <tr class="odd gradeA">
                                         <td>3</td>
                                         <td>Internet Explorer 5.5</td>
                                         <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
                                         <th><button>Edit</button></th>
                                     </tr>
                                     <tr class="even gradeA">
                                         <td>4</td>
                                         <td>Internet Explorer 6</td>
                                         <td>Win 98+</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
                                         <th><button>Edit</button></th>
                                     </tr>
                                     <tr class="odd gradeA">
                                         <td>5</td>
                                         <td>Internet Explorer 7</td>
                                         <td>Win XP SP2+</td>
-                                        <td class="center">7</td>
-                                        <td class="center">A</td>
                                         <th><button>Edit</button></th>
                                     </tr>
                                     <tr class="even gradeA">
                                         <td>6</td>
                                         <td>AOL browser (AOL desktop)</td>
                                         <td>Win XP</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
                                         <th><button>Edit</button></th>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>7</td>
                                         <td>Firefox 1.0</td>
                                         <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
                                         <th><button>Edit</button></th>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>8</td>
                                         <td>Firefox 1.5</td>
                                         <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
                                         <th><button>Edit</button></th>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>9</td>
                                         <td>Firefox 2.0</td>
                                         <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
                                         <th><button>Edit</button></th>
                                     </tr>
                                     <tr class="gradeA">
                                         <td>10</td>
                                         <td>Firefox 3.0</td>
                                         <td>Win 2k+ / OSX.3+</td>
-                                        <td class="center">1.9</td>
-                                        <td class="center">A</td>
                                         <th><button>Edit</button></th>
 
                                     </tr>
@@ -119,8 +100,6 @@
                                         <td>11</td>
                                         <td>Camino 1.0</td>
                                         <td>OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
                                         <th><button>Edit</button></th>
                                     </tr>
                                 </tbody>
@@ -129,7 +108,12 @@
                         <!-- /.table-responsive -->
                     </div>
                     <!-- /.panel-body -->
-                <button type="submit" class="btn btn-default">Create Template</button>
+                                    <a href="create">
+                                        <i class="fa fa-plus fa-fw"></i>
+                                        <label>
+                                            Create Template
+                                        </label>
+                                    </a>
                 </div>
                 <!-- /.panel -->
             </div>

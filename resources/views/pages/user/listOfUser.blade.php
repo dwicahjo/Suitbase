@@ -11,11 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-<<<<<<< HEAD
-                <h1 class="page-header">List of Users</h1>
-=======
-                <h1 class="page-header">List of User</h1>
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
+            <h1 class="page-header">List of Users</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -27,7 +23,6 @@
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
-<<<<<<< HEAD
                     <div class="filter_menu">
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" placeholder="Search for..." type="button" data-toggle="dropdown">Choose Division
@@ -45,7 +40,6 @@
                         <button class="btn btn-default" type="button">Go!</button>
                         </span>
                     </div><!-- /input-group -->
-=======
                     
                     <div class="row">
                             <div class="col-lg-7 upper-menu-left">
@@ -84,13 +78,6 @@
                                 </div>
                             </div>
                         </div>
-
-             
-                    
-                    
-
-
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
 
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
