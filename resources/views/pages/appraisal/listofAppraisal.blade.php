@@ -45,7 +45,7 @@
                                 </select>
                         </div>
 
-                        <div class="col-lg-3">
+                        <div class="col-md-3">
                         <div class="input-group" style="margin-top: 14px">
                            <input type="text" class="form-control" placeholder="Search for...">
                                 <span class="input-group-btn">
@@ -54,7 +54,7 @@
                         </div><!-- /input-group -->
                         </div>
                    
-                        <div class="col-lg-3">
+                        <div class="col-md-3">
                             <button style="margin-top: 14px" type="submit" class="btn btn-default">View Recap</button>
                         </div>
                     </div>
