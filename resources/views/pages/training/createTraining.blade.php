@@ -23,31 +23,6 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-<<<<<<< HEAD
-                            <div class="col-lg-6">
-                                <form role="form">
-                                    <div class="form-group">
-                                        <label>Training Title</label>
-                                        <input class="form-control" name = "title" type = "title">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Date</label>
-                                        <input class="form-control" name = "date" type = "date">
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label>Price Estimate</label>
-                                        <input class="form-control" name = "price_estimate" type = "price_estimate">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Description</label>
-                                        <textarea class ="form-control" name = "description"> </textarea>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-default">Submit Button</button>
-                                </form>
-=======
                             <div class="col-lg-12">
                                 <div class = "content-form">
                                     <form class = "form-horizontal" role="form">
@@ -62,9 +37,9 @@
                                             <label class="col-md-4 control-label">End Date</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "enddate" type = "date" required>
-                                            </div> 
+                                            </div>
                                         </div>
-                                        
+
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Price Estimate</label>
                                             <div class = "col-md-6">
@@ -86,9 +61,8 @@
                                         </div>
                                     </form>
                                 </div>
->>>>>>> 2c597105d518500ff6ce263e6dcf3c8fe7732c1a
                             </div>
-                            
+
                         </div>
                         <!-- /.row (nested) -->
                     </div>

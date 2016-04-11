@@ -21,12 +21,10 @@
 
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="row">
-                                <div class="col-lg-2"></div>
-                                <div class="col-lg-8">
+                                 <div class="col-lg-8">
                                     <img alt="image" class="img-responsive" src="assets/foto.jpg">
                                 </div>
-                            </div> <!--row-->
+
                         </div> <!--col-lg-6-->
 
                         <div class="col-lg-6">
