@@ -56,62 +56,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>1</td>
-                                        <td><a href="remoteApproval"> Alisha ZB</a></td>
-                                        <td>Creative</td>
-                                        <td> 2/2/2016</td>
-                                        <td> 4/2/2016</td>
-                                        <td>Approved</td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>3</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>4</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>5</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <td class="center">7</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>6</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>7</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
+                                    <?php $i = 1 ?>
+                                    @foreach ($remotes as $remote)
+                                        <tr class="odd gradeX">
+                                            <td>{{ $i }}</td>
+                                            <td><a href="/remoteApproval:{{ $remote->id }}">{{ $remote->employee->name }}</a></td>
+                                            <td>{{ $remote->employee->division->name }}</td>
+                                            <td>{{ $remote->date_start }}</td>
+                                            <td>{{ $remote->date_end}}</td>
+                                            <td>{{ $remote->status }}</td>
+                                        </tr>
+                                        <?php $i++; ?>
+                                    @endforeach
+                                    {{ $remotes->render() }}
                                 </tbody>
                             </table>
                         </div>

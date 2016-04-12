@@ -29,38 +29,37 @@
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Name</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Alisha ZB</label>
+                                        <label class="col-md-6">: {{ $leaves[0]->employee->name }}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Divison</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Creative</label>
+                                        <label class="col-md-6">: {{ $leaves[0]->employee->division->name }}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Leave Type</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Sick</label>
+                                        <label class="col-md-6">: {{ $leaves[0]->type }}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Start Date </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: 2/2/2016</label>
+                                        <label class="col-md-6">: {{ $leaves[0]->date_start }}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">End Date </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: 4/2/2016</label>
+                                        <label class="col-md-6">: {{ $leaves[0]->date_end }}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                         <label class="col-md-4 control-label">Description </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Sequence Diagram:  terlampir sequence diagram parent use case melihat detil.
-    Sequence diagram melihat detil pengajuan kerja remote mengikuti sequence diagram parent-nya, yaitu melihat detil. Beberapa hal yang harus disesuaikan adalah </label>
+                                        <label class="col-md-6">: {{ $leaves[0]->description }}</label>
                                     </div>
                                 </div>
 

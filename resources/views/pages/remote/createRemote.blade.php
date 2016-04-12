@@ -16,6 +16,15 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-12 ">
                 <div class="panel panel-default">
@@ -25,7 +34,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class = "content-form">
-                                    <form class = "form-horizontal" role="form">
+                                    <form class = "form-horizontal" role="form" method="post" action="/storeRemote">
                                         <div class="form-group">
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                             <label class="col-md-4 control-label">Start Date</label>

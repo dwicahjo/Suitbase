@@ -37,108 +37,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>1</td>
-                                        <td><a href="leaveDetails">11/04/2016</a></td>
-                                        <td>15/04/2016</td>
-                                        <td class="center">Sick</td>
-                                        <td class="center">Submitted</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="#" class="btn btn-default" role="button">Cancel</a></th>
-                                        
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>3</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>4</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>5</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <td class="center">7</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>6</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>7</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                        <th><<a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>8</td>
-                                        <td>Firefox 1.5</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>9</td>
-                                        <td>Firefox 2.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>10</td>
-                                        <td>Firefox 3.0</td>
-                                        <td>Win 2k+ / OSX.3+</td>
-                                        <td class="center">1.9</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>11</td>
-                                        <td>Camino 1.0</td>
-                                        <td>OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    
+                                    <?php $i = 1; ?>
+                                    @foreach ($leaves as $leave)
+                                        <tr class="odd gradeX">
+                                            <td>{{ $i }}</td>
+                                            <td>{{ $leave->date_start }}</a></td>
+                                            <td>{{ $leave->date_end }}</td>
+                                            <td class="center">{{ $leave->type }}</td>
+                                            <td class="center"><a href="/myLeaves:{{ $leave->id }}">{{ $leave->status }}</td>
+                                            <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
+                                                <a href="#" class="btn btn-default" role="button">Cancel</a></th>
+                                        </tr>
+                                        <?php $i++; ?>
+                                    @endforeach
+                                    {{ $leaves->render() }}
                                 </tbody>
                             </table>
                         </div>

@@ -35,61 +35,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="odd gradeX">
-                                        <td class="center">1</td>
-                                        <td><a href="procurementDetails">Meminta atk baru </a></td>
-                                        <td class="center">Submitted</td>
-                                        <th><a href="editProcurement" class="btn btn-default" role="button">Edit</a>
-                                            <a href="#" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td><th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>3</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <th><a href="editTraining" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>4</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>5</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>6</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>7</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>8</td>
-                                        <td>Firefox 1.5</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
+                                    <?php $i = 1; ?>
+                                    @foreach ($procurements as $procurement)
+                                        <tr class="odd gradeX">
+                                            <td class="center">{{ $i }}</td>
+                                            <td><a href="/myProcurements:{{ $procurement->id }}">{{ $procurement->title }}</a></td>
+                                            <td class="center">{{ $procurement->status}}</td>
+                                            <th><a href="editProcurement" class="btn btn-default" role="button">Edit</a>
+                                                <a href="#" class="btn btn-default" role="button">Cancel</a></th>
+                                        </tr>
+                                        <?php $i++; ?>
+                                    @endforeach
+                                    {{ $procurements->render() }}
                                 </tbody>
                             </table>
                         </div>

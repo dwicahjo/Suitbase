@@ -12,14 +12,14 @@ class LeavesController extends Controller
 {
     public function create(Request $request)
     {
-    	$this->validate ($request, [
-    		'startdate' => 'required|date|after:today',
-    		'enddate' => 'required|date|after:startdate'
-    	]);
+        $this->validate ($request, [
+            'startdate' => 'required|date|after:today',
+            'enddate' => 'required|date|after:startdate'
+        ]);
 
-    	$leave = new Leave;
+        $leave = new Leave;
 
-    	$leave->date_start = $request->startdate;
+        $leave->date_start = $request->startdate;
         $leave->date_end = $request->enddate;
         $leave->type = $request->leavetype;
         $leave->description = $request->reason;
@@ -33,8 +33,30 @@ class LeavesController extends Controller
 
     public function viewListof ()
     {
-    	$leaves = Leave::paginate(15);
+        $leaves = Leave::paginate(15);
 
-    	return view('pages.leave.alllistofleave', ['leaves' => $leaves]);
+        return view('pages.leave.listOfLeave', ['leaves' => $leaves]);
+    }
+
+    public function viewDetails ($id)
+    {
+        $leaves = Leave::where('id', $id)->get();
+
+        return view('pages.leave.leaveapproval', ['leaves' => $leaves]);
+    }
+
+    public function viewMyList ()
+    {
+        $user_id = \Auth::user()->id;
+        $leaves = Leave::where('employees_id', $user_id)->paginate(15);
+
+        return view('pages.leave.myLeave', ['leaves' => $leaves]);
+    }
+
+    public function viewMyDetails ($id)
+    {
+        $leaves = Leave::where('id', $id)->get();
+
+        return view('pages.leave.leaveDetails', ['leaves' => $leaves]);
     }
 }

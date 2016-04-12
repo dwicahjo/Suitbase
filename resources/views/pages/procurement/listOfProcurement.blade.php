@@ -55,55 +55,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php $i = 1; ?>
+                                    @foreach ($procurements as $procurement)
                                     <tr class="odd gradeX">
-                                        <td>1</td>
-                                        <th><a href="procurementApproval">Alisha ZB</a></th>
-                                        <td>Creative</td>
-                                        <td>Membeli ATK baru</td>
-                                        <td>Rejected</td>
+                                        <td>{{ $i }}</td>
+                                        <td><a href="/procurementApproval:{{ $procurement->id }}">{{ $procurement->employee->name }}</a></td>
+                                        <td>{{ $procurement->employee->division->name }}</td>
+                                        <td>{{ $procurement->title }}</td>
+                                        <td>{{ $procurement->status }}</td>
                                     </tr>
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">C</td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>3</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>4</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>5</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>6</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>7</td>
-                                        <td>Firefox 1.0</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
+                                    <?php $i++; ?>
+                                    @endforeach
+                                    {{ $procurements->render() }}
                                 </tbody>
                             </table>
                         </div>

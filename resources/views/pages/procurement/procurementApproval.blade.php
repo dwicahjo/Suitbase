@@ -29,38 +29,37 @@
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Name</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Alisha ZB</label>
+                                        <label class="col-md-6">: {{ $procurements[0]->employee->name }}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Divison</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Creative</label>
+                                        <label class="col-md-6">: {{ $procurements[0]->employee->division->name }}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label"> Title </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Membeli ATK baru </label>
+                                        <label class="col-md-6">: {{ $procurements[0]->title }}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Price Estimate</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Rp 200.000 </label>
+                                        <label class="col-md-6">: Rp {{ $procurements[0]->estimate_price }}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Status </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Rejected by HR </label>
+                                        <label class="col-md-6">: {{ $procurements[0]->status }}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                         <label class="col-md-4 control-label">Description </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Sequence Diagram:  terlampir sequence diagram parent use case melihat detil.
-                                        Sequence diagram melihat detil pengajuan kerja remote mengikuti sequence diagram parent-nya, yaitu melihat detil. Beberapa hal yang harus disesuaikan adalah </label>
+                                        <label class="col-md-6">: {{ $procurements[0]->description }}</label>
                                     </div>
                                 </div>
                             </form>

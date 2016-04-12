@@ -23,5 +23,8 @@ class Procurement extends Model
 
     protected $guarded = [];
 
-        
+    public function employee() 
+    {
+        return $this->hasOne('App\Models\User', 'id', 'employees_id');
+    }
 }

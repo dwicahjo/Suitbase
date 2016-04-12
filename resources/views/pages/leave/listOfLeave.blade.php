@@ -57,17 +57,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php $i = 1; ?>
                                     @foreach ($leaves as $leave)
-                                    <tr class="odd gradeX">
-                                        <!-- <td>1</td> -->
-                                        <td><a href="leaves/{{ $leave->id }}">{{ $leave->employee->name }}</td>
-                                        <td>{{ $leave->employee->division->name }}</td>
-                                        <td class="center"> {{ $leave->date_start }}</td>
-                                        <td class="center"> {{ $leave->date_end }} </td>
-                                        <td> {{ $leave->type }} </td>
-                                        <td> {{ $leave->status }} </td>
-                                    </tr>
+                                        <tr class="odd gradeX">
+                                            <td>{{ $i }}</td>
+                                            <td><a href="/leaveApproval:{{ $leave->id }}">{{ $leave->employee->name }}</td>
+                                            <td>{{ $leave->employee->division->name }}</td>
+                                            <td class="center"> {{ $leave->date_start }}</td>
+                                            <td class="center"> {{ $leave->date_end }} </td>
+                                            <td> {{ $leave->type }} </td>
+                                            <td> {{ $leave->status }} </td>
+                                        </tr>
+                                        <?php $i++; ?>
                                     @endforeach
+                                    {{ $leaves->render() }}
                                 </tbody>
                             </table>
                         </div>
