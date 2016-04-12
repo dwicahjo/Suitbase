@@ -23,7 +23,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-11">
                                 <div class = "content-form">
                                     <form class = "form-horizontal" role="form">
                                         <div class="form-group">
@@ -71,10 +71,13 @@
                                         -->
                                         
                                     </form>
-                                    <button class="add_field_button btn btn-default">Add More Fields</button>
-                                    <div class = "button">
-                                            <button type="submit" class="btn btn-default">Save</button>
-                                    </div>
+                                    <button class="add-question add_field_button btn btn-default">Add Question</button>
+                                    <div class="form-group">
+                                            <div class="col-md-5 control-label"></div>
+                                            <div class = "col-md-2 col-md-offset-3">
+                                                <button type="submit" class="save btn btn-default">Save</button>
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
                             

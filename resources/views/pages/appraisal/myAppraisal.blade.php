@@ -65,9 +65,6 @@
                             </table>
                         </div>
                         <!-- /.table-responsive -->
-                        <div class="well">
-                            <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>
-                        </div>
                     </div>
                     <!-- /.panel-body -->
                 </div>

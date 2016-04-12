@@ -23,6 +23,15 @@
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
+                        <div class="menu-survey">
+                                            <a href="createSurvey">
+                                                <i class="fa fa-pencil-square-o fa-fw"></i>
+                                                <label>
+                                                    Create Survey
+                                                </label>
+                                            </a>
+                        </div>
+
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
