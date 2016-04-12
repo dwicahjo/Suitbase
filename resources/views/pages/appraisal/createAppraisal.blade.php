@@ -28,7 +28,7 @@
                                     <form class = "form-horizontal" role="form">
                                         <div class="form-group">
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
-                                            <label class="col-md-4 control-label">Title</label>
+                                            <label class="col-md-4 control-label" required>Title</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "title" required>
                                             </div>
