@@ -210,7 +210,7 @@
                             <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">View List of Survey</a>
+                                    <a href="listOfSurvey">View List of Survey</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

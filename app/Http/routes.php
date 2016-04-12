@@ -137,6 +137,15 @@ Route::get('/editOvertime', function () {
 Route::get('/createSurvey', function () {
     return view('pages.survey.createSurvey');
 });
+Route::get('/editSurvey', function () {
+    return view('pages.survey.editSurvey');
+});
+Route::get('/listOfSurvey', function () {
+    return view('pages.survey.listOfSurvey');
+});
+Route::get('/surveyDetails', function () {
+    return view('pages.survey.surveyDetails');
+});
 /* feedback */
 Route::get('/createFeedback', 'FeedbackController@index');
 Route::post('/createFeedback', 'FeedbackController@postFeedback');
