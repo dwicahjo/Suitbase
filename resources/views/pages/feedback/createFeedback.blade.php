@@ -31,14 +31,14 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-10 feedbackSubmit">
+                                        <div class="col-lg-10 anon">
                                           <label>
                                             <input type="hidden" name="is_anonim" value="0" />
                                             <input type="checkbox" name="is_anonim" value="1"> Anonymous
                                           </label>
                                         </div>
                                            <input type="hidden" name="employees_id" value="{{ Auth::user()->id }}">
-                                        <div class="col-lg-2">
+                                        <div class="col-lg-2 submit">
                                             <button type="submit" class="btn btn-default">Submit</button>
                                         </div>
                                     </div>
@@ -46,11 +46,11 @@
 
                         </div>
                     </form>
+                    <div class="myFeedback">
                     @foreach ($feedbacks as $feedback)
                         <div class="row">
-                            <div class="col-lg-3">
-                            </div>
-                            <div class="col-lg-6">
+                            
+                            <div class="col-lg-8">
                                     <div class="form-group" style="text-align: justify">
                                         {{$feedback->description}}
                                     <div class="row">
@@ -64,6 +64,7 @@
                             </div>
                         </div>
                     @endforeach
+                    </div>
                        <!-- /.row (nested) -->
                     </div>
                     <!-- /.panel-body -->

@@ -20,14 +20,15 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-6">
-                                 <div class="col-lg-8">
+                        <div class="col-lg-5">
+                            <div class="row">
+                                 <div class="col-lg-12">
                                     <img alt="image" class="img-responsive" src="assets/foto.jpg">
                                 </div>
-
+                            </div>
                         </div> <!--col-lg-6-->
 
-                        <div class="col-lg-6">
+                        <div class="col-lg-7">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="form-group">
@@ -128,7 +129,7 @@
                                 </div>
                                    <div class="row">
                                     <div class="form-group">
-                                        <div class="col-md-8">
+                                        <div class="col-md-6">
                                         </div>
                                         <div class="col-md-2">
                                             <a href="/listOfUser" class="btn btn-default" role="button">Back</a>

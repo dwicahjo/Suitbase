@@ -26,18 +26,15 @@
                     <div class="panel-body">
                         <div class = "content">
                             <form class = "form-horizontal">
-                                <div class = "form-group">
+                                <div class = "detail-feedback">
                                     {{$feedback[0]->description}}
                                 </div>
                             </form>
-                                    <div class="form-group">
-                                        {{$feedback[0]->description}}
-                                    <div class="row">
-                                    <br>
-                                        <div class="col-lg-5">
-                                        </div>
-                                        <div class="col-lg-7">
-                                          <a href="listOfFeedback" class="btn btn-default" role="button">Back</a>
+                                        <div class="form-group">
+                                            <div class="col-md-6 control-label"></div>
+                                            <div class = "col-md-2 col-md-offset-3">
+                                                <a href="listOfFeedback" class="btn btn-default" role="button">Back</a>
+                                            </div>
                                         </div>
 
                                     <!--row-->

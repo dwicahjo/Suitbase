@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	@section('content')
+    @section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -17,8 +17,6 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-2">
-            </div>
             <div class="col-lg-4">
             </div>
             <div class="col-lg-8 detail">
@@ -49,7 +47,8 @@
                                 <div class = "form-group">
                                         <label class="col-md-4 control-label">Description </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Sequence Diagram:  terlampir sequence diagram parent use case melihat detil.</label>
+                                        <label class="col-md-6">: Sequence Diagram:  terlampir sequence diagram parent use case melihat detil.
+                                        Sequence diagram melihat detil pengajuan kerja remote mengikuti sequence diagram parent-nya, yaitu melihat detil. Beberapa hal yang harus disesuaikan adalah </label>
                                     </div>
                                 </div>
                             </form>

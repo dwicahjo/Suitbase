@@ -22,13 +22,13 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-6" style= "width:500px">
+                                <div class="col-lg-6" style= "width:50%">
                                     <div class="col-image">
                                     <span>
-                                         <img alt="image" class="" width= 60% src="assets/foto.jpg">
+                                         <img alt="image" class="" width= 80% src="assets/foto.jpg">
                                      </span>
                                      
-                                    <input onclick="myFunction()" type="file" class="upload" />
+                                    <input style="margin-top:3%" onclick="myFunction()" type="file" class="upload" />
 
                                         <script>
                                             function myFunction() {

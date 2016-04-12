@@ -21,9 +21,9 @@
                 <div class="panel panel-default">
                     <div class="row">
                     <div class="col-lg-12">
-                    <div class = "search_menu">
+                    <div class = "search_menu search-feedback">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for...">
+                            <input type="text" class="form-control">
                             <span class="input-group-btn">
                             <button class="btn btn-default" type="button">Go!</button>
                             </span>
@@ -37,10 +37,9 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
-                                        <th>Description</th>
                                         <th>Timestamp </th>
                                         <th>Division</th>
-
+                                        <th>Description</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,9 +47,9 @@
                                     @foreach ($feedbacks as $feedback)
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
-                                        <td><a href="/detailFeedback:{{$feedback->id}}">{{str_limit($feedback->description, $limit = 20, $end = '...')}}</a></td>
                                         <td>{{$feedback->created_at}}</td>
                                         <td>{{$feedback->employees_id}}</td>
+                                        <td><a href="/detailFeedback:{{$feedback->id}}">{{str_limit($feedback->description, $limit = 20, $end = '...')}}</a></td>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

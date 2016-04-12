@@ -25,10 +25,10 @@
                                 <div class="col-lg-6" style= "width:500px">
                                     <div class="col-image">
                                     <span>
-                                         <img alt="image" class="" width= 60% src="assets/foto.jpg">
+                                         <img alt="image" class="" width= 100% src="assets/foto.jpg">
                                      </span>
                                      <br><br>
-                                        <select class="form-control" name = "role" style="width: 214px";>
+                                        <select class="form-control" name = "role" style="width: 100%";>
                                             <option>Active</option>
                                              <option>Deactive</option>
                                         </select>

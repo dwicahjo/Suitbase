@@ -383,7 +383,6 @@ table.dataTable thead .sorting:after {
     float: right;
     width: 30%;
     padding: 15px;
-    margin-top: 25px;
 }
 
 .right-side{
@@ -391,9 +390,7 @@ table.dataTable thead .sorting:after {
 }
 
 .content {
-    margin-left: 250px;
-    padding-left: 70px;
-    padding-right: 160px;
+    margin-left: 20%;
     text-align: justify;
 }
 
@@ -410,7 +407,7 @@ table.dataTable thead .sorting:after {
     margin-top: 1%;
 }
 .upper-menu-left{
-    margin-left:-5%;
+    margin-left:-4%;
     margin-top: 2%;
 }
 
@@ -422,9 +419,7 @@ table.dataTable thead .sorting:after {
 .button{
     margin-left: 68%;
 }
-.button-right {
-    float: right;
-}
+
 .titleProfile{
     padding-bottom:9px;
     text-align: center;
@@ -447,12 +442,32 @@ table.dataTable thead .sorting:after {
     margin-left: 25%
 }
 .feedbackDate{
-    margin-left: 60%;
-}
-.feedbackSubmit{
-    margin-left: -3%;
+    margin-left: 61%;
 }
 
-.label-input{
-    
+.myFeedback{
+    margin-left: 28%;
+    margin-right: 4%
+}
+
+* {
+  .border-radius(0) !important;
+}
+
+#field {
+    margin-bottom:20px;
+}
+
+.anon{
+margin-left: -1%;
+}
+.submit{
+margin-left: -2%;
+}
+.search-feedback{
+    margin-right: -4%
+}
+.detail-feedback{
+    margin-left: -15%;
+    margin-right: 10%;
 }
