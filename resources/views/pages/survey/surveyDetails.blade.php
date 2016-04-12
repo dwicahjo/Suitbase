@@ -31,11 +31,11 @@
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Question 1</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Sequence Diagram:  terlampir sequence diagram parent use case melihat detil </label>
+                                        <label class="col-md-6">: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
-                                    <label class="col-md-4 control-label">Answer Type</label>
+                                    <label class="col-md-4 control-label">Answer</label>
                                     <div class = "right-side">
                                         <label class="col-md-6">: Text</label>
                                     </div>
@@ -43,25 +43,58 @@
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Question 2</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Sequence Diagram:  terlampir sequence diagram parent use case melihat detil</label>
+                                        <label class="col-md-6">: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
-                                    <label class="col-md-4 control-label">Answer Type</label>
+                                    <label class="col-md-4 control-label">Answer </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Multiple Choice</label>
+                                        <div class = "col-md-6">
+                                            <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">Option 1
+                                                    </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="">Option 2
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="">Option 3
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
+
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Question 3</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Approved by HR </label>
+                                        <label class="col-md-6">: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
-                                        <label class="col-md-4 control-label">Question 1 </label>
+                                        <label class="col-md-4 control-label">Answer</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Sequence Diagram:  terlampir sequence diagram parent use case melihat detil.</label>
+                                        <div class="col-md-6">
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">Option 1
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Option 2
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Option 3
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </form>

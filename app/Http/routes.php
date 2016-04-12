@@ -146,6 +146,9 @@ Route::get('/listOfSurvey', function () {
 Route::get('/surveyDetails', function () {
     return view('pages.survey.surveyDetails');
 });
+Route::get('/fillSurvey', function () {
+    return view('pages.survey.fillSurvey');
+});
 /* feedback */
 Route::get('/createFeedback', 'FeedbackController@index');
 Route::post('/createFeedback', 'FeedbackController@postFeedback');
