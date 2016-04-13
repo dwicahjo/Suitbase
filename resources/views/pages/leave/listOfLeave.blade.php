@@ -47,7 +47,7 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <!-- <th>No. </th> -->
+                                        <th>No. </th>
                                         <th>Name </th>
                                         <th>Division </th>
                                         <th>Start Date </th>
