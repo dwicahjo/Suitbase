@@ -29,67 +29,72 @@
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Date </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: 2/2/2016</label>
+                                        <label class="col-md-6">: {{$overtime[0]->date}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
-                                    <label class="col-md-4 control-label">Time </label>
+                                    <label class="col-md-4 control-label">Time Start</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: 4/2/2016</label>
+                                        <label class="col-md-6">: {{$overtime[0]->time_start}}</label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                <label class="col-md-4 control-label">Time End</label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: {{$overtime[0]->time_end}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Total Hours </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: 4/2/2016</label>
+                                        <label class="col-md-6">: {{$overtime[0]->time_end - $overtime[0]->time_start}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Status </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Approved by HR </label>
+                                        <label class="col-md-6">: {{$overtime[0]->status}} </label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
-                                        <label class="col-md-4 control-label">Description </label>
+                                    <label class="col-md-4 control-label">Description </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Sequence Diagram:  terlampir sequence diagram parent use case melihat detil.
-                                        Sequence diagram melihat detil pengajuan kerja remote mengikuti sequence diagram parent-nya, yaitu melihat detil. Beberapa hal yang harus disesuaikan adalah </label>
+                                        <label class="col-md-6">: {{$overtime[0]->description}}</label>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="form-group">
+                                    <div class="col-md-6 control-label"></div>
+                                    <div class = "col-md-2 col-md-offset-3">
+                                        <a href="myOvertime" class="btn btn-default" role="button">Back</a>
                                     </div>
                                 </div>
-                            </form>
-                                    <div class="form-group">
-                                            <div class="col-md-6 control-label"></div>
-                                            <div class = "col-md-2 col-md-offset-3">
-                                                <a href="myOvertime" class="btn btn-default" role="button">Back</a>
-                                            </div>
-                                        </div>
 
-                                    <!--row-->
-                        </div><!--content-->
+                                <!--row-->
+                            </div><!--content-->
+                        </div>
+                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel-body -->
+                    <!-- /.panel -->
                 </div>
-                <!-- /.panel -->
+                <!-- /.col-lg-8 -->
             </div>
-            <!-- /.col-lg-8 -->
+            <!-- /.row -->
         </div>
-        <!-- /.row -->
-    </div>
-    <!-- /#wrapper -->
-    @endsection
-    <!-- jQuery -->
-    <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
+        <!-- /#wrapper -->
+        @endsection
+        <!-- jQuery -->
+        <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="/assets/js/sb-admin-2.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="/assets/js/sb-admin-2.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>

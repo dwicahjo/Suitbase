@@ -27,7 +27,7 @@
                     <div class="row">
                             <div class="col-lg-7 upper-menu-left">
                                 <div class="row">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                           <label>Choose Division:</label>
                                             <select class="form-control" name = "leavetype">
                                                 <option>PR</option>
@@ -36,7 +36,7 @@
                                                 <option>HR</option>
                                             </select>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                             <div class= "upper-menu">
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" placeholder="Search">

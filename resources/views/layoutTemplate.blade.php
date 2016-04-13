@@ -73,7 +73,7 @@
                                 @if (Auth::user())
                                 <div class="input-group custom-search-form">
                                     <span>
-                                        <img alt="image" class="img-circle" src="img/profile_small.jpg">
+                                        <img alt="image" class="img-circle" style="margin-left:25px" src="assets/photo.png">
                                     </span>
                                     <br>
                                     {{-- <a data-toggle="dropdown" class="dropdown-toggle" href="#"> --}}
@@ -83,8 +83,8 @@
                                             {{ Auth::user()->name }}
                                         </span>
                                         <br>
-                                        <span class="text-muted text-xs block"> {{ Auth::user()->divisions_id }} </span>
-                                        <span class="text-muted text-xs block"> {{ Auth::user()->departments_id }} </span>
+                                       {{--  <span class="text-muted text-xs block"> {{ Auth::user()->divisions_id }} </span>
+                                        <span class="text-muted text-xs block"> {{ Auth::user()->departments_id }} </span> --}}
                                 {{-- <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                     <li><a href="pages/myProfile">Profile</a></li>
                                     <li><a href="pages/login">Logout</a></li>

@@ -63,7 +63,7 @@
                                         <td>{{$training->username}}</td>
                                         <td>{{$training->date}}</td>
                                         <td>{{$training->division}}</td>
-                                        <td><a href="/detailTraining:{{$training->id}}">{{$training->title}}</a></td>
+                                        <td><a href="/trainingApproval:{{$training->id}}">{{$training->title}}</a></td>
                                         <td>{{$training->status}}</td>
                                     </tr>
                                     <?php $i++; ?>

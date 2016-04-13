@@ -29,44 +29,43 @@
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Name</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Alisha ZB</label>
+                                        <label class="col-md-6">: {{$training[0]->username}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Divison</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Creative</label>
+                                        <label class="col-md-6">: {{$training[0]->division}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Training Title </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Training cisco </label>
+                                        <label class="col-md-6">: {{$training[0]->title}} </label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Date </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: 4/2/2016</label>
+                                        <label class="col-md-6">: {{$training[0]->date}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Price Estimate</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Rp 200.000 </label>
+                                        <label class="col-md-6">: {{$training[0]->estimate_price}} </label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Status </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Rejected by HR </label>
+                                        <label class="col-md-6">: {{$training[0]->status}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                         <label class="col-md-4 control-label">Description </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Sequence Diagram:  terlampir sequence diagram parent use case melihat detil.
-                                        Sequence diagram melihat detil pengajuan kerja remote mengikuti sequence diagram parent-nya, yaitu melihat detil. Beberapa hal yang harus disesuaikan adalah </label>
+                                        <label class="col-md-6">: {{$training[0]->description}}</label>
                                     </div>
                                 </div>
                             </form>
