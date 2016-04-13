@@ -29,13 +29,13 @@
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Name</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: {{ $leaves[0]->employee->name }}</label>
+                                        <label class="col-md-6">: {{ $leaves[0]->username }}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Divison</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: {{ $leaves[0]->employee->division->name }}</label>
+                                        <label class="col-md-6">: {{ $leaves[0]->division }}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
@@ -72,7 +72,7 @@
                                              <a href="listOfLeave" class="btn btn-default" role="button">Reject</a>
                                         </div>
                                         <div class="col-lg-3">
-                                            <a href="listOfLeave" class="btn btn-default" role="button">Approve</a>                                        
+                                            <a href="listOfLeave" class="btn btn-default" role="button">Approve</a>
                                         </div>
                                     </div>
                                     <!--row-->

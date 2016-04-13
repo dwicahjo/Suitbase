@@ -17,12 +17,12 @@ class TrainingController extends Controller
     }
 
     public function postTraining(Request $request){
-        $this->validate ($request, [
+/*        $this->validate ($request, [
             'title' => 'required',
             'date' => 'required',
             'price_estimate' => 'required',
             'description' => 'required,'
-        ]);
+        ]);*/
         return $this->create($request->all());
     }
 
@@ -32,8 +32,7 @@ class TrainingController extends Controller
             'description' => $data['description'],
             'title' => $data['title'],
             'employees_id' => $data['employees_id'],
-            'date_start' => $data['date'],
-            'date_end' => $data['date'],
+            'date' => $data['date'],
             'estimate_price' => $data['price_estimate'],
             'status' => $data['status'],
         ]);
