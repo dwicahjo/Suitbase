@@ -35,7 +35,7 @@
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Date </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: {{$training[0]->date_start}}</label>
+                                        <label class="col-md-6">: {{$training[0]->date}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">

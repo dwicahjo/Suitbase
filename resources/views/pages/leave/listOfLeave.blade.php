@@ -47,7 +47,7 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <!-- <th>No. </th> -->
+                                        <th>No. </th>
                                         <th>Name </th>
                                         <th>Division </th>
                                         <th>Start Date </th>
@@ -61,8 +61,8 @@
                                     @foreach ($leaves as $leave)
                                         <tr class="odd gradeX">
                                             <td>{{ $i }}</td>
-                                            <td><a href="/leaveApproval:{{ $leave->id }}">{{ $leave->employee->name }}</td>
-                                            <td>{{ $leave->employee->division->name }}</td>
+                                            <td><a href="/leaveApproval:{{ $leave->id }}">{{ $leave->username }}</td>
+                                            <td>{{ $leave->division }}</td>
                                             <td class="center"> {{ $leave->date_start }}</td>
                                             <td class="center"> {{ $leave->date_end }} </td>
                                             <td> {{ $leave->type }} </td>
@@ -70,7 +70,7 @@
                                         </tr>
                                         <?php $i++; ?>
                                     @endforeach
-                                    {{ $leaves->render() }}
+                                  {{--   {{ $leaves->render() }} --}}
                                 </tbody>
                             </table>
                         </div>

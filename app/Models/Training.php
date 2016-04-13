@@ -14,8 +14,7 @@ class Training extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'date_start',
-        'date_end',
+        'date',
         'title',
         'estimate_price',
         'description',
@@ -25,5 +24,5 @@ class Training extends Model
 
     protected $guarded = [];
 
-        
+
 }
