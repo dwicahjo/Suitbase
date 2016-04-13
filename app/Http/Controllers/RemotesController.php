@@ -20,7 +20,7 @@ class RemotesController extends Controller
 
     	$remote->date_start = $request->startdate;
         $remote->date_end = $request->enddate;
-        $remote->description = $request->reason;
+        $remote->description = $request->description;
         $remote->status = "Submitted";
         $remote->employees_id = $request->user()->id;
 
