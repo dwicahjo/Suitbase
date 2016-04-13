@@ -48,7 +48,7 @@
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
                                         <td>{{$feedback->created_at}}</td>
-                                        <td>{{$feedback->employees_id}}</td>
+                                        <td>{{$feedback->name}}</td>
                                         <td><a href="/detailFeedback:{{$feedback->id}}">{{str_limit($feedback->description, $limit = 20, $end = '...')}}</a></td>
                                     </tr>
                                     <?php $i++; ?>

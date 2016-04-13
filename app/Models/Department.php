@@ -20,5 +20,4 @@ class Department extends Model
 
     protected $guarded = [];
 
-        
 }

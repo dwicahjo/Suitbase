@@ -20,5 +20,4 @@ class Division extends Model
 
     protected $guarded = [];
 
-        
 }

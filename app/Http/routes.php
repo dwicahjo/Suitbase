@@ -78,21 +78,11 @@ Route::get('/editRemote', function () {
 });
 
 /* training */
-Route::get('/createTraining', function () {
-    return view('pages.training.createTraining');
-});
-Route::get('/trainingDetails', function () {
-    return view('pages.training.trainingDetails');
-});
-Route::get('/trainingApproval', function () {
-    return view('pages.training.trainingApproval');
-});
-Route::get('/myTraining', function () {
-    return view('pages.training.myTraining');
-});
-Route::get('/listOfTraining', function () {
-    return view('pages.training.listOfTraining');
-});
+Route::get('/createTraining', 'TrainingController@index');
+Route::post('/createTraining', 'TrainingController@postTraining');
+Route::get('/detailTraining:{id}', 'TrainingController@showDetail');
+Route::get('/myTraining', 'TrainingController@showListOfMyTraining');
+Route::get('/listOfTraining', 'TrainingController@showListOfTraining');
 Route::get('/editTraining', function () {
     return view('pages.training.editTraining');
 });

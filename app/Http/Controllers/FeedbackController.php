@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Http\Requests;
 use App\Models\Feedback;
+use DB;
 
 class FeedbackController extends Controller
 {
@@ -17,6 +18,9 @@ class FeedbackController extends Controller
     }
 
     public function postFeedback(Request $request){
+        $this->validate ($request, [
+            'description' => 'required',
+        ]);
         return $this->create($request->all());
     }
 
@@ -31,14 +35,19 @@ class FeedbackController extends Controller
     }
 
     public function showListOfFeedback(){
-        $feedbacks = Feedback::orderBy('created_at','desc')->get();
+        //$feedbacks = Feedback::orderBy('created_at','desc')->get();
+        $feedbacks = DB::table('feedbacks')
+            ->join('users', 'employees_id', '=', 'users.id')
+            ->join('divisions','users.divisions_id','=','divisions.id')
+            ->select('feedbacks.*','divisions.name')
+            ->orderBy('feedbacks.created_at','desc')
+            ->get();
         return view('pages.feedback.listOfFeedback',['feedbacks'=>$feedbacks]);
     }
 
     public function showDetail($id){
 
         $feedback = Feedback::where('id',$id)->get();
-
         return view('pages.feedback.detailFeedback',['feedback'=>$feedback]);
     }
 

@@ -23,7 +23,7 @@
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
-                    
+
                     <div class="filter_menu">
                     <label>Choose Division:</label>
                         <select class="form-control" name = "leavetype">
@@ -83,7 +83,7 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-      
+
         </div>
         <!-- /#page-wrapper -->
         @endsection

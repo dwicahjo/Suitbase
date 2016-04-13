@@ -31,66 +31,18 @@
                                         <th>No. </th>
                                         <th>Training Title</th>
                                         <th>Status</th>
-                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="odd gradeX">
-                                        <td> 1</td>
-                                        <td><a href="trainingDetails"> Cisco training</a></td>
-                                        <td> Submitted</td>
-                                        <th><a href="editTraining" class="btn btn-default" role="button">Edit</a>
-                                            <a href="#" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
+                                    <?php $i=1; ?>
+                                    @foreach ($trainings as $training)
                                     <tr class="odd gradeA">
-                                        <td>3</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <th><a href="editTraining" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
+                                        <td>{{$i}}</td>
+                                        <td><a href="/detailTraining:{{$training->id}}">{{$training->title}}</a></td>
+                                        <td>{{$training->status}}</td>
                                     </tr>
-                                    <tr class="even gradeA">
-                                        <td>4</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>5</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>6</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>7</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>8</td>
-                                        <td>Firefox 1.5</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <th><a href="editOvertime" class="btn btn-default" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
-                                    </tr>
+                                    <?php $i++; ?>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

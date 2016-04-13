@@ -27,7 +27,7 @@
                         <div class="row">
                             <div class="col-lg-6 createFeedback">
                                     <div class="form-group">
-                                        <textarea name="description" class="form-control" rows="5"></textarea>
+                                        <textarea name="description" class="form-control" rows="5" required></textarea>
                                     </div>
 
                                     <div class="row">
@@ -49,7 +49,7 @@
                     <div class="myFeedback">
                     @foreach ($feedbacks as $feedback)
                         <div class="row">
-                            
+
                             <div class="col-lg-8">
                                     <div class="form-group" style="text-align: justify">
                                         {{$feedback->description}}

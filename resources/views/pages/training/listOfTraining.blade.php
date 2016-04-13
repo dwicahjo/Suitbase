@@ -56,62 +56,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>1</td>
-                                        <th><a href="trainingApproval">Alisha ZB</a></th>
-                                        <td> 2/2/2016</td>
-                                        <td>Creative</td>
-                                        <td>Cisco Training</td>
-                                        <td>Rejected</td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                        <td>Approved </td>
-                                    </tr>
+                                    <?php $i=1; ?>
+                                    @foreach ($trainings as $training)
                                     <tr class="odd gradeA">
-                                        <td>3</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
+                                        <td>{{$i}}</td>
+                                        <td>{{$training->username}}</td>
+                                        <td>{{$training->date_start}}</td>
+                                        <td>{{$training->division}}</td>
+                                        <td><a href="/detailTraining:{{$training->id}}">{{$training->title}}</a></td>
+                                        <td>{{$training->status}}</td>
                                     </tr>
-                                    <tr class="even gradeA">
-                                        <td>4</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>5</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <td class="center">7</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>6</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>7</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                        <td>Approved </td>
-                                    </tr>
+                                    <?php $i++; ?>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

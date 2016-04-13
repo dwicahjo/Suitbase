@@ -25,7 +25,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class = "content-form">
-                                    <form class = "form-horizontal" role="form">
+                                    <form class = "form-horizontal" role="form" method="POST" action="{{ url('/createTraining') }}">
                                         <div class="form-group">
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                             <label class="col-md-4 control-label">Training Title</label>
@@ -45,7 +45,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Price Estimate</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "price_estimate" type = "price_estimate" requiews>
+                                                <input class="form-control" name = "price_estimate" type = "price_estimate" required>
                                             </div>
                                         </div>
 
@@ -55,6 +55,8 @@
                                                 <textarea class ="form-control" name = "description" required> </textarea>
                                             </div>
                                         </div>
+                                        <input class="form-control" name = "employees_id" type = "hidden" value='{{Auth::user()->id}}'>
+                                        <input class="form-control" name = "status" type = "hidden" value='Submitted'>
                                         <div class="form-group">
                                             <div class="col-md-5 control-label"></div>
                                             <div class = "col-md-2 col-md-offset-3">

@@ -78,7 +78,7 @@
                                              <a href="listOfTraining" class="btn btn-default" role="button">Reject</a>
                                         </div>
                                         <div class="col-lg-3">
-                                            <a href="listOfTraining" class="btn btn-default" role="button">Approve</a>                                        
+                                            <a href="listOfTraining" class="btn btn-default" role="button">Approve</a>
                                         </div>
                                     </div>
 
