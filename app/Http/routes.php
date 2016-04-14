@@ -103,9 +103,9 @@ Route::get('/listOfProcurement', 'ProcurementsController@viewListof');
 
 Route::get('/procurementApproval:{id}', 'ProcurementsController@viewDetails');
 
-Route::get('/editProcurement', function () {
-    return view('pages.procurement.editProcurement');
-});
+Route::get('/editProcurement:{id}', 'ProcurementsController@viewEdit');
+
+Route::post('/updateProcurement', 'ProcurementsController@update');
 
 /* overtime */
 Route::get('/createOvertime', 'OvertimeController@index');

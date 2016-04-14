@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Models\Procurement;
+use Session;
 
 class ProcurementsController extends Controller
 {
@@ -69,8 +70,7 @@ class ProcurementsController extends Controller
 
         $procurement->title = $request->title;
         $procurement->estimate_price = $request->price_estimate;
-        $procurement->description = $request->description;
-        $procurement->status = $request->status;
+        $procurement->description = $request->reason;
         $procurement->employees_id = $request->user()->id;
 
         $procurement->save();

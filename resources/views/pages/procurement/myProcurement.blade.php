@@ -43,7 +43,7 @@
                                             <td class="center">{{ $i }}</td>
                                             <td><a href="/myProcurements:{{ $procurement->id }}">{{ $procurement->title }}</a></td>
                                             <td class="center">{{ $procurement->status}}</td>
-                                            <th><a href="editRemote" class="btn btn-default btn-edit" role="button">Edit</a>
+                                            <th><a href="/editProcurement:{{ $procurement->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
                                                 <a href="resetUser" class="btn btn-default btn-delete" role="button">Cancel</a></th>
                                         </tr>
                                         <?php $i++; ?>
