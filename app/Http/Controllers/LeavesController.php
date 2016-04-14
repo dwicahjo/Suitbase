@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Models\Leave;
 use App\Http\Controllers\Auth\AuthController;
 use DB;
+use Session;
 class LeavesController extends Controller
 {
     public function create(Request $request)
@@ -28,6 +29,7 @@ class LeavesController extends Controller
 
         $leave->save();
 
+        Session::flash('success', 'Leave request was submitted successfully');
         return back();
     }
 
@@ -90,7 +92,9 @@ class LeavesController extends Controller
 
         $leave->save();
 
-        $returnData = Leave::where('id', $request->id)->get();
-        return view('pages.leave.editleave', ['leaves' => $returnData]);
+        Session::flash('success', 'Leave request was edited successfully');
+        return back();
+        // $returnData = Leave::where('id', $request->id)->get();
+        // return view('pages.leave.editleave', ['leaves' => $returnData]);
     }
 }
