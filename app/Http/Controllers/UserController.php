@@ -7,6 +7,7 @@ use App\User;
 use App\Http\Requests;
 use App\Models\Department;
 use App\Models\Division;
+use DB;
 
 class UserController extends Controller
 {
@@ -49,6 +50,10 @@ class UserController extends Controller
 
 public function showListOfUser(){
     $users = User::orderBy('name','asc')->get();
+    $leaves = DB::table('users')
+        ->join('divisions','users.divisions_id','=','divisions.id')
+        ->select('users.*','divisions.name as division')
+        ->get();
     return view('pages.user.listOfUser',['users'=>$users]);
 }
 

@@ -150,10 +150,16 @@ Route::get('/listofAppraisal', function () {
 Route::get('/createAppraisal', function () {
     return view('pages.appraisal.createAppraisal');
 });
+Route::get('/fillAppraisal', function () {
+    return view('pages.appraisal.fillAppraisal');
+});
 /* ini form aslinya guys*/
 Route::get('/forms', function () {
     return view('pages.formsTemplate');
 });
 Route::get('/a', function () {
     return view('pages.panels-wells');
+});
+Route::get('/tb', function () {
+    return view('tables');
 });
