@@ -516,9 +516,8 @@ margin-left: -2%;
 }
 
 .btn-edit {
-    color:#f60;
-    background-color:white;
-    border-color:#f60;
+    color:white;
+    background-color:#337ab7;
 }
 .btn-delete {
     color:white;

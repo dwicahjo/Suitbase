@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <link href="/assets/plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Custom CSS -->
+    <link href="/assets/css/sb-admin-2.css" rel="stylesheet">
+    
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
