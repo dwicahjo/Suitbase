@@ -54,9 +54,7 @@ Route::get('/listOfLeave', 'LeavesController@viewListof');
 
 Route::get('/leaveApproval:{id}', 'LeavesController@viewDetails');
 
-Route::get('/editLeave', function () {
-    return view('pages.leave.editLeave');
-});
+Route::get('/editLeave:{id}', 'LeavesController@viewEdit');
 
 /* remote */
 Route::get('/createRemote', function () {
