@@ -1259,7 +1259,7 @@ a.bg-danger:focus,a.bg-danger:hover {
 				padding-bottom:9px;
 				margin:40px 0 20px;
 				text-align: center;
-				border-bottom:1px solid #eee
+				border-bottom:1px solid transparent;
 			}
 			ol,ul {
 				margin-top:0;
