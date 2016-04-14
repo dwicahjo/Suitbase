@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Models\Procurement;
+use Session;
 
 class ProcurementsController extends Controller
 {
@@ -55,5 +56,26 @@ class ProcurementsController extends Controller
         $procurements = Procurement::where('id', $id)->get();
 
         return view('pages.procurement.procurementDetails', ['procurements' => $procurements]);
+    }
+
+    public function viewEdit ($id) {
+        $procurements = Procurement::where('id', $id)->get();
+
+        return view('pages.procurement.editProcurement', ['procurements' => $procurements]);
+    }
+
+    public function update (Request $request)
+    {
+        $procurement = Procurement::where('id', $request->id)->get()->first();
+
+        $procurement->title = $request->title;
+        $procurement->estimate_price = $request->price_estimate;
+        $procurement->description = $request->reason;
+        $procurement->employees_id = $request->user()->id;
+
+        $procurement->save();
+
+        Session::flash('success', 'Procurement request was edited successfully');
+        return back();
     }
 }

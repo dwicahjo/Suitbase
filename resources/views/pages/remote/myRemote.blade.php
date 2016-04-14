@@ -42,8 +42,15 @@
                                             <td>{{ $remote->date_start }}</td>
                                             <td>{{ $remote->date_end }}</td>
                                             <td class="center"><a href="/myRemotes:{{ $remote->id }}">{{ $remote->status }}</a></td>
-                                            <th><a href="editRemote" class="btn btn-default btn-edit" role="button">Edit</a>
+                                            @if (strtotime('today') > strtotime($remote->date_start))
+                                                <th>
+                                                    <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
+                                                    <button type="submit" class="btn btn-default btn-delete" disabled="">Cancel</button>
+                                                </th>
+                                            @elseif (strtotime('today') < strtotime($remote->date_start))
+                                                <th><a href="/editRemote:{{ $remote->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
                                                 <a href="resetUser" class="btn btn-default btn-delete" role="button">Cancel</a></th>
+                                            @endif
                                         </tr>
                                         <?php $i++; ?>
                                     @endforeach

@@ -1,11 +1,11 @@
 @extends('layoutTemplate')
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
 </head>
 
-<body>
+<body> --}}
     @section('content')
 
     <div id="page-wrapper">
@@ -21,10 +21,10 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     </div>
-                    <!--<div class="panel-heading">
+{{--                     <div class="panel-heading">
                         DataTables Advanced Tables
-                    </div>-->
-                    <!-- /.panel-heading -->
+                    </div>
+                    <!-- /.panel-heading --> --}}
 
                     <div class="row">
                             <div class="col-lg-7 upper-menu-left">
@@ -38,7 +38,7 @@
                                                 <option>HR</option>
                                             </select>
                                         </div>
-                                        <div class="col-lg-6">
+                                        {{-- <div class="col-lg-6">
                                             <div class= "upper-menu">
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" placeholder="Search">
@@ -47,7 +47,7 @@
                                                     </span>
                                                 </div><!-- /input-group -->
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div> <!--row-->
                             </div>
                             <div class="col-lg-5">
@@ -81,7 +81,7 @@
                                     @foreach($users as $user)
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
-                                        <td>{{$user->divisions_id}}</td>
+                                        <td>{{$user->division}}</td>
                                         <td><a href="/userDetails:{{$user->id}}">{{$user->name}}</a></td>
                                         <th><a href="/editProfile" class="btn btn-default btn-edit" role="button">Edit</a>
                                             <a href="/resetUser" class="btn btn-default btn-delete" role="button">Reset</a></th>
@@ -106,21 +106,21 @@
         <!-- /#page-wrapper -->
         @endsection
 
-    <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+{{--     <!-- jQuery -->
+    <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
 
     <!-- DataTables JavaScript -->
-    <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-    <script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+    <script src="assets/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="assets/plugins/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="assets/js/sb-admin-2.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
@@ -134,3 +134,4 @@
 </body>
 
 </html>
+ --}}

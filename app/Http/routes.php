@@ -56,6 +56,8 @@ Route::get('/leaveApproval:{id}', 'LeavesController@viewDetails');
 
 Route::get('/editLeave:{id}', 'LeavesController@viewEdit');
 
+Route::post('/updateLeave', 'LeavesController@update');
+
 /* remote */
 Route::get('/createRemote', function () {
     return view('pages.remote.createRemote');
@@ -71,9 +73,9 @@ Route::get('/listOfRemote', 'RemotesController@viewListof');
 
 Route::get('/remoteApproval:{id}', 'RemotesController@viewDetails');
 
-Route::get('/editRemote', function () {
-    return view('pages.remote.editRemote');
-});
+Route::get('/editRemote:{id}', 'RemotesController@viewEdit');
+
+Route::post('/updateRemote', 'RemotesController@update');
 
 /* training */
 Route::get('/createTraining', 'TrainingController@index');
@@ -101,9 +103,9 @@ Route::get('/listOfProcurement', 'ProcurementsController@viewListof');
 
 Route::get('/procurementApproval:{id}', 'ProcurementsController@viewDetails');
 
-Route::get('/editProcurement', function () {
-    return view('pages.procurement.editProcurement');
-});
+Route::get('/editProcurement:{id}', 'ProcurementsController@viewEdit');
+
+Route::post('/updateProcurement', 'ProcurementsController@update');
 
 /* overtime */
 Route::get('/createOvertime', 'OvertimeController@index');
@@ -150,10 +152,16 @@ Route::get('/listofAppraisal', function () {
 Route::get('/createAppraisal', function () {
     return view('pages.appraisal.createAppraisal');
 });
+Route::get('/fillAppraisal', function () {
+    return view('pages.appraisal.fillAppraisal');
+});
 /* ini form aslinya guys*/
 Route::get('/forms', function () {
     return view('pages.formsTemplate');
 });
 Route::get('/a', function () {
     return view('pages.panels-wells');
+});
+Route::get('/tb', function () {
+    return view('tables');
 });
