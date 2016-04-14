@@ -94,7 +94,5 @@ class LeavesController extends Controller
 
         Session::flash('success', 'Leave request was edited successfully');
         return back();
-        // $returnData = Leave::where('id', $request->id)->get();
-        // return view('pages.leave.editleave', ['leaves' => $returnData]);
     }
 }

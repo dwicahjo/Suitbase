@@ -56,7 +56,7 @@ Route::get('/leaveApproval:{id}', 'LeavesController@viewDetails');
 
 Route::get('/editLeave:{id}', 'LeavesController@viewEdit');
 
-Route::get('/updateLeave', 'LeavesController@update');
+Route::post('/updateLeave', 'LeavesController@update');
 
 /* remote */
 Route::get('/createRemote', function () {
@@ -73,9 +73,9 @@ Route::get('/listOfRemote', 'RemotesController@viewListof');
 
 Route::get('/remoteApproval:{id}', 'RemotesController@viewDetails');
 
-Route::get('/editRemote', function () {
-    return view('pages.remote.editRemote');
-});
+Route::get('/editRemote:{id}', 'RemotesController@viewEdit');
+
+Route::post('/updateRemote', 'RemotesController@update');
 
 /* training */
 Route::get('/createTraining', 'TrainingController@index');

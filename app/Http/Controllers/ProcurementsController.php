@@ -56,4 +56,26 @@ class ProcurementsController extends Controller
 
         return view('pages.procurement.procurementDetails', ['procurements' => $procurements]);
     }
+
+    public function viewEdit ($id) {
+        $procurements = Procurement::where('id', $id)->get();
+
+        return view('pages.procurement.editProcurement', ['procurements' => $procurements]);
+    }
+
+    public function update (Request $request)
+    {
+        $procurement = Procurement::where('id', $request->id)->get()->first();
+
+        $procurement->title = $request->title;
+        $procurement->estimate_price = $request->price_estimate;
+        $procurement->description = $request->description;
+        $procurement->status = $request->status;
+        $procurement->employees_id = $request->user()->id;
+
+        $procurement->save();
+
+        Session::flash('success', 'Procurement request was edited successfully');
+        return back();
+    }
 }

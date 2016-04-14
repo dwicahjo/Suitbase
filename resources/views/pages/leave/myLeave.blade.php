@@ -47,8 +47,15 @@
                                             <td>{{ $leave->date_end }}</td>
                                             <td class="center">{{ $leave->type }}</td>
                                             <td class="center"><a href="/myLeaves:{{ $leave->id }}">{{ $leave->status }}</td>
-                                            <th><a href="/editLeave:{{ $leave->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
-                                                <a href="#" class="btn btn-default btn-delete" role="button">Cancel</a></th>
+                                            @if (strtotime('today') > strtotime($leave->date_start))
+                                                <th>
+                                                    <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
+                                                    <button type="submit" class="btn btn-default btn-delete" disabled="">Cancel</button>
+                                                </th>
+                                            @elseif (strtotime('today') < strtotime($leave->date_start))
+                                                <th><a href="/editLeave:{{ $leave->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
+                                                    <a href="#" class="btn btn-default btn-delete" role="button">Cancel</a></th>
+                                            @endif
                                         </tr>
                                         <?php $i++; ?>
                                     @endforeach

@@ -31,7 +31,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class = "content-form">
-                                    <form class = "form-horizontal" role="form" medthod = "post" action = "/updateLeave">
+                                    <form class = "form-horizontal" role="form" method = "post" action = "/updateLeave">
                                         <div class="form-group">
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                             <input class="form-control" name = "id" type = "hidden" value = "{{ $leaves[0]->id }}">
