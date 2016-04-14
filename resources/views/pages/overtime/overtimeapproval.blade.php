@@ -29,44 +29,49 @@
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Name</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Alisha ZB</label>
+                                        <label class="col-md-6">: {{$overtimes[0]->username}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Divison</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Creative</label>
+                                        <label class="col-md-6">: {{$overtimes[0]->division}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Date </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: 2/2/2016</label>
+                                        <label class="col-md-6">: {{$overtimes[0]->date}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
-                                    <label class="col-md-4 control-label">Time </label>
+                                    <label class="col-md-4 control-label">Time Start</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: 4/2/2016</label>
+                                        <label class="col-md-6">: {{$overtimes[0]->time_start}}</label>
+                                    </div>
+                                </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Time End</label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: {{$overtimes[0]->time_end}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Total Hours </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: 4/2/2016</label>
+                                        <label class="col-md-6">: {{$overtimes[0]->time_end - $overtimes[0]->time_start}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Status </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Approved by HR </label>
+                                        <label class="col-md-6">: {{$overtimes[0]->status}} </label>
                                     </div>
                                 </div>
                                 <div class = "form-group">
                                         <label class="col-md-4 control-label">Description </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Sequence Diagram:  terlampir sequence diagram parent use case melihat detil.
-                                        Sequence diagram melihat detil pengajuan kerja remote mengikuti sequence diagram parent-nya, yaitu melihat detil. Beberapa hal yang harus disesuaikan adalah </label>
+                                        <label class="col-md-6">: {{$overtimes[0]->description}} </label>
                                     </div>
                                 </div>
                             </form>
@@ -78,7 +83,7 @@
                                              <a href="listOfOvertime" class="btn btn-default" role="button">Reject</a>
                                         </div>
                                         <div class="col-lg-3">
-                                            <a href="listOfOvertime" class="btn btn-default" role="button">Approve</a>                                        
+                                            <a href="listOfOvertime" class="btn btn-default" role="button">Approve</a>
                                         </div>
                                     </div>
 

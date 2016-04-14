@@ -19,9 +19,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <!--<div class="panel-heading">
-                        DataTables Advanced Tables
-                    </div>-->
+                    <div class="panel-heading">
+                    </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                     <div class="row">
@@ -39,63 +38,33 @@
                                  <tbody style="text-align: center">
                                         <tr class="odd gradeX">
                                             <td>1</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
+                                            <td>Dwi Cahyo</td>
+                                            <td>Mobile Developper</td>
                                         </tr>
                                         <tr class="even gradeC">
-                                            <td>2</td>
-                                            <td>Internet Explorer 5.0</td>
-                                            <td>Win 95+</td>
+                                            <td>1</td>
+                                            <td>Reza Briyan</td>
+                                            <td>Back-End Engineer</td>
                                         </tr>
-                                        <tr class="odd gradeA">
-                                            <td>3</td>
-                                            <td>Internet Explorer 5.5</td>
-                                            <td>Win 95+</td>
+                                        <tr class="even gradeC">
+                                            <td>1</td>
+                                            <td>Gati Yusrina</td>
+                                            <td>Front-End Engineer</td>
                                         </tr>
-                                        <tr class="even gradeA">
-                                            <td>4</td>
-                                            <td>Internet Explorer 6</td>
-                                            <td>Win 98+</td>
+                                        <tr class="even gradeC">
+                                            <td>1</td>
+                                            <td>Devi F.A</td>
+                                            <td>Front-End Engineer</td>
                                         </tr>
-                                        <tr class="odd gradeA">
-                                            <td>5</td>
-                                            <td>Internet Explorer 7</td>
-                                            <td>Win XP SP2+</td>
-                                        </tr>
-                                        <tr class="even gradeA">
-                                            <td>6</td>
-                                            <td>AOL browser (AOL desktop)</td>
-                                            <td>Win XP</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>7</td>
-                                            <td>Firefox 1.0</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>8</td>
-                                            <td>Firefox 1.5</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>9</td>
-                                            <td>Firefox 2.0</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>10</td>
-                                            <td>Firefox 3.0</td>
-                                            <td>Win 2k+ / OSX.3+</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>11</td>
-                                            <td>Camino 1.0</td>
-                                            <td>OSX.2+</td>
+                                        <tr class="even gradeC">
+                                            <td>1</td>
+                                            <td>Alisha Z.B</td>
+                                            <td>System Analyst</td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                
-                            </div> 
+
+                            </div>
                         </div>
                         </div> <!--row-->
 
@@ -132,9 +101,9 @@
                                                 </label>
                                             </a>
                             </div>
-                            
+
                         </div>
-                    </div> 
+                    </div>
                         <!-- /.table-responsive -->
                     <!-- /.panel-body -->
                 </div>
@@ -143,7 +112,7 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-      
+
     </div>
         <!-- /#page-wrapper -->
         @endsection
@@ -164,7 +133,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="/assets/js/sb-admin-2.js"></script>
 
-    <!-- Page-Level Demo Scripts - Tables - Use for reference 
+    <!-- Page-Level Demo Scripts - Tables - Use for reference
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({

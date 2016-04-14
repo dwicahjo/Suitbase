@@ -14,6 +14,8 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
+                <div class="panel-heading">
+                    </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-5">
@@ -102,25 +104,25 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Curriculum Vitae</label>
-                                        <div class="col-md-6">nama file tapi kalo di klik jd muncul pdfnya / download-able</div>
+                                        <div class="col-md-6"><a href="{{Auth::user()->CV }}">CV</a></div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">KTP</label>
-                                        <div class="col-md-6">nama file tapi kalo di klik jd muncul pdfnya / download-able</div>
+                                        <div class="col-md-6"><a href="{{Auth::user()->KTP }}">KTP</a></div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Ijazah</label>
-                                        <div class="col-md-6">nama file tapi kalo di klik jd muncul pdfnya / download-able</div>
+                                        <div class="col-md-6"><a href="{{Auth::user()->ijazah }}">Ijazah</a></div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Kartu Keluarga</label>
-                                        <div class="col-md-6">nama file tapi kalo di klik jd muncul pdfnya / download-able</div>
+                                        <div class="col-md-6"><a href="{{ Auth::user()->KK }}">KK</a></div>
                                     </div>
                                 </div>
                                 <div class="row">

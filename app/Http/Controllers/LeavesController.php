@@ -33,42 +33,48 @@ class LeavesController extends Controller
 
     public function viewListof ()
     {
-     /*     $leaves = Leave::paginate(15);*/
-     $leaves = DB::table('leaves')
-     ->join('users', 'employees_id', '=', 'users.id')
-     ->join('divisions','users.divisions_id','=','divisions.id')
-     ->select('leaves.*','divisions.name as division', 'users.name as username')
-     ->orderBy('leaves.created_at','desc')
-     ->get();
-     return view('pages.leave.listOfLeave', ['leaves' => $leaves]);
+        /*     $leaves = Leave::paginate(15);*/
+        $leaves = DB::table('leaves')
+        ->join('users', 'employees_id', '=', 'users.id')
+        ->join('divisions','users.divisions_id','=','divisions.id')
+        ->select('leaves.*','divisions.name as division', 'users.name as username')
+        ->orderBy('leaves.created_at','desc')
+        ->get();
 
- }
+        return view('pages.leave.listOfLeave', ['leaves' => $leaves]);
+    }
 
- public function viewDetails ($id)
- {
-    $leaves = Leave::where('id', $id)->get();
-    $leaves = DB::table('leaves')
-    ->join('users', 'employees_id', '=', 'users.id')
-    ->join('divisions','users.divisions_id','=','divisions.id')
-    ->select('leaves.*','divisions.name as division', 'users.name as username')
-    ->where('leaves.id',$id)
-    ->get();
+     public function viewDetails ($id)
+     {
+        $leaves = Leave::where('id', $id)->get();
+        $leaves = DB::table('leaves')
+        ->join('users', 'employees_id', '=', 'users.id')
+        ->join('divisions','users.divisions_id','=','divisions.id')
+        ->select('leaves.*','divisions.name as division', 'users.name as username')
+        ->where('leaves.id',$id)
+        ->get();
 
-    return view('pages.leave.leaveapproval', ['leaves' => $leaves]);
-}
+        return view('pages.leave.leaveapproval', ['leaves' => $leaves]);
+    }
 
-public function viewMyList ()
-{
-    $user_id = \Auth::user()->id;
-    $leaves = Leave::where('employees_id', $user_id)->paginate(15);
+    public function viewMyList ()
+    {
+        $user_id = \Auth::user()->id;
+        $leaves = Leave::where('employees_id', $user_id)->paginate(15);
 
-    return view('pages.leave.myLeave', ['leaves' => $leaves]);
-}
+        return view('pages.leave.myLeave', ['leaves' => $leaves]);
+    }
 
-public function viewMyDetails ($id)
-{
-    $leaves = Leave::where('id', $id)->get();
+    public function viewMyDetails ($id)
+    {
+        $leaves = Leave::where('id', $id)->get();
 
-    return view('pages.leave.leaveDetails', ['leaves' => $leaves]);
-}
+        return view('pages.leave.leaveDetails', ['leaves' => $leaves]);
+    }
+
+    public function viewEdit ($id) {
+        $leaves = Leave::where('id', $id)->get();
+
+        return view('pages.leave.editleave', ['leaves' => $leaves]);
+    }
 }

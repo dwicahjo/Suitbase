@@ -19,9 +19,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <!--<div class="panel-heading">
-                        DataTables Advanced Tables
-                    </div>-->
+                    <div class="panel-heading">
+                    </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
@@ -43,8 +42,8 @@
                                             <td>{{ $remote->date_start }}</td>
                                             <td>{{ $remote->date_end }}</td>
                                             <td class="center"><a href="/myRemotes:{{ $remote->id }}">{{ $remote->status }}</a></td>
-                                            <th><a href="editRemote" class="btn btn-default" role="button">Edit</a>
-                                                <a href="resetUser" class="btn btn-default" role="button">Cancel</a></th>
+                                            <th><a href="editRemote" class="btn btn-default btn-edit" role="button">Edit</a>
+                                                <a href="resetUser" class="btn btn-default btn-delete" role="button">Cancel</a></th>
                                         </tr>
                                         <?php $i++; ?>
                                     @endforeach

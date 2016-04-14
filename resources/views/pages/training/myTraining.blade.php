@@ -19,9 +19,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <!--<div class="panel-heading">
-                        DataTables Advanced Tables
-                    </div>-->
+                    <div class="panel-heading">
+                    </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
@@ -31,6 +30,7 @@
                                         <th>No. </th>
                                         <th>Training Title</th>
                                         <th>Status</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -40,6 +40,8 @@
                                         <td>{{$i}}</td>
                                         <td><a href="/detailTraining:{{$training->id}}">{{$training->title}}</a></td>
                                         <td>{{$training->status}}</td>
+                                        <th><a href="editRemote" class="btn btn-default btn-edit" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default btn-delete" role="button">Cancel</a></th>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

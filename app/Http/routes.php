@@ -54,9 +54,7 @@ Route::get('/listOfLeave', 'LeavesController@viewListof');
 
 Route::get('/leaveApproval:{id}', 'LeavesController@viewDetails');
 
-Route::get('/editLeave', function () {
-    return view('pages.leave.editLeave');
-});
+Route::get('/editLeave:{id}', 'LeavesController@viewEdit');
 
 /* remote */
 Route::get('/createRemote', function () {
@@ -81,6 +79,7 @@ Route::get('/editRemote', function () {
 Route::get('/createTraining', 'TrainingController@index');
 Route::post('/createTraining', 'TrainingController@postTraining');
 Route::get('/detailTraining:{id}', 'TrainingController@showDetail');
+Route::get('/trainingApproval:{id}', 'TrainingController@showApproval');
 Route::get('/myTraining', 'TrainingController@showListOfMyTraining');
 Route::get('/listOfTraining', 'TrainingController@showListOfTraining');
 Route::get('/editTraining', function () {
@@ -107,21 +106,13 @@ Route::get('/editProcurement', function () {
 });
 
 /* overtime */
-Route::get('/createOvertime', function () {
-    return view('pages.overtime.createOvertime');
-});
-Route::get('/overtimeDetails', function () {
-    return view('pages.overtime.overtimeDetails');
-});
-Route::get('/overtimeApproval', function () {
-    return view('pages.overtime.overtimeApproval');
-});
-Route::get('/myOvertime', function () {
-    return view('pages.overtime.myOvertime');
-});
-Route::get('/listOfOvertime', function () {
-    return view('pages.overtime.listOfOvertime');
-});
+Route::get('/createOvertime', 'OvertimeController@index');
+Route::post('/createOvertime', 'OvertimeController@postOvertime');
+
+Route::get('/overtimeDetails:{id}', 'OvertimeController@showDetails');
+Route::get('/overtimeApproval:{id}', 'OvertimeController@showApproval');
+Route::get('/myOvertime', 'OvertimeController@showListOfMyOvertime');
+Route::get('/listOfOvertime', 'OvertimeController@showListOfOvertime');
 Route::get('/editOvertime', function () {
     return view('pages.overtime.editOvertime');
 });

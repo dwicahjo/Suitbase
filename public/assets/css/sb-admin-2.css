@@ -118,7 +118,8 @@ body {
 }
 
 .sidebar ul li a.active {
-    background-color: #eee;
+    background-color: #f60;
+    color: white;
 }
 
 .sidebar .arrow {
@@ -192,7 +193,7 @@ body {
 .btn-info.btn-outline:hover,
 .btn-warning.btn-outline:hover,
 .btn-danger.btn-outline:hover {
-    color: #fff;
+    color: red;
 }
 
 .chat {
@@ -403,11 +404,11 @@ table.dataTable thead .sorting:after {
 }
 
 .upper-menu-right{
-    margin-left: 73%;
-    margin-top: 1%;
+    margin-left: 50%;
+    margin-top: 18%;
 }
 .upper-menu-left{
-    margin-left:-4%;
+    margin-left:-3%;
     margin-top: 2%;
 }
 
@@ -497,4 +498,30 @@ margin-left: -2%;
 
 .button-right{
     float: right;
+}
+
+#sidebar-wrapper{
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.btn-edit {
+    color:#f60;
+    background-color:white;
+    border-color:#f60;
+}
+.btn-delete {
+    color:white;
+    background-color:red;
+
 }

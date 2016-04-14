@@ -19,12 +19,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
+                    <div class="panel-heading">
+                    </div>
                     <!--<div class="panel-heading">
                         DataTables Advanced Tables
                     </div>-->
                     <!-- /.panel-heading -->
                     <div class="filter_menu">
-                    <label>Choose Division:</label>
+                        <label>Choose Division:</label>
                         <select class="form-control" name = "leavetype">
                             <option>PR</option>
                             <option>Creative</option>
@@ -36,7 +38,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search for...">
                             <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
+                                <button class="btn btn-default" type="button">Go!</button>
                             </span>
                         </div><!-- /input-group -->
                     </div>
@@ -49,118 +51,33 @@
                                         <th>Date </th>
                                         <th>Employee Name </th>
                                         <th>Division</th>
-                                        <th>Time</th>
+                                        <th>Time Start</th>
+                                        <th>Time End</th>
                                         <th>Total Hours</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>1</td>
-                                        <td>2/2/2016</td>
-                                        <td><a href="overtimeApproval">Alisha ZB</td>
-                                        <td> Creative </td>
-                                        <td>18:00:00 - 20:00:00</td>
-                                        <td>2 hours </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
-                                    </tr>
+                                    <?php $i=1; ?>
+                                    @foreach ($overtimes as $overtime)
                                     <tr class="odd gradeA">
-                                        <td>3</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
+                                        <td>{{$i}}</td>
+                                        <td>{{$overtime->date}}</td>
+                                        <td><a href='/overtimeApproval:{{$overtime->id}}'>{{$overtime->username}}</td>
+                                        <td>{{$overtime->division}}</td>
+                                        <td>{{$overtime->time_start}}</td>
+                                        <td>{{$overtime->time_end}}</td>
+                                        <td>{{$overtime->time_end - $overtime->time_start}}</td>
+                                        <td>{{$overtime->status}}</td>
                                     </tr>
-                                    <tr class="even gradeA">
-                                        <td>4</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>5</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <td class="center">7</td>
-                                        <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>6</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>7</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>8</td>
-                                        <td>Firefox 1.5</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>9</td>
-                                        <td>Firefox 2.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>10</td>
-                                        <td>Firefox 3.0</td>
-                                        <td>Win 2k+ / OSX.3+</td>
-                                        <td class="center">1.9</td>
-                                        <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
+                                    <?php $i++; ?>
+                                    @endforeach
 
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>11</td>
-                                        <td>Camino 1.0</td>
-                                        <td>OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                        <td>3 hours </td>
-                                        <td>Approved </td>
-                                    </tr>
-                                    
                                 </tbody>
                             </table>
                         </div>
                         <!-- /.table-responsive -->
-                        
+
                     </div>
                     <!-- /.panel-body -->
                 </div>
@@ -169,10 +86,10 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-      
-        </div>
-        <!-- /#page-wrapper -->
-        @endsection
+
+    </div>
+    <!-- /#page-wrapper -->
+    @endsection
 
     <!-- jQuery -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
@@ -192,11 +109,11 @@
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
+        $(document).ready(function() {
+            $('#dataTables-example').DataTable({
                 responsive: true
+            });
         });
-    });
     </script>
 
 </body>

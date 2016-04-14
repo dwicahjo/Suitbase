@@ -51,7 +51,7 @@ class TrainingController extends Controller
     }
 
     public function showListOfMyTraining(){
-        $trainings = Training::orderBy('created_at','desc')->get();
+        $trainings = Training::where('employees_id',Auth::user()->id)->orderBy('created_at','desc')->get();
         return view('pages.training.myTraining',['trainings'=>$trainings]);
     }
 
@@ -60,4 +60,15 @@ class TrainingController extends Controller
         $training = Training::where('id',$id)->get();
         return view('pages.training.trainingDetails',['training'=>$training]);
     }
+
+    public function showApproval($id){
+    //$trainings = Training::orderBy('created_at','desc')->get();
+    $training = DB::table('trainings')
+            ->join('users', 'employees_id', '=', 'users.id')
+            ->join('divisions','users.divisions_id','=','divisions.id')
+            ->select('trainings.*','divisions.name as division', 'users.name as username')
+            ->where('trainings.id',$id)
+            ->get();
+    return view('pages.training.trainingApproval',['training'=>$training]);
+}
 }

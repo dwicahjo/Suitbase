@@ -31,13 +31,13 @@
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                             <label class="col-md-4 control-label">Start Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "startdate" type = "date" required>
+                                                <input class="form-control" name = "startdate" type = "date" value = "{{ $leaves[0]->date_start }}" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">End Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "enddate" type = "date" required>
+                                                <input class="form-control" name = "enddate" type = "date" value = "{{ $leaves[0]->date_end }}" required>
                                             </div> 
                                         </div>
                                         
@@ -56,7 +56,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Reason</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "reason" required> </textarea>
+                                                <textarea class ="form-control" name = "reason" required>{{ $leaves[0]->description }}</textarea>
                                             </div>
                                         </div>
                                     <div class="form-group">

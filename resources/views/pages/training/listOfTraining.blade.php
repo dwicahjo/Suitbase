@@ -19,9 +19,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <!--<div class="panel-heading">
-                        DataTables Advanced Tables
-                    </div>-->
+                    <div class="panel-heading">
+                    </div>
                     <!-- /.panel-heading -->
                     <div class="filter_menu">
                     <label>Choose Division:</label>
@@ -63,7 +62,7 @@
                                         <td>{{$training->username}}</td>
                                         <td>{{$training->date}}</td>
                                         <td>{{$training->division}}</td>
-                                        <td><a href="/detailTraining:{{$training->id}}">{{$training->title}}</a></td>
+                                        <td><a href="/trainingApproval:{{$training->id}}">{{$training->title}}</a></td>
                                         <td>{{$training->status}}</td>
                                     </tr>
                                     <?php $i++; ?>
