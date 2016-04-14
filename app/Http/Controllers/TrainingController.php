@@ -7,6 +7,7 @@ use Auth;
 use App\Http\Requests;
 use App\Models\Training;
 use DB;
+use Session;
 
 class TrainingController extends Controller
 {
@@ -17,12 +18,10 @@ class TrainingController extends Controller
     }
 
     public function postTraining(Request $request){
-/*        $this->validate ($request, [
-            'title' => 'required',
-            'date' => 'required',
-            'price_estimate' => 'required',
-            'description' => 'required,'
-        ]);*/
+        $this->validate ($request, [
+            'date' => 'required|date|after:today'
+            ]);
+
         return $this->create($request->all());
     }
 
@@ -36,6 +35,8 @@ class TrainingController extends Controller
             'estimate_price' => $data['price_estimate'],
             'status' => $data['status'],
         ]);
+
+        Session::flash('success', 'Training request was submitted successfully');
         return $this->index();
     }
 
@@ -62,13 +63,35 @@ class TrainingController extends Controller
     }
 
     public function showApproval($id){
-    //$trainings = Training::orderBy('created_at','desc')->get();
-    $training = DB::table('trainings')
-            ->join('users', 'employees_id', '=', 'users.id')
-            ->join('divisions','users.divisions_id','=','divisions.id')
-            ->select('trainings.*','divisions.name as division', 'users.name as username')
-            ->where('trainings.id',$id)
-            ->get();
-    return view('pages.training.trainingApproval',['training'=>$training]);
-}
+        //$trainings = Training::orderBy('created_at','desc')->get();
+        $training = DB::table('trainings')
+                ->join('users', 'employees_id', '=', 'users.id')
+                ->join('divisions','users.divisions_id','=','divisions.id')
+                ->select('trainings.*','divisions.name as division', 'users.name as username')
+                ->where('trainings.id',$id)
+                ->get();
+        return view('pages.training.trainingApproval',['training'=>$training]);
+    }
+
+    public function viewEdit ($id) {
+        $trainings = Training::where('id', $id)->get();
+
+        return view('pages.training.editTraining', ['trainings' => $trainings]);
+    }
+
+    public function update (Request $request)
+    {
+        $training = Training::where('id', $request->id)->get()->first();
+
+        $training->title = $request->title;
+        $training->date = $request->date;
+        $training->estimate_price = $request->price_estimate;
+        $training->description = $request->reason;
+        $training->employees_id = $request->user()->id;
+
+        $training->save();
+
+        Session::flash('success', 'Training request was edited successfully');
+        return back();
+    }
 }

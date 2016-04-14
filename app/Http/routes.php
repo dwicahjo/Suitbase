@@ -79,14 +79,20 @@ Route::post('/updateRemote', 'RemotesController@update');
 
 /* training */
 Route::get('/createTraining', 'TrainingController@index');
+
 Route::post('/createTraining', 'TrainingController@postTraining');
+
 Route::get('/detailTraining:{id}', 'TrainingController@showDetail');
+
 Route::get('/trainingApproval:{id}', 'TrainingController@showApproval');
+
 Route::get('/myTraining', 'TrainingController@showListOfMyTraining');
+
 Route::get('/listOfTraining', 'TrainingController@showListOfTraining');
-Route::get('/editTraining', function () {
-    return view('pages.training.editTraining');
-});
+
+Route::get('/editTraining:{id}', 'TrainingController@viewEdit');
+
+Route::post('/updateTraining', 'TrainingController@update');
 
 /* procurement */
 Route::get('/createProcurement', function () {

@@ -16,6 +16,20 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        @if (Session::has('success'))
+            <div class = "alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -35,7 +49,6 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                             <label class="col-md-4 control-label">Date</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "date" type = "date" required>
