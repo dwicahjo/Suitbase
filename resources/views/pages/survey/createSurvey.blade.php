@@ -140,8 +140,7 @@
                                     </div>
                                     </form>
                                 </div>
-                                <button type="submit" class="btn btn-default">Add more questions</button>
-                                <div class = "button-right">
+                                    <button class="add-question add_field_button btn btn-default">Add Question</button>                                <div class = "button-right">
                                     <button type="submit" class="btn btn-default">Close</button>
                                     <button type="submit" class="btn btn-default">Save</button>
                                     <button type="submit" class="btn btn-default">Submit</button>
@@ -164,7 +163,7 @@
     @endsection
     <!-- jQuery -->
     <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
-
+    <script src="/js/createSurvey.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 
