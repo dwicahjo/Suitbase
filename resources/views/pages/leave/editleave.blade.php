@@ -26,9 +26,10 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class = "content-form">
-                                    <form class = "form-horizontal" role="form">
+                                    <form class = "form-horizontal" role="form" medthod = "post" action = "/updateLeave">
                                         <div class="form-group">
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                            <input class="form-control" name = "id" type = "hidden" value = "{{ $leaves[0]->id }}">
                                             <label class="col-md-4 control-label">Start Date</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "startdate" type = "date" value = "{{ $leaves[0]->date_start }}" required>
@@ -45,10 +46,27 @@
                                             <label class="col-md-4 control-label">Leave Type</label>
                                             <div class = "col-md-6">
                                                 <select class="form-control" name = "leavetype" required>
-                                                    <option>Sick</option>
-                                                    <option>Maternal</option>
-                                                    <option>Marriage</option>
-                                                    <option>Unpaid</option>
+                                                    @if ($leaves[0]->type == 'Sick')
+                                                        <option selected>Sick</option>
+                                                        <option>Maternal</option>
+                                                        <option>Marriage</option>
+                                                        <option>Unpaid</option>
+                                                    @elseif ($leaves[0]->type == 'Maternal')
+                                                        <option>Sick</option>
+                                                        <option selected>Maternal</option>
+                                                        <option>Marriage</option>
+                                                        <option>Unpaid</option>
+                                                    @elseif ($leaves[0]->type == 'Marriage')
+                                                        <option>Sick</option>
+                                                        <option>Maternal</option>
+                                                        <option selected>Marriage</option>
+                                                        <option>Unpaid</option>
+                                                    @elseif ($leaves[0]->type == 'Unpaid')
+                                                        <option>Sick</option>
+                                                        <option>Maternal</option>
+                                                        <option>Marriage</option>
+                                                        <option selected>Unpaid</option>
+                                                    @endif
                                                 </select>
                                             </div>
                                         </div>
