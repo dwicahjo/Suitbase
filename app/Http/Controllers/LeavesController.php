@@ -14,7 +14,7 @@ class LeavesController extends Controller
     {
         $this->validate ($request, [
             'startdate' => 'required|date|after:today',
-            'enddate' => 'required|date|after:startdate'
+            'enddate' => 'required|date|after:startdate+1'
             ]);
 
         $leave = new Leave;
@@ -76,5 +76,21 @@ class LeavesController extends Controller
         $leaves = Leave::where('id', $id)->get();
 
         return view('pages.leave.editleave', ['leaves' => $leaves]);
+    }
+
+    public function update (Request $request)
+    {
+        $leave = Leave::where('id', $request->id)->get()->first();
+
+        $leave->date_start = $request->startdate;
+        $leave->date_end = $request->enddate;
+        $leave->type = $request->leavetype;
+        $leave->description = $request->reason;
+        $leave->employees_id = $request->user()->id;
+
+        $leave->save();
+
+        $returnData = Leave::where('id', $request->id)->get();
+        return view('pages.leave.editleave', ['leaves' => $returnData]);
     }
 }
