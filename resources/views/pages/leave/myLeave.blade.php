@@ -19,6 +19,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
+                    <div class="panel-heading">
+                    </div>
                     <!--<div class="panel-heading">
                         DataTables Advanced Tables
                     </div>-->
@@ -45,8 +47,8 @@
                                             <td>{{ $leave->date_end }}</td>
                                             <td class="center">{{ $leave->type }}</td>
                                             <td class="center"><a href="/myLeaves:{{ $leave->id }}">{{ $leave->status }}</td>
-                                            <th><a href="editLeave" class="btn btn-default" role="button">Edit</a>
-                                                <a href="#" class="btn btn-default" role="button">Cancel</a></th>
+                                            <th><a href="editLeave" class="btn btn-default btn-edit" role="button">Edit</a>
+                                                <a href="#" class="btn btn-default btn-delete" role="button">Cancel</a></th>
                                         </tr>
                                         <?php $i++; ?>
                                     @endforeach
