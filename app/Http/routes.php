@@ -11,12 +11,9 @@
 */
 Route::auth();
 Route::get('/home', 'HomeController@index');
+/*Route::get('/', 'HomeController@index');*/
 Route::get('/', function () {
-    if (Auth::user()) {
-        return view('layoutTemplate'); //Page which you want to show for loged user.
-    } else {
-        return view('auth.login'); //You can redirect from here, if user is not logged in
-    }
+    return redirect('home');
 });
 Route::get('/template', function () {
     return view('layoutTemplate');
@@ -79,14 +76,20 @@ Route::post('/updateRemote', 'RemotesController@update');
 
 /* training */
 Route::get('/createTraining', 'TrainingController@index');
+
 Route::post('/createTraining', 'TrainingController@postTraining');
+
 Route::get('/detailTraining:{id}', 'TrainingController@showDetail');
+
 Route::get('/trainingApproval:{id}', 'TrainingController@showApproval');
+
 Route::get('/myTraining', 'TrainingController@showListOfMyTraining');
+
 Route::get('/listOfTraining', 'TrainingController@showListOfTraining');
-Route::get('/editTraining', function () {
-    return view('pages.training.editTraining');
-});
+
+Route::get('/editTraining:{id}', 'TrainingController@viewEdit');
+
+Route::post('/updateTraining', 'TrainingController@update');
 
 /* procurement */
 Route::get('/createProcurement', function () {

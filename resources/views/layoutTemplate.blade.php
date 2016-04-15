@@ -94,7 +94,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="/"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                            <a href="home"><i class="fa fa-dashboard fa-fw"></i> Home</a>
                         </li>
                         <li>
                             <a href="myProfile"><i class="fa fa-user fa-fw"></i>My Profile</a>
