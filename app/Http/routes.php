@@ -163,7 +163,7 @@ Route::get('/forms', function () {
     return view('pages.formsTemplate');
 });
 Route::get('/a', function () {
-    return view('pages.panels-wells');
+    return view('pages.coba');
 });
 Route::get('/tb', function () {
     return view('tables');
