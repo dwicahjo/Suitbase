@@ -46,11 +46,12 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">Question 1</label>
+                                            <label class="col-md-4 control-label">Question </label>
                                             <div class = "col-md-6">
                                                <input class= "form-control" type="text" name="mytext[]">
                                             </div>
                                         </div>
+                                        
                                         <!--<div class="form-group">
                                             <label class="col-md-4 control-label">Question 2</label>
                                             <div class = "col-md-6">
@@ -71,13 +72,14 @@
                                         -->
                                         
                                     </form>
-                                    <button class="add-question add_field_button btn btn-default">Add Question</button>
+                                    <button class="add-question add_field_button btn btn-default">Add Question</button> 
                                     <div class="form-group">
                                             <div class="col-md-5 control-label"></div>
                                             <div class = "col-md-2 col-md-offset-3">
                                                 <button type="submit" class="save btn btn-default">Save</button>
                                             </div>
-                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                             

@@ -48,7 +48,7 @@ class LeavesController extends Controller
 
      public function viewDetails ($id)
      {
-        $leaves = Leave::where('id', $id)->get();
+        // $leaves = Leave::where('id', $id)->get();
         $leaves = DB::table('leaves')
         ->join('users', 'employees_id', '=', 'users.id')
         ->join('divisions','users.divisions_id','=','divisions.id')
