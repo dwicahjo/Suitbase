@@ -68,8 +68,8 @@ class UserController extends Controller
 }
 
 public function showListOfUser(){
-    $users = User::orderBy('name','asc')->get();
-    $leaves = DB::table('users')
+    /*$users = User::orderBy('name','asc')->get();*/
+    $users = DB::table('users')
         ->join('divisions','users.divisions_id','=','divisions.id')
         ->select('users.*','divisions.name as division')
         ->get();

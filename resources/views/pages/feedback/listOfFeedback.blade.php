@@ -28,6 +28,7 @@
                                     <tr>
                                         <th>No. </th>
                                         <th>Timestamp </th>
+                                        <th>Employee Name </th>
                                         <th>Division</th>
                                         <th>Description</th>
                                     </tr>
@@ -38,7 +39,13 @@
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
                                         <td>{{$feedback->created_at}}</td>
-                                        <td>{{$feedback->name}}</td>
+                                    <!--kalo ngga anon-->
+                                    <?php if($feedback->is_anonim==0){ ?>
+                                        <td>{{$feedback->username}}</td>                                            
+                                    <?php }else{ ?>
+                                        <td>Anonymous</td>
+                                    <?php } ?>
+                                        <td>{{$feedback->division}}</td>
                                         <td><a href="/detailFeedback:{{$feedback->id}}">{{str_limit($feedback->description, $limit = 20, $end = '...')}}</a></td>
                                     </tr>
                                     <?php $i++; ?>

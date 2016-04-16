@@ -21,10 +21,6 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     </div>
-{{--                     <div class="panel-heading">
-                        DataTables Advanced Tables
-                    </div>
-                    <!-- /.panel-heading --> --}}
 
                     <div class="row">
                             <div class="col-lg-7 upper-menu-left">
@@ -38,16 +34,7 @@
                                                 <option>HR</option>
                                             </select>
                                         </div>
-                                        {{-- <div class="col-lg-6">
-                                            <div class= "upper-menu">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" placeholder="Search">
-                                                    <span class="input-group-btn">
-                                                    <button class="btn btn-default" type="button">Go!</button>
-                                                    </span>
-                                                </div><!-- /input-group -->
-                                            </div>
-                                        </div> --}}
+                 
                                     </div> <!--row-->
                             </div>
                             <div class="col-lg-5">
