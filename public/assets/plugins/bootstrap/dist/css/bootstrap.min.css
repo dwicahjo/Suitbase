@@ -2193,6 +2193,9 @@ col-input{
 .table-hover>tbody>tr.danger:hover>td,.table-hover>tbody>tr.danger:hover>th,.table-hover>tbody>tr:hover>.danger,.table-hover>tbody>tr>td.danger:hover,.table-hover>tbody>tr>th.danger:hover {
 				background-color:#ebcccc
 			}
+			.table-responsives {
+				min-height:.01%;
+						}
 			.table-responsive {
 				min-height:.01%;
 				overflow-x:auto
