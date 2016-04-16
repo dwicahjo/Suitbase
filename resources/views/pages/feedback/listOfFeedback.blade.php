@@ -21,16 +21,6 @@
                 <div class="panel panel-default">
                     <div class="row">
                     <div class="col-lg-12">
-                    <div class = "search_menu search-feedback">
-                        <div class="input-group">
-                            <input type="text" class="form-control">
-                            <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
-                            </span>
-                        </div><!-- /input-group -->
-                    </div>
-                    </div>
-                    </div>
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">

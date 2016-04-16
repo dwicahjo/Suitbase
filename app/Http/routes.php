@@ -112,15 +112,21 @@ Route::post('/updateProcurement', 'ProcurementsController@update');
 
 /* overtime */
 Route::get('/createOvertime', 'OvertimeController@index');
+
 Route::post('/createOvertime', 'OvertimeController@postOvertime');
 
 Route::get('/overtimeDetails:{id}', 'OvertimeController@showDetails');
+
 Route::get('/overtimeApproval:{id}', 'OvertimeController@showApproval');
+
 Route::get('/myOvertime', 'OvertimeController@showListOfMyOvertime');
+
 Route::get('/listOfOvertime', 'OvertimeController@showListOfOvertime');
-Route::get('/editOvertime', function () {
-    return view('pages.overtime.editOvertime');
-});
+
+Route::get('/editOvertime:{id}', 'OvertimeController@viewEdit');
+
+Route::post('/updateOvertime', 'OvertimeController@update');
+
 /* survey */
 Route::get('/createSurvey', function () {
     return view('pages.survey.createSurvey');
