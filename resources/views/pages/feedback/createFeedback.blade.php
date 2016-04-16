@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Create Feedback</h1>
+                <h1 class="page-header">CREATE FEEDBACK</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -25,8 +25,7 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/createFeedback') }}">
                         {!! csrf_field() !!}
                         <div class="row">
-                            <div class="col-lg-12"></div>
-                            <div class="col-lg-6">
+                            <div class="col-md-6 col-md-offset-3">
                                     <div class="form-group">
                                         <textarea name="description" class="form-control" rows="5" required></textarea>
                                     </div>
@@ -40,12 +39,10 @@
                                         </div>
                                            <input type="hidden" name="employees_id" value="{{ Auth::user()->id }}">
                                         <div class="col-lg-2 submit">
-                                            <button type="submit" class="btn btn-default">Submit</button>
+                                            <button type="submit" class="btn btn-primary btn-default">Submit</button>
                                         </div>
                                     </div>
                             </div>
-                        
-
                         </div>
                     </form>
                     <div class="myFeedback">

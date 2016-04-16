@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">My Overtime Requests</h1>
+                <h1 class="page-header">MY OVERTIME REQUESTS</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -49,8 +49,8 @@
                                         <td>{{$overtime->time_end}}</td>
                                         <td>{{$overtime->time_end - $overtime->time_start}}</td>
                                         <td>{{$overtime->status}}</td>
-                                        <th><a href="/editOvertime:{{ $overtime->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default btn-delete" role="button">Cancel</a></th>
+                                        <th><a href="/editOvertime:{{ $overtime->id }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                            <a href="resetUser" class="btn btn-default btn-danger" role="button">Cancel</a></th>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

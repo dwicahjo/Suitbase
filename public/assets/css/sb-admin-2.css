@@ -508,8 +508,3 @@ table.dataTable thead .sorting:after {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-
-.btn-edit {
-    color:white;
-    background-color:#337ab7;
-}
