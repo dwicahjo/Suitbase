@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Models\Overtime;
 use Auth;
 use DB;
+use Session;
+
 class OvertimeController extends Controller
 {
     public function index()
@@ -25,6 +27,14 @@ class OvertimeController extends Controller
 
     protected function create(array $data)
     {
+        // $startHour = substr($data['time_start'], 0, 2);
+        // $startMin = substr($data['time_start'], 3, 2);
+        // $endHour = substr($data['time_end'], 0, 2);
+        // $endMin = substr($data['time_end'], 3, 2);
+
+        // $diffHour = $endHour - $startHour;
+        // $diffMin = $endMin - $startMin;
+
         Overtime::create([
             'description' => $data['description'],
             'time_end' => $data['endtime'],
@@ -33,11 +43,12 @@ class OvertimeController extends Controller
             'status' => $data['status'],
             'employees_id' => $data['employees_id'],
             ]);
+
+        Session::flash('success', 'Overtime log was submitted successfully');
         return $this->index();
     }
 
     public function showListOfOvertime(){
-        //$trainings = Training::orderBy('created_at','desc')->get();
         $overtimes = DB::table('overtimes')
         ->join('users', 'employees_id', '=', 'users.id')
         ->join('divisions','users.divisions_id','=','divisions.id')
@@ -58,7 +69,6 @@ class OvertimeController extends Controller
     }
 
     public function showApproval($id){
-        //$trainings = Training::orderBy('created_at','desc')->get();
         $overtimes = DB::table('overtimes')
         ->join('users', 'employees_id', '=', 'users.id')
         ->join('divisions','users.divisions_id','=','divisions.id')
@@ -66,5 +76,31 @@ class OvertimeController extends Controller
         ->where('overtimes.id',$id)
         ->get();
         return view('pages.overtime.overtimeapproval',['overtimes'=>$overtimes]);
+    }
+
+    public function viewEdit ($id) {
+        $overtimes = Overtime::where('id', $id)->get();
+
+        return view('pages.overtime.editovertime', ['overtimes' => $overtimes]);
+    }
+
+    public function update (Request $request)
+    {
+        $this->validate ($request, [
+            'date' => 'required|date|before:tomorrow                '
+            ]);
+
+        $overtime = Overtime::where('id', $request->id)->get()->first();
+
+        $overtime->description = $request->description;
+        $overtime->time_start = $request->starttime;
+        $overtime->time_end = $request->endtime;
+        $overtime->date = $request->date;
+        $overtime->description = $request->reason;
+
+        $overtime->save();
+
+        Session::flash('success', 'Overtime log was edited successfully');
+        return back();
     }
 }
