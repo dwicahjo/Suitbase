@@ -459,12 +459,6 @@ table.dataTable thead .sorting:after {
     margin-bottom:20px;
 }
 
-.anon{
-margin-left: -1%;
-}
-.submit{
-margin-left: -2%;
-}
 .search-feedback{
     margin-right: -4%
 }

@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">List of Training Requests</h1>
+                <h1 class="page-header">LIST OF TRAINING REQUESTS</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -20,16 +20,6 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                    </div>
-                    <!-- /.panel-heading -->
-                    <div class="filter_menu">
-                    <label>Choose Division:</label>
-                        <select class="form-control" name = "leavetype">
-                            <option>PR</option>
-                            <option>Creative</option>
-                            <option>IT</option>
-                            <option>HR</option>
-                        </select>
                     </div>
 
                     <div class="panel-body">
