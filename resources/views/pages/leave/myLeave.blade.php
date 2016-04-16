@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">My Leave Requests</h1>
+                <h1 class="page-header">MY LEAVE REQUESTS</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -50,11 +50,11 @@
                                             @if (strtotime('today') > strtotime($leave->date_start))
                                                 <th>
                                                     <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
-                                                    <button type="submit" class="btn btn-default btn-delete" disabled="">Cancel</button>
+                                                    <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                                 </th>
                                             @elseif (strtotime('today') < strtotime($leave->date_start))
                                                 <th><a href="/editLeave:{{ $leave->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
-                                                    <a href="#" class="btn btn-default btn-delete" role="button">Cancel</a></th>
+                                                    <a href="#" class="btn btn-default btn-danger" role="button">Cancel</a></th>
                                             @endif
                                         </tr>
                                         <?php $i++; ?>

@@ -12,7 +12,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Edit Leave Request</h1>
+                <h1 class="page-header">EDIT LEAVE REQUEST</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -82,10 +82,11 @@
                                                 <textarea class ="form-control" name = "reason" required>{{ $leaves[0]->description }}</textarea>
                                             </div>
                                         </div>
-                                    <div class="form-group">
-                                            <div class="col-md-5 control-label"></div>
-                                            <div class = "col-md-2 col-md-offset-3">
-                                                <button type="submit" class="btn btn-default">Submit</button>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-md-offset-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    Edit
+                                                </button>
                                             </div>
                                         </div>
                                     </form>

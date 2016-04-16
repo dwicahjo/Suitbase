@@ -6,7 +6,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">My Profile</h1>
+            <h1 class="page-header">MY PROFILE</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -15,7 +15,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    </div>
+                </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-5">
@@ -27,7 +27,6 @@
                         </div> <!--col-lg-6-->
 
                         <div class="col-lg-7">
-                            <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
@@ -69,7 +68,7 @@
                                         </tr>
                                         <tr>
                                             <td>KTP Address</td>
-                                            <td>{{ Auth::user()->address }}</td>
+                                            <td>{{ Auth::user()->ktp_address }}</td>
                                         </tr>
                                         <tr>
                                             <td>Current Address</td>
@@ -79,22 +78,21 @@
                                             <td>Phone Number</td>
                                             <td>{{ Auth::user()->phone }}</td>
                                         </tr>
-                                <!-- msh bingung ada atau ngga -->
                                         <tr>
-                                        <td>Curriculum Vitae</td>
-                                        <td><a href="{{Auth::user()->CV }}">CV</a></td>
+                                            <td>Curriculum Vitae</td>
+                                            <td><a href="{{Auth::user()->CV }}">CV</a></td>
                                         </tr>
                                         <tr>
-                                        <td>KTP Number</td>
-                                        <td>{{ Auth::user()->ktp_id }}</td>
+                                            <td>KTP</td>
+                                            <td><a href="{{ Auth::user()->ktp_id }}">KTP</td>
                                         </tr>
                                         <tr>
-                                        <td>Ijazah</td>
-                                        <td><a href="{{Auth::user()->ijazah }}">Ijazah</a></td>
+                                            <td>Ijazah</td>
+                                            <td><a href="{{Auth::user()->ijazah }}">Ijazah</a></td>
                                         </tr>
                                         <tr>
-                                        <td>Kartu Keluarga</td>
-                                        <td><a href="{{ Auth::user()->KK }}">KK</a></td>
+                                            <td>Kartu Keluarga</td>
+                                            <td><a href="{{ Auth::user()->KK }}">KK</a></td>
                                         </tr>
                                         <tr>
                                             <td></td>
@@ -109,20 +107,16 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> <!--form group-->
-                            
-                                        
-                                     
-                                   
                             </div>
                             <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
                         </div> <!--col-lg-7-->
-                    </div>
-                </div>
+                    </div> <!--row-->
+                </div><!-- /.panel-body -->
+
             </div>
-            <!-- /#wrapper -->
+        </div>
+    </div>
+</div> <!-- /#wrapper -->
              @endsection
             <!-- jQuery -->
             <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
