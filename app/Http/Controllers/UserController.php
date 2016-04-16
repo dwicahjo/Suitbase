@@ -25,7 +25,7 @@ class UserController extends Controller
     protected function createAccount(array $data)
     {
 
-     User::create([
+     $user= User::create([
         'name' => $data['name'],
         'email' => $data['email'],
         'password' => bcrypt($data['password']),
@@ -45,6 +45,25 @@ class UserController extends Controller
         'departments_id' => $data['departments_id'],
         'divisions_id' => $data['divisions_id'],
         ]);
+     
+     // if($data['CV']) {}
+     $fileCV = $data['CV']->getClientOriginalName();
+     $fileKTP = $data['KTP']->getClientOriginalName();
+     $fileIjazah = $data['ijazah']->getClientOriginalName();
+     $fileKK = $data['KK']->getClientOriginalName();
+     
+     $data['CV']->move(base_path().'/public/upload/', $fileCV);
+     $data['KTP']->move(base_path().'/public/upload/', $fileKTP);
+     $data['ijazah']->move(base_path().'/public/upload/', $fileIjazah);
+     $data['KK']->move(base_path().'/public/upload/', $fileKK);
+
+     $user->CV = $fileCV;
+     $user->KTP = $fileKTP;
+     $user->ijazah = $fileIjazah;
+     $user->KK = $fileKK;
+
+     $user->save();
+
      return $this->index();
 }
 

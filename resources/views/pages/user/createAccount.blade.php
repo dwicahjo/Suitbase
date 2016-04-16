@@ -24,7 +24,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12">
-                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/createAccount') }}">
+                                <form class="form-horizontal" role="form" enctype="multipart/form-data" method="POST" action="{{ url('/createAccount') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
