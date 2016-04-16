@@ -27,104 +27,81 @@
                         </div> <!--col-lg-6-->
 
                         <div class="col-lg-7">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Email</label>
-                                        <div class="col-md-4">{{ Auth::user()->email }}</div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Role</label>
-                                        <div class="col-md-6">{{ Auth::user()->divisions_id}}</div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Full Name</label>
-                                        <div class="col-md-6">{{ Auth::user()->name }}</div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Birth Place</label>
-                                        <div class="col-md-6">{{ Auth::user()->birth_place }}</div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Birth Date</label>
-                                        <div class="col-md-6">{{ Auth::user()->birth_date }}</div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Gender</label>
-                                        <div class="col-md-6">{{ Auth::user()->gender }}</div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Religion</label>
-                                        <div class="col-md-6">{{ Auth::user()->religion }}</div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">KTP Number</label>
-                                        <div class="col-md-6">{{ Auth::user()->ktp_id }}</div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">NPWP Number</label>
-                                        <div class="col-md-6">{{ Auth::user()->NPWP }}</div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">KTP Address</label>
-                                        <div class="col-md-6">{{ Auth::user()->address }}</div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Current Address</label>
-                                        <div class="col-md-6">{{ Auth::user()->address }}</div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Phone Number</label>
-                                        <div class="col-md-6">{{ Auth::user()->phone }}</div>
-                                    </div>
-                                </div>
+                            <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Email</td>
+                                            <td>{{ Auth::user()->email }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Role</td>
+                                            <td>{{ Auth::user()->divisions_id}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Full Name</td>
+                                            <td>{{ Auth::user()->name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Birth Place</td>
+                                            <td>{{ Auth::user()->birth_place }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Birth Date</td>
+                                            <td>{{ Auth::user()->birth_date }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Gender</td>
+                                            <td>{{ Auth::user()->gender }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Religion</td>
+                                            <td>{{ Auth::user()->religion }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>KTP Number</td>
+                                            <td>{{ Auth::user()->ktp_id }}</td>
+                                        </tr>
+                                        <tr>                                    
+                                            <td>NPWP Number</td>
+                                            <td>{{ Auth::user()->NPWP }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>KTP Address</td>
+                                            <td>{{ Auth::user()->address }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Current Address</td>
+                                            <td>{{ Auth::user()->address }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phone Number</td>
+                                            <td>{{ Auth::user()->phone }}</td>
+                                        </tr>
                                 <!-- msh bingung ada atau ngga -->
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Curriculum Vitae</label>
-                                        <div class="col-md-6"><a href="{{Auth::user()->CV }}">CV</a></div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">KTP</label>
-                                        <div class="col-md-6"><a href="{{Auth::user()->KTP }}">KTP</a></div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Ijazah</label>
-                                        <div class="col-md-6"><a href="{{Auth::user()->ijazah }}">Ijazah</a></div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Kartu Keluarga</label>
-                                        <div class="col-md-6"><a href="{{ Auth::user()->KK }}">KK</a></div>
-                                    </div>
-                                </div>
+                                        <tr>
+                                        <td>Curriculum Vitae</td>
+                                        <td><a href="{{Auth::user()->CV }}">CV</a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>KTP Number</td>
+                                        <td>{{ Auth::user()->ktp_id }}</td>
+                                        </tr>
+                                        <tr>
+                                        <td>Ijazah</td>
+                                        <td><a href="{{Auth::user()->ijazah }}">Ijazah</a></td>
+                                        </tr>
+                                        <tr>
+                                        <td>Kartu Keluarga</td>
+                                        <td><a href="{{ Auth::user()->KK }}">KK</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                     </tbody>
+                                </table>
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-6">
@@ -133,7 +110,15 @@
                                     </div>
                                 </div>
                             </div> <!--form group-->
-                        </div> <!--col-lg-6-->
+                            
+                                        
+                                     
+                                   
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                        </div> <!--col-lg-7-->
                     </div>
                 </div>
             </div>
@@ -149,4 +134,3 @@
             <script src="/assets/js/sb-admin-2.js"></script>
             </body>
             </html>
-
