@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Training Detail</h1>
+                <h1 class="page-header">TRAINING DETAIL</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -76,24 +76,24 @@
                                 </div>
                             </form>
                             <div class="row buttonApproval">
-                                <div class="col-lg-3">
+                                <div class="col-lg-2 col-lg-offset-1">
                                     <a href="listOfTraining" class="btn btn-default" role="button">Back</a>
                                 </div>
                                 <?php 
                                     $status = explode(" ", $training[0]->status);
                                 ?>
                                 @if (strtotime('today') > strtotime($training[0]->date) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-2">
                                          <button class="btn btn-default" disabled>Reject</button>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-2">
                                         <button class="btn btn-default" disabled>Approve</button>
                                     </div>
                                 @else   
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-2">
                                          <a href="/rejectTraining:{{ $training[0]->id }}" class="btn btn-default" role="button">Reject</a>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-2">
                                         <a href="/approveTraining:{{ $training[0]->id }}" class="btn btn-default" role="button">Approve</a>
                                     </div>
                                 @endif
