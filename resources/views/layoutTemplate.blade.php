@@ -158,12 +158,14 @@
                         <li>
                             <a href="myProfile"><i class="fa fa-user fa-fw"></i>My Profile</a>
                         </li>
-                        <li>
-                            <a href="listOfUser"><i class="fa fa-users fa-fw"></i> Users</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> Request</a>
-                        </li>
+                        @if (Auth::user()->type == 'HR')
+                            <li>
+                                <a href="listOfUser"><i class="fa fa-users fa-fw"></i> Users</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-table fa-fw"></i> Request</a>
+                            </li>
+                        @endif
                         <li>
                              <a href="#"><i class="fa fa-reorder fa-fw"></i> Leave<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -173,9 +175,11 @@
                                 <li>
                                     <a href="myLeave">View My Leave</a>
                                 </li>
-                                <li>
-                                    <a href="listOfLeave">View List of Leave</a>
-                                </li>
+                                @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
+                                    <li>
+                                        <a href="listOfLeave">View List of Leave</a>
+                                    </li>
+                                @endif
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -188,9 +192,11 @@
                                 <li>
                                     <a href="myRemote">View My Remote</a>
                                 </li>
-                                <li>
-                                    <a href="listOfRemote">View List of Remote</a>
-                                </li>
+                                @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
+                                    <li>
+                                        <a href="listOfRemote">View List of Remote</a>
+                                    </li>
+                                @endif
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -204,9 +210,11 @@
                                 <li>
                                     <a href="myTraining">View My Training</a>
                                 </li>
-                                <li>
-                                    <a href="listOfTraining">View List of Training</a>
-                                </li>
+                                @if (Auth::user()->type == 'Finance')
+                                    <li>
+                                        <a href="listOfTraining">View List of Training</a>
+                                    </li>
+                                @endif
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -219,9 +227,11 @@
                                 <li>
                                     <a href="myProcurement">View My Procurement</a>
                                 </li>
-                                <li>
-                                    <a href="listOfProcurement">View List of Procurement</a>
-                                </li>
+                                @if (Auth::user()->type == 'Finance')
+                                    <li>
+                                        <a href="listOfProcurement">View List of Procurement</a>
+                                    </li>
+                                @endif
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -234,9 +244,11 @@
                                 <li>
                                     <a href="myOvertime">View My Overtime</a>
                                 </li>
-                                <li>
-                                    <a href="listOfOvertime">View List of Overtime</a>
-                                </li>
+                                @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
+                                    <li>
+                                        <a href="listOfOvertime">View List of Overtime</a>
+                                    </li>
+                                @endif
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -246,9 +258,16 @@
                                 <li>
                                     <a href="myAppraisal">View My Appraisal</a>
                                 </li>
-                                <li>
-                                    <a href="listofAppraisal">View List of Appraisal</a>
-                                </li>
+                                @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
+                                    <li>
+                                        <a href="listofAppraisal">View List of Appraisal</a>
+                                    </li>
+                                    @if (Auth::user()->type == 'HR')
+                                        <li>
+                                            <a href="viewListAppraisalTemplate">View List of Appraisal Template</a>
+                                        </li>
+                                    @endif
+                                @endif
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -258,25 +277,25 @@
                                 <li>
                                     <a href="createFeedback">Create Feedback</a>
                                 </li>
-                                <li>
-                                    <a href="listOfFeedback">View List of Feedback</a>
-
-                                </li>
+                                @if (Auth::user()->type == 'HR')
+                                    <li>
+                                        <a href="listOfFeedback">View List of Feedback</a>
+                                    </li>
+                                @endif
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="listOfSurvey">View List of Survey</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-
-
-
+                        @if (Auth::user()->type == 'HR')
+                            <li>
+                                <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="listOfSurvey">View List of Survey</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+                        @endif
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -309,6 +328,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="assets/js/sb-admin-2.js"></script>
+
+    <script src="/js/createAppraisal.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>

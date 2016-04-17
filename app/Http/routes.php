@@ -182,25 +182,35 @@ Route::get('/fillSurvey', function () {
 });
 /* feedback */
 Route::get('/createFeedback', 'FeedbackController@index');
+
 Route::post('/createFeedback', 'FeedbackController@postFeedback');
+
 Route::get('/listOfFeedback', 'FeedbackController@showListOfFeedback');
+
 Route::get('/detailFeedback:{id}', 'FeedbackController@showDetail');
+
 /* appraisal */
-Route::get('/viewListAppraisalTemplate', function () {
-    return view('pages.appraisal.viewListAppraisalTemplate');
-});
+Route::get('/viewListAppraisalTemplate', 'AppraisalsController@showListOfAppraisalsTemplate');
+
 Route::get('/myAppraisal', function () {
     return view('pages.appraisal.myAppraisal');
 });
+
 Route::get('/listofAppraisal', function () {
     return view('pages.appraisal.listofAppraisal');
 });
-Route::get('/createAppraisal', function () {
-    return view('pages.appraisal.createAppraisal');
-});
+
+Route::get('/createAppraisal','AppraisalsController@index');
+
+Route::post('/createAppraisal','AppraisalsController@postAppraisal');
+
 Route::get('/fillAppraisal', function () {
     return view('pages.appraisal.fillAppraisal');
 });
+
+Route::get('/editAppraisalTemplate:{id}','AppraisalsController@editAppraisalTemplate');
+Route::post('/updateAppraisalTemplate','AppraisalsController@updateAppraisalTemplate');
+
 /* ini form aslinya guys*/
 Route::get('/forms', function () {
     return view('pages.formsTemplate');

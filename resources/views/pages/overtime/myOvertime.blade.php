@@ -47,7 +47,7 @@
                                         <td>{{$overtime->date}}</td>
                                         <td>{{$overtime->time_start}}</td>
                                         <td>{{$overtime->time_end}}</td>
-                                        <td>{{$overtime->time_end - $overtime->time_start}}</td>
+                                        <td>{{$overtime->total_hours}}</td>
                                         <td>{{$overtime->status}}</td>
                                         <?php 
                                             $status = explode(" ", $overtime->status);
