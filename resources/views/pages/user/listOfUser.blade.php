@@ -47,14 +47,6 @@
                                     <?php $i++; ?>
                                     @endforeach
                                 </tbody>
-                                    <div class="col-lg-3 col-lg-offset-2 pull-right">
-                                        <a href="createAccount">
-                                            <i class="fa fa-plus fa-fw"></i>
-                                            <label>
-                                                Add Account
-                                            </label>
-                                        </a>
-                                    </div>
                             </table>
                         </div>
                         <!-- /.table-responsive -->
