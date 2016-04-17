@@ -41,7 +41,7 @@
                                 <div class = "content-form">
                                     <form class = "form-horizontal" role="form" method="post" action="/storeRemote">
                                         <div class="form-group">
-                                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                             <label class="col-md-4 control-label">Start Date</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "startdate" type = "date" value = "{{ old('startdate') }}" required>

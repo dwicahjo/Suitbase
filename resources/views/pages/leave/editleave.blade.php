@@ -33,7 +33,7 @@
                                 <div class = "content-form">
                                     <form class = "form-horizontal" role="form" method = "post" action = "/updateLeave">
                                         <div class="form-group">
-                                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                             <input class="form-control" name = "id" type = "hidden" value = "{{ $leaves[0]->id }}">
                                             <label class="col-md-4 control-label">Start Date</label>
                                             <div class = "col-md-6">
