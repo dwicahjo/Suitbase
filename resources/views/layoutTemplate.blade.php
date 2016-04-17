@@ -249,6 +249,9 @@
                                 <li>
                                     <a href="listofAppraisal">View List of Appraisal</a>
                                 </li>
+                                <li>
+                                    <a href="viewListAppraisalTemplate">View List of Appraisal Template</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

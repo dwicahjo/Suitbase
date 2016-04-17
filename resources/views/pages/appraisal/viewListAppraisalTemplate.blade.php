@@ -38,7 +38,7 @@
                                         <th style="text-align: center">Date Start</th>
                                         <th style="text-align: center">Date End</th>
                                         <th style="text-align: center">Appraisal Title</th>
-                                        <th></th>
+                                        <th style="text-align: center">Appraisal Template</th>
                                         <th></th>
                                     </tr>
                                 </thead>
