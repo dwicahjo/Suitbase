@@ -27,9 +27,9 @@ Route::get('/createAccount', 'UserController@index');
 
 Route::post('/createAccount', 'UserController@postCreate');
 
-Route::get('/editProfile', function () {
-    return view('pages.user.editProfile');
-});
+Route::get('/editProfile', 'UserController@viewEdit');
+
+Route::post('/updateProfile', 'UserController@update');
 
 Route::get('/listOfUser', 'UserController@showListOfUser');
 

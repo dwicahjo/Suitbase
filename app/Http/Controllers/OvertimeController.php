@@ -42,13 +42,15 @@ class OvertimeController extends Controller
 
     protected function create(array $data)
     {
-        // $startHour = substr($data['time_start'], 0, 2);
-        // $startMin = substr($data['time_start'], 3, 2);
-        // $endHour = substr($data['time_end'], 0, 2);
-        // $endMin = substr($data['time_end'], 3, 2);
+        $startHour = substr($data['starttime'], 0, 2);
+        $startMin = substr($data['starttime'], 3, 2);
+        $endHour = substr($data['endtime'], 0, 2);
+        $endMin = substr($data['endtime'], 3, 2);
 
-        // $diffHour = $endHour - $startHour;
-        // $diffMin = $endMin - $startMin;
+        $diffHour = $endHour - $startHour;
+        $diffMin = $endMin - $startMin;
+
+        $totalHours = $diffHour . " hours " . $diffMin . " minutes";
 
         Overtime::create([
             'description' => $data['description'],
@@ -57,6 +59,7 @@ class OvertimeController extends Controller
             'date' => $data['date'],
             'status' => $data['status'],
             'employees_id' => $data['employees_id'],
+            'total_hours' => $totalHours
             ]);
 
         Session::flash('success', 'Overtime log was submitted successfully');

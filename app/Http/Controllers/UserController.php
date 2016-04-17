@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Models\Department;
 use App\Models\Division;
 use DB;
+use Storage;
 
 class UserController extends Controller
 {
@@ -38,9 +39,9 @@ class UserController extends Controller
             'ktp_id' => $data['ktp_id'],
             'ktp_address' => $data['ktp_address'],
             'NPWP' => $data['NPWP'],
-            'ijazah' => $data['ijazah'],
             'departments_id' => $data['departments_id'],
             'divisions_id' => $data['divisions_id'],
+            'status' => 'Active'
         ]);
 
         // if($data['CV']) {}
@@ -54,12 +55,12 @@ class UserController extends Controller
         // $data['ijazah']->move(base_path().'/public/upload/', $fileIjazah);
         // $data['KK']->move(base_path().'/public/upload/', $fileKK);
 
-        // $user->CV = $fileCV;
-        // $user->KTP = $fileKTP;
-        // $user->ijazah = $fileIjazah;
-        // $user->KK = $fileKK;
+        $user->CV = $fileCV;
+        $user->KTP = $fileKTP;
+        $user->ijazah = $fileIjazah;
+        $user->KK = $fileKK;
 
-        // $user->save();
+        $user->save();
 
         return $this->index();
     }
@@ -78,5 +79,37 @@ class UserController extends Controller
         $user = User::where('id',$id)->get();
 
         return view('pages.user.userDetails',['user'=>$user]);
+    }
+
+    public function viewEdit()
+    {
+        $departments = Department::all();
+        $divisions = Division::all();
+        $user = User::where('id', \Auth::user()->id)->get()->first();
+        return view('pages.user.editProfile',['user' => $user],['divisions' => $divisions]);
+    }
+
+    public function update (Request $request)
+    {
+        $user = User::where('id', \Auth::user()->id)->get()->first();
+        
+        if ($request->password != "")
+        {
+            $user->password = bcrypt($request->password);
+        }
+        $user->name = $request->fullname;
+        $user->birth_place = $request->birthplace;
+        $user->birth_date = $request->birthdate;
+        $user->gender = $request->gender;
+        $user->religion = $request->religion;
+        $user->ktp_id = $request->ktpnumber;
+        $user->ktp_address = $request->ktpAddress;
+        $user->NPWP = $request->npwpnumber;
+        $user->address = $request->currentAddress;
+        $user->phone = $request->tlpnumber;
+
+        $user->save();
+
+        return back();
     }
 }

@@ -84,7 +84,8 @@ class AuthController extends Controller
             'KTP' => $data['KTP'],
             'ijazah' => $data['ijazah'],
             'departments_id' => $data['departments_id'],
-            'divisions_id' => $data['divisions_id']
+            'divisions_id' => $data['divisions_id'],
+            'status' => 'Active'
             ]);
     }
 
