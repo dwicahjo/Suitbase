@@ -10,21 +10,21 @@
 	@section('content')
     <div id="page-wrapper">
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Create Account</h1>
+            <div class="col-md-8 col-md-offset-2">
+                <h1 class="page-header">CREATE ACCOUNT</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     </div>
                     <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <form class="form-horizontal" role="form" enctype="multipart/form-data" method="POST" action="{{ url('/createAccount') }}">
+                        <!-- <div class="row">
+                            <div class="col-lg-12"> -->
+                        <form class="form-horizontal" role="form" enctype="multipart/form-data" method="POST" action="{{ url('/createAccount') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -209,9 +209,9 @@
                             </div>
                         </div>
                     </form>
-                            </div>
+                        <!-- </div>
 
-                        </div>
+                        </div> -->
                         <!-- /.row (nested) -->
                     </div>
                     <!-- /.panel-body -->

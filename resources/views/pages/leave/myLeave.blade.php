@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">My Leave Requests</h1>
+                <h1 class="page-header">MY LEAVE REQUESTS</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -21,10 +21,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     </div>
-                    <!--<div class="panel-heading">
-                        DataTables Advanced Tables
-                    </div>-->
-                    <!-- /.panel-heading -->
+
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -45,16 +42,19 @@
                                             <td>{{ $i }}</td>
                                             <td>{{ $leave->date_start }}</a></td>
                                             <td>{{ $leave->date_end }}</td>
-                                            <td class="center">{{ $leave->type }}</td>
-                                            <td class="center"><a href="/myLeaves:{{ $leave->id }}">{{ $leave->status }}</td>
-                                            @if (strtotime('today') > strtotime($leave->date_start))
+                                            <td>{{ $leave->type }}</td>
+                                            <td><a href="/myLeaves:{{ $leave->id }}">{{ $leave->status }}</td>
+                                            <?php 
+                                                $status = explode(" ", $leave->status);
+                                            ?>
+                                            @if (strtotime('today') > strtotime($leave->date_start) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                                 <th>
-                                                    <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
-                                                    <button type="submit" class="btn btn-default btn-delete" disabled="">Cancel</button>
+                                                    <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
+                                                    <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                                 </th>
                                             @elseif (strtotime('today') < strtotime($leave->date_start))
-                                                <th><a href="/editLeave:{{ $leave->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
-                                                    <a href="#" class="btn btn-default btn-delete" role="button">Cancel</a></th>
+                                                <th><a href="/editLeave:{{ $leave->id }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                                    <a href="/cancelLeave:{{ $leave->id }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
                                             @endif
                                         </tr>
                                         <?php $i++; ?>

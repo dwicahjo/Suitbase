@@ -1260,6 +1260,7 @@ a.bg-danger:focus,a.bg-danger:hover {
 				margin:40px 0 20px;
 				text-align: center;
 				border-bottom:1px solid transparent;
+				font-weight: bold;
 			}
 			ol,ul {
 				margin-top:0;
@@ -2740,6 +2741,8 @@ a.btn.disabled,fieldset[disabled] a.btn {
 .btn-primary {
 	color:#fff;
 	background-color:#f60;
+	float: right;
+	margin-bottom: 20%;
 }
 .btn-primary.focus,.btn-primary:focus {
 	color:#fff;
@@ -3883,7 +3886,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 }
 .navbar-default {
 	background-color:white;
-	border-color:#e7e7e7
+	border-color:#f60
 }
 .navbar-default .navbar-brand {
 	color:#777

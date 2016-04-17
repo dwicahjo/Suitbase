@@ -12,7 +12,7 @@
 <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Edit Profile</h1>
+                    <h1 class="page-header">EDIT PROFILE</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

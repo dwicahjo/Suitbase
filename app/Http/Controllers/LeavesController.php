@@ -9,14 +9,32 @@ use App\Models\Leave;
 use App\Http\Controllers\Auth\AuthController;
 use DB;
 use Session;
+use Validator;
+
 class LeavesController extends Controller
 {
     public function create(Request $request)
     {
-        $this->validate ($request, [
-            'startdate' => 'required|date|after:today',
-            'enddate' => 'required|date|after:startdate+1'
-            ]);
+        $inputDate = $request->startdate;
+        $date = date("Y-m-d", strtotime('-1 day', strtotime($inputDate)));
+
+        $messages = [
+            'startdate.after' => "The start date must be later than today",
+            'enddate.after' => "The end date can not be earlier than the start date",
+        ];
+
+        $rules = [
+            'startdate' => 'date|after:today',
+            'enddate' => 'date|after:' . $date,
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect('/createLeave')
+                        ->withErrors($validator)
+                        ->withInput($request->all());
+        }
 
         $leave = new Leave;
 
@@ -62,7 +80,7 @@ class LeavesController extends Controller
     public function viewMyList ()
     {
         $user_id = \Auth::user()->id;
-        $leaves = Leave::where('employees_id', $user_id)->paginate(15);
+        $leaves = Leave::where('employees_id', $user_id)->orderBy('created_at','desc')->paginate(15);
 
         return view('pages.leave.myLeave', ['leaves' => $leaves]);
     }
@@ -93,6 +111,40 @@ class LeavesController extends Controller
         $leave->save();
 
         Session::flash('success', 'Leave request was edited successfully');
+        return back();
+    }
+
+    public function reject ($id)
+    {
+        $approver = \Auth::user()->name;
+        $leave = Leave::where('id', $id)->get()->first();
+        $status = "Rejected by " . $approver;
+        $leave->status = $status;
+
+        $leave->save();
+
+        return back();
+    }
+
+    public function approve ($id)
+    {
+        $approver = \Auth::user()->name;
+        $leave = Leave::where('id', $id)->get()->first();
+        $status = "Approved by " . $approver;
+        $leave->status = $status;
+
+        $leave->save();
+
+        return back();
+    }
+
+    public function cancel ($id)
+    {
+        $leave = Leave::where('id', $id)->get()->first();
+        $leave->status = "Cancelled";
+
+        $leave->save();
+
         return back();
     }
 }

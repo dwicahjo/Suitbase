@@ -62,20 +62,27 @@
                                         <label class="col-md-6">: {{ $leaves[0]->description }}</label>
                                     </div>
                                 </div>
-
-                            </form>
-                                    <div class="row buttonApproval">
-                                        <div class="col-lg-3">
-                                            <a href="listOfLeave" class="btn btn-default" role="button">Back</a>
-                                        </div>
-                                        <div class="col-lg-3">
-                                             <a href="listOfLeave" class="btn btn-default" role="button">Reject</a>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <a href="listOfLeave" class="btn btn-default" role="button">Approve</a>
-                                        </div>
+                                <div class = "form-group">
+                                        <label class="col-md-4 control-label">Status </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: {{ $leaves[0]->status }}</label>
                                     </div>
-                                    <!--row-->
+                                </div>
+                            </form>
+                            <div class="form-group">
+                                    <a href="listOfLeave" class="btn btn-default" role="button">Back</a>
+                                <?php 
+                                    $status = explode(" ", $leaves[0]->status);
+                                ?>
+                                @if (strtotime('today') > strtotime($leaves[0]->date_start) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
+                                         <button class="btn btn-default" disabled>Reject</button>
+                                        <button class="btn btn-default" disabled>Approve</button>
+                                @else   
+                                         <a href="/rejectLeave:{{ $leaves[0]->id }}" class="btn btn-default" role="button">Reject</a>
+                                        <a href="/approveLeave:{{ $leaves[0]->id }}" class="btn btn-default" role="button">Approve</a>
+                                @endif
+                            </div>
+                            <!--row-->
                         </div>
                     </div>
                     <!-- /.panel-body -->

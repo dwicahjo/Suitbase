@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Create Leave Request</h1>
+                <h1 class="page-header">CREATE LEAVE REQUEST</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -41,16 +41,16 @@
                                 <div class = "content-form">
                                     <form class = "form-horizontal" role="form" method="post" action="/storeLeave">
                                         <div class="form-group">
-                                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                             <label class="col-md-4 control-label">Start Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "startdate" type = "date" required>
+                                            <input class="form-control" name = "startdate" type = "date" value = "{{ old('startdate') }}" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">End Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "enddate" type = "date" required>
+                                                <input class="form-control" name = "enddate" type = "date" value = "{{ old('enddate') }}" required>
                                             </div> 
                                         </div>
                                         
@@ -58,10 +58,32 @@
                                             <label class="col-md-4 control-label">Leave Type</label>
                                             <div class = "col-md-6">
                                                 <select class="form-control" name = "leavetype" required>
-                                                    <option>Sick</option>
-                                                    <option>Maternal</option>
-                                                    <option>Marriage</option>
-                                                    <option>Unpaid</option>
+                                                    @if (old('leavetype') == 'Sick')
+                                                        <option selected>Sick</option>
+                                                        <option>Maternal</option>
+                                                        <option>Marriage</option>
+                                                        <option>Unpaid</option>
+                                                    @elseif (old('leavetype') == 'Maternal')
+                                                        <option>Sick</option>
+                                                        <option selected>Maternal</option>
+                                                        <option>Marriage</option>
+                                                        <option>Unpaid</option>
+                                                    @elseif (old('leavetype') == 'Marriage')
+                                                        <option>Sick</option>
+                                                        <option>Maternal</option>
+                                                        <option selected>Marriage</option>
+                                                        <option>Unpaid</option>
+                                                    @elseif (old('leavetype') == 'Unpaid')
+                                                        <option>Sick</option>
+                                                        <option>Maternal</option>
+                                                        <option>Marriage</option>
+                                                        <option selected>Unpaid</option>
+                                                    @else
+                                                        <option>Sick</option>
+                                                        <option>Maternal</option>
+                                                        <option>Marriage</option>
+                                                        <option>Unpaid</option>
+                                                    @endif
                                                 </select>
                                             </div>
                                         </div>
@@ -69,7 +91,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Reason</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "reason" required></textarea>
+                                                <textarea class ="form-control" name = "reason" required>{{ old('reason') }}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">

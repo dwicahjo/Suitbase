@@ -7,15 +7,32 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\Remote;
 use Session;
+use Validator;
 
 class RemotesController extends Controller
 {
     public function create (Request $request)
     {
-    	$this->validate ($request, [
-    		'startdate' => 'required|date|after:today',
-    		'enddate' => 'required|date|after:startdate+1'
-    	]);
+    	$inputDate = $request->startdate;
+        $date = date("Y-m-d", strtotime('-1 day', strtotime($inputDate)));
+
+        $messages = [
+            'startdate.after' => "The start date must be later than today",
+            'enddate.after' => "The end date can not be earlier than the start date",
+        ];
+
+        $rules = [
+            'startdate' => 'date|after:today',
+            'enddate' => 'date|after:' . $date,
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect('/createRemote')
+                        ->withErrors($validator)
+                        ->withInput($request->all());
+        }
 
     	$remote = new Remote;
 
@@ -33,7 +50,7 @@ class RemotesController extends Controller
 
     public function viewListof ()
     {
-    	$remotes = Remote::paginate(15);
+    	$remotes = Remote::orderBy('created_at','desc')->paginate(15);
 
     	return view('pages.remote.listOfRemote', ['remotes' => $remotes]);
     }
@@ -48,7 +65,7 @@ class RemotesController extends Controller
     public function viewMyList ()
     {
         $user_id = \Auth::user()->id;
-        $remotes = Remote::where('employees_id', $user_id)->paginate(15);
+        $remotes = Remote::where('employees_id', $user_id)->orderBy('created_at','desc')->paginate(15);
 
         return view('pages.remote.myRemote', ['remotes' => $remotes]);
     }
@@ -78,6 +95,40 @@ class RemotesController extends Controller
         $remote->save();
 
         Session::flash('success', 'Remote request was edited successfully');
+        return back();
+    }
+
+    public function reject ($id)
+    {
+        $approver = \Auth::user()->name;
+        $remote = Remote::where('id', $id)->get()->first();
+        $status = "Rejected by " . $approver;
+        $remote->status = $status;
+
+        $remote->save();
+
+        return back();
+    }
+
+    public function approve ($id)
+    {
+        $approver = \Auth::user()->name;
+        $remote = Remote::where('id', $id)->get()->first();
+        $status = "Approved by " . $approver;
+        $remote->status = $status;
+
+        $remote->save();
+
+        return back();
+    }
+
+    public function cancel ($id)
+    {
+        $remote = Remote::where('id', $id)->get()->first();
+        $remote->status = "Cancelled";
+
+        $remote->save();
+
         return back();
     }
 }

@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Edit Overtime Request</h1>
+                <h1 class="page-header">EDIT OVERTIME REQUEST</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -41,7 +41,7 @@
                                 <div class = "content-form">
                                     <form class = "form-horizontal" role="form" method = "post" action = "/updateOvertime">
                                         <div class="form-group">
-                                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                             <input class="form-control" name = "id" type = "hidden" value = "{{ $overtimes[0]->id }}">
                                             <label class="col-md-4 control-label">Date</label>
                                             <div class = "col-md-6">
@@ -69,9 +69,10 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-md-5 control-label"></div>
-                                            <div class = "col-md-2 col-md-offset-3">
-                                                <button type="submit" class="btn btn-default">Submit</button>
+                                            <div class="col-md-6 col-md-offset-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    Save
+                                                </button>
                                             </div>
                                         </div>
                                     </form>

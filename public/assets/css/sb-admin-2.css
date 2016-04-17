@@ -459,12 +459,6 @@ table.dataTable thead .sorting:after {
     margin-bottom:20px;
 }
 
-.anon{
-margin-left: -1%;
-}
-.submit{
-margin-left: -2%;
-}
 .search-feedback{
     margin-right: -4%
 }
@@ -513,14 +507,4 @@ margin-left: -2%;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-}
-
-.btn-edit {
-    color:white;
-    background-color:#337ab7;
-}
-.btn-delete {
-    color:white;
-    background-color:red;
-
 }

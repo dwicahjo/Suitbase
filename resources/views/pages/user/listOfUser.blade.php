@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">List of User</h1>
+                <h1 class="page-header">LIST OF USERS</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -21,35 +21,6 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                     </div>
-
-                    <div class="row">
-                            <div class="col-lg-7 upper-menu-left">
-                                <div class="row">
-                                        <div class="col-lg-6">
-                                          <label>Choose Division:</label>
-                                            <select class="form-control" name = "leavetype">
-                                                <option>PR</option>
-                                                <option>Creative</option>
-                                                <option>IT</option>
-                                                <option>HR</option>
-                                            </select>
-                                        </div>
-                 
-                                    </div> <!--row-->
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="upper-menu">
-                                    <div class="upper-menu-right">
-                                        <a href="createAccount">
-                                            <i class="fa fa-plus fa-fw"></i>
-                                            <label>
-                                                Add Account
-                                            </label>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
@@ -70,13 +41,20 @@
                                         <td>{{$i}}</td>
                                         <td>{{$user->division}}</td>
                                         <td><a href="/userDetails:{{$user->id}}">{{$user->name}}</a></td>
-                                        <th><a href="/editProfile" class="btn btn-default btn-edit" role="button">Edit</a>
-                                            <a href="/resetUser" class="btn btn-default btn-delete" role="button">Reset</a></th>
+                                        <th><a href="/editProfile" class="btn btn-default btn-info" role="button">Edit</a>
+                                            <a href="/resetUser" class="btn btn-default btn-danger" role="button">Reset</a></th>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach
-
                                 </tbody>
+                                    <div class="col-lg-3 col-lg-offset-2 pull-right">
+                                        <a href="createAccount">
+                                            <i class="fa fa-plus fa-fw"></i>
+                                            <label>
+                                                Add Account
+                                            </label>
+                                        </a>
+                                    </div>
                             </table>
                         </div>
                         <!-- /.table-responsive -->

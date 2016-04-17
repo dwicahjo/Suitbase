@@ -9,6 +9,7 @@ use App\Models\Overtime;
 use Auth;
 use DB;
 use Session;
+use Validator;
 
 class OvertimeController extends Controller
 {
@@ -18,10 +19,24 @@ class OvertimeController extends Controller
         return view('pages.overtime.createOvertime');
     }
 
-    public function postOvertime(Request $request){
-        $this->validate ($request, [
-            'date' => 'required|date|before:tomorrow'
-            ]);
+    public function postOvertime(Request $request)
+    {
+        $messages = [
+            'date.before' => "The date can not be later than today",
+        ];
+
+        $rules = [
+            'date' => 'required|date|before:tomorrow',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect('/createOvertime')
+                        ->withErrors($validator)
+                        ->withInput($request->all());
+        }
+
         return $this->create($request->all());
     }
 
@@ -101,6 +116,40 @@ class OvertimeController extends Controller
         $overtime->save();
 
         Session::flash('success', 'Overtime log was edited successfully');
+        return back();
+    }
+
+    public function reject ($id)
+    {
+        $approver = \Auth::user()->name;
+        $overtime = Overtime::where('id', $id)->get()->first();
+        $status = "Rejected by " . $approver;
+        $overtime->status = $status;
+
+        $overtime->save();
+
+        return back();
+    }
+
+    public function approve ($id)
+    {
+        $approver = \Auth::user()->name;
+        $overtime = Overtime::where('id', $id)->get()->first();
+        $status = "Approved by " . $approver;
+        $overtime->status = $status;
+
+        $overtime->save();
+
+        return back();
+    }
+
+    public function cancel ($id)
+    {
+        $overtime = Overtime::where('id', $id)->get()->first();
+        $overtime->status = "Cancelled";
+
+        $overtime->save();
+
         return back();
     }
 }

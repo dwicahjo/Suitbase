@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">My Remote Working Requests</h1>
+                <h1 class="page-header">MY REMOTE WORKING REQUEST</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -42,14 +42,17 @@
                                             <td>{{ $remote->date_start }}</td>
                                             <td>{{ $remote->date_end }}</td>
                                             <td class="center"><a href="/myRemotes:{{ $remote->id }}">{{ $remote->status }}</a></td>
-                                            @if (strtotime('today') > strtotime($remote->date_start))
+                                            <?php 
+                                                $status = explode(" ", $remote->status);
+                                            ?>
+                                            @if (strtotime('today') > strtotime($remote->date_start) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                                 <th>
                                                     <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
-                                                    <button type="submit" class="btn btn-default btn-delete" disabled="">Cancel</button>
+                                                    <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                                 </th>
                                             @elseif (strtotime('today') < strtotime($remote->date_start))
                                                 <th><a href="/editRemote:{{ $remote->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
-                                                <a href="resetUser" class="btn btn-default btn-delete" role="button">Cancel</a></th>
+                                                <a href="/cancelRemote:{{ $remote->id }}" class="btn btn-default btn-delete" role="danger">Cancel</a></th>
                                             @endif
                                         </tr>
                                         <?php $i++; ?>

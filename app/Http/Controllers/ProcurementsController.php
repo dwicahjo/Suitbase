@@ -12,10 +12,6 @@ class ProcurementsController extends Controller
 {
     public function create (Request $request)
     {
-    	$this->validate ($request, [
-  			
-    	]);
-
     	$procurement = new Procurement;
 
     	$procurement->title = $request->title;
@@ -31,7 +27,7 @@ class ProcurementsController extends Controller
 
     public function viewListof ()
     {
-    	$procurements = Procurement::paginate(15);
+    	$procurements = Procurement::orderBy('created_at','desc')->paginate(15);
 
     	return view('pages.procurement.listOfProcurement', ['procurements' => $procurements]);
     }
@@ -46,7 +42,7 @@ class ProcurementsController extends Controller
     public function viewMyList ()
     {
         $user_id = \Auth::user()->id;
-        $procurements = Procurement::where('employees_id', $user_id)->paginate(15);
+        $procurements = Procurement::where('employees_id', $user_id)->orderBy('created_at','desc')->paginate(15);
 
         return view('pages.procurement.myProcurement', ['procurements' => $procurements]);
     }
@@ -76,6 +72,40 @@ class ProcurementsController extends Controller
         $procurement->save();
 
         Session::flash('success', 'Procurement request was edited successfully');
+        return back();
+    }
+
+    public function reject ($id)
+    {
+        $approver = \Auth::user()->name;
+        $procurement = Procurement::where('id', $id)->get()->first();
+        $status = "Rejected by " . $approver;
+        $procurement->status = $status;
+
+        $procurement->save();
+
+        return back();
+    }
+
+    public function approve ($id)
+    {
+        $approver = \Auth::user()->name;
+        $procurement = Procurement::where('id', $id)->get()->first();
+        $status = "Approved by " . $approver;
+        $procurement->status = $status;
+
+        $procurement->save();
+
+        return back();
+    }
+
+    public function cancel ($id)
+    {
+        $procurement = Procurement::where('id', $id)->get()->first();
+        $procurement->status = "Cancelled";
+
+        $procurement->save();
+
         return back();
     }
 }

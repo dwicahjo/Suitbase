@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Create Remote Request</h1>
+                <h1 class="page-header">CREATE REMOTE REQUEST</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -41,23 +41,23 @@
                                 <div class = "content-form">
                                     <form class = "form-horizontal" role="form" method="post" action="/storeRemote">
                                         <div class="form-group">
-                                            <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                             <label class="col-md-4 control-label">Start Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "startdate" type = "date" required>
+                                                <input class="form-control" name = "startdate" type = "date" value = "{{ old('startdate') }}" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">End Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "enddate" type = "date" required>
+                                                <input class="form-control" name = "enddate" type = "date" value = "{{ old('enddate') }}" required>
                                             </div> 
                                         </div>
                                         
                                        <div class="form-group">
                                             <label class="col-md-4 control-label">Description</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "description" required></textarea>
+                                                <textarea class ="form-control" name = "description" required>{{ old('description') }}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">

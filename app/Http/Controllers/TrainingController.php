@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Models\Training;
 use DB;
 use Session;
+use Validator;
 
 class TrainingController extends Controller
 {
@@ -17,11 +18,23 @@ class TrainingController extends Controller
         return view('pages.training.createTraining');
     }
 
-    public function postTraining(Request $request){
-        $this->validate ($request, [
-            'date' => 'required|date|after:today'
-            ]);
+    public function postTraining(Request $request)
+    {
+        $messages = [
+            'date.after' => "The date must be later than today",
+        ];
 
+        $rules = [
+            'date' => 'date|after:today',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect('/createTraining')
+                        ->withErrors($validator)
+                        ->withInput($request->all());
+        }
         return $this->create($request->all());
     }
 
@@ -92,6 +105,40 @@ class TrainingController extends Controller
         $training->save();
 
         Session::flash('success', 'Training request was edited successfully');
+        return back();
+    }
+
+    public function reject ($id)
+    {
+        $approver = \Auth::user()->name;
+        $training = Training::where('id', $id)->get()->first();
+        $status = "Rejected by " . $approver;
+        $training->status = $status;
+
+        $training->save();
+
+        return back();
+    }
+
+    public function approve ($id)
+    {
+        $approver = \Auth::user()->name;
+        $training = Training::where('id', $id)->get()->first();
+        $status = "Approved by " . $approver;
+        $training->status = $status;
+
+        $training->save();
+
+        return back();
+    }
+
+    public function cancel ($id)
+    {
+        $training = Training::where('id', $id)->get()->first();
+        $training->status = "Cancelled";
+
+        $training->save();
+
         return back();
     }
 }
