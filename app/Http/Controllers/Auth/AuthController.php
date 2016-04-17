@@ -66,7 +66,7 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        return $user= User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -78,13 +78,11 @@ class AuthController extends Controller
             'phone' => $data['phone'],
             'ktp_id' => $data['ktp_id'],
             'ktp_address' => $data['ktp_address'],
-            'KK' => $data['KK'],
-            'CV' => $data['CV'],
             'NPWP' => $data['NPWP'],
-            'KTP' => $data['KTP'],
             'ijazah' => $data['ijazah'],
             'departments_id' => $data['departments_id'],
-            'divisions_id' => $data['divisions_id']
+            'divisions_id' => $data['divisions_id'],
+            'photo' => $data['photo'],
             ]);
     }
 

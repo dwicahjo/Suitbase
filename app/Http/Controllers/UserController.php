@@ -41,35 +41,17 @@ class UserController extends Controller
             'ijazah' => $data['ijazah'],
             'departments_id' => $data['departments_id'],
             'divisions_id' => $data['divisions_id'],
-        ]);
-
-        // if($data['CV']) {}
-        // $fileCV = $data['CV']->getClientOriginalName();
-        // $fileKTP = $data['KTP']->getClientOriginalName();
-        // $fileIjazah = $data['ijazah']->getClientOriginalName();
-        // $fileKK = $data['KK']->getClientOriginalName();
-
-        // $data['CV']->move(base_path().'/public/upload/', $fileCV);
-        // $data['KTP']->move(base_path().'/public/upload/', $fileKTP);
-        // $data['ijazah']->move(base_path().'/public/upload/', $fileIjazah);
-        // $data['KK']->move(base_path().'/public/upload/', $fileKK);
-
-        // $user->CV = $fileCV;
-        // $user->KTP = $fileKTP;
-        // $user->ijazah = $fileIjazah;
-        // $user->KK = $fileKK;
-
-        // $user->save();
-
+            'photo' => $data['photo'],
+            ]);
         return $this->index();
     }
 
     public function showListOfUser(){
         /*$users = User::orderBy('name','asc')->get();*/
         $users = DB::table('users')
-            ->join('divisions','users.divisions_id','=','divisions.id')
-            ->select('users.*','divisions.name as division')
-            ->get();
+        ->join('divisions','users.divisions_id','=','divisions.id')
+        ->select('users.*','divisions.name as division')
+        ->get();
         return view('pages.user.listOfUser',['users'=>$users]);
     }
 
