@@ -95,4 +95,28 @@ class LeavesController extends Controller
         Session::flash('success', 'Leave request was edited successfully');
         return back();
     }
+
+    public function reject ($id)
+    {
+        $approver = \Auth::user()->name;
+        $leave = Leave::where('id', $id)->get()->first();
+        $status = "Rejected by " . $approver;
+        $leave->status = $status;
+
+        $leave->save();
+
+        return back();
+    }
+
+    public function approve ($id)
+    {
+        $approver = \Auth::user()->name;
+        $leave = Leave::where('id', $id)->get()->first();
+        $status = "Approved by " . $approver;
+        $leave->status = $status;
+
+        $leave->save();
+
+        return back();
+    }
 }

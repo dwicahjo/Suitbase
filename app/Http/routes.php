@@ -22,16 +22,23 @@ Route::get('/template', function () {
 /*Route::get('/createAccount', function () {
     return view('pages.user.createAccount');
 });*/
+
 Route::get('/createAccount', 'UserController@index');
+
 Route::post('/createAccount', 'UserController@postCreate');
+
 Route::get('/editProfile', function () {
     return view('pages.user.editProfile');
 });
+
 Route::get('/listOfUser', 'UserController@showListOfUser');
+
 Route::get('/myProfile', function () {
     return view('pages.user.myProfile');
 });
+
 Route::get('/userDetails:{id}', 'UserController@showDetail');
+
 Route::get('/resetUser', function () {
     return view('pages.user.resetUser');
 });
@@ -50,6 +57,10 @@ Route::get('/myLeaves:{id}', 'LeavesController@viewMyDetails');
 Route::get('/listOfLeave', 'LeavesController@viewListof');
 
 Route::get('/leaveApproval:{id}', 'LeavesController@viewDetails');
+
+Route::get('/rejectLeave:{id}', 'LeavesController@reject');
+
+Route::get('/approveLeave:{id}', 'LeavesController@approve');
 
 Route::get('/editLeave:{id}', 'LeavesController@viewEdit');
 
