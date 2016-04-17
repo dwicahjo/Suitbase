@@ -54,11 +54,11 @@
                                         ?>
                                         @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                             <th>
-                                                <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
+                                                <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
                                                 <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                             </th>
                                         @else
-                                            <th><a href="/editOvertime:{{ $overtime->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
+                                            <th><a href="/editOvertime:{{ $overtime->id }}" class="btn btn-default btn-info" role="button">Edit</a>
                                             <a href="/cancelOvertime:{{ $overtime->id }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
                                         @endif
                                     </tr>

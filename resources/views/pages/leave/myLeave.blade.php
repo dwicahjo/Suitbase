@@ -42,18 +42,18 @@
                                             <td>{{ $i }}</td>
                                             <td>{{ $leave->date_start }}</a></td>
                                             <td>{{ $leave->date_end }}</td>
-                                            <td class="center">{{ $leave->type }}</td>
-                                            <td class="center"><a href="/myLeaves:{{ $leave->id }}">{{ $leave->status }}</td>
+                                            <td>{{ $leave->type }}</td>
+                                            <td><a href="/myLeaves:{{ $leave->id }}">{{ $leave->status }}</td>
                                             <?php 
                                                 $status = explode(" ", $leave->status);
                                             ?>
                                             @if (strtotime('today') > strtotime($leave->date_start) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                                 <th>
-                                                    <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
+                                                    <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
                                                     <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                                 </th>
                                             @elseif (strtotime('today') < strtotime($leave->date_start))
-                                                <th><a href="/editLeave:{{ $leave->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
+                                                <th><a href="/editLeave:{{ $leave->id }}" class="btn btn-default btn-info" role="button">Edit</a>
                                                     <a href="/cancelLeave:{{ $leave->id }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
                                             @endif
                                         </tr>
