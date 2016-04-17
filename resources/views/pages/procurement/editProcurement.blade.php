@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Edit Procurement Request</h1>
+                <h1 class="page-header">EDIT PROCUREMENT REQUEST</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -28,8 +28,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-lg-12">
-                                <div class = "content-form">
+                            <div class="col-lg-9 col-lg-offset-2">
                                     <form class = "form-horizontal" role="form" method = "post" action = "/updateProcurement">
                                         <div class="form-group">
                                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
@@ -56,7 +55,7 @@
                                         <div class="form-group">
                                             <div class="col-md-5 control-label"></div>
                                             <div class = "col-md-2 col-md-offset-3">
-                                                <button type="submit" class="btn btn-default">Submit</button>
+                                                <button type="submit" class="btn btn-default">Save</button>
                                             </div>
                                         </div>
                                     </form>
