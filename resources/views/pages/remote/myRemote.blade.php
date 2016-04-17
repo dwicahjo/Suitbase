@@ -42,9 +42,12 @@
                                             <td>{{ $remote->date_start }}</td>
                                             <td>{{ $remote->date_end }}</td>
                                             <td class="center"><a href="/myRemotes:{{ $remote->id }}">{{ $remote->status }}</a></td>
-                                            @if (strtotime('today') > strtotime($remote->date_start))
+                                            <?php 
+                                                $status = explode(" ", $remote->status);
+                                            ?>
+                                            @if (strtotime('today') > strtotime($remote->date_start) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                                 <th>
-                                                    <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
+                                                    <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
                                                     <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                                 </th>
                                             @elseif (strtotime('today') < strtotime($remote->date_start))

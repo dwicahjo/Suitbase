@@ -43,8 +43,18 @@
                                             <td class="center">{{ $i }}</td>
                                             <td><a href="/myProcurements:{{ $procurement->id }}">{{ $procurement->title }}</a></td>
                                             <td class="center">{{ $procurement->status}}</td>
-                                            <th><a href="/editProcurement:{{ $procurement->id }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                            <?php 
+                                                $status = explode(" ", $procurement->status);
+                                            ?>
+                                            @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
+                                                <th>
+                                                    <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
+                                                    <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
+                                                </th>
+                                            @else
+                                                <th><a href="/editProcurement:{{ $procurement->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default btn-danger" role="button">Cancel</a></th>
+                                            @endif
                                         </tr>
                                         <?php $i++; ?>
                                     @endforeach

@@ -76,7 +76,7 @@
                                 <?php 
                                     $status = explode(" ", $leaves[0]->status);
                                 ?>
-                                @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
+                                @if (strtotime('today') > strtotime($leaves[0]->date_start) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                     <div class="col-lg-3">
                                          <button class="btn btn-default" disabled>Reject</button>
                                     </div>
@@ -90,7 +90,7 @@
                                     <div class="col-lg-3">
                                         <a href="/approveLeave:{{ $leaves[0]->id }}" class="btn btn-default" role="button">Approve</a>
                                     </div>
-                                @endunless
+                                @endif
                             </div>
                             <!--row-->
                         </div>

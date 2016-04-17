@@ -62,7 +62,7 @@ class LeavesController extends Controller
     public function viewMyList ()
     {
         $user_id = \Auth::user()->id;
-        $leaves = Leave::where('employees_id', $user_id)->paginate(15);
+        $leaves = Leave::where('employees_id', $user_id)->orderBy('created_at','desc')->paginate(15);
 
         return view('pages.leave.myLeave', ['leaves' => $leaves]);
     }

@@ -81,6 +81,10 @@ Route::get('/listOfRemote', 'RemotesController@viewListof');
 
 Route::get('/remoteApproval:{id}', 'RemotesController@viewDetails');
 
+Route::get('/rejectRemote:{id}', 'RemotesController@reject');
+
+Route::get('/approveRemote:{id}', 'RemotesController@approve');
+
 Route::get('/editRemote:{id}', 'RemotesController@viewEdit');
 
 Route::post('/updateRemote', 'RemotesController@update');
@@ -98,6 +102,10 @@ Route::get('/myTraining', 'TrainingController@showListOfMyTraining');
 
 Route::get('/listOfTraining', 'TrainingController@showListOfTraining');
 
+Route::get('/rejectTraining:{id}', 'TrainingController@reject');
+
+Route::get('/approveTraining:{id}', 'TrainingController@approve');
+
 Route::get('/editTraining:{id}', 'TrainingController@viewEdit');
 
 Route::post('/updateTraining', 'TrainingController@update');
@@ -114,6 +122,10 @@ Route::get('/myProcurement', 'ProcurementsController@viewMyList');
 Route::get('/myProcurements:{id}', 'ProcurementsController@viewMyDetails');
 
 Route::get('/listOfProcurement', 'ProcurementsController@viewListof');
+
+Route::get('/rejectProcurement:{id}', 'ProcurementsController@reject');
+
+Route::get('/approveProcurement:{id}', 'ProcurementsController@approve');
 
 Route::get('/procurementApproval:{id}', 'ProcurementsController@viewDetails');
 
@@ -133,6 +145,10 @@ Route::get('/overtimeApproval:{id}', 'OvertimeController@showApproval');
 Route::get('/myOvertime', 'OvertimeController@showListOfMyOvertime');
 
 Route::get('/listOfOvertime', 'OvertimeController@showListOfOvertime');
+
+Route::get('/rejectOvertime:{id}', 'OvertimeController@reject');
+
+Route::get('/approveOvertime:{id}', 'OvertimeController@approve');
 
 Route::get('/editOvertime:{id}', 'OvertimeController@viewEdit');
 

@@ -56,20 +56,37 @@
                                         <label class="col-md-6">: {{ $remotes[0]->description }}</label>
                                     </div>
                                 </div>
-
-                            </form>
-                                    <div class="row buttonApproval">
-                                        <div class="col-lg-3">
-                                            <a href="listOfRemote" class="btn btn-default" role="button">Back</a>
-                                        </div>
-                                        <div class="col-lg-3">
-                                             <a href="listOfRemote" class="btn btn-default" role="button">Reject</a>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <a href="listOfRemote" class="btn btn-default" role="button">Approve</a>                                        
-                                        </div>
+                                <div class = "form-group">
+                                        <label class="col-md-4 control-label">Status </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: {{ $remotes[0]->status }}</label>
                                     </div>
-                                    <!--row-->
+                                </div>
+                            </form>
+                            <div class="row buttonApproval">
+                                <div class="col-lg-3">
+                                    <a href="listOfRemote" class="btn btn-default" role="button">Back</a>
+                                </div>
+                                <?php 
+                                    $status = explode(" ", $remotes[0]->status);
+                                ?>
+                                @if (strtotime('today') > strtotime($remotes[0]->date_start) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
+                                    <div class="col-lg-3">
+                                         <button class="btn btn-default" disabled>Reject</button>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <button class="btn btn-default" disabled>Approve</button>
+                                    </div>
+                                @else   
+                                    <div class="col-lg-3">
+                                         <a href="/rejectRemote:{{ $remotes[0]->id }}" class="btn btn-default" role="button">Reject</a>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <a href="/approveRemote:{{ $remotes[0]->id }}" class="btn btn-default" role="button">Approve</a>
+                                    </div>
+                                @endif
+                            </div>
+                            <!--row-->
                         </div>
                     </div>
                     <!-- /.panel-body -->

@@ -49,8 +49,18 @@
                                         <td>{{$overtime->time_end}}</td>
                                         <td>{{$overtime->time_end - $overtime->time_start}}</td>
                                         <td>{{$overtime->status}}</td>
-                                        <th><a href="/editOvertime:{{ $overtime->id }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                        <?php 
+                                            $status = explode(" ", $overtime->status);
+                                        ?>
+                                        @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
+                                            <th>
+                                                <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
+                                                <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
+                                            </th>
+                                        @else
+                                            <th><a href="/editOvertime:{{ $overtime->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
                                             <a href="resetUser" class="btn btn-default btn-danger" role="button">Cancel</a></th>
+                                        @endif
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

@@ -63,31 +63,42 @@
                                     </div>
                                 </div>
                                 <div class = "form-group">
-                                    <label class="col-md-4 control-label">Status </label>
-                                    <div class = "right-side">
-                                        <label class="col-md-6">: {{$overtimes[0]->status}} </label>
-                                    </div>
-                                </div>
-                                <div class = "form-group">
                                         <label class="col-md-4 control-label">Description </label>
                                     <div class = "right-side">
                                         <label class="col-md-6">: {{$overtimes[0]->description}} </label>
                                     </div>
                                 </div>
-                            </form>
-                                    <div class="row buttonApproval">
-                                        <div class="col-lg-3">
-                                            <a href="listOfOvertime" class="btn btn-default" role="button">Back</a>
-                                        </div>
-                                        <div class="col-lg-3">
-                                             <a href="listOfOvertime" class="btn btn-default" role="button">Reject</a>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <a href="listOfOvertime" class="btn btn-default" role="button">Approve</a>
-                                        </div>
+                                <div class = "form-group">
+                                    <label class="col-md-4 control-label">Status </label>
+                                    <div class = "right-side">
+                                        <label class="col-md-6">: {{$overtimes[0]->status}} </label>
                                     </div>
-
-                                    <!--row-->
+                                </div>
+                            </form>
+                            <div class="row buttonApproval">
+                                <div class="col-lg-3">
+                                    <a href="listOfOvertime" class="btn btn-default" role="button">Back</a>
+                                </div>
+                                <?php 
+                                    $status = explode(" ", $overtimes[0]->status);
+                                ?>
+                                @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
+                                    <div class="col-lg-3">
+                                         <button class="btn btn-default" disabled>Reject</button>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <button class="btn btn-default" disabled>Approve</button>
+                                    </div>
+                                @else   
+                                    <div class="col-lg-3">
+                                         <a href="/rejectOvertime:{{ $overtimes[0]->id }}" class="btn btn-default" role="button">Reject</a>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <a href="/approveOvertime:{{ $overtimes[0]->id }}" class="btn btn-default" role="button">Approve</a>
+                                    </div>
+                                @endif
+                            </div>
+                            <!--row-->
                         </div><!--content-->
                     </div>
                     <!-- /.panel-body -->

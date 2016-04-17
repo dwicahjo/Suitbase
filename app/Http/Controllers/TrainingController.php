@@ -94,4 +94,28 @@ class TrainingController extends Controller
         Session::flash('success', 'Training request was edited successfully');
         return back();
     }
+
+    public function reject ($id)
+    {
+        $approver = \Auth::user()->name;
+        $training = Training::where('id', $id)->get()->first();
+        $status = "Rejected by " . $approver;
+        $training->status = $status;
+
+        $training->save();
+
+        return back();
+    }
+
+    public function approve ($id)
+    {
+        $approver = \Auth::user()->name;
+        $training = Training::where('id', $id)->get()->first();
+        $status = "Approved by " . $approver;
+        $training->status = $status;
+
+        $training->save();
+
+        return back();
+    }
 }

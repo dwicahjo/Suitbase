@@ -40,16 +40,18 @@
                                         <td>{{$i}}</td>
                                         <td><a href="/detailTraining:{{$training->id}}">{{$training->title}}</a></td>
                                         <td>{{$training->status}}</td>
-                                            @if (strtotime('today') > strtotime($training->date))
-                                                <th>
-                                                    <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
-                                                    <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
-                                                </th>
-                                            @elseif (strtotime('today') < strtotime($training->date))
-                                                <th><a href="/editTraining:{{ $training->id }}" class="btn btn-default btn-info" role="button">Edit</a>
-                                                <a href="" class="btn btn-default btn-danger" role="button">Cancel</a></th>
-                                            @endif
-                                        
+                                        <?php 
+                                                $status = explode(" ", $training->status);
+                                            ?>
+                                        @if (strtotime('today') > strtotime($training->date) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
+                                            <th>
+                                                <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
+                                                <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
+                                            </th>
+                                        @elseif (strtotime('today') < strtotime($training->date))
+                                            <th><a href="/editTraining:{{ $training->id }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                            <a href="" class="btn btn-default btn-danger" role="button">Cancel</a></th>
+                                        @endif
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

@@ -103,4 +103,28 @@ class OvertimeController extends Controller
         Session::flash('success', 'Overtime log was edited successfully');
         return back();
     }
+
+    public function reject ($id)
+    {
+        $approver = \Auth::user()->name;
+        $overtime = Overtime::where('id', $id)->get()->first();
+        $status = "Rejected by " . $approver;
+        $overtime->status = $status;
+
+        $overtime->save();
+
+        return back();
+    }
+
+    public function approve ($id)
+    {
+        $approver = \Auth::user()->name;
+        $overtime = Overtime::where('id', $id)->get()->first();
+        $status = "Approved by " . $approver;
+        $overtime->status = $status;
+
+        $overtime->save();
+
+        return back();
+    }
 }

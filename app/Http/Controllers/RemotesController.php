@@ -33,7 +33,7 @@ class RemotesController extends Controller
 
     public function viewListof ()
     {
-    	$remotes = Remote::paginate(15);
+    	$remotes = Remote::orderBy('created_at','desc')->paginate(15);
 
     	return view('pages.remote.listOfRemote', ['remotes' => $remotes]);
     }
@@ -48,7 +48,7 @@ class RemotesController extends Controller
     public function viewMyList ()
     {
         $user_id = \Auth::user()->id;
-        $remotes = Remote::where('employees_id', $user_id)->paginate(15);
+        $remotes = Remote::where('employees_id', $user_id)->orderBy('created_at','desc')->paginate(15);
 
         return view('pages.remote.myRemote', ['remotes' => $remotes]);
     }
@@ -78,6 +78,30 @@ class RemotesController extends Controller
         $remote->save();
 
         Session::flash('success', 'Remote request was edited successfully');
+        return back();
+    }
+
+    public function reject ($id)
+    {
+        $approver = \Auth::user()->name;
+        $remote = Remote::where('id', $id)->get()->first();
+        $status = "Rejected by " . $approver;
+        $remote->status = $status;
+
+        $remote->save();
+
+        return back();
+    }
+
+    public function approve ($id)
+    {
+        $approver = \Auth::user()->name;
+        $remote = Remote::where('id', $id)->get()->first();
+        $status = "Approved by " . $approver;
+        $remote->status = $status;
+
+        $remote->save();
+
         return back();
     }
 }

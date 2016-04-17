@@ -44,7 +44,10 @@
                                             <td>{{ $leave->date_end }}</td>
                                             <td class="center">{{ $leave->type }}</td>
                                             <td class="center"><a href="/myLeaves:{{ $leave->id }}">{{ $leave->status }}</td>
-                                            @if (strtotime('today') > strtotime($leave->date_start))
+                                            <?php 
+                                                $status = explode(" ", $leave->status);
+                                            ?>
+                                            @if (strtotime('today') > strtotime($leave->date_start) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                                 <th>
                                                     <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
                                                     <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
