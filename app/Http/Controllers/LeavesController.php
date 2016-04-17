@@ -129,10 +129,15 @@ class LeavesController extends Controller
     public function approve ($id)
     {
         $approver = \Auth::user()->name;
+
         $leave = Leave::where('id', $id)->get()->first();
+
         $status = "Approved by " . $approver;
         $leave->status = $status;
+        $totalLeave = $leave->employee->number_leave;
+        $leave->employee->number_leave = $totalLeave - 1;
 
+        $leave->employee->save();
         $leave->save();
 
         return back();

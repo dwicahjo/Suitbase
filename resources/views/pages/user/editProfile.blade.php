@@ -17,6 +17,20 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+            @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+            @if (Session::has('success'))
+                <div class = "alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
@@ -25,28 +39,24 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6" style= "width:50%">
-                                <form role="form" method = "post" action = "/uploadImage">
+                                <form role="form" enctype="multipart/form-data" method = "post" action = "/uploadImage">
                                     <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                     <div class="col-image">
                                     <span>
-                                         <img alt="image" class="img-responsive img-circle" src="assets/photo.png">
+                                         <img alt="image" class="img-responsive img-circle" src="upload/photos/{{ $user->photo }}">
                                      </span>          
-                                    <input style="margin-top:3%" onclick="myFunction()" type="file" class="upload" />
-                                    <script>
-                                            function myFunction() {
-                                                var x = document.getElementById("myFile");
-                                                x.disabled = true;
-                                            }
-                                    </script>
+                                    <input style="margin-top:3%" type="file" class="upload" name = "image" />
+                                    <br>
+                                    <button type="submit" class="btn btn-default">Upload Photo</button> 
                                 </form>
                                 </div>
                                 </div>
         
                 <div class="col-lg-6">
-                            <form role="form" method = "post" action = "/updateProfile">
+                            <form role="form" enctype="multipart/form-data" method = "post" action = "/updateProfile">
                                     <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                     <div class="form-group">
-                                        <label>Password</label>
+                                        <label>New Password</label>
                                         <input class="form-control" name = "password" type = "password">
                                     </div>
                                     <!--belom selesai ya-->
@@ -136,43 +146,16 @@
                                         <input class="form-control" name = "tlpnumber" type = "text" value = "{{ $user->phone }}" required>
                                     </div>
                                     <label>Curriculum Vitae</label>
-                                        <input onclick="myFunction()" type="file" class="upload" />
-                                        <script>
-                                        function myFunction() {
-                                            var x = document.getElementById("myFile");
-                                            x.disabled = true;
-                                        }
-                                        </script>
+                                        <input type="file" class="upload" name = "CV" />
                                     <br>
                                     <label>KTP</label>
-                                        <input onclick="myFunction()" type="file" class="upload" />
-
-                                        <script>
-                                        function myFunction() {
-                                            var x = document.getElementById("myFile");
-                                            x.disabled = true;
-                                        }
-                                        </script>
+                                        <input type="file" class="upload" name = "KTP" />
                                     <br>
                                     <label>Ijazah</label>
-                                        <input onclick="myFunction()" type="file" class="upload" />
-
-                                        <script>
-                                        function myFunction() {
-                                            var x = document.getElementById("myFile");
-                                            x.disabled = true;
-                                        }
-                                        </script>
+                                        <input type="file" class="upload" name = "ijazah" />
                                     <br>
                                     <label>Kartu Keluarga</label>
-                                        <input onclick="myFunction()" type="file" class="upload" />
-
-                                        <script>
-                                        function myFunction() {
-                                            var x = document.getElementById("myFile");
-                                            x.disabled = true;
-                                        }
-                                        </script>
+                                        <input type="file" class="upload" name = "KK" />
                                     <br>
                                     <button type="submit" class="btn btn-default">Save</button>   
                             </form>
