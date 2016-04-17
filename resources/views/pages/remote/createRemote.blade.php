@@ -44,20 +44,20 @@
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                             <label class="col-md-4 control-label">Start Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "startdate" type = "date" required>
+                                                <input class="form-control" name = "startdate" type = "date" value = "{{ old('startdate') }}" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">End Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "enddate" type = "date" required>
+                                                <input class="form-control" name = "enddate" type = "date" value = "{{ old('enddate') }}" required>
                                             </div> 
                                         </div>
                                         
                                        <div class="form-group">
                                             <label class="col-md-4 control-label">Description</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "description" required></textarea>
+                                                <textarea class ="form-control" name = "description" required>{{ old('description') }}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">

@@ -53,7 +53,7 @@
                                                 </th>
                                             @else
                                                 <th><a href="/editProcurement:{{ $procurement->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
-                                            <a href="resetUser" class="btn btn-default btn-danger" role="button">Cancel</a></th>
+                                            <a href="/cancelProcurement:{{ $procurement->id }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
                                             @endif
                                         </tr>
                                         <?php $i++; ?>

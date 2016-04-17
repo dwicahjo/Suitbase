@@ -53,8 +53,8 @@
                                                     <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                                 </th>
                                             @elseif (strtotime('today') < strtotime($leave->date_start))
-                                                <th><a href="/editLeave:{{ $leave->id }}" class="btn btn-default btn-info" role="button">Edit</a>
-                                                    <a href="#" class="btn btn-default btn-danger" role="button">Cancel</a></th>
+                                                <th><a href="/editLeave:{{ $leave->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
+                                                    <a href="/cancelLeave:{{ $leave->id }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
                                             @endif
                                         </tr>
                                         <?php $i++; ?>

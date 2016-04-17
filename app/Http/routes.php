@@ -66,6 +66,8 @@ Route::get('/editLeave:{id}', 'LeavesController@viewEdit');
 
 Route::post('/updateLeave', 'LeavesController@update');
 
+Route::get('/cancelLeave:{id}', 'LeavesController@cancel');
+
 /* remote */
 Route::get('/createRemote', function () {
     return view('pages.remote.createRemote');
@@ -89,6 +91,8 @@ Route::get('/editRemote:{id}', 'RemotesController@viewEdit');
 
 Route::post('/updateRemote', 'RemotesController@update');
 
+Route::get('/cancelRemote:{id}', 'RemotesController@cancel');
+
 /* training */
 Route::get('/createTraining', 'TrainingController@index');
 
@@ -109,6 +113,8 @@ Route::get('/approveTraining:{id}', 'TrainingController@approve');
 Route::get('/editTraining:{id}', 'TrainingController@viewEdit');
 
 Route::post('/updateTraining', 'TrainingController@update');
+
+Route::get('/cancelTraining:{id}', 'TrainingController@cancel');
 
 /* procurement */
 Route::get('/createProcurement', function () {
@@ -133,6 +139,8 @@ Route::get('/editProcurement:{id}', 'ProcurementsController@viewEdit');
 
 Route::post('/updateProcurement', 'ProcurementsController@update');
 
+Route::get('/cancelProcurement:{id}', 'ProcurementsController@cancel');
+
 /* overtime */
 Route::get('/createOvertime', 'OvertimeController@index');
 
@@ -153,6 +161,8 @@ Route::get('/approveOvertime:{id}', 'OvertimeController@approve');
 Route::get('/editOvertime:{id}', 'OvertimeController@viewEdit');
 
 Route::post('/updateOvertime', 'OvertimeController@update');
+
+Route::get('/cancelOvertime:{id}', 'OvertimeController@cancel');
 
 /* survey */
 Route::get('/createSurvey', function () {

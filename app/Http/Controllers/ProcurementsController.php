@@ -12,10 +12,6 @@ class ProcurementsController extends Controller
 {
     public function create (Request $request)
     {
-    	$this->validate ($request, [
-  			
-    	]);
-
     	$procurement = new Procurement;
 
     	$procurement->title = $request->title;
@@ -97,6 +93,16 @@ class ProcurementsController extends Controller
         $procurement = Procurement::where('id', $id)->get()->first();
         $status = "Approved by " . $approver;
         $procurement->status = $status;
+
+        $procurement->save();
+
+        return back();
+    }
+
+    public function cancel ($id)
+    {
+        $procurement = Procurement::where('id', $id)->get()->first();
+        $procurement->status = "Cancelled";
 
         $procurement->save();
 

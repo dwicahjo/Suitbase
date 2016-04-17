@@ -109,8 +109,7 @@ return [
     */
 
     'attributes' => [
-        'startdate' => 'starting date',
-        'enddate' => 'ending date'
+        
     ],
 
 ];

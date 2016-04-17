@@ -49,8 +49,8 @@
                                                 <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                             </th>
                                         @elseif (strtotime('today') < strtotime($training->date))
-                                            <th><a href="/editTraining:{{ $training->id }}" class="btn btn-default btn-info" role="button">Edit</a>
-                                            <a href="" class="btn btn-default btn-danger" role="button">Cancel</a></th>
+                                            <th><a href="/editTraining:{{ $training->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
+                                            <a href="/cancelTraining:{{ $training->id }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
                                         @endif
                                     </tr>
                                     <?php $i++; ?>

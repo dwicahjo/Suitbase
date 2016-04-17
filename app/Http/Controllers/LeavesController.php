@@ -9,14 +9,32 @@ use App\Models\Leave;
 use App\Http\Controllers\Auth\AuthController;
 use DB;
 use Session;
+use Validator;
+
 class LeavesController extends Controller
 {
     public function create(Request $request)
     {
-        $this->validate ($request, [
-            'startdate' => 'required|date|after:today',
-            'enddate' => 'required|date|after:startdate+1'
-            ]);
+        $inputDate = $request->startdate;
+        $date = date("Y-m-d", strtotime('-1 day', strtotime($inputDate)));
+
+        $messages = [
+            'startdate.after' => "The start date must be later than today",
+            'enddate.after' => "The end date can not be earlier than the start date",
+        ];
+
+        $rules = [
+            'startdate' => 'date|after:today',
+            'enddate' => 'date|after:' . $date,
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect('/createLeave')
+                        ->withErrors($validator)
+                        ->withInput($request->all());
+        }
 
         $leave = new Leave;
 
@@ -114,6 +132,16 @@ class LeavesController extends Controller
         $leave = Leave::where('id', $id)->get()->first();
         $status = "Approved by " . $approver;
         $leave->status = $status;
+
+        $leave->save();
+
+        return back();
+    }
+
+    public function cancel ($id)
+    {
+        $leave = Leave::where('id', $id)->get()->first();
+        $leave->status = "Cancelled";
 
         $leave->save();
 
