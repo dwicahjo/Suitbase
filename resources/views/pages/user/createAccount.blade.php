@@ -25,7 +25,7 @@
                         <!-- <div class="row">
                             <div class="col-lg-12"> -->
                         <form class="form-horizontal" role="form" enctype="multipart/form-data" method="POST" action="{{ url('/createAccount') }}">
-                        {!! csrf_field() !!}
+                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Name</label>
@@ -103,6 +103,18 @@
                                             foreach ($divisions as $division) {
                                             echo '<option value="'.$division->id.'">'.$division->name.'</option>';
                                         }?>
+                                    </select>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">User Type</label>
+                                <div class="col-md-6">
+                                    <select class="form-control" name = "type">
+                                        <option>HR</option>
+                                        <option>Supervisor</option>
+                                        <option>Finance</option>
+                                        <option>Employee</option>
                                     </select>
                                 </div>
                         </div>

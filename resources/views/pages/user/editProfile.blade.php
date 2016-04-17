@@ -68,7 +68,7 @@
                                         <select class="form-control" name = "role">
                                             <option>Finance</option>
                                             <option>HR</option>
-                                            <option>SUpervisor</option>
+                                            <option>Supervisor</option>
                                             <option>Employee</option>
                                         </select>
                                     </div>
