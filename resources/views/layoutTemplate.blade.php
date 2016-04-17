@@ -158,7 +158,15 @@
                         </li>
                         @if (Auth::user()->type == 'HR')
                             <li>
-                                <a href="listOfUser"><i class="fa fa-users fa-fw"></i> Users</a>
+                                <a href="#"><i class="fa fa-users fa-fw"></i> Users<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="createAccount">Create Account</a>
+                                </li>
+                                <li>
+                                    <a href="listOfUser">View List Of Users</a>
+                                </li>
+                            </ul>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-table fa-fw"></i> Request</a>

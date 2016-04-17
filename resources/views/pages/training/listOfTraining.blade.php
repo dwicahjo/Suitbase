@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="panel-body">
-                        <div class="dataTable_wrapper">
+                        <div class="dataTable_wrapper disini?">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
@@ -40,10 +40,10 @@
                                     @foreach ($trainings as $training)
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
-                                        <td>{{$training->username}}</td>
+                                        <td><a href="/trainingApproval:{{$training->id}}">{{$training->username}}</td>
                                         <td>{{$training->date}}</td>
                                         <td>{{$training->division}}</td>
-                                        <td><a href="/trainingApproval:{{$training->id}}">{{$training->title}}</a></td>
+                                        <td>{{$training->title}}</a></td>
                                         <td>{{$training->status}}</td>
                                     </tr>
                                     <?php $i++; ?>
