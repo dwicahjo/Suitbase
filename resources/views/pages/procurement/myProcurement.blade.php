@@ -41,18 +41,18 @@
                                     @foreach ($procurements as $procurement)
                                         <tr class="odd gradeX">
                                             <td class="center">{{ $i }}</td>
-                                            <td><a href="/myProcurements:{{ $procurement->id }}">{{ $procurement->title }}</a></td>
-                                            <td class="center">{{ $procurement->status}}</td>
+                                            <td>{{ $procurement->title }}</td>
+                                            <td><a href="/myProcurements:{{ $procurement->id }}">{{ $procurement->status}}</a></td>
                                             <?php 
                                                 $status = explode(" ", $procurement->status);
                                             ?>
                                             @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                                 <th>
-                                                    <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
+                                                    <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
                                                     <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                                 </th>
                                             @else
-                                                <th><a href="/editProcurement:{{ $procurement->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
+                                                <th><a href="/editProcurement:{{ $procurement->id }}" class="btn btn-default btn-info" role="button">Edit</a>
                                             <a href="/cancelProcurement:{{ $procurement->id }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
                                             @endif
                                         </tr>

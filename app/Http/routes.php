@@ -27,9 +27,11 @@ Route::get('/createAccount', 'UserController@index');
 
 Route::post('/createAccount', 'UserController@postCreate');
 
-Route::get('/editProfile', function () {
-    return view('pages.user.editProfile');
-});
+Route::get('/editProfile', 'UserController@viewEdit');
+
+Route::post('/updateProfile', 'UserController@update');
+
+Route::post('/uploadImage', 'UserController@uploadImage');
 
 Route::get('/listOfUser', 'UserController@showListOfUser');
 
@@ -39,9 +41,11 @@ Route::get('/myProfile', function () {
 
 Route::get('/userDetails:{id}', 'UserController@showDetail');
 
-Route::get('/resetUser', function () {
-    return view('pages.user.resetUser');
-});
+Route::get('/resetUser:{id}', 'UserController@viewReset');
+
+Route::post('/reset:{id}', 'UserController@reset');
+
+Route::get('/download:{doc}', 'UserController@download');
 
 /* leave */
 Route::get('/createLeave', function () {

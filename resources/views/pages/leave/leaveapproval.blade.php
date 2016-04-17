@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Leave Detail</h1>
+                <h1 class="page-header">LEAVE DETAIL</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -70,6 +70,7 @@
                                 </div>
                             </form>
                             <div class="form-group">
+                                <div class="col-lg-6 col-md-offset-2">
                                     <a href="listOfLeave" class="btn btn-default" role="button">Back</a>
                                 <?php 
                                     $status = explode(" ", $leaves[0]->status);
@@ -81,6 +82,7 @@
                                          <a href="/rejectLeave:{{ $leaves[0]->id }}" class="btn btn-default" role="button">Reject</a>
                                         <a href="/approveLeave:{{ $leaves[0]->id }}" class="btn btn-default" role="button">Approve</a>
                                 @endif
+                            </div>
                             </div>
                             <!--row-->
                         </div>

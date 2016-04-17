@@ -11,7 +11,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">REMOTE DETAIL</h1>
+                <h1 class="page-header">REMOTE WORKING DETAIL</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -63,28 +63,21 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="row buttonApproval">
-                                <div class="col-lg-2 col-lg-offset-1">
+                            <div class="form-group">
+                                <div class="col-lg-6 col-md-offset-2">
                                     <a href="listOfRemote" class="btn btn-default" role="button">Back</a>
-                                </div>
                                 <?php 
                                     $status = explode(" ", $remotes[0]->status);
                                 ?>
                                 @if (strtotime('today') > strtotime($remotes[0]->date_start) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
-                                    <div class="col-lg-2">
+    
                                          <button class="btn btn-default" disabled>Reject</button>
-                                    </div>
-                                    <div class="col-lg-2">
                                         <button class="btn btn-default" disabled>Approve</button>
-                                    </div>
                                 @else   
-                                    <div class="col-lg-2">
                                          <a href="/rejectRemote:{{ $remotes[0]->id }}" class="btn btn-default" role="button">Reject</a>
-                                    </div>
-                                    <div class="col-lg-2">
                                         <a href="/approveRemote:{{ $remotes[0]->id }}" class="btn btn-default" role="button">Approve</a>
-                                    </div>
                                 @endif
+                            </div>
                             </div>
                             <!--row-->
                         </div>

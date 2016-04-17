@@ -63,30 +63,21 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="row buttonApproval">
-                                <div class="col-lg-2 col-lg-offset-1">
+                            <div class="form-group">
+                                <div class="col-lg-6 col-md-offset-2">
                                     <a href="listOfProcurement" class="btn btn-default" role="button">Back</a>
-                                </div>
                                 <?php 
                                     $status = explode(" ", $procurements[0]->status);
                                 ?>
                                 @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
-                                    <div class="col-lg-2">
-                                         <button class="btn btn-default" disabled>Reject</button>
-                                    </div>
-                                    <div class="col-lg-2">
+                                        <button class="btn btn-default" disabled>Reject</button>
                                         <button class="btn btn-default" disabled>Approve</button>
-                                    </div>
                                 @else   
-                                    <div class="col-lg-2">
-                                         <a href="/rejectProcurement:{{ $procurements[0]->id }}" class="btn btn-default" role="button">Reject</a>
-                                    </div>
-                                    <div class="col-lg-2">
+                                        <a href="/rejectProcurement:{{ $procurements[0]->id }}" class="btn btn-default" role="button">Reject</a>
                                         <a href="/approveProcurement:{{ $procurements[0]->id }}" class="btn btn-default" role="button">Approve</a>
-                                    </div>
                                 @endif
+                                </div>
                             </div>
-
                             <!--row-->
                         </div><!--content-->
                     </div>

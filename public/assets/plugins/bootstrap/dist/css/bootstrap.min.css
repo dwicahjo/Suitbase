@@ -1055,7 +1055,6 @@ img {
 				display:block;
 				max-width:100%;
 				height:auto;
-				border: 4px double black;
 			}
 			.img-rounded {
 				border-radius:6px
