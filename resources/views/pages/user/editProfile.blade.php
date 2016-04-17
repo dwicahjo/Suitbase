@@ -25,11 +25,12 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6" style= "width:50%">
+                                <form role="form">
                                     <div class="col-image">
                                     <span>
-                                         <img alt="image" class="" width= 80% src="assets/foto.jpg">
+                                         <img alt="image" class="img-responsive img-circle" src="assets/photo.png">
                                      </span>
-                                     
+                                                        
                                     <input style="margin-top:3%" onclick="myFunction()" type="file" class="upload" />
 
                                         <script>
@@ -38,6 +39,7 @@
                                                 x.disabled = true;
                                             }
                                     </script>
+                                </form>
                                 </div>
                                 </div>
         
@@ -158,7 +160,7 @@
                                         </script>
                                     <br>
                                     <button type="submit" class="btn btn-default">Save</button>   
-                                </form>
+                            </form>
                 </div>
     </div>
     <!-- /#wrapper -->
