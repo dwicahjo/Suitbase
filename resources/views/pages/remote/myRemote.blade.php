@@ -47,12 +47,12 @@
                                             ?>
                                             @if (strtotime('today') > strtotime($remote->date_start) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                                 <th>
-                                                    <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
+                                                    <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
                                                     <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                                 </th>
                                             @elseif (strtotime('today') < strtotime($remote->date_start))
-                                                <th><a href="/editRemote:{{ $remote->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
-                                                <a href="/cancelRemote:{{ $remote->id }}" class="btn btn-default btn-delete" role="danger">Cancel</a></th>
+                                                <th><a href="/editRemote:{{ $remote->id }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                                <a href="/cancelRemote:{{ $remote->id }}" class="btn btn-default btn-danger" role="danger">Cancel</a></th>
                                             @endif
                                         </tr>
                                         <?php $i++; ?>

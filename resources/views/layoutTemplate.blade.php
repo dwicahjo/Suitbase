@@ -135,10 +135,8 @@
                                         <img alt="image" class="img-circle" style="margin-left:25px" src="assets/photo.png">
                                     </span>
                                     <br>
-                                    {{-- <a data-toggle="dropdown" class="dropdown-toggle" href="#"> --}}
                                     <span class="clear">
                                         <span class="block m-t-xs">
-                                            {{-- <strong class="font-bold">David Williams</strong> --}}
                                             {{ Auth::user()->name }}
                                         </span>
                                         <br>

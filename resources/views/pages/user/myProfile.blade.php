@@ -20,14 +20,13 @@
                     <div class="row">
                         <div class="col-lg-5">
                             <div class="row">
-                                <div class="col-lg-12">
-                                    <img alt="image" class="img-responsive" src="assets/foto.jpg">
+                                <div class="col-lg-6 col-lg-offset-4">
+                                    <img alt="image" class="img-circle img-responsive" src="assets/photo.png">
                                </div>
                             </div> <!--row-->
                         </div> <!--col-lg-6-->
 
                         <div class="col-lg-7">
-                            <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
                                         <tr>
@@ -107,8 +106,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- /.table-responsive -->
                         </div> <!--col-lg-7-->
                     </div> <!--row-->
                 </div><!-- /.panel-body -->
