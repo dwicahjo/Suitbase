@@ -295,7 +295,7 @@ class UserController extends Controller
 
             if ($request->newPassword != "")
             {
-                $user->password = bcrypt($request->password);
+                $user->password = bcrypt($request->newPassword);
                 Session::flash('success', 'Password was reset successfully');
             }
         }

@@ -132,7 +132,7 @@
                                 @if (Auth::user())
                                 <div class="input-group custom-search-form">
                                     <span>
-                                        <img alt="image" class="img-circle" style="margin-left:25px" src="assets/photo.png">
+                                        <img alt="image" class="img-circle img-responsive" style="margin-left:25px" src="upload/photos/{{ Auth::user()->photo }}">
                                     </span>
                                     <br>
                                     <span class="clear">
