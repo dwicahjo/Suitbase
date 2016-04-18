@@ -89,6 +89,7 @@ public function updateAppraisalTemplate(Request $request)
         'appraisals_template_id' => $request->id,
     ]);
       }
+      Session::flash('success', 'Appraisal Template was edited successfully');
     return back();
 }
 }

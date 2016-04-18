@@ -22,6 +22,7 @@ class ProcurementsController extends Controller
 
         $procurement->save();
 
+        Session::flash('success', 'Procurement request was submitted successfully');
         return back();
     }
 

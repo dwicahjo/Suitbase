@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class FixAttributesInUsersTable extends Migration
+class AddStatusAttributeInUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,7 @@ class FixAttributesInUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->text('photo');
-            $table->string('NPWP')->change();
+            $table->string('status');
         });
     }
 
@@ -26,8 +25,7 @@ class FixAttributesInUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('photo');
-            $table->text('NPWP')->change();
+            $table->dropColumn('status');
         });
     }
 }

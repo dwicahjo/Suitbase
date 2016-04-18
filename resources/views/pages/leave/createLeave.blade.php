@@ -58,31 +58,26 @@
                                             <label class="col-md-4 control-label">Leave Type</label>
                                             <div class = "col-md-6">
                                                 <select class="form-control" name = "leavetype" required>
-                                                    @if (old('leavetype') == 'Sick')
-                                                        <option selected>Sick</option>
-                                                        <option>Maternal</option>
-                                                        <option>Marriage</option>
+                                                    @if (Auth::user()->number_leave <= 0)
                                                         <option>Unpaid</option>
-                                                    @elseif (old('leavetype') == 'Maternal')
-                                                        <option>Sick</option>
-                                                        <option selected>Maternal</option>
-                                                        <option>Marriage</option>
-                                                        <option>Unpaid</option>
-                                                    @elseif (old('leavetype') == 'Marriage')
-                                                        <option>Sick</option>
-                                                        <option>Maternal</option>
-                                                        <option selected>Marriage</option>
-                                                        <option>Unpaid</option>
-                                                    @elseif (old('leavetype') == 'Unpaid')
-                                                        <option>Sick</option>
-                                                        <option>Maternal</option>
-                                                        <option>Marriage</option>
-                                                        <option selected>Unpaid</option>
                                                     @else
-                                                        <option>Sick</option>
-                                                        <option>Maternal</option>
-                                                        <option>Marriage</option>
-                                                        <option>Unpaid</option>
+                                                        @if (old('leavetype') == 'Sick')
+                                                            <option selected>Sick</option>
+                                                            <option>Maternal</option>
+                                                            <option>Marriage</option>
+                                                        @elseif (old('leavetype') == 'Maternal')
+                                                            <option>Sick</option>
+                                                            <option selected>Maternal</option>
+                                                            <option>Marriage</option>
+                                                        @elseif (old('leavetype') == 'Marriage')
+                                                            <option>Sick</option>
+                                                            <option>Maternal</option>
+                                                            <option selected>Marriage</option>
+                                                        @else
+                                                            <option>Sick</option>
+                                                            <option>Maternal</option>
+                                                            <option>Marriage</option>
+                                                        @endif
                                                     @endif
                                                 </select>
                                             </div>

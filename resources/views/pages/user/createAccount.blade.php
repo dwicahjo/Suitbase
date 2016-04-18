@@ -16,6 +16,20 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+            @if (Session::has('success'))
+                <div class = "alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -212,7 +226,6 @@
                                     <input name="KK" type="file" class="upload" />
                                 </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

@@ -21,7 +21,7 @@
                         <div class="col-lg-5">
                             <div class="row">
                                 <div class="col-lg-6 col-lg-offset-4">
-                                    <img alt="image" class="img-circle img-responsive" src="assets/photo.png">
+                                    <img alt="image" class="img-circle img-responsive" src="upload/photos/{{ Auth::user()->photo }}">
                                </div>
                             </div> <!--row-->
                         </div> <!--col-lg-6-->
@@ -79,19 +79,35 @@
                                         </tr>
                                         <tr>
                                             <td>Curriculum Vitae</td>
-                                            <td><a href= /public/upload"{{Auth::user()->CV }}">CV</a></td>
+                                            @if (Auth::user()->CV == "")
+                                                <td>Not Available</td>
+                                            @else
+                                                <td><a href="/download:1">CV</a></td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <td>KTP</td>
-                                            <td><a href="{{ Auth::user()->ktp_id }}">KTP</td>
+                                            @if (Auth::user()->KTP == "")
+                                                <td>Not Available</td>
+                                            @else
+                                                <td><a href="/download:2">KTP</td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <td>Ijazah</td>
-                                            <td><a href="{{Auth::user()->ijazah }}">Ijazah</a></td>
+                                            @if (Auth::user()->ijazah == "")
+                                                <td>Not Available</td>
+                                            @else
+                                                <td><a href="/download:3">Ijazah</a></td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <td>Kartu Keluarga</td>
-                                            <td><a href="{{ Auth::user()->KK }}">KK</a></td>
+                                            @if (Auth::user()->KK == "")
+                                                <td>Not Available</td>
+                                            @else
+                                                <td><a href="/download:4">KK</a></td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <td></td>

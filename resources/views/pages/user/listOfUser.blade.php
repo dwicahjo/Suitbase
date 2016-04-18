@@ -42,7 +42,7 @@
                                         <td>{{$user->division}}</td>
                                         <td><a href="/userDetails:{{$user->id}}">{{$user->name}}</a></td>
                                         <th><a href="/editProfile" class="btn btn-default btn-info" role="button">Edit</a>
-                                            <a href="/resetUser" class="btn btn-default btn-danger" role="button">Reset</a></th>
+                                            <a href="/resetUser:{{ $user->id }}" class="btn btn-default btn-danger" role="button">Reset</a></th>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

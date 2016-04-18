@@ -55,22 +55,16 @@
                                                         <option selected>Sick</option>
                                                         <option>Maternal</option>
                                                         <option>Marriage</option>
-                                                        <option>Unpaid</option>
                                                     @elseif ($leaves[0]->type == 'Maternal')
                                                         <option>Sick</option>
                                                         <option selected>Maternal</option>
                                                         <option>Marriage</option>
-                                                        <option>Unpaid</option>
                                                     @elseif ($leaves[0]->type == 'Marriage')
                                                         <option>Sick</option>
                                                         <option>Maternal</option>
                                                         <option selected>Marriage</option>
-                                                        <option>Unpaid</option>
                                                     @elseif ($leaves[0]->type == 'Unpaid')
-                                                        <option>Sick</option>
-                                                        <option>Maternal</option>
-                                                        <option>Marriage</option>
-                                                        <option selected>Unpaid</option>
+                                                        <option>Unpaid</option>
                                                     @endif
                                                 </select>
                                             </div>
