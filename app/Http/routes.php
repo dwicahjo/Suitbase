@@ -22,7 +22,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'inactive'], function() {
 
         Route::get('/home', 'HomeController@index');
-        
+
         /*user*/
         Route::get('/createAccount', 'UserController@index');
 
@@ -199,21 +199,18 @@ Route::group(['middleware' => 'auth'], function() {
         /* appraisal */
         Route::get('/viewListAppraisalTemplate', 'AppraisalsController@showListOfAppraisalsTemplate');
 
+
+Route::get('/listofAppraisal', 'AppraisalsController@showListofAppraisals');
+
         Route::get('/myAppraisal', function () {
             return view('pages.appraisal.myAppraisal');
         });
 
-        Route::get('/listofAppraisal', function () {
-            return view('pages.appraisal.listofAppraisal');
-        });
-
         Route::get('/createAppraisal','AppraisalsController@index');
+        Route::get('/fillAppraisal:{id}', 'AppraisalsController@fillAppraisal');
+        Route::post('/fillAppraisal', 'AppraisalsController@postFillAppraisal');
 
         Route::post('/createAppraisal','AppraisalsController@postAppraisal');
-
-        Route::get('/fillAppraisal', function () {
-            return view('pages.appraisal.fillAppraisal');
-        });
 
         Route::get('/editAppraisalTemplate:{id}','AppraisalsController@editAppraisalTemplate');
         Route::post('/updateAppraisalTemplate','AppraisalsController@updateAppraisalTemplate');
