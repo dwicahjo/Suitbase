@@ -15,12 +15,6 @@ use Session;
 
 class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-        // $this->middleware('inactive');
-    }
-
     public function index()
     {
         $departments = Department::all();
@@ -153,6 +147,20 @@ class UserController extends Controller
 
         if ($request->password != "")
         {
+            $messages = [
+                'password.same' => "Please repeat the new password properly"
+            ];
+
+            $rules = [
+                'password' => 'same:repeatPass'
+            ];
+
+            $validator = Validator::make($request->all(), $rules, $messages);
+
+            if ($validator->fails()) {
+                return redirect('/editProfile' . $request->user_id)
+                            ->withErrors($validator);
+            }
             $user->password = bcrypt($request->password);
         }
 

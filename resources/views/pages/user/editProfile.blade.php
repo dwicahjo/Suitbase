@@ -59,7 +59,10 @@
                                         <label>New Password</label>
                                         <input class="form-control" name = "password" type = "password">
                                     </div>
-                                    <!--belom selesai ya-->
+                                    <div class="form-group">
+                                        <label>Repeat New Password</label>
+                                        <input class="form-control" name = "repeatPass" type = "password">
+                                    </div>
                                     @if (Auth::user()->type == "HR")
                                         <div class="form-group">
                                             <label>Division</label>
