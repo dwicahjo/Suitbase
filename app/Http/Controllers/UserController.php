@@ -40,7 +40,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect('/editProfile')
+            return redirect('/createAccount')
                         ->withErrors($validator);
         }
 
@@ -61,6 +61,8 @@ class UserController extends Controller
             'departments_id' => $request->departments_id,
             'divisions_id' => $request->divisions_id,
             'status' => 'Active',
+            'photo' => 'photo.png',
+            'type' => $request->type,
         ]);
 
         if ($request->hasFile('CV'))
@@ -115,9 +117,14 @@ class UserController extends Controller
 
     public function viewEdit()
     {
-        $divisions = Division::all();
         $user = User::where('id', \Auth::user()->id)->get()->first();
-        return view('pages.user.editProfile',['user' => $user],['divisions' => $divisions]);
+        return view('pages.user.editProfile',['user' => $user]);
+    }
+
+    public function viewEditUser ($id)
+    {
+        $user = User::where('id', $id)->get()->first();
+        return view('pages.user.editProfile',['user' => $user]);
     }
 
     public function update (Request $request)
@@ -143,7 +150,7 @@ class UserController extends Controller
                         ->withErrors($validator);
         }
 
-        $user = User::where('id', \Auth::user()->id)->get()->first();
+        $user = User::where('id', $request->user_id)->get()->first();
 
         if ($request->password != "")
         {
@@ -212,6 +219,7 @@ class UserController extends Controller
     public function uploadImage (Request $request)
     {
         $messages = [
+            'image.required' => "Choose the file first",
             'image.mimes' => "The file must be in PNG, JPG or JPEG format"
         ];
 
@@ -226,7 +234,7 @@ class UserController extends Controller
                         ->withErrors($validator);
         }
 
-        $user = User::where('id', \Auth::user()->id)->get()->first();
+        $user = User::where('id', $request->user_id)->get()->first();
 
         $fileName = $user->name . '.' . $request->file('image')->getClientOriginalExtension();
         $request->file('image')->move(base_path().'/public/upload/photos', $fileName);
@@ -234,6 +242,7 @@ class UserController extends Controller
         $user->photo = $fileName;
         $user->save();
 
+        Session::flash('success', 'Profile photo was changed successfully');
         return back();
     }
 

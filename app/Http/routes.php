@@ -30,6 +30,8 @@ Route::group(['middleware' => 'auth'], function() {
 
         Route::get('/editProfile', 'UserController@viewEdit');
 
+        Route::get('/editProfile:{id}', 'UserController@viewEditUser');
+
         Route::post('/updateProfile', 'UserController@update');
 
         Route::post('/uploadImage', 'UserController@uploadImage');
