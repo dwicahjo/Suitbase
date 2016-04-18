@@ -5,7 +5,7 @@
  */
 
 body {
-    background-color: #f8f8f8;
+    background-color: white;
 }
 
 #wrapper {
@@ -152,7 +152,7 @@ body {
     .sidebar {
         z-index: 1;
         position: absolute;
-        width: 250px;
+        width: 220px;
         margin-top: 51px;
     }
 
@@ -497,14 +497,14 @@ table.dataTable thead .sorting:after {
 
 @media(min-width:768px) {
     .side-nav {
-        position: fixed;
+        position: relative;
         top: 51px;
         left: 225px;
         width: 225px;
         margin-left: -225px;
         border: solid 1px #f60;
         border-radius: 0;
-        overflow-y: hidden;
+        overflow-y: ;
         background-color: white;
         bottom: 0;
         overflow-x: hidden;

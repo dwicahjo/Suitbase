@@ -127,12 +127,12 @@
 
                 <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
-                        <ul class="nav navbar-nav side-nav" id="side-menu">
+                        <ul class="nav" id="side-menu">
                             <li class="sidebar-search">
                                 @if (Auth::user())
                                 <div class="input-group custom-search-form">
                                     <span>
-                                        <img alt="image" class="img-circle img-responsive" style="margin-left:25px" src="upload/photos/{{ Auth::user()->photo }}">
+                                        <img alt="image" class="img-circle img-responsive" src="upload/photos/{{ Auth::user()->photo }}">
                                     </span>
                                     <br>
                                     <span class="clear">
@@ -311,14 +311,16 @@
             </div>
             <!-- /.sidebar-collapse -->
         </div>
+        <div class="page-wrapper">
+    </div>
         <!-- /.navbar-static-side -->
-    </nav>
 
     @section('content')
     @show
-    <!-- /#page-wrapper -->
 
-</div>
+    <!-- /#page-wrapper -->
+    
+
 <!-- /#wrapper -->
 
     <!-- jQuery -->
