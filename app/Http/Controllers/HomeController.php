@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
     if (Auth::user()) {
-         return view('layoutTemplate'); //Page which you want to show for loged user.
+         return view('home'); //Page which you want to show for loged user.
     } else {
         return view('auth.login'); //You can redirect from here, if user is not logged in
     }

@@ -315,7 +315,7 @@
             <!-- /.sidebar-collapse -->
         </div>
         <!-- /.navbar-static-side -->
-    
+
     </nav>
 
     @section('content')

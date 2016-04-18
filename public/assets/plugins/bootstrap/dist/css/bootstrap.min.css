@@ -1056,6 +1056,7 @@ img {
 				display:block;
 				max-width:100%;
 				height:auto;
+				margin-left: 18%;
 			}
 			.img-rounded {
 				border-radius:6px
@@ -3643,8 +3644,9 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 	}
 }
 .navbar-static-top {
-	z-index:1000;
-	border-width:0 0 1px
+  z-index: 1000;
+  background-color: #f60!important;
+  border-width: 0 0 1px;
 }
 @media (min-width:768px) {
 				.navbar-static-top {
@@ -3888,7 +3890,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 	border-color:#f60
 }
 .navbar-default .navbar-brand {
-	color:#777
+	 color: #000;
 }
 .navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:hover {
 				color:#5e5e5e;
