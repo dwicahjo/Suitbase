@@ -49,7 +49,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">SUITBASE</a>
+                    <a class="navbar-brand" href="/">SUITBASE</a>
                 </div>
                 <!-- /.navbar-header -->
                 @if (Auth::user())
@@ -132,13 +132,15 @@
                                 @if (Auth::user())
                                 <div class="input-group custom-search-form">
                                     <span>
-                                        <img alt="image" class="img-circle" style="margin-left:25px" src="assets/photo.png">
+                                        <img alt="image" class="img-circle img-responsive" src="upload/photos/{{ Auth::user()->photo }}">
                                     </span>
                                     <br>
                                     <span class="clear">
-                                        <span class="block m-t-xs">
-                                            {{ Auth::user()->name }}
-                                        </span>
+                                        <div class="col-lg-12 pager">
+                                            <span class="block m-t-xs">
+                                                {{ Auth::user()->name }}
+                                            </span>
+                                        </div>
                                         <br>
                                        {{--  <span class="text-muted text-xs block"> {{ Auth::user()->divisions_id }} </span>
                                         <span class="text-muted text-xs block"> {{ Auth::user()->departments_id }} </span> --}}
@@ -313,6 +315,7 @@
             <!-- /.sidebar-collapse -->
         </div>
         <!-- /.navbar-static-side -->
+    
     </nav>
 
     @section('content')
