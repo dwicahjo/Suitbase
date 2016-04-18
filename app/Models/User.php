@@ -25,6 +25,7 @@ class User extends Model
         'type',
         'CV',
         'KK',
+        'type',
         'ijazah',
         'religion',
         'gender',

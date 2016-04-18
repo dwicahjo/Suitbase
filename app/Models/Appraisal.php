@@ -33,12 +33,12 @@ class Appraisal extends Model
     {
         return $this->hasOne('App\Models\User', 'id', 'employees_id');
     }
-    public function appraisals_template_id()
+    public function appraisalsTemplate()
     {
         return $this->hasOne('App\Models\AppraisalsTemplate', 'id', 'appraisals_template_id');
     }
     public function supervisor()
     {
-        return $this->hasOne('App\Models\Supervisor', 'id', 'supervisors_id');
+        return $this->hasOne('App\Models\Supervisor', 'supervisors_id', 'supervisors_id');
     }
 }

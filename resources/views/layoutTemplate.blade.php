@@ -270,6 +270,9 @@
                                     </li>
                                     @if (Auth::user()->type == 'HR')
                                         <li>
+                                            <a href="createAppraisal">Create Appraisal Template</a>
+                                        </li>
+                                        <li>
                                             <a href="viewListAppraisalTemplate">View List of Appraisal Template</a>
                                         </li>
                                     @endif

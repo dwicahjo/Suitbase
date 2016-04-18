@@ -91,6 +91,16 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="col-md-4 control-label">Type</label>
+                                <div class="col-md-6">
+                                    <select class="form-control" name = "type">
+                                        <option value='administrator'>Administrator</option>
+                                        <option value='user'>User</option>
+                                    </select>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
                             <label class="col-md-4 control-label">Birth Place</label>
                                 <div class="col-md-6">
                                     <input class="form-control" name = "birth_place" type = "text">

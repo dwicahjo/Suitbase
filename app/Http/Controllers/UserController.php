@@ -15,6 +15,10 @@ use Session;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $departments = Department::all();
@@ -65,11 +69,12 @@ class UserController extends Controller
             'number_leave' => 12,
             'departments_id' => $data['departments_id'],
             'divisions_id' => $data['divisions_id'],
-            'photo' => $data['photo'],
+            /*'photo' => $data['photo'],*/
             'status' => 'Active',
+            'type' => 'type',
         ]);
 
-        if ($request->hasFile('CV'))
+       /* if ($request->hasFile('CV'))
         {
             $fileCV = 'CV_' . $user->name . '.' . $request->file('CV')->getClientOriginalExtension();
             $request->file('CV')->move(base_path().'/public/upload/docs', $fileCV);
@@ -97,7 +102,7 @@ class UserController extends Controller
             $user->KK = $fileKK;
         }
 
-        $user->save();
+        $user->save();*/
 
         Session::flash('success', 'A new account was created successfully');
         return $this->index();

@@ -10,8 +10,12 @@ use DB;
 
 class FeedbackController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
-    {   
+    {
         if(Auth::user()){
             $user = Auth::user()->id;
             $feedbacks = Feedback::where('employees_id', $user)->orderBy('created_at','desc')->take(10)->get();
