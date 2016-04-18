@@ -311,16 +311,15 @@
             </div>
             <!-- /.sidebar-collapse -->
         </div>
-        <div class="page-wrapper">
-    </div>
         <!-- /.navbar-static-side -->
+    
+    </nav>
 
     @section('content')
     @show
-
     <!-- /#page-wrapper -->
-    
 
+</div>
 <!-- /#wrapper -->
 
     <!-- jQuery -->

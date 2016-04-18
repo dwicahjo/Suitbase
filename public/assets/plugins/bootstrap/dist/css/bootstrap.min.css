@@ -3416,7 +3416,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 				text-decoration:none;
 				background-color:#f60;
 				opacity: 0.7;
-				color: black;
+				color: white;
 }
 .nav>li.disabled>a {
 	color:#777
