@@ -1049,7 +1049,8 @@ figure {
 	margin:0
 }
 img {
-	vertical-align:middle
+	vertical-align:middle;
+	margin-bottom: 10%;
 }
 .carousel-inner>.item>a>img,.carousel-inner>.item>img,.img-responsive,.thumbnail a>img,.thumbnail>img {
 				display:block;
@@ -3400,7 +3401,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 .nav {
 				padding-left:0;
 				margin-bottom:0;
-				list-style:none
+				list-style:none;
 			}
 			.nav>li {
 				position:relative;
@@ -3415,7 +3416,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 				text-decoration:none;
 				background-color:#f60;
 				opacity: 0.7;
-				color: white;
+				color: black;
 }
 .nav>li.disabled>a {
 	color:#777
@@ -3898,7 +3899,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 	color:#777
 }
 .navbar-default .navbar-nav>li>a {
-	color:white;
+	color:black;
 }
 .navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:hover {
 				color:#333;
@@ -4137,7 +4138,6 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 			}
 			.pager {
 				padding-left:0;
-				margin:20px 0;
 				text-align:center;
 				list-style:none
 			}

@@ -79,7 +79,7 @@
                                         </tr>
                                         <tr>
                                             <td>Curriculum Vitae</td>
-                                            <td><a href="{{Auth::user()->CV }}">CV</a></td>
+                                            <td><a href= /public/upload"{{Auth::user()->CV }}">CV</a></td>
                                         </tr>
                                         <tr>
                                             <td>KTP</td>

@@ -49,7 +49,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">SUITBASE</a>
+                    <a class="navbar-brand" href="/">SUITBASE</a>
                 </div>
                 <!-- /.navbar-header -->
                 @if (Auth::user())
@@ -127,7 +127,7 @@
 
                 <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
-                        <ul class="nav" id="side-menu">
+                        <ul class="nav navbar-nav side-nav" id="side-menu">
                             <li class="sidebar-search">
                                 @if (Auth::user())
                                 <div class="input-group custom-search-form">
@@ -136,9 +136,11 @@
                                     </span>
                                     <br>
                                     <span class="clear">
-                                        <span class="block m-t-xs">
-                                            {{ Auth::user()->name }}
-                                        </span>
+                                        <div class="col-lg-12 pager">
+                                            <span class="block m-t-xs">
+                                                {{ Auth::user()->name }}
+                                            </span>
+                                        </div>
                                         <br>
                                        {{--  <span class="text-muted text-xs block"> {{ Auth::user()->divisions_id }} </span>
                                         <span class="text-muted text-xs block"> {{ Auth::user()->departments_id }} </span> --}}
