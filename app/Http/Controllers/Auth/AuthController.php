@@ -84,7 +84,7 @@ class AuthController extends Controller
             'departments_id' => $data['departments_id'],
             'divisions_id' => $data['divisions_id'],
             'status' => 'Active',
-            'photo' => $data['photo'],
+            'photo' => 'photo.png',
             ]);
     }
 

@@ -15,7 +15,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        // \App\Http\Middleware\LogoutIfNotActiveUser::class
+        \App\Http\Middleware\LogoutIfNotActiveUser::class
     ];
 
     /**
@@ -49,5 +49,6 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'inactive' => \App\Http\Middleware\LogoutIfNotActiveUser::class,
     ];
 }

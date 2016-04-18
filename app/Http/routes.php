@@ -10,218 +10,221 @@
 |
 */
 Route::auth();
-Route::get('/home', 'HomeController@index');
-/*Route::get('/', 'HomeController@index');*/
+
 Route::get('/', function () {
     return redirect('home');
 });
 Route::get('/template', function () {
     return view('layoutTemplate');
 });
-/*user*/
-/*Route::get('/createAccount', function () {
-    return view('pages.user.createAccount');
-});*/
 
-Route::get('/createAccount', 'UserController@index');
+Route::group(['middleware' => 'auth'], function() {
+    Route::group(['middleware' => 'inactive'], function() {
 
-Route::post('/createAccount', 'UserController@postCreate');
+        Route::get('/home', 'HomeController@index');
+        
+        /*user*/
+        Route::get('/createAccount', 'UserController@index');
 
-Route::get('/editProfile', 'UserController@viewEdit');
+        Route::post('/createAccount', 'UserController@postCreate');
 
-Route::post('/updateProfile', 'UserController@update');
+        Route::get('/editProfile', 'UserController@viewEdit');
 
-Route::post('/uploadImage', 'UserController@uploadImage');
+        Route::post('/updateProfile', 'UserController@update');
 
-Route::get('/listOfUser', 'UserController@showListOfUser');
+        Route::post('/uploadImage', 'UserController@uploadImage');
 
-Route::get('/myProfile', function () {
-    return view('pages.user.myProfile');
-});
+        Route::get('/listOfUser', 'UserController@showListOfUser');
 
-Route::get('/userDetails:{id}', 'UserController@showDetail');
+        Route::get('/myProfile', function () {
+            return view('pages.user.myProfile');
+        });
 
-Route::get('/resetUser:{id}', 'UserController@viewReset');
+        Route::get('/userDetails:{id}', 'UserController@showDetail');
 
-Route::post('/reset:{id}', 'UserController@reset');
+        Route::get('/resetUser:{id}', 'UserController@viewReset');
 
-Route::get('/download:{doc}', 'UserController@download');
+        Route::post('/reset:{id}', 'UserController@reset');
 
-/* leave */
-Route::get('/createLeave', function () {
-    return view('pages.leave.createLeave');
-});
+        Route::get('/download:{doc}', 'UserController@download');
 
-Route::post('/storeLeave', 'LeavesController@create');
+        /* leave */
+        Route::get('/createLeave', function () {
+            return view('pages.leave.createLeave');
+        });
 
-Route::get('/myLeave', 'LeavesController@viewMyList');
+        Route::post('/storeLeave', 'LeavesController@create');
 
-Route::get('/myLeaves:{id}', 'LeavesController@viewMyDetails');
+        Route::get('/myLeave', 'LeavesController@viewMyList');
 
-Route::get('/listOfLeave', 'LeavesController@viewListof');
+        Route::get('/myLeaves:{id}', 'LeavesController@viewMyDetails');
 
-Route::get('/leaveApproval:{id}', 'LeavesController@viewDetails');
+        Route::get('/listOfLeave', 'LeavesController@viewListof');
 
-Route::get('/rejectLeave:{id}', 'LeavesController@reject');
+        Route::get('/leaveApproval:{id}', 'LeavesController@viewDetails');
 
-Route::get('/approveLeave:{id}', 'LeavesController@approve');
+        Route::get('/rejectLeave:{id}', 'LeavesController@reject');
 
-Route::get('/editLeave:{id}', 'LeavesController@viewEdit');
+        Route::get('/approveLeave:{id}', 'LeavesController@approve');
 
-Route::post('/updateLeave', 'LeavesController@update');
+        Route::get('/editLeave:{id}', 'LeavesController@viewEdit');
 
-Route::get('/cancelLeave:{id}', 'LeavesController@cancel');
+        Route::post('/updateLeave', 'LeavesController@update');
 
-/* remote */
-Route::get('/createRemote', function () {
-    return view('pages.remote.createRemote');
-});
+        Route::get('/cancelLeave:{id}', 'LeavesController@cancel');
 
-Route::post('/storeRemote', 'RemotesController@create');
+        /* remote */
+        Route::get('/createRemote', function () {
+            return view('pages.remote.createRemote');
+        });
 
-Route::get('/myRemote', 'RemotesController@viewMyList');
+        Route::post('/storeRemote', 'RemotesController@create');
 
-Route::get('/myRemotes:{id}', 'RemotesController@viewMyDetails');
+        Route::get('/myRemote', 'RemotesController@viewMyList');
 
-Route::get('/listOfRemote', 'RemotesController@viewListof');
+        Route::get('/myRemotes:{id}', 'RemotesController@viewMyDetails');
 
-Route::get('/remoteApproval:{id}', 'RemotesController@viewDetails');
+        Route::get('/listOfRemote', 'RemotesController@viewListof');
 
-Route::get('/rejectRemote:{id}', 'RemotesController@reject');
+        Route::get('/remoteApproval:{id}', 'RemotesController@viewDetails');
 
-Route::get('/approveRemote:{id}', 'RemotesController@approve');
+        Route::get('/rejectRemote:{id}', 'RemotesController@reject');
 
-Route::get('/editRemote:{id}', 'RemotesController@viewEdit');
+        Route::get('/approveRemote:{id}', 'RemotesController@approve');
 
-Route::post('/updateRemote', 'RemotesController@update');
+        Route::get('/editRemote:{id}', 'RemotesController@viewEdit');
 
-Route::get('/cancelRemote:{id}', 'RemotesController@cancel');
+        Route::post('/updateRemote', 'RemotesController@update');
 
-/* training */
-Route::get('/createTraining', 'TrainingController@index');
+        Route::get('/cancelRemote:{id}', 'RemotesController@cancel');
 
-Route::post('/createTraining', 'TrainingController@postTraining');
+        /* training */
+        Route::get('/createTraining', 'TrainingController@index');
 
-Route::get('/detailTraining:{id}', 'TrainingController@showDetail');
+        Route::post('/createTraining', 'TrainingController@postTraining');
 
-Route::get('/trainingApproval:{id}', 'TrainingController@showApproval');
+        Route::get('/detailTraining:{id}', 'TrainingController@showDetail');
 
-Route::get('/myTraining', 'TrainingController@showListOfMyTraining');
+        Route::get('/trainingApproval:{id}', 'TrainingController@showApproval');
 
-Route::get('/listOfTraining', 'TrainingController@showListOfTraining');
+        Route::get('/myTraining', 'TrainingController@showListOfMyTraining');
 
-Route::get('/rejectTraining:{id}', 'TrainingController@reject');
+        Route::get('/listOfTraining', 'TrainingController@showListOfTraining');
 
-Route::get('/approveTraining:{id}', 'TrainingController@approve');
+        Route::get('/rejectTraining:{id}', 'TrainingController@reject');
 
-Route::get('/editTraining:{id}', 'TrainingController@viewEdit');
+        Route::get('/approveTraining:{id}', 'TrainingController@approve');
 
-Route::post('/updateTraining', 'TrainingController@update');
+        Route::get('/editTraining:{id}', 'TrainingController@viewEdit');
 
-Route::get('/cancelTraining:{id}', 'TrainingController@cancel');
+        Route::post('/updateTraining', 'TrainingController@update');
 
-/* procurement */
-Route::get('/createProcurement', function () {
-    return view('pages.procurement.createProcurement');
-});
+        Route::get('/cancelTraining:{id}', 'TrainingController@cancel');
 
-Route::post('/storeProcurement', 'ProcurementsController@create');
+        /* procurement */
+        Route::get('/createProcurement', function () {
+            return view('pages.procurement.createProcurement');
+        });
 
-Route::get('/myProcurement', 'ProcurementsController@viewMyList');
+        Route::post('/storeProcurement', 'ProcurementsController@create');
 
-Route::get('/myProcurements:{id}', 'ProcurementsController@viewMyDetails');
+        Route::get('/myProcurement', 'ProcurementsController@viewMyList');
 
-Route::get('/listOfProcurement', 'ProcurementsController@viewListof');
+        Route::get('/myProcurements:{id}', 'ProcurementsController@viewMyDetails');
 
-Route::get('/rejectProcurement:{id}', 'ProcurementsController@reject');
+        Route::get('/listOfProcurement', 'ProcurementsController@viewListof');
 
-Route::get('/approveProcurement:{id}', 'ProcurementsController@approve');
+        Route::get('/rejectProcurement:{id}', 'ProcurementsController@reject');
 
-Route::get('/procurementApproval:{id}', 'ProcurementsController@viewDetails');
+        Route::get('/approveProcurement:{id}', 'ProcurementsController@approve');
 
-Route::get('/editProcurement:{id}', 'ProcurementsController@viewEdit');
+        Route::get('/procurementApproval:{id}', 'ProcurementsController@viewDetails');
 
-Route::post('/updateProcurement', 'ProcurementsController@update');
+        Route::get('/editProcurement:{id}', 'ProcurementsController@viewEdit');
 
-Route::get('/cancelProcurement:{id}', 'ProcurementsController@cancel');
+        Route::post('/updateProcurement', 'ProcurementsController@update');
 
-/* overtime */
-Route::get('/createOvertime', 'OvertimeController@index');
+        Route::get('/cancelProcurement:{id}', 'ProcurementsController@cancel');
 
-Route::post('/createOvertime', 'OvertimeController@postOvertime');
+        /* overtime */
+        Route::get('/createOvertime', 'OvertimeController@index');
 
-Route::get('/overtimeDetails:{id}', 'OvertimeController@showDetails');
+        Route::post('/createOvertime', 'OvertimeController@postOvertime');
 
-Route::get('/overtimeApproval:{id}', 'OvertimeController@showApproval');
+        Route::get('/overtimeDetails:{id}', 'OvertimeController@showDetails');
 
-Route::get('/myOvertime', 'OvertimeController@showListOfMyOvertime');
+        Route::get('/overtimeApproval:{id}', 'OvertimeController@showApproval');
 
-Route::get('/listOfOvertime', 'OvertimeController@showListOfOvertime');
+        Route::get('/myOvertime', 'OvertimeController@showListOfMyOvertime');
 
-Route::get('/rejectOvertime:{id}', 'OvertimeController@reject');
+        Route::get('/listOfOvertime', 'OvertimeController@showListOfOvertime');
 
-Route::get('/approveOvertime:{id}', 'OvertimeController@approve');
+        Route::get('/rejectOvertime:{id}', 'OvertimeController@reject');
 
-Route::get('/editOvertime:{id}', 'OvertimeController@viewEdit');
+        Route::get('/approveOvertime:{id}', 'OvertimeController@approve');
 
-Route::post('/updateOvertime', 'OvertimeController@update');
+        Route::get('/editOvertime:{id}', 'OvertimeController@viewEdit');
 
-Route::get('/cancelOvertime:{id}', 'OvertimeController@cancel');
+        Route::post('/updateOvertime', 'OvertimeController@update');
 
-/* survey */
-Route::get('/createSurvey', function () {
-    return view('pages.survey.createSurvey');
-});
-Route::get('/editSurvey', function () {
-    return view('pages.survey.editSurvey');
-});
-Route::get('/listOfSurvey', function () {
-    return view('pages.survey.listOfSurvey');
-});
-Route::get('/surveyDetails', function () {
-    return view('pages.survey.surveyDetails');
-});
-Route::get('/fillSurvey', function () {
-    return view('pages.survey.fillSurvey');
-});
-/* feedback */
-Route::get('/createFeedback', 'FeedbackController@index');
+        Route::get('/cancelOvertime:{id}', 'OvertimeController@cancel');
 
-Route::post('/createFeedback', 'FeedbackController@postFeedback');
+        /* survey */
+        Route::get('/createSurvey', function () {
+            return view('pages.survey.createSurvey');
+        });
+        Route::get('/editSurvey', function () {
+            return view('pages.survey.editSurvey');
+        });
+        Route::get('/listOfSurvey', function () {
+            return view('pages.survey.listOfSurvey');
+        });
+        Route::get('/surveyDetails', function () {
+            return view('pages.survey.surveyDetails');
+        });
+        Route::get('/fillSurvey', function () {
+            return view('pages.survey.fillSurvey');
+        });
+        /* feedback */
+        Route::get('/createFeedback', 'FeedbackController@index');
 
-Route::get('/listOfFeedback', 'FeedbackController@showListOfFeedback');
+        Route::post('/createFeedback', 'FeedbackController@postFeedback');
 
-Route::get('/detailFeedback:{id}', 'FeedbackController@showDetail');
+        Route::get('/listOfFeedback', 'FeedbackController@showListOfFeedback');
 
-/* appraisal */
-Route::get('/viewListAppraisalTemplate', 'AppraisalsController@showListOfAppraisalsTemplate');
+        Route::get('/detailFeedback:{id}', 'FeedbackController@showDetail');
 
-Route::get('/myAppraisal', function () {
-    return view('pages.appraisal.myAppraisal');
-});
+        /* appraisal */
+        Route::get('/viewListAppraisalTemplate', 'AppraisalsController@showListOfAppraisalsTemplate');
 
-Route::get('/listofAppraisal', function () {
-    return view('pages.appraisal.listofAppraisal');
-});
+        Route::get('/myAppraisal', function () {
+            return view('pages.appraisal.myAppraisal');
+        });
 
-Route::get('/createAppraisal','AppraisalsController@index');
+        Route::get('/listofAppraisal', function () {
+            return view('pages.appraisal.listofAppraisal');
+        });
 
-Route::post('/createAppraisal','AppraisalsController@postAppraisal');
+        Route::get('/createAppraisal','AppraisalsController@index');
 
-Route::get('/fillAppraisal', function () {
-    return view('pages.appraisal.fillAppraisal');
-});
+        Route::post('/createAppraisal','AppraisalsController@postAppraisal');
 
-Route::get('/editAppraisalTemplate:{id}','AppraisalsController@editAppraisalTemplate');
-Route::post('/updateAppraisalTemplate','AppraisalsController@updateAppraisalTemplate');
+        Route::get('/fillAppraisal', function () {
+            return view('pages.appraisal.fillAppraisal');
+        });
 
-/* ini form aslinya guys*/
-Route::get('/forms', function () {
-    return view('pages.formsTemplate');
-});
-Route::get('/a', function () {
-    return view('pages.coba');
-});
-Route::get('/tb', function () {
-    return view('tables');
+        Route::get('/editAppraisalTemplate:{id}','AppraisalsController@editAppraisalTemplate');
+        Route::post('/updateAppraisalTemplate','AppraisalsController@updateAppraisalTemplate');
+
+        /* ini form aslinya guys*/
+        Route::get('/forms', function () {
+            return view('pages.formsTemplate');
+        });
+        Route::get('/a', function () {
+            return view('pages.coba');
+        });
+        Route::get('/tb', function () {
+            return view('tables');
+        });
+    });
 });

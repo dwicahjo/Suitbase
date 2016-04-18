@@ -15,6 +15,12 @@ use Session;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        // $this->middleware('inactive');
+    }
+
     public function index()
     {
         $departments = Department::all();
@@ -44,28 +50,22 @@ class UserController extends Controller
                         ->withErrors($validator);
         }
 
-        return $this->createAccount($request->all());
-    }
-
-    protected function createAccount(array $data)
-    {
         $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'gender' => $data['gender'],
-            'religion' => $data['religion'],
-            'address' => $data['address'],
-            'birth_date' => $data['birth_date'],
-            'birth_place' => $data['birth_place'],
-            'phone' => $data['phone'],
-            'ktp_id' => $data['ktp_id'],
-            'ktp_address' => $data['ktp_address'],
-            'NPWP' => $data['NPWP'],
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'gender' => $request->gender,
+            'religion' => $request->religion,
+            'address' => $request->address,
+            'birth_date' => $request->birth_date,
+            'birth_place' => $request->birth_place,
+            'phone' => $request->phone,
+            'ktp_id' => $request->ktp_id,
+            'ktp_address' => $request->ktp_address,
+            'NPWP' => $request->NPWP,
             'number_leave' => 12,
-            'departments_id' => $data['departments_id'],
-            'divisions_id' => $data['divisions_id'],
-            'photo' => $data['photo'],
+            'departments_id' => $request->departments_id,
+            'divisions_id' => $request->divisions_id,
             'status' => 'Active',
         ]);
 
