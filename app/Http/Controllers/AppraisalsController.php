@@ -98,6 +98,7 @@ public function updateAppraisalTemplate(Request $request)
     $appraisalTemplate->date_start = $request->date_start;
     $appraisalTemplate->date_end = $request->date_end;
     $appraisalTemplate->save();
+
     $i=0;
     foreach($request->oldQuestionId as $idQuestion){
         $question = Question::where('id',$idQuestion)->get()->first();
@@ -105,13 +106,14 @@ public function updateAppraisalTemplate(Request $request)
         $question->save();
         $i++;
     }
-
+if($request->question){
     foreach ($request->question as $question){
       Question::create([
         'question' => $question,
         'appraisals_template_id' => $request->id,
         ]);
   }
+}
   Session::flash('success', 'Appraisal Template was edited successfully');
   return back();
 }

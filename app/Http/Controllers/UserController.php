@@ -7,6 +7,7 @@ use App\User;
 use App\Http\Requests;
 use App\Models\Department;
 use App\Models\Division;
+use App\Models\Supervisor;
 use DB;
 use Storage;
 use Validator;
@@ -31,14 +32,16 @@ class UserController extends Controller
             'CV.mimes' => "CV must be in PDF format",
             'KTP.mimes' => "KTP must be in PDF format",
             'ijazah.mimes' => "Ijazah must be in PDF format",
-            'KK.mimes' => "Kartu Keluarga must be in PDF format"
+            'KK.mimes' => "Kartu Keluarga must be in PDF format",
+            'password.same' => "Please repeat the password properly"
         ];
 
         $rules = [
             'CV' => 'mimes:pdf',
             'KTP' => 'mimes:pdf',
             'ijazah' => 'mimes:pdf',
-            'KK' => 'mimes:pdf'
+            'KK' => 'mimes:pdf',
+            'password' => 'same:password_confirmation'
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -98,7 +101,11 @@ class UserController extends Controller
         }
 
         $user->save();
-
+        Supervisor::create([
+            'supervisors_id' => '1',
+            'supervisees_id' => $user->id,
+            'gap_level' => '2',
+        ]);
         Session::flash('success', 'A new account was created successfully');
         return $this->index();
     }

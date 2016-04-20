@@ -172,9 +172,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/cancelOvertime:{id}', 'OvertimeController@cancel');
 
         /* survey */
-        Route::get('/createSurvey', function () {
-            return view('pages.survey.createSurvey');
-        });
+        Route::get('/createSurvey', 'SurveysController@index');
         Route::get('/editSurvey', function () {
             return view('pages.survey.editSurvey');
         });
