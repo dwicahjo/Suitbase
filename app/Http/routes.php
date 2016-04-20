@@ -200,7 +200,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/viewListAppraisalTemplate', 'AppraisalsController@showListOfAppraisalsTemplate');
 
 
-Route::get('/listofAppraisal', 'AppraisalsController@showListofAppraisals');
+        Route::get('/listofAppraisal', 'AppraisalsController@showListofAppraisals');
 
         Route::get('/myAppraisal', function () {
             return view('pages.appraisal.myAppraisal');
