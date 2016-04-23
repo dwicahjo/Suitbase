@@ -264,18 +264,18 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>Appraisal<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="myAppraisal">View My Appraisal</a>
+                                    <a href="{{route('appraisal.my')}}">View My Appraisal</a>
                                 </li>
                                 @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
                                     <li>
-                                        <a href="listofAppraisal">View List of Appraisal</a>
+                                        <a href="{{route('appraisal.list')}}">View List of Appraisal</a>
                                     </li>
                                     @if (Auth::user()->type == 'HR')
                                         <li>
-                                            <a href="createAppraisal">Create Appraisal Template</a>
+                                            <a href="{{route('appraisal.create')}}">Create Appraisal Template</a>
                                         </li>
                                         <li>
-                                            <a href="viewListAppraisalTemplate">View List of Appraisal Template</a>
+                                            <a href="{{route('appraisal.template')}}">View List of Appraisal Template</a>
                                         </li>
                                     @endif
                                 @endif
@@ -326,22 +326,22 @@
 <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{asset('assets/plugins/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="{{asset('assets/plugins/metisMenu/dist/metisMenu.min.js')}}"></script>
 
     <!-- DataTables JavaScript -->
-    <script src="assets/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
-    <script src="assets/plugins/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+    <script src="{{asset('assets/plugins/datatables/media/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}}"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="assets/js/sb-admin-2.js"></script>
+    <script src="{{asset('assets/js/sb-admin-2.js')}}"></script>
 
-    <script src="/js/createAppraisal.js"></script>
+    <script src="{{asset('js/createAppraisal.js')}}"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>

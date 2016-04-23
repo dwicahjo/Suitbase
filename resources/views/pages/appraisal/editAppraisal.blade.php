@@ -39,7 +39,7 @@
                         <div class="row">
                             <div class="col-lg-11">
                                 <div class = "content-form">
-                                    <form class = "form-horizontal" role="form" method="POST" action="{{ url('/updateAppraisalTemplate') }}">
+                                    <form class = "form-horizontal" role="form" method="POST" action="{{ route('appraisal.update',['id' => $appraisalTemplate[0]->id]) }}">
                                         <div class="form-group">
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                             <label class="col-md-4 control-label" required>Title</label>

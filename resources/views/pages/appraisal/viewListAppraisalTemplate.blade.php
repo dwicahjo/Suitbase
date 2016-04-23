@@ -1,10 +1,4 @@
 @extends('layoutTemplate')
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-</head>
-
 <body>
     @section('content')
 
@@ -51,7 +45,7 @@
                                     <td>{{$appraisalTemplate->date_end}}</td>
                                     <td>{{$appraisalTemplate->title}}</td>
                                     <td>{{$appraisalTemplate->division->name}}</td>
-                                    <th><a href="/editAppraisalTemplate:{{$appraisalTemplate->id}}" class="btn btn-default btn-edit" role="button">Edit</a></th>
+                                    <th><a href="{{ route('appraisal.edit', ['id' => $appraisalTemplate->id]) }}" class="btn btn-default btn-edit" role="button">Edit</a></th>
                                 </tr>
                                 <?php $i++; ?>
                                 @endforeach
