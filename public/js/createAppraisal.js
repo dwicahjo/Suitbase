@@ -24,4 +24,9 @@ $(this).parent('span').parent('div').parent('div').remove();
 //document.getElementById(button_id).remove();
 x--;
 })
+
 });
+
+function remove_question(x) {
+document.getElementById(x).remove();
+}

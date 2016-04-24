@@ -20,7 +20,7 @@
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <a href="/createAppraisal">
+                                <a href="{{ route('appraisal.create')}}">
                                     <i class="fa fa-plus fa-fw"></i>
                                     <label>
                                         Create Template
@@ -65,32 +65,3 @@
 </div>
 <!-- /#page-wrapper -->
 @endsection
-
-<!-- jQuery -->
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- Metis Menu Plugin JavaScript -->
-<script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-<!-- DataTables JavaScript -->
-<script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-<script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="../dist/js/sb-admin-2.js"></script>
-
-<!-- Page-Level Demo Scripts - Tables - Use for reference -->
-<script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
-</script>
-
-</body>
-
-</html>

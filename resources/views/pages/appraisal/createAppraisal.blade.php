@@ -23,6 +23,11 @@
             {{ Session::get('success') }}
         </div>
         @endif
+        @if (Session::has('fail'))
+        <div class = "alert alert-danger">
+            {{ Session::get('fail') }}
+        </div>
+        @endif
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">

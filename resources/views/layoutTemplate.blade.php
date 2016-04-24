@@ -12,22 +12,22 @@
     <title>SUITBASE</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/assets/plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('assets/plugins/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="/assets/plugins/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="{{asset('assets/plugins/metisMenu/dist/metisMenu.min.css')}}" rel="stylesheet">
 
     <!-- Timeline CSS -->
-    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="{{asset('assets/css/timeline.css')}}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/assets/css/sb-admin-2.css" rel="stylesheet">
+    <link href="{{asset('assets/css/sb-admin-2.css')}}" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="/assets/plugins/morrisjs/morris.css" rel="stylesheet">
+    <link href="{{asset('assets/plugins/morrisjs/morris.css')}}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('assets/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -132,7 +132,7 @@
                                 @if (Auth::user())
                                 <div class="input-group custom-search-form">
                                     <span>
-                                        <img alt="image" class="img-circle img-responsive" src="upload/photos/{{ Auth::user()->photo }}">
+                                        <img alt="image" class="img-circle img-responsive" src="{{asset("upload/photos/".Auth::user()->photo)}}">
                                     </span>
                                     <br>
                                     <span class="clear">
