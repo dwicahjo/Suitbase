@@ -119,10 +119,22 @@
                             <label class="col-md-4 control-label">User Type</label>
                                 <div class="col-md-6">
                                     <select class="form-control" name = "type">
-                                        <option>HR</option>
-                                        <option>Supervisor</option>
-                                        <option>Finance</option>
-                                        <option>Employee</option>
+                                        <option value='HR'>HR</option>
+                                        <option value='Supervisor'>Supervisor</option>
+                                        <option value='Finance'>Finance</option>
+                                        <option value='User'>Employee</option>
+                                    </select>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Supervisor</label>
+                                <div class="col-md-6">
+                                    <select class="form-control" name = "supervisor">
+                                        <?php
+                                            foreach ($supervisors as $supervisor) {
+                                            echo '<option value="'.$supervisor->id.'">'.$supervisor->name.'</option>';
+                                        }?>
                                     </select>
                                 </div>
                         </div>
