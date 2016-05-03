@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * Class AnswersSurvey
+ */
+class AnswersSurvey extends Model
+{
+    protected $table = 'answers_survey';
+
+    public $timestamps = true;
+
+    protected $fillable = [
+        'surveys_id',
+        'question_id',
+        'answer'
+    ];
+
+    protected $guarded = [];
+
+        
+}

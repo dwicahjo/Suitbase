@@ -21,5 +21,8 @@ class Supervisor extends Model
 
     protected $guarded = [];
 
-        
+    public function supervisee()
+    {
+        return $this->hasMany('App\Models\User', 'id', 'supervisees_id');
+    }
 }

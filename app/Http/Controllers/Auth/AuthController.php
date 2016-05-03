@@ -79,12 +79,12 @@ class AuthController extends Controller
             'ktp_id' => $data['ktp_id'],
             'ktp_address' => $data['ktp_address'],
             'NPWP' => $data['NPWP'],
-            'ijazah' => $data['ijazah'],
             'number_leave' => 12,
             'departments_id' => $data['departments_id'],
             'divisions_id' => $data['divisions_id'],
             'status' => 'Active',
-            'photo' => $data['photo'],
+            'photo' => 'photo.png',
+            'type' => $data['type'],
             ]);
     }
 

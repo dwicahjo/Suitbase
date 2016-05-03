@@ -16,14 +16,13 @@ class LogoutIfNotActiveUser
      */
     public function handle($request, Closure $next)
     {
-        // $user = Auth::user();
-        if (Auth::attempt())
+        if (Auth::check())
         {
-            
-        }
-        else
-        {
-            redirect('/login');
+            if(Auth::user()->status == 'Inactive')
+            {
+                Auth::logout();
+                return redirect('/login');
+            }
         }
 
         return $next($request);

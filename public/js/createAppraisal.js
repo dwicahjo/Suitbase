@@ -12,7 +12,7 @@ if(x < max_fields){ //max input box allowed
 x++; //text box increment
 //$(label).append('<div class="label-input"><label id = "' + x + '">Question ' + x + '</label></div>'); //Add question label
 //$(wrapper).append('<div class="input-group"><input class ="form-control" type="text" name="mytext[]"/><span class = "input-group-btn"><button class="remove_field btn btn-danger" id = "'+x+'">Remove</button></span></div>'); //add input box
-$(wrapper).append('<div class="form-group"><label class="col-md-4 control-label">Question</label><div class = "col-md-6"><input class ="form-control" type="text" name="question[]"/><span class = "input-group-btn"><button class="remove_field btn btn-danger" id = "'+x+'">Remove</button></span></div></div>');
+$(wrapper).append('<div class="form-group"><label class="col-md-4 control-label">Question</label><div class = "col-md-6"><input class ="form-control" type="text" name="question[]" required/><span class = "input-group-btn"><button class="remove_field btn btn-danger" id = "'+x+'">Remove</button></span></div></div>');
 }
 });
 
@@ -24,4 +24,9 @@ $(this).parent('span').parent('div').parent('div').remove();
 //document.getElementById(button_id).remove();
 x--;
 })
+
 });
+
+function remove_question(x) {
+document.getElementById(x).remove();
+}

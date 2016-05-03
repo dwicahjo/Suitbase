@@ -91,6 +91,18 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="col-md-4 control-label">User Type</label>
+                                <div class="col-md-6">
+                                    <select class="form-control" name = "type">
+                                        <option>HR</option>
+                                        <option>Supervisor</option>
+                                        <option>Finance</option>
+                                        <option>Employee</option>
+                                    </select>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
                             <label class="col-md-4 control-label">Birth Place</label>
                                 <div class="col-md-6">
                                     <input class="form-control" name = "birth_place" type = "text">
@@ -153,41 +165,6 @@
                             <label class="col-md-4 control-label">Current Address</label>
                                 <div class="col-md-6">
                                     <input class="form-control" name = "address" type = "text">
-                                </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Curricullum Vitae</label>
-                                <div class="col-md-6">
-                                    <input name="CV" type="file" class="upload" />
-                                </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">KTP</label>
-                                <div class="col-md-6">
-                                    <input name="KTP" type="file" class="upload" />
-                                </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Ijazah</label>
-                                <div class="col-md-6">
-                                    <input name="ijazah" type="file" class="upload" />
-                                </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Kartu Keluarga</label>
-                                <div class="col-md-6">
-                                    <input name="KK" type="file" class="upload" />
-                                </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Photo</label>
-                                <div class="col-md-6">
-                                    <input name="photo" type="file" class="upload" />
                                 </div>
                         </div>
 

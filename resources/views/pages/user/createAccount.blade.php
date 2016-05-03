@@ -1,13 +1,5 @@
 @extends('layoutTemplate')
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-</head>
-
-<body>
-	@section('content')
+@section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -45,7 +37,7 @@
                             <label class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                <input type="text" class="form-control" name="name" value="{{ old('name') }}" required>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -59,7 +51,7 @@
                             <label class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -73,7 +65,7 @@
                             <label class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
-                                <input type="password" class="form-control" name="password">
+                                <input type="password" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -87,13 +79,7 @@
                             <label class="col-md-4 control-label">Confirm Password</label>
 
                             <div class="col-md-6">
-                                <input type="password" class="form-control" name="password_confirmation">
-
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
+                                <input type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
 
@@ -125,10 +111,22 @@
                             <label class="col-md-4 control-label">User Type</label>
                                 <div class="col-md-6">
                                     <select class="form-control" name = "type">
-                                        <option>HR</option>
-                                        <option>Supervisor</option>
-                                        <option>Finance</option>
-                                        <option>Employee</option>
+                                        <option value='HR'>HR</option>
+                                        <option value='Supervisor'>Supervisor</option>
+                                        <option value='Finance'>Finance</option>
+                                        <option value='User'>Employee</option>
+                                    </select>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Supervisor</label>
+                                <div class="col-md-6">
+                                    <select class="form-control" name = "supervisor">
+                                        <?php
+                                            foreach ($supervisors as $supervisor) {
+                                            echo '<option value="'.$supervisor->id.'">'.$supervisor->name.'</option>';
+                                        }?>
                                     </select>
                                 </div>
                         </div>
@@ -136,14 +134,14 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label">Birth Place</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" name = "birth_place" type = "text">
+                                    <input class="form-control" name = "birth_place" type = "text"required>
                                 </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-md-4 control-label">Birth Date</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" name = "birth_date" type ="date">
+                                    <input class="form-control" name = "birth_date" type ="date" required>
                                 </div>
                         </div>
 
@@ -160,42 +158,42 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label">Religion</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" name = "religion" type = "text">
+                                    <input class="form-control" name = "religion" type = "text" required>
                                 </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-md-4 control-label">KTP Number</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" name = "ktp_id" type = "text">
+                                    <input class="form-control" name = "ktp_id" type = "text" required>
                                 </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-md-4 control-label">NPWP Number</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" name = "NPWP" type = "text">
+                                    <input class="form-control" name = "NPWP" type = "text" required>
                                 </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-md-4 control-label">KTP Address</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" name = "ktp_address" type = "text">
+                                    <input class="form-control" name = "ktp_address" type = "text" required>
                                 </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-md-4 control-label">Phone</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" name = "phone" type = "text">
+                                    <input class="form-control" name = "phone" type = "text" required>
                                 </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-md-4 control-label">Current Address</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" name = "address" type = "text">
+                                    <input class="form-control" name = "address" type = "text" required>
                                 </div>
                         </div>
 
@@ -226,6 +224,7 @@
                                     <input name="KK" type="file" class="upload" />
                                 </div>
                         </div>
+                        <input name="type" type="hidden" value="user" />
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -249,18 +248,3 @@
     </div>
     <!-- /#wrapper -->
     @endsection
-    <!-- jQuery -->
-    <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="/assets/js/sb-admin-2.js"></script>
-
-</body>
-
-</html>

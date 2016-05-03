@@ -1,13 +1,5 @@
 @extends('layoutTemplate')
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-</head>
-
-<body>
-	@section('content')
+@section('content')
 
 <div id="page-wrapper">
             <div class="row">
@@ -41,6 +33,7 @@
                                 <div class="col-lg-6" style= "width:50%">
                                 <form role="form" enctype="multipart/form-data" method = "post" action = "/uploadImage">
                                     <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                    <input name="user_id" type="hidden" value="{{ $user->id }}">
                                     <div class="col-image">
                                     <span>
                                          <img alt="image" class="img-responsive img-circle" src="upload/photos/{{ $user->photo }}">
@@ -55,48 +48,16 @@
                 <div class="col-lg-6">
                             <form role="form" enctype="multipart/form-data" method = "post" action = "/updateProfile">
                                     <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                    <input name="user_id" type="hidden" value="{{ $user->id }}">
                                     <div class="form-group">
                                         <label>New Password</label>
                                         <input class="form-control" name = "password" type = "password">
                                     </div>
-                                    <!--belom selesai ya-->
-                                    @if (Auth::user()->type == "HR")
-                                        <div class="form-group">
-                                            <label>Division</label>
-                                            <select class="form-control" name = "role">
-                                                <?php
-                                                foreach ($divisions as $division) {
-                                                    echo '<option value="'.$division->id.'">'.$division->name.'</option>';
-                                                }?>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Role</label>
-                                            <select class="form-control" name = "role">
-                                                @if ($user->type == 'HR')
-                                                    <option>Finance</option>
-                                                    <option selected>HR</option>
-                                                    <option>Supervisor</option>
-                                                    <option>Employee</option>
-                                                @elseif ($user->type == 'Supervisor')
-                                                    <option>Finance</option>
-                                                    <option>HR</option>
-                                                    <option selected>Supervisor</option>
-                                                    <option>Employee</option>
-                                                @elseif ($user->type == 'Finance')
-                                                    <option selected>Finance</option>
-                                                    <option>HR</option>
-                                                    <option>Supervisor</option>
-                                                    <option>Employee</option>
-                                                @elseif ($user->type == 'Employee')
-                                                    <option>Finance</option>
-                                                    <option>HR</option>
-                                                    <option>Supervisor</option>
-                                                    <option selected>Employee</option>
-                                                @endif
-                                            </select>
-                                        </div>
-                                    @endif
+                                    <div class="form-group">
+                                        <label>Repeat New Password</label>
+                                        <input class="form-control" name = "repeatPass" type = "password">
+                                    </div>
+                                    
                                     <div class="form-group">
                                         <label>Full Name</label>
                                         <input class="form-control" name = "fullname" type = "text" value = "{{ $user->name }}" required>
@@ -113,9 +74,11 @@
                                         <label>Gender</label>
                                         <select class="form-control" name = "gender">
                                             @if ($user->gender == 'Male')
-                                                <option>Male</option>
-                                            @else
+                                                <option selected>Male</option>
                                                 <option>Female</option>
+                                            @else
+                                                <option>Male</option>
+                                                <option selected>Female</option>
                                             @endif
                                         </select>
                                     </div>
@@ -163,18 +126,3 @@
     </div>
     <!-- /#wrapper -->
     @endsection
-    <!-- jQuery -->
-    <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="/assets/js/sb-admin-2.js"></script>
-
-</body>
-
-</html>

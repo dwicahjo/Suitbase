@@ -25,6 +25,7 @@ class User extends Model
         'type',
         'CV',
         'KK',
+        'type',
         'ijazah',
         'religion',
         'gender',
@@ -44,5 +45,10 @@ class User extends Model
     public function division()
     {
         return $this->hasOne('App\Models\Division', 'id', 'divisions_id');
+    }
+
+    public function supervisor()
+    {
+        return $this->belongsTo('App\Models\Supervisor','id','supervisees_id');
     }
 }

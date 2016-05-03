@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
 use App\Http\Requests;
 use App\Models\Department;
 use App\Models\Division;
+use App\Models\Supervisor;
+use App\Models\User;
 use DB;
 use Storage;
 use Validator;
@@ -15,11 +16,16 @@ use Session;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $departments = Department::all();
         $divisions = Division::all();
-        return view('pages.user.createAccount',['divisions' => $divisions],['departments' => $departments]);
+        $supervisors = User::where('type','Supervisor')->get();
+        return view('pages.user.createAccount')->with(compact('departments','divisions','supervisors'));
     }
 
     public function postCreate(Request $request){
@@ -27,46 +33,44 @@ class UserController extends Controller
             'CV.mimes' => "CV must be in PDF format",
             'KTP.mimes' => "KTP must be in PDF format",
             'ijazah.mimes' => "Ijazah must be in PDF format",
-            'KK.mimes' => "Kartu Keluarga must be in PDF format"
+            'KK.mimes' => "Kartu Keluarga must be in PDF format",
+            'password.same' => "Please repeat the password properly"
         ];
 
         $rules = [
             'CV' => 'mimes:pdf',
             'KTP' => 'mimes:pdf',
             'ijazah' => 'mimes:pdf',
-            'KK' => 'mimes:pdf'
+            'KK' => 'mimes:pdf',
+            'password' => 'same:password_confirmation'
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect('/editProfile')
+            return redirect('/createAccount')
                         ->withErrors($validator);
         }
 
-        return $this->createAccount($request->all());
-    }
-
-    protected function createAccount(array $data)
-    {
         $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'gender' => $data['gender'],
-            'religion' => $data['religion'],
-            'address' => $data['address'],
-            'birth_date' => $data['birth_date'],
-            'birth_place' => $data['birth_place'],
-            'phone' => $data['phone'],
-            'ktp_id' => $data['ktp_id'],
-            'ktp_address' => $data['ktp_address'],
-            'NPWP' => $data['NPWP'],
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'gender' => $request->gender,
+            'religion' => $request->religion,
+            'address' => $request->address,
+            'birth_date' => $request->birth_date,
+            'birth_place' => $request->birth_place,
+            'phone' => $request->phone,
+            'ktp_id' => $request->ktp_id,
+            'ktp_address' => $request->ktp_address,
+            'NPWP' => $request->NPWP,
             'number_leave' => 12,
-            'departments_id' => $data['departments_id'],
-            'divisions_id' => $data['divisions_id'],
-            'photo' => $data['photo'],
+            'departments_id' => $request->departments_id,
+            'divisions_id' => $request->divisions_id,
             'status' => 'Active',
+            'photo' => 'photo.png',
+            'type' => $request->type,
         ]);
 
         if ($request->hasFile('CV'))
@@ -98,7 +102,11 @@ class UserController extends Controller
         }
 
         $user->save();
-
+        Supervisor::create([
+            'supervisors_id' => $request->supervisor,
+            'supervisees_id' => $user->id,
+            //'gap_level' => '2',
+        ]);
         Session::flash('success', 'A new account was created successfully');
         return $this->index();
     }
@@ -121,9 +129,14 @@ class UserController extends Controller
 
     public function viewEdit()
     {
-        $divisions = Division::all();
         $user = User::where('id', \Auth::user()->id)->get()->first();
-        return view('pages.user.editProfile',['user' => $user],['divisions' => $divisions]);
+        return view('pages.user.editProfile',['user' => $user]);
+    }
+
+    public function viewEditUser ($id)
+    {
+        $user = User::where('id', $id)->get()->first();
+        return view('pages.user.editProfile',['user' => $user]);
     }
 
     public function update (Request $request)
@@ -149,10 +162,24 @@ class UserController extends Controller
                         ->withErrors($validator);
         }
 
-        $user = User::where('id', \Auth::user()->id)->get()->first();
+        $user = User::where('id', $request->user_id)->get()->first();
 
         if ($request->password != "")
         {
+            $messages = [
+                'password.same' => "Please repeat the new password properly"
+            ];
+
+            $rules = [
+                'password' => 'same:repeatPass'
+            ];
+
+            $validator = Validator::make($request->all(), $rules, $messages);
+
+            if ($validator->fails()) {
+                return redirect('/editProfile' . $request->user_id)
+                            ->withErrors($validator);
+            }
             $user->password = bcrypt($request->password);
         }
 
@@ -204,6 +231,7 @@ class UserController extends Controller
     public function uploadImage (Request $request)
     {
         $messages = [
+            'image.required' => "Choose the file first",
             'image.mimes' => "The file must be in PNG, JPG or JPEG format"
         ];
 
@@ -218,7 +246,7 @@ class UserController extends Controller
                         ->withErrors($validator);
         }
 
-        $user = User::where('id', \Auth::user()->id)->get()->first();
+        $user = User::where('id', $request->user_id)->get()->first();
 
         $fileName = $user->name . '.' . $request->file('image')->getClientOriginalExtension();
         $request->file('image')->move(base_path().'/public/upload/photos', $fileName);
@@ -226,6 +254,7 @@ class UserController extends Controller
         $user->photo = $fileName;
         $user->save();
 
+        Session::flash('success', 'Profile photo was changed successfully');
         return back();
     }
 

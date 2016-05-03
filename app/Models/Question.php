@@ -25,4 +25,9 @@ class Question extends Model
     {
         return $this->hasOne('App\Models\AppraisalsTemplate', 'id', 'appraisals_template_id');
     }
+
+    public function answers()
+    {
+        return $this->hasMany('App\Models\Answer');
+    }
 }
