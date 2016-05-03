@@ -25,5 +25,5 @@
             <script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
             <!-- Custom Theme JavaScript -->
             <script src="/assets/js/sb-admin-2.js"></script>
-            </body>
-            </html>
+</body>
+</html>
