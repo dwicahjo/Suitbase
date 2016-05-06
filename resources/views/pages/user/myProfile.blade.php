@@ -90,7 +90,7 @@
                                             @if (Auth::user()->KTP == "")
                                                 <td>Not Available</td>
                                             @else
-                                                <td><a href="/download:2">KTP</td>
+                                                <td><a href="{{ Auth::user()->getKtpUrl() }}">KTP</td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -118,7 +118,7 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-6">
-                                            <a href="editProfile" class="btn btn-default" role="button">Edit Profile</a>
+                                            <a href="{{ url('editProfile') }}" class="btn btn-default" role="button">Edit Profile</a>
                                         </div>
                                     </div>
                                 </div>

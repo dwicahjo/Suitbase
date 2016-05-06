@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth'], function() {
 
         Route::post('/createAccount', 'UserController@postCreate');
 
-        Route::get('/editProfile', 'UserController@viewEdit');
+        Route::get('/editProfile/{id}', ['as' => 'user.edit.current', 'uses' => 'UserController@viewEdit']);
 
         Route::get('/editProfile:{id}', 'UserController@viewEditUser');
 
@@ -172,7 +172,9 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/cancelOvertime:{id}', 'OvertimeController@cancel');
 
         /* survey */
-        Route::get('/createSurvey', 'SurveysController@index');
+        Route::get('/createSurvey', function () {
+            return view('pages.survey.createSurvey');
+        });
         Route::get('/editSurvey', function () {
             return view('pages.survey.editSurvey');
         });

@@ -26,6 +26,6 @@ class Leave extends Model
 
     public function employee()
     {
-        return $this->hasOne('App\Models\User', 'id', 'employees_id');
+        return $this->belongsTo('App\Models\User', 'employees_id');
     }
 }

@@ -57,6 +57,11 @@ class TrainingController extends Controller
         return $this->index();
     }
 
+    protected function listTraining($trainings)
+    {
+        return view('pages.traning.listOfTraining', compact('trainings'));
+    }
+
     public function showListOfTraining(){
         //$trainings = Training::orderBy('created_at','desc')->get();
         $trainings = DB::table('trainings')
@@ -65,12 +70,13 @@ class TrainingController extends Controller
             ->select('trainings.*','divisions.name as division', 'users.name as username')
             ->orderBy('trainings.created_at','desc')
             ->get();
-        return view('pages.training.listOfTraining',['trainings'=>$trainings]);
+        return $this->listTraining($trainings);
     }
 
     public function showListOfMyTraining(){
         $trainings = Training::where('employees_id',Auth::user()->id)->orderBy('created_at','desc')->get();
-        return view('pages.training.myTraining',['trainings'=>$trainings]);
+        view()->share('isViewMine', true);
+        return $this->listTraining($trainings);
     }
 
     public function showDetail($id){

@@ -23,4 +23,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token','overtime_hours','last_avg_score'
     ];
+
+    public function getKtpUrl()
+    {
+        return asset("/upload/docs/{$this->KTP}");
+    }
 }
