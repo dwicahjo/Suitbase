@@ -103,6 +103,9 @@ public function showListOfAppraisalsTemplate()
 
 public function showListOfAppraisals()
 {
+    /*if(Auth::user()->type == "HR"){
+        $appraisals = Appraisal::orderBy('created_at','desc')->get();
+    }*/
     $appraisals = Appraisal::orderBy('created_at','desc')->get();
     return view('pages.appraisal.listofAppraisal',['appraisals'=>$appraisals]);
 }
