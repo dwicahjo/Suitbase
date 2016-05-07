@@ -1,13 +1,5 @@
 @extends('layoutTemplate')
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-</head>
-
-<body>
-	@section('content')
+@section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -119,10 +111,22 @@
                             <label class="col-md-4 control-label">User Type</label>
                                 <div class="col-md-6">
                                     <select class="form-control" name = "type">
-                                        <option>HR</option>
-                                        <option>Supervisor</option>
-                                        <option>Finance</option>
-                                        <option>Employee</option>
+                                        <option value='HR'>HR</option>
+                                        <option value='Supervisor'>Supervisor</option>
+                                        <option value='Finance'>Finance</option>
+                                        <option value='User'>Employee</option>
+                                    </select>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Supervisor</label>
+                                <div class="col-md-6">
+                                    <select class="form-control" name = "supervisor">
+                                        <?php
+                                            foreach ($supervisors as $supervisor) {
+                                            echo '<option value="'.$supervisor->id.'">'.$supervisor->name.'</option>';
+                                        }?>
                                     </select>
                                 </div>
                         </div>
@@ -244,18 +248,3 @@
     </div>
     <!-- /#wrapper -->
     @endsection
-    <!-- jQuery -->
-    <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="/assets/js/sb-admin-2.js"></script>
-
-</body>
-
-</html>

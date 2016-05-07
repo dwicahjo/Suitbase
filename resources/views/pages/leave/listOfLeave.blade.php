@@ -1,12 +1,5 @@
  @extends('layoutTemplate')
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-</head>
-
-<body>
-    @section('content')
+@section('content')
 
     <div id="page-wrapper">
         <div class="row">
@@ -41,12 +34,12 @@
                                     @foreach ($leaves as $leave)
                                         <tr class="odd gradeX">
                                             <td>{{ $i }}</td>
-                                            <td><a href="/leaveApproval:{{ $leave->id }}">{{ $leave->username }}</td>
+                                            <td>{{ $leave->username }}</td>
                                             <td>{{ $leave->division }}</td>
                                             <td class="center"> {{ $leave->date_start }}</td>
                                             <td class="center"> {{ $leave->date_end }} </td>
-                                            <td> {{ $leave->type }} </td>
-                                            <td> {{ $leave->status }} </td>
+                                            <td>{{ $leave->type }}</td>
+                                            <td><a href="/leaveApproval:{{ $leave->id }}">{{ $leave->status }}</td>
                                         </tr>
                                         <?php $i++; ?>
                                     @endforeach
@@ -67,32 +60,3 @@
         </div>
         <!-- /#page-wrapper -->
         @endsection
-
-    <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-    <!-- DataTables JavaScript -->
-    <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-    <script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
-
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-                responsive: true
-        });
-    });
-    </script>
-
-</body>
-
-</html>

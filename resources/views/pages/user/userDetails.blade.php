@@ -1,8 +1,5 @@
-@extends('layoutTemplate') <!DOCTYPE html>
-<html lang="en">
-<head></head>
-<body>
- @section('content')
+@extends('layoutTemplate') 
+@section('content')
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
@@ -25,7 +22,7 @@
                         <div class="col-lg-5">
                             <div class="row">
                                  <div class="col-lg-12">
-                                    <img alt="image" class="img-responsive" src="assets/foto.jpg">
+                                    <img alt="image" class="img-responsive" src="upload/photos/{{ $user[0]->photo }}">
                                 </div>
                             </div>
                         </div> <!--col-lg-6-->
@@ -121,13 +118,3 @@
     </div>
 </div><!-- /#wrapper -->
              @endsection
-            <!-- jQuery -->
-            <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
-            <!-- Bootstrap Core JavaScript -->
-            <script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-            <!-- Metis Menu Plugin JavaScript -->
-            <script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
-            <!-- Custom Theme JavaScript -->
-            <script src="/assets/js/sb-admin-2.js"></script>
-            </body>
-            </html>

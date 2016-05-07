@@ -1,12 +1,5 @@
 @extends('layoutTemplate')
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-</head>
-
-<body>
-    @section('content')
+@section('content')
 
     <div id="page-wrapper">
         <div class="row">
@@ -16,6 +9,11 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (Session::has('success'))
+            <div class = "alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -47,12 +45,12 @@
                                             <?php 
                                                 $status = explode(" ", $leave->status);
                                             ?>
-                                            @if (strtotime('today') > strtotime($leave->date_start) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
+                                            @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                                 <th>
                                                     <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
                                                     <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                                 </th>
-                                            @elseif (strtotime('today') < strtotime($leave->date_start))
+                                            @else
                                                 <th><a href="/editLeave:{{ $leave->id }}" class="btn btn-default btn-info" role="button">Edit</a>
                                                     <a href="/cancelLeave:{{ $leave->id }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
                                             @endif
@@ -77,32 +75,3 @@
         </div>
         <!-- /#page-wrapper -->
         @endsection
-
-    <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-    <!-- DataTables JavaScript -->
-    <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-    <script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
-
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-                responsive: true
-        });
-    });
-    </script>
-
-</body>
-
-</html>

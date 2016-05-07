@@ -1,13 +1,5 @@
 @extends('layoutTemplate')
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-</head>
-
-<body>
-	@section('content')
+@section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -30,6 +22,11 @@
             {{ Session::get('success') }}
         </div>
         @endif
+        @if (Session::has('fail'))
+        <div class = "alert alert-danger">
+            {{ Session::get('fail') }}
+        </div>
+        @endif
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -39,7 +36,7 @@
                         <div class="row">
                             <div class="col-lg-11">
                                 <div class = "content-form">
-                                    <form class = "form-horizontal" role="form" method="POST" action="{{ url('/createAppraisal') }}">
+                                    <form class = "form-horizontal" role="form" method="POST" action="{{ route('appraisal.postCreate') }}">
                                         <div class="form-group">
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                             <label class="col-md-4 control-label" required>Title</label>
@@ -72,11 +69,11 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Question </label>
                                             <div class = "col-md-6">
-                                             <input class= "form-control" type="text" name="question[]">
+                                             <input class= "form-control" type="text" name="question[]" required>
                                          </div>
                                      </div>
                                      <div id="wrap"></div>
-                                     <button class="add-question add_field_button btn btn-default">Add Question</button>
+                                     <button class="add-question add_field_button btn btn-default" type="button">Add Question</button>
                                      <div class="form-group">
                                         <div class="col-md-5 control-label"></div>
                                         <div class = "col-md-2 col-md-offset-3">
@@ -100,18 +97,4 @@
 </div>
 <!-- /#wrapper -->
 @endsection
-<!-- jQuery -->
-<script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- Metis Menu Plugin JavaScript -->
-<script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/assets/js/sb-admin-2.js"></script>
-
-</body>
-
-</html>

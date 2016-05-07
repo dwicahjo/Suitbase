@@ -22,8 +22,9 @@ class RemotesController extends Controller
         ];
 
         $rules = [
-            'startdate' => 'date|after:today',
-            'enddate' => 'date|after:' . $date,
+            'startdate'     => 'required|date|after:yesterday',
+            'enddate'       => 'required|date|after:' . $date,
+            'description'   => 'required|alpha_num',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -45,7 +46,7 @@ class RemotesController extends Controller
         $remote->save();
 
         Session::flash('success', 'Remote request was submitted successfully');
-        return back();
+        return redirect('myRemote');
     }
 
     public function viewListof ()

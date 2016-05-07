@@ -28,8 +28,10 @@ class LeavesController extends Controller
         ];
 
         $rules = [
-            'startdate' => 'date|after:today',
-            'enddate' => 'date|after:' . $date,
+            'startdate' => 'required|date|after:yesterday',
+            'enddate'   => 'required|date|after:' . $date,
+            'leavetype' => 'required',
+            'reason'    => 'required|alpha_num',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -52,7 +54,7 @@ class LeavesController extends Controller
         $leave->save();
 
         Session::flash('success', 'Leave request was submitted successfully');
-        return back();
+        return redirect('myLeave');
     }
 
     public function viewListof ()

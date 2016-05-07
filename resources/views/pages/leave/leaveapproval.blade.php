@@ -1,13 +1,5 @@
 @extends('layoutTemplate')
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-</head>
-
-<body>
-    @section('content')
+@section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -75,11 +67,11 @@
                                 <?php 
                                     $status = explode(" ", $leaves[0]->status);
                                 ?>
-                                @if (strtotime('today') > strtotime($leaves[0]->date_start) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
-                                         <button class="btn btn-default" disabled>Reject</button>
+                                @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
+                                        <button class="btn btn-default" disabled>Reject</button>
                                         <button class="btn btn-default" disabled>Approve</button>
                                 @else   
-                                         <a href="/rejectLeave:{{ $leaves[0]->id }}" class="btn btn-default" role="button">Reject</a>
+                                        <a href="/rejectLeave:{{ $leaves[0]->id }}" class="btn btn-default" role="button">Reject</a>
                                         <a href="/approveLeave:{{ $leaves[0]->id }}" class="btn btn-default" role="button">Approve</a>
                                 @endif
                             </div>
@@ -97,18 +89,3 @@
     </div>
     <!-- /#wrapper -->
     @endsection
-    <!-- jQuery -->
-    <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="/assets/js/sb-admin-2.js"></script>
-
-</body>
-
-</html>

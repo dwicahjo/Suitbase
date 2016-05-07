@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth'], function() {
 
         Route::post('/createAccount', 'UserController@postCreate');
 
-        Route::get('/editProfile/{id}', ['as' => 'user.edit.current', 'uses' => 'UserController@viewEdit']);
+        Route::get('/editProfile', ['as' => 'user.edit.current', 'uses' => 'UserController@viewEdit']);
 
         Route::get('/editProfile:{id}', 'UserController@viewEditUser');
 
@@ -197,23 +197,36 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/detailFeedback:{id}', 'FeedbackController@showDetail');
 
         /* appraisal */
-        Route::get('/viewListAppraisalTemplate', 'AppraisalsController@showListOfAppraisalsTemplate');
-
-
-        Route::get('/listofAppraisal', 'AppraisalsController@showListofAppraisals');
-
-        Route::get('/myAppraisal', function () {
-            return view('pages.appraisal.myAppraisal');
-        });
-
-        Route::get('/createAppraisal','AppraisalsController@index');
-        Route::get('/fillAppraisal:{id}', 'AppraisalsController@fillAppraisal');
-        Route::post('/fillAppraisal', 'AppraisalsController@postFillAppraisal');
-
-        Route::post('/createAppraisal','AppraisalsController@postAppraisal');
-
-        Route::get('/editAppraisalTemplate:{id}','AppraisalsController@editAppraisalTemplate');
-        Route::post('/updateAppraisalTemplate','AppraisalsController@updateAppraisalTemplate');
+        Route::get('/appraisals', [
+            'as' => 'appraisal.list', 'uses' => 'AppraisalsController@showListofAppraisals'
+            ]);
+        Route::get('/appraisals/template', [
+            'as' => 'appraisal.template', 'uses' => 'AppraisalsController@showListOfAppraisalsTemplate'
+            ]);
+        Route::get('/appraisals/list', [
+            'as' => 'appraisal.list', 'uses' => 'AppraisalsController@showListofAppraisals'
+            ]);
+        Route::get('/appraisals/myappraisal', [
+            'as' => 'appraisal.my', 'uses' => 'AppraisalsController@showMyAppraisals'
+            ]);
+        Route::get('/appraisals/create',[
+            'as' => 'appraisal.create', 'uses' => 'AppraisalsController@index'
+            ]);
+        Route::post('/appraisals/create',[
+            'as' => 'appraisal.postCreate', 'uses' => 'AppraisalsController@postAppraisal'
+            ]);
+        Route::get('/appraisals/fill/{id}', [
+            'as' => 'appraisal.fill', 'uses' => 'AppraisalsController@fillAppraisal'
+            ]);
+        Route::post('/appraisals/fill/{id}', [
+            'as' => 'appraisal.postFill', 'uses' => 'AppraisalsController@postFillAppraisal'
+            ]);
+        Route::get('/appraisals/edit/{id}',[
+            'as' => 'appraisal.edit', 'uses' => 'AppraisalsController@editAppraisalTemplate'
+            ]);
+        Route::post('/appraisals/edit/{id}',[
+            'as' => 'appraisal.update', 'uses' => 'AppraisalsController@updateAppraisalTemplate'
+            ]);
 
         /* ini form aslinya guys*/
         Route::get('/forms', function () {

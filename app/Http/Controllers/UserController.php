@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
 use App\Http\Requests;
 use App\Models\Department;
 use App\Models\Division;
 use App\Models\Supervisor;
+use App\Models\User;
 use DB;
 use Storage;
 use Validator;
@@ -24,7 +24,8 @@ class UserController extends Controller
     {
         $departments = Department::all();
         $divisions = Division::all();
-        return view('pages.user.createAccount',['divisions' => $divisions],['departments' => $departments]);
+        $supervisors = User::where('type','Supervisor')->get();
+        return view('pages.user.createAccount')->with(compact('departments','divisions','supervisors'));
     }
 
     public function postCreate(Request $request){
@@ -102,9 +103,9 @@ class UserController extends Controller
 
         $user->save();
         Supervisor::create([
-            'supervisors_id' => '1',
+            'supervisors_id' => $request->supervisor,
             'supervisees_id' => $user->id,
-            'gap_level' => '2',
+            //'gap_level' => '2',
         ]);
         Session::flash('success', 'A new account was created successfully');
         return $this->index();

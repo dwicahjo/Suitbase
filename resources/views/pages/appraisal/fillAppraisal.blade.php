@@ -1,12 +1,5 @@
 @extends('layoutTemplate')
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-</head>
-
-<body>
-    @section('content')
+@section('content')
 
     <div id="page-wrapper">
         <div class="row">
@@ -44,7 +37,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <form class = "form-horizontal" role="form" method="POST" action="{{ url('/fillAppraisal') }}">
+                            <form class = "form-horizontal" role="form" method="POST" action="{{ route('appraisal.postFill',['id' => $appraisal->id]) }}">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
@@ -58,18 +51,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php $i=1; ?>
+                                        <?php $j=1; ?>
                                         @foreach ($questions as $question)
                                         <tr class="odd gradeA">
-                                            <td>{{$i}}</td>
+                                            <td>{{$j}}</td>
                                             <td>{{$question->question}}</td>
-                                            <td><input type="radio" name="answer[{{$question->id}}]"  value="5" ></td>
-                                            <td><input type="radio" name="answer[{{$question->id}}]"  value="4" ></td>
-                                            <td><input type="radio" name="answer[{{$question->id}}]"  value="3" ></td>
-                                            <td><input type="radio" name="answer[{{$question->id}}]"  value="2" ></td>
-                                            <td><input type="radio" name="answer[{{$question->id}}]"  value="1" ></td>
+                                            @for ($i=5; $i>0; $i--)
+                                            @if($question->answers()->where('appraisals_id',$appraisal->id)->count() >0)
+                                            @if($question->answers()->where('appraisals_id',$appraisal->id)->orderBy('created_at','desc')->first()->answer == $i)
+                                            <td><input type="radio" name="answer[{{$question->id}}]"  value="{{$i}}" checked></td>
+                                            @else
+                                            <td><input type="radio" name="answer[{{$question->id}}]"  value="{{$i}}"></td>
+                                            @endif
+                                            @else
+                                            <td><input type="radio" name="answer[{{$question->id}}]"  value="{{$i}}"></td>
+                                            @endif
+                                            @endfor
                                         </tr>
-                                        <?php $i++; ?>
+                                        <?php $j++; ?>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -78,7 +77,11 @@
                                     <input name="appraisal_id" type="hidden" value="{{ $appraisal->id }}">
                                     <label class="col-md-4 control-label" required>Comment</label>
                                     <div class = "col-md-12">
+                                        @if($appraisal->comment)
+                                        <textarea class="form-control" name = "comment" required>{{$appraisal->comment}}</textarea>
+                                        @else
                                         <textarea class="form-control" name = "comment" required></textarea>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -103,7 +106,3 @@
     </div>
     <!-- /#page-wrapper -->
     @endsection
-
-</body>
-
-</html>

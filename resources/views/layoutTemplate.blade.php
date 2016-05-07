@@ -12,22 +12,22 @@
     <title>SUITBASE</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/assets/plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('assets/plugins/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="/assets/plugins/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="{{asset('assets/plugins/metisMenu/dist/metisMenu.min.css')}}" rel="stylesheet">
 
     <!-- Timeline CSS -->
-    <link href="/assets/css/timeline.css" rel="stylesheet">
+    <link href="{{asset('assets/css/timeline.css')}}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/assets/css/sb-admin-2.css" rel="stylesheet">
+    <link href="{{asset('assets/css/sb-admin-2.css')}}" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="/assets/plugins/morrisjs/morris.css" rel="stylesheet">
+    <link href="{{asset('assets/plugins/morrisjs/morris.css')}}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('assets/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -132,7 +132,7 @@
                                 @if (Auth::user())
                                 <div class="input-group custom-search-form">
                                     <span>
-                                        <img alt="image" class="img-circle img-responsive" src="upload/photos/{{ Auth::user()->photo }}">
+                                        <img alt="image" class="img-circle img-responsive" src="{{asset("upload/photos/".Auth::user()->photo)}}">
                                     </span>
                                     <br>
                                     <span class="clear">
@@ -264,18 +264,18 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>Appraisal<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="myAppraisal">View My Appraisal</a>
+                                    <a href="{{route('appraisal.my')}}">View My Appraisal</a>
                                 </li>
                                 @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
                                     <li>
-                                        <a href="listofAppraisal">View List of Appraisal</a>
+                                        <a href="{{route('appraisal.list')}}">View List of Appraisal</a>
                                     </li>
                                     @if (Auth::user()->type == 'HR')
                                         <li>
-                                            <a href="createAppraisal">Create Appraisal Template</a>
+                                            <a href="{{route('appraisal.create')}}">Create Appraisal Template</a>
                                         </li>
                                         <li>
-                                            <a href="viewListAppraisalTemplate">View List of Appraisal Template</a>
+                                            <a href="{{route('appraisal.template')}}">View List of Appraisal Template</a>
                                         </li>
                                     @endif
                                 @endif
@@ -326,22 +326,22 @@
 <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{asset('assets/plugins/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="{{asset('assets/plugins/metisMenu/dist/metisMenu.min.js')}}"></script>
 
     <!-- DataTables JavaScript -->
-    <script src="assets/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
-    <script src="assets/plugins/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+    <script src="{{asset('assets/plugins/datatables/media/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}}"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="assets/js/sb-admin-2.js"></script>
+    <script src="{{asset('assets/js/sb-admin-2.js')}}"></script>
 
-    <script src="/js/createAppraisal.js"></script>
+    <script src="{{asset('js/createAppraisal.js')}}"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>

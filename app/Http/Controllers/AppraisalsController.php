@@ -14,7 +14,7 @@ use App\Models\Question;
 use App\Models\Supervisor;
 use App\Models\User;
 use Session;
-use DB;
+use Validator;
 
 class AppraisalsController extends Controller
 {
@@ -30,47 +30,69 @@ class AppraisalsController extends Controller
     }
 
     public function postAppraisal(Request $request){
-        /*$this->validate ($request, [
-            'date' => 'required|date|after:today'
-            ]);*/
-return $this->create($request->all());
-}
+        $inputDate = $request->date_start;
+        $date = date("Y-m-d", strtotime('-1 day', strtotime($inputDate)));
 
-protected function create(array $data)
-{
-    AppraisalsTemplate::create([
-        'title' => $data['title'],
-        'divisions_id' => $data['division_id'],
-        'date_start' => $data['date_start'],
-        'date_end' => $data['date_end'],
-        ]);
-    $questions = $data['question'];
-    $idAppraisalsTemplate = AppraisalsTemplate::where('title',$data['title'])->get();
-    foreach ($questions as $question){
-      Question::create([
-        'question' => $question,
-        'appraisals_template_id' => $idAppraisalsTemplate[0]->id,
-        ]);
-  }
-  $users=User::where('divisions_id',$data['division_id'])->get();
-  /*print_r($users);*/
-  foreach ($users as $user){
-    $supervisors_id = DB::table('supervisors')
-        ->select('supervisors_id')
-        ->where('supervisees_id',$user->id)
-        ->get();
-    if($supervisors_id){
-    Appraisal::create([
-        'status' => 'Submitted',
-        'employees_id' => $user->id,
-        'divisions_id' => $user->divisions_id,
-        'appraisals_template_id' => $idAppraisalsTemplate[0]->id,
-        'supervisors_id' => $supervisors_id[0]->supervisors_id,
-        ]);
+        $messages = [
+        'date_start.after' => "The start date must be later than today",
+        'date_end.after' => "The end date can not be earlier than the start date",
+        ];
+
+        $rules = [
+        'date_start' => 'date|after:today',
+        'date_end' => 'date|after:' . $date,
+        'division_id' => 'exists:divisions,id',
+        'question' => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->route('appraisal.create')
+            ->withErrors($validator)
+            ->withInput($request->all());
+        }
+
+        return $this->create($request->all());
     }
-}
-Session::flash('success', 'Appraisal Template request was created successfully');
-return $this->index();
+
+    protected function create(array $data)
+    {
+        $users=User::where('divisions_id',$data['division_id'])->get();
+        if($users->count() > 0){
+            AppraisalsTemplate::create([
+                'title' => $data['title'],
+                'divisions_id' => $data['division_id'],
+                'date_start' => $data['date_start'],
+                'date_end' => $data['date_end'],
+                ]);
+            $questions = $data['question'];
+            $idAppraisalsTemplate = AppraisalsTemplate::where('title',$data['title'])->get();
+            foreach ($questions as $question){
+              Question::create([
+                'question' => $question,
+                'appraisals_template_id' => $idAppraisalsTemplate[0]->id,
+                ]);
+          }
+          foreach ($users as $user){
+            $supervisor = $user->supervisor()->where('supervisees_id',$user->id)->first();
+            if($supervisor->count() > 0){
+                Appraisal::create([
+                    'status' => 'Submitted',
+                    'employees_id' => $user->id,
+                    'divisions_id' => $user->divisions_id,
+                    'appraisals_template_id' => $idAppraisalsTemplate[0]->id,
+                    'supervisors_id' => $supervisor->supervisors_id,
+                    ]);
+            }
+        }
+        Session::flash('success', 'Appraisal Template request was created successfully');
+    }else{
+        $name = Division::where('id',$data['division_id'])->first()->name;
+        $message = 'Appraisal Template request was not created because Division '.$name.' is not have employee';
+        Session::flash('fail', $message);
+    }
+    return redirect()->route('appraisal.create');
 }
 
 public function showListOfAppraisalsTemplate()
@@ -99,21 +121,29 @@ public function updateAppraisalTemplate(Request $request)
     $appraisalTemplate->date_end = $request->date_end;
     $appraisalTemplate->save();
 
-    $i=0;
-    foreach($request->oldQuestionId as $idQuestion){
-        $question = Question::where('id',$idQuestion)->get()->first();
-        $question->question = $request->oldQuestion[$i];
-        $question->save();
-        $i++;
+    if($request->oldQuestionId){
+        foreach($request->oldQuestionId as $idQuestion){
+            $question = Question::where('id',$idQuestion)->get()->first();
+            $question->delete();
+        }
     }
-if($request->question){
-    foreach ($request->question as $question){
-      Question::create([
-        'question' => $question,
-        'appraisals_template_id' => $request->id,
-        ]);
+    if($request->oldQuestion){
+        foreach($request->oldQuestion as $question){
+            Question::create([
+            'question' => $question,
+            'appraisals_template_id' => $request->id,
+            ]);
+        }
+    }
+
+    if($request->question){
+        foreach ($request->question as $question){
+          Question::create([
+            'question' => $question,
+            'appraisals_template_id' => $request->id,
+            ]);
+      }
   }
-}
   Session::flash('success', 'Appraisal Template was edited successfully');
   return back();
 }
@@ -121,33 +151,27 @@ if($request->question){
 public function fillAppraisal($id){
     $appraisal = Appraisal::where('id',$id)->get()->first();
     $questions = Question::where('appraisals_template_id',$appraisal->appraisals_template_id)->get();
-    return view('pages.appraisal.fillAppraisal',['appraisal'=>$appraisal],['questions'=>$questions]);
+    $answers = Answer::where('appraisals_id',$id)->get();
+    return view('pages.appraisal.fillAppraisal')->with(compact('appraisal','questions','answers'));
 }
 
 public function postFillAppraisal(Request $request)
 {
-    /*$appraisalTemplate = AppraisalsTemplate::where('id', $request->id)->get()->first();
-    $appraisalTemplate->date_start = $request->date_start;
-    $appraisalTemplate->date_end = $request->date_end;
-    $appraisalTemplate->save();
-    $i=0;
-    foreach($request->oldQuestionId as $idQuestion){
-        $question = Question::where('id',$idQuestion)->get()->first();
-        $question->question = $request->oldQuestion[$i];
-        $question->save();
-        $i++;
-    }*/
-
     foreach ($request->answer as $key => $value){
-     Answer::create([
+       Answer::create([
         'question_id' => $key,
         'appraisals_id' => $request->appraisal_id,
         'answer' =>$request->answer[$key],
         ]);
-  }
-  Session::flash('success', 'Appraisal was filled successfully');
-  return back();
+       $appraisal = Appraisal::find($request->appraisal_id);
+       $appraisal->comment = $request->comment;
+       $appraisal->save();
+   }
+   Session::flash('success', 'Appraisal was filled successfully');
+   return back();
 }
 
+public function showMyAppraisals(){
+    return view('pages.appraisal.myAppraisal');
 }
-
+}

@@ -1,13 +1,5 @@
 @extends('layoutTemplate')
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-</head>
-
-<body>
-    @section('content')
+@section('content')
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -39,7 +31,7 @@
                         <div class="row">
                             <div class="col-lg-11">
                                 <div class = "content-form">
-                                    <form class = "form-horizontal" role="form" method="POST" action="{{ url('/updateAppraisalTemplate') }}">
+                                    <form class = "form-horizontal" role="form" method="POST" action="{{ route('appraisal.update',['id' => $appraisalTemplate[0]->id]) }}">
                                         <div class="form-group">
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                             <label class="col-md-4 control-label" required>Title</label>
@@ -68,11 +60,12 @@
                                             </div>
                                         </div>
                                         @foreach($questions as $question)
-                                        <div class="form-group">
+                                        <input class= "form-control" type="hidden" name="oldQuestionId[]" value="{{$question->id}}">
+                                        <div class="form-group" id="{{$question->id}}">
                                             <label class="col-md-4 control-label">Question </label>
                                             <div class = "col-md-6">
-                                                <input class= "form-control" type="hidden" name="oldQuestionId[]" value="{{$question->id}}">
                                                 <input class= "form-control" type="text" name="oldQuestion[]" value="{{$question->question}}">
+                                                <span class = "input-group-btn"><button type="button" class="remove_field2 btn btn-danger" onclick="remove_question({{$question->id}})" >Remove</button></span>
                                            </div>
                                        </div>
                                        @endforeach
@@ -101,18 +94,3 @@
    </div>
    <!-- /#wrapper -->
    @endsection
-   <!-- jQuery -->
-   <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
-
-   <!-- Bootstrap Core JavaScript -->
-   <script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-
-   <!-- Metis Menu Plugin JavaScript -->
-   <script src="/assets/plugins/metisMenu/dist/metisMenu.min.js"></script>
-
-   <!-- Custom Theme JavaScript -->
-   <script src="/assets/js/sb-admin-2.js"></script>
-
-</body>
-
-</html>
