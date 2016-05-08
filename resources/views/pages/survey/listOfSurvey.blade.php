@@ -16,7 +16,7 @@
                     </div>
                     <!-- /.panel-heading -->
                         <div class="menu-survey">
-                                            <a href="createSurvey">
+                                            <a href="{{route('survey.create')}}">
                                                 <i class="fa fa-pencil-square-o fa-fw"></i>
                                                 <label>
                                                     Create Survey
@@ -42,7 +42,7 @@
                                         <td><a href="surveyDetails">Title 1</td>
                                         <th><a href="#" class="btn btn-default" role="button">Recap</a>
                                             <a href="#" class="btn btn-default" role="button">Export</a></th>
-                                        
+
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>11/04/2016</a></td>
@@ -112,7 +112,7 @@
                             </table>
                         </div>
                         <!-- /.table-responsive -->
-                        
+
                     </div>
                     <!-- /.panel-body -->
                 </div>
@@ -121,7 +121,7 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-      
+
         </div>
         <!-- /#page-wrapper -->
         @endsection

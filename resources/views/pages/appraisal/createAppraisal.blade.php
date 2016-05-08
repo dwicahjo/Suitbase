@@ -73,7 +73,7 @@
                                          </div>
                                      </div>
                                      <div id="wrap"></div>
-                                     <button class="add-question add_field_button btn btn-default" type="button">Add Question</button>
+                                     <button class="add-question add_field_button btn btn-default" type="button" id="addQuestionAppraisal">Add Question</button>
                                      <div class="form-group">
                                         <div class="col-md-5 control-label"></div>
                                         <div class = "col-md-2 col-md-offset-3">

@@ -301,7 +301,7 @@
                                 <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="listOfSurvey">View List of Survey</a>
+                                        <a href="{{route('survey.list')}}">View List of Survey</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->
@@ -342,6 +342,7 @@
     <script src="{{asset('assets/js/sb-admin-2.js')}}"></script>
 
     <script src="{{asset('js/createAppraisal.js')}}"></script>
+    <script src="{{asset('js/createSurvey.js')}}"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>

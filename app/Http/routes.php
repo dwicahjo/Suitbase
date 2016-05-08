@@ -172,21 +172,33 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/cancelOvertime:{id}', 'OvertimeController@cancel');
 
         /* survey */
-        Route::get('/createSurvey', function () {
-            return view('pages.survey.createSurvey');
-        });
-        Route::get('/editSurvey', function () {
-            return view('pages.survey.editSurvey');
-        });
-        Route::get('/listOfSurvey', function () {
-            return view('pages.survey.listOfSurvey');
-        });
-        Route::get('/surveyDetails', function () {
-            return view('pages.survey.surveyDetails');
-        });
-        Route::get('/fillSurvey', function () {
-            return view('pages.survey.fillSurvey');
-        });
+        Route::get('/surveys', [
+            'as' => 'survey.list', 'uses' => 'SurveysController@showListofSurveys'
+            ]);
+        Route::get('/surveys/form', [
+            'as' => 'survey.form', 'uses' => 'SurveysController@showListOfSurveysForm'
+            ]);
+        Route::get('/surveys/list', [
+            'as' => 'survey.list', 'uses' => 'SurveysController@showListofSurveys'
+            ]);
+        Route::get('/surveys/create',[
+            'as' => 'survey.create', 'uses' => 'SurveysController@index'
+            ]);
+        Route::post('/surveys/create',[
+            'as' => 'survey.postCreate', 'uses' => 'SurveysController@postSurvey'
+            ]);
+        Route::get('/surveys/fill/{id}', [
+            'as' => 'survey.fill', 'uses' => 'SurveysController@fillSurvey'
+            ]);
+        Route::post('/surveys/fill/{id}', [
+            'as' => 'survey.postFill', 'uses' => 'SurveyssController@postFillSurvey'
+            ]);
+        Route::get('/surveys/edit/{id}',[
+            'as' => 'survey.edit', 'uses' => 'SurveysController@editSurveyForm'
+            ]);
+        Route::post('/surveys/edit/{id}',[
+            'as' => 'survey.update', 'uses' => 'SurveysController@updateSurveyForm'
+            ]);
         /* feedback */
         Route::get('/createFeedback', 'FeedbackController@index');
 

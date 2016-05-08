@@ -16,4 +16,7 @@ class SurveysController extends Controller
     {
         return view('pages.survey.createSurvey');
     }
+    public function showListofSurveys(){
+        return view('pages.survey.listOfSurvey');
+    }
 }
