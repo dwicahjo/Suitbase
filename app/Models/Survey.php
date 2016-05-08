@@ -22,5 +22,12 @@ class Survey extends Model
 
     protected $guarded = [];
 
-        
+    public function surveyForm()
+    {
+        return $this->hasOne('App\Models\SurveysForm', 'id', 'surveys_form_id');
+    }
+    public function employee()
+    {
+        return $this->hasOne('App\Models\User', 'id', 'employees_id');
+    }
 }
