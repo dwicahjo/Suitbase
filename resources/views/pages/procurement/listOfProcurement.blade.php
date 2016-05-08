@@ -32,10 +32,10 @@
                                     @foreach ($procurements as $procurement)
                                     <tr class="odd gradeX">
                                         <td>{{ $i }}</td>
-                                        <td><a href="/procurementApproval:{{ $procurement->id }}">{{ $procurement->employee->name }}</a></td>
+                                        <td>{{ $procurement->employee->name }}</a></td>
                                         <td>{{ $procurement->employee->division->name }}</td>
                                         <td>{{ $procurement->title }}</td>
-                                        <td>{{ $procurement->status }}</td>
+                                        <td><a href="/procurementApproval:{{ $procurement->id }}">{{ $procurement->status }}</td>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

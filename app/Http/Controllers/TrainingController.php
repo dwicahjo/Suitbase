@@ -29,7 +29,10 @@ class TrainingController extends Controller
         ];
 
         $rules = [
-            'date' => 'date|after:today',
+            'title'             => 'required',
+            'date'              => 'required|date|after:today',
+            'description'       => 'required',
+            'price_estimate'    => 'required|numeric'
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -54,13 +57,13 @@ class TrainingController extends Controller
         ]);
 
         Session::flash('success', 'Training request was submitted successfully');
-        return $this->index();
+        return redirect('myTraining');
     }
 
-    protected function listTraining($trainings)
-    {
-        return view('pages.traning.listOfTraining', compact('trainings'));
-    }
+    // protected function listTraining($trainings)
+    // {
+    //     return view('pages.training.listOfTraining', compact('trainings'));
+    // }
 
     public function showListOfTraining(){
         //$trainings = Training::orderBy('created_at','desc')->get();
@@ -70,13 +73,15 @@ class TrainingController extends Controller
             ->select('trainings.*','divisions.name as division', 'users.name as username')
             ->orderBy('trainings.created_at','desc')
             ->get();
-        return $this->listTraining($trainings);
+        // return $this->listTraining($trainings);
+        return view('pages.training.listOfTraining', ['trainings' => $trainings]);
     }
 
     public function showListOfMyTraining(){
         $trainings = Training::where('employees_id',Auth::user()->id)->orderBy('created_at','desc')->get();
         view()->share('isViewMine', true);
-        return $this->listTraining($trainings);
+        // return $this->listTraining($trainings);
+        return view('pages.training.myTraining', ['trainings' => $trainings]);
     }
 
     public function showDetail($id){

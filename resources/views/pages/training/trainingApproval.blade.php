@@ -73,11 +73,11 @@
                                 <?php 
                                     $status = explode(" ", $training[0]->status);
                                 ?>
-                                @if (strtotime('today') > strtotime($training[0]->date) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
-                                         <button class="btn btn-default" disabled>Reject</button>
+                                @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
+                                        <button class="btn btn-default" disabled>Reject</button>
                                         <button class="btn btn-default" disabled>Approve</button>
                                 @else   
-                                         <a href="/rejectTraining:{{ $training[0]->id }}" class="btn btn-default" role="button">Reject</a>
+                                        <a href="/rejectTraining:{{ $training[0]->id }}" class="btn btn-default" role="button">Reject</a>
                                         <a href="/approveTraining:{{ $training[0]->id }}" class="btn btn-default" role="button">Approve</a>
                                 @endif
                                 </div>

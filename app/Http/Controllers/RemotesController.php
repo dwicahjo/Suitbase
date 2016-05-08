@@ -24,7 +24,7 @@ class RemotesController extends Controller
         $rules = [
             'startdate'     => 'required|date|after:yesterday',
             'enddate'       => 'required|date|after:' . $date,
-            'description'   => 'required|alpha_num',
+            'description'   => 'required|alpha_dash',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);

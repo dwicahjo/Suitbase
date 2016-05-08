@@ -9,6 +9,11 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (Session::has('success'))
+            <div class = "alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -36,13 +41,13 @@
                                         <?php 
                                                 $status = explode(" ", $training->status);
                                             ?>
-                                        @if (strtotime('today') > strtotime($training->date) || $status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
+                                        @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                             <th>
-                                                <button type="submit" class="btn btn-default btn-edit" disabled="">Edit</button>
+                                                <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
                                                 <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                             </th>
-                                        @elseif (strtotime('today') < strtotime($training->date))
-                                            <th><a href="/editTraining:{{ $training->id }}" class="btn btn-default btn-edit" role="button">Edit</a>
+                                        @else
+                                            <th><a href="/editTraining:{{ $training->id }}" class="btn btn-default btn-info" role="button">Edit</a>
                                             <a href="/cancelTraining:{{ $training->id }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
                                         @endif
                                     </tr>

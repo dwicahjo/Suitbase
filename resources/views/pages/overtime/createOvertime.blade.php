@@ -36,27 +36,27 @@
                                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                             <label class="col-md-4 control-label">Date</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "date" type = "date" required>
+                                                <input class="form-control" name = "date" type = "date" value = "{{ old('date') }}" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Start Time</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "starttime" type = "time" required>
+                                                <input class="form-control" name = "starttime" type = "time" value = "{{ old('starttime') }}" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">End Time</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "endtime" type = "time" required>
+                                                <input class="form-control" name = "endtime" type = "time" value = "{{ old('endtime') }}" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Description</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "description" required></textarea>
+                                                <textarea class ="form-control" name = "description" required>{{ old('description') }}</textarea>
                                             </div>
                                         </div>
                                         <input class="form-control" name = "employees_id" type = "hidden" value='{{Auth::user()->id}}'>

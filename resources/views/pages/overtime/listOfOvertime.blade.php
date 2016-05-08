@@ -36,12 +36,12 @@
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
                                         <td>{{$overtime->date}}</td>
-                                        <td><a href='/overtimeApproval:{{$overtime->id}}'>{{$overtime->username}}</td>
+                                        <td>{{$overtime->username}}</td>
                                         <td>{{$overtime->division}}</td>
                                         <td>{{$overtime->time_start}}</td>
                                         <td>{{$overtime->time_end}}</td>
                                         <td>{{$overtime->time_end - $overtime->time_start}}</td>
-                                        <td>{{$overtime->status}}</td>
+                                        <td><a href='/overtimeApproval:{{$overtime->id}}'>{{$overtime->status}}</td>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

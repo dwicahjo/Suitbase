@@ -9,6 +9,11 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (Session::has('success'))
+            <div class = "alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
