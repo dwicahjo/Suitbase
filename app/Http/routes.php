@@ -187,6 +187,9 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/surveys/create',[
             'as' => 'survey.postCreate', 'uses' => 'SurveysController@postSurvey'
             ]);
+        Route::get('/surveys/detail/{id}', [
+            'as' => 'survey.detail', 'uses' => 'SurveysController@showDetail'
+            ]);
         Route::get('/surveys/fill/{id}', [
             'as' => 'survey.fill', 'uses' => 'SurveysController@fillSurvey'
             ]);
