@@ -44,7 +44,7 @@
                                     <td>{{$i}}</td>
                                     <td>{{$survey->surveyForm->date_start}}</td>
                                     <td>{{$survey->surveyForm->date_end}}</td>
-                                    <td><a href="{{route('survey.fill',['id' =>$survey->id])}}">{{$survey->surveyForm->title}}</a></td>
+                                    <td><a href="{{route('survey.detail',['id' =>$survey->id])}}">{{$survey->surveyForm->title}}</a></td>
                                     <td>{{$survey->employee->name}}</td>
                                     <th><a href="#" class="btn btn-default" role="button">Recap</a>
                                         <a href="#" class="btn btn-default" role="button">Export</a></th>

@@ -296,7 +296,6 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        @if (Auth::user()->type == 'HR')
                             <li>
                                 <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
@@ -306,7 +305,6 @@
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>
-                        @endif
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
