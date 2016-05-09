@@ -21,6 +21,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Created At</th>
                                         <th>Employee Name</th>
                                         <th>Division </th>
                                         <th>Title</th>
@@ -32,6 +33,7 @@
                                     @foreach ($procurements as $procurement)
                                     <tr class="odd gradeX">
                                         <td>{{ $i }}</td>
+                                        <td>{{ $procurement->created_at }}</td>
                                         <td>{{ $procurement->employee->name }}</a></td>
                                         <td>{{ $procurement->employee->division->name }}</td>
                                         <td>{{ $procurement->title }}</td>

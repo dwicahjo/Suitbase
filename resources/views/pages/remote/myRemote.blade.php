@@ -26,6 +26,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Created At</th>
                                         <th>Start Date</th>
                                         <th>End Date</th>
                                         <th>Status</th>
@@ -37,6 +38,7 @@
                                     @foreach ($remotes as $remote)
                                         <tr class="odd gradeX">
                                             <td>{{ $i }}</td>
+                                            <td>{{ $remote->created_at }}</td>
                                             <td>{{ $remote->date_start }}</td>
                                             <td>{{ $remote->date_end }}</td>
                                             <td class="center"><a href="/myRemotes:{{ $remote->id }}">{{ $remote->status }}</a></td>

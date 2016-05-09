@@ -21,6 +21,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Created At</th>
                                         <th>Name </th>
                                         <th>Division </th>
                                         <th>Start Date </th>
@@ -34,6 +35,7 @@
                                     @foreach ($leaves as $leave)
                                         <tr class="odd gradeX">
                                             <td>{{ $i }}</td>
+                                            <td>{{ $leave->created_at }}</td>
                                             <td>{{ $leave->username }}</td>
                                             <td>{{ $leave->division }}</td>
                                             <td class="center"> {{ $leave->date_start }}</td>

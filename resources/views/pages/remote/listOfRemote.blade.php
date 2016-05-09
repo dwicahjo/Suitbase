@@ -21,6 +21,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Created At</th>
                                         <th>Employee Name </th>
                                         <th>Division </th>
                                         <th>Start Date </th>
@@ -33,6 +34,7 @@
                                     @foreach ($remotes as $remote)
                                         <tr class="odd gradeX">
                                             <td>{{ $i }}</td>
+                                            <td>{{ $remote->created_at }}</td>
                                             <td>{{ $remote->employee->name }}</a></td>
                                             <td>{{ $remote->employee->division->name }}</td>
                                             <td>{{ $remote->date_start }}</td>

@@ -26,6 +26,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Created At</th>
                                         <th>Training Title</th>
                                         <th>Status</th>
                                         <th></th>
@@ -36,6 +37,7 @@
                                     @foreach ($trainings as $training)
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
+                                        <td>{{ $training->created_at }}</td>
                                         <td><a href="/detailTraining:{{$training->id}}">{{$training->title}}</a></td>
                                         <td>{{$training->status}}</td>
                                         <?php 

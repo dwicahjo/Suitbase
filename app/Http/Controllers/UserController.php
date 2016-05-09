@@ -38,11 +38,26 @@ class UserController extends Controller
         ];
 
         $rules = [
-            'CV' => 'mimes:pdf',
-            'KTP' => 'mimes:pdf',
-            'ijazah' => 'mimes:pdf',
-            'KK' => 'mimes:pdf',
-            'password' => 'same:password_confirmation'
+            'name'              => 'required',
+            'email'             => 'required|email',
+            'password'          => 'required|same:password_confirmation',
+            'gender'            => 'required',
+            'religion'          => 'required',
+            'address'           => 'required',
+            'birth_date'        => 'required|date',
+            'birth_place'       => 'required',
+            'phone'             => 'required',
+            'ktp_id'            => 'required',
+            'ktp_address'       => 'required',
+            'NPWP'              => 'required',
+            'departments_id'    => 'required',
+            'divisions_id'      => 'required',
+            'type'              => 'required',
+            'CV'                => 'mimes:pdf',
+            'KTP'               => 'mimes:pdf',
+            'ijazah'            => 'mimes:pdf',
+            'KK'                => 'mimes:pdf',
+
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);

@@ -8,15 +8,6 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
         <div class="row">
             <div class="col-lg-12 ">
                 <div class="panel panel-default">
@@ -29,20 +20,31 @@
                                     <form class = "form-horizontal" role="form" method="post" action="/storeLeave">
                                         <div class="form-group">
                                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                                            <label class="col-md-4 control-label">Start Date</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('startdate') ? 'color:red' : '' }}">Start Date</label>
                                             <div class = "col-md-6">
-                                            <input class="form-control" name = "startdate" type = "date" value = "{{ old('startdate') }}" required>
+                                                <input class="form-control" name = "startdate" type = "date" value = "{{ old('startdate') }}" required>
+                                                @if ($errors->has('startdate'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('startdate') ? 'color:red' : '' }}">{{ $errors->first('startdate') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">End Date</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('enddate') ? 'color:red' : '' }}"
+                                            >End Date</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "enddate" type = "date" value = "{{ old('enddate') }}" required>
+                                                @if ($errors->has('enddate'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('enddate') ? 'color:red' : '' }}">{{ $errors->first('enddate') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div> 
                                         </div>
                                         
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">Leave Type</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('leavetype') ? 'color:red' : '' }}">Leave Type</label>
                                             <div class = "col-md-6">
                                                 <select class="form-control" name = "leavetype" required>
                                                     @if (Auth::user()->number_leave <= 0)
@@ -67,13 +69,23 @@
                                                         @endif
                                                     @endif
                                                 </select>
+                                                @if ($errors->has('leavetype'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('leavetype') ? 'color:red' : '' }}">{{ $errors->first('leavetype') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">Reason</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('reason') ? 'color:red' : '' }}">Reason</label>
                                             <div class = "col-md-6">
                                                 <textarea class ="form-control" name = "reason" required>{{ old('reason') }}</textarea>
+                                                @if ($errors->has('reason'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('reason') ? 'color:red' : '' }}">{{ $errors->first('reason') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -83,12 +95,9 @@
                                                 </button>
                                             </div>
                                         </div>
-
-                                    
                                     </form>
                                 </div>
                             </div>
-                            
                         </div>
                         <!-- /.row (nested) -->
                     </div>

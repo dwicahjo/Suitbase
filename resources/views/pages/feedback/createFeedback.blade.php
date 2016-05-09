@@ -38,23 +38,14 @@
                         </div>
                     </form>
                     <div class="myFeedback">
-                    @foreach ($feedbacks as $feedback)
-                        <div class="row">
-
-                            <div class="col-lg-8">
-                                    <div class="form-group" style="text-align: justify">
-                                        {{$feedback->description}}
-                                    <div class="row">
-                                        <div class="col-lg-7">
-                                        </div>
-                                        <div class="col-lg-5 feedbackDate" style="text-align: right">
-                                          {{$feedback->created_at}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+                        <table class="table" id="dataTables-example">
+                        @foreach ($feedbacks as $feedback)
+                        <tr class="odd gradeX">
+                                <td>{{$feedback->description}}</td>
+                                <td>{{$feedback->created_at}}</td>
+                            </tr>
+                        @endforeach
+                        {{ $feedbacks->render() }}
                     </div>
                        <!-- /.row (nested) -->
                     </div>

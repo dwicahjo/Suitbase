@@ -21,6 +21,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Created At</th>
                                         <th>Employee Name</th>
                                         <th>Date </th>
                                         <th>Division </th>
@@ -33,6 +34,7 @@
                                     @foreach ($trainings as $training)
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
+                                        <td>{{$training->created_at}}</td>
                                         <td>{{$training->username}}</td>
                                         <td>{{$training->date}}</td>
                                         <td>{{$training->division}}</td>

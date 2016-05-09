@@ -8,20 +8,6 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        @if (Session::has('success'))
-            <div class = "alert alert-success">
-                {{ Session::get('success') }}
-            </div>
-        @endif
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -33,23 +19,38 @@
                                     <form class = "form-horizontal" role="form" method="post" action="/storeProcurement">
                                         <div class="form-group">
                                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                                            <label class="col-md-4 control-label">Title</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('title') ? 'color:red' : '' }}">Title</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "title" type = "text" required>
+                                                @if ($errors->has('title'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('title') ? 'color:red' : '' }}">{{ $errors->first('title') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
                                         
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">Price Estimate</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('price_estimate') ? 'color:red' : '' }}">Price Estimate</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "price_estimate" type = "price_estimate" requiews>
+                                                @if ($errors->has('price_estimate'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('price_estimate') ? 'color:red' : '' }}">{{ $errors->first('price_estimate') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">Description</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('description') ? 'color:red' : '' }}">Description</label>
                                             <div class = "col-md-6">
                                                 <textarea class ="form-control" name = "description" required></textarea>
+                                                @if ($errors->has('description'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('price_estimate') ? 'color:red' : '' }}">{{ $errors->first('description') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="form-group">

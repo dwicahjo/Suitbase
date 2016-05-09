@@ -29,6 +29,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Created At</th>
                                         <th>Procurement Title</th>
                                         <th>Status</th>
                                         <th></th>
@@ -39,6 +40,7 @@
                                     @foreach ($procurements as $procurement)
                                         <tr class="odd gradeX">
                                             <td class="center">{{ $i }}</td>
+                                            <td>{{ $procurement->created_at }}</td>
                                             <td>{{ $procurement->title }}</td>
                                             <td><a href="/myProcurements:{{ $procurement->id }}">{{ $procurement->status}}</a></td>
                                             <?php 

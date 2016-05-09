@@ -8,20 +8,6 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        @if (Session::has('success'))
-            <div class = "alert alert-success">
-                {{ Session::get('success') }}
-            </div>
-        @endif
         <div class="row">
             <div class="col-lg-12 ">
                 <div class="panel panel-default">
@@ -34,22 +20,37 @@
                                     <form class = "form-horizontal" role="form" method="post" action="/storeRemote">
                                         <div class="form-group">
                                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                                            <label class="col-md-4 control-label">Start Date</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('startdate') ? 'color:red' : '' }}">Start Date</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "startdate" type = "date" value = "{{ old('startdate') }}" required>
+                                                @if ($errors->has('startdate'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('startdate') ? 'color:red' : '' }}">{{ $errors->first('startdate') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">End Date</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('enddate') ? 'color:red' : '' }}">End Date</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "enddate" type = "date" value = "{{ old('enddate') }}" required>
+                                                @if ($errors->has('enddate'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('enddate') ? 'color:red' : '' }}">{{ $errors->first('enddate') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div> 
                                         </div>
                                         
                                        <div class="form-group">
-                                            <label class="col-md-4 control-label">Description</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('description') ? 'color:red' : '' }}">Description</label>
                                             <div class = "col-md-6">
                                                 <textarea class ="form-control" name = "description" required>{{ old('description') }}</textarea>
+                                                @if ($errors->has('description'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('description') ? 'color:red' : '' }}">{{ $errors->first('description') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -59,8 +60,6 @@
                                                 </button>
                                             </div>
                                         </div>
-
-                                    
                                     </form>
                                 </div>
                             </div>

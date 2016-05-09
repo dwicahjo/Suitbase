@@ -290,7 +290,7 @@
                                 </li>
                                 @if (Auth::user()->type == 'HR')
                                     <li>
-                                        <a href="listOfFeedback">View List of Feedback</a>
+                                        <a href="listOfFeedback">View Feedbacks</a>
                                     </li>
                                 @endif
                             </ul>

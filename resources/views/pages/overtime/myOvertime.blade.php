@@ -29,6 +29,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Created At</th>
                                         <th>Date</th>
                                         <th>Start Time</th>
                                         <th>End Time</th>
@@ -42,6 +43,7 @@
                                     @foreach ($overtimes as $overtime)
                                     <tr class="odd gradeA">
                                         <td><a href='/overtimeDetails:{{$overtime->id}}'>{{$i}}</td>
+                                        <td>{{$overtime->created_at}}</td>
                                         <td>{{$overtime->date}}</td>
                                         <td>{{$overtime->time_start}}</td>
                                         <td>{{$overtime->time_end}}</td>

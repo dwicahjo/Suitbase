@@ -21,6 +21,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Created At</th>
                                         <th>Date </th>
                                         <th>Employee Name </th>
                                         <th>Division</th>
@@ -35,6 +36,7 @@
                                     @foreach ($overtimes as $overtime)
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
+                                        <td>{{$overtime->created_at}}</td>
                                         <td>{{$overtime->date}}</td>
                                         <td>{{$overtime->username}}</td>
                                         <td>{{$overtime->division}}</td>

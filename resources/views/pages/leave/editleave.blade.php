@@ -70,9 +70,8 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-6 col-md-offset-4">
-                                                <button type="submit" class="btn btn-primary">
-                                                    Save
-                                                </button>
+                                                <a href="{{ URL::previous() }}" class="btn btn-default" role="button">Back</a>
+                                                <button type="submit" class="btn btn-primary">Save</button>
                                             </div>
                                         </div>
                                     </form>
