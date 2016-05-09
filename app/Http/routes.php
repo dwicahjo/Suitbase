@@ -178,7 +178,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/surveys/form', [
             'as' => 'survey.form', 'uses' => 'SurveysController@showListOfSurveysForm'
             ]);
-        Route::get('/surveys/list', [
+        Route::get('/surveyslist', [
             'as' => 'survey.list', 'uses' => 'SurveysController@showListofSurveys'
             ]);
         Route::get('/surveys/create',[

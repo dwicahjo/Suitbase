@@ -197,7 +197,58 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label">Religion</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" name = "religion" type = "text" value = "{{ old('religion') }}" required>
+                                    <select class="form-control" name = "religion">
+                                    @if (old('religion') == 'Islam')
+                                        <option value="Islam" selected>Islam</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Buddha">Buddha</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    @elseif (old('religion') == 'Katolik')
+                                        <option value="Islam">Islam</option>
+                                        <option value="Katolik" selected>Katolik</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Buddha">Buddha</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    @elseif (old('religion') == 'Kristen')
+                                        <option value="Islam">Islam</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Kristen" selected>Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Buddha">Buddha</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    @elseif (old('religion') == 'Hindu')
+                                        <option value="Islam">Islam</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu" selected>Hindu</option>
+                                        <option value="Buddha">Buddha</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    @elseif (old('religion') == 'Buddha')
+                                        <option value="Islam">Islam</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Buddha" selected>Buddha</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    @elseif (old('religion') == 'Lainnya')
+                                        <option value="Islam">Islam</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Buddha">Buddha</option>
+                                        <option value="Lainnya" selected>Lainnya</option>
+                                    @else
+                                        <option value="Islam">Islam</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Buddha">Buddha</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    @endif
+                                </select>
                                 </div>
                         </div>
 

@@ -89,7 +89,7 @@ public function postSurvey(Request $request){
     $validator = Validator::make($request->all(), $rules, $messages);
 
     if ($validator->fails()) {
-        return redirect()->route('appraisal.create')
+        return redirect()->route('survey.create')
         ->withErrors($validator)
         ->withInput($request->all());
     }
