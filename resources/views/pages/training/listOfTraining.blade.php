@@ -33,11 +33,11 @@
                                     @foreach ($trainings as $training)
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
-                                        <td><a href="/trainingApproval:{{$training->id}}">{{$training->username}}</td>
+                                        <td>{{$training->username}}</td>
                                         <td>{{$training->date}}</td>
                                         <td>{{$training->division}}</td>
                                         <td>{{$training->title}}</a></td>
-                                        <td>{{$training->status}}</td>
+                                        <td><a href="/trainingApproval:{{$training->id}}">{{$training->status}}</td>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

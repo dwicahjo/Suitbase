@@ -30,7 +30,10 @@ class OvertimeController extends Controller
         ];
 
         $rules = [
-            'date' => 'required|date|before:tomorrow',
+            'date'          => 'required|date|before:tomorrow',
+            'description'   => 'required',
+            'starttime'     => 'required',
+            'endtime'       => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -67,7 +70,7 @@ class OvertimeController extends Controller
             ]);
 
         Session::flash('success', 'Overtime log was submitted successfully');
-        return $this->index();
+        return redirect('/myOvertime');
     }
 
     public function showListOfOvertime(){

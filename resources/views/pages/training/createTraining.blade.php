@@ -57,7 +57,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Description</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "description" required>{{ old('startdate') }}</textarea>
+                                                <textarea class ="form-control" name = "description" required>{{ old('description') }}</textarea>
                                             </div>
                                         </div>
                                         <input class="form-control" name = "employees_id" type = "hidden" value='{{Auth::user()->id}}'>

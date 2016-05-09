@@ -31,7 +31,7 @@ class LeavesController extends Controller
             'startdate' => 'required|date|after:yesterday',
             'enddate'   => 'required|date|after:' . $date,
             'leavetype' => 'required',
-            'reason'    => 'required|alpha_num',
+            'reason'    => 'required|alpha_dash',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);

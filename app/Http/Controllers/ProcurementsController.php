@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\Procurement;
 use Session;
+use Validator;
 
 class ProcurementsController extends Controller
 {
@@ -16,6 +17,20 @@ class ProcurementsController extends Controller
     }
     public function create (Request $request)
     {
+        $rules = [
+            'title'             => 'required',
+            'description'       => 'required',
+            'price_estimate'    => 'required|numeric'
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return redirect('/createProcurement')
+                        ->withErrors($validator)
+                        ->withInput($request->all());
+        }
+
     	$procurement = new Procurement;
 
     	$procurement->title = $request->title;
@@ -27,7 +42,7 @@ class ProcurementsController extends Controller
         $procurement->save();
 
         Session::flash('success', 'Procurement request was submitted successfully');
-        return back();
+        return redirect('myProcurement');
     }
 
     public function viewListof ()
