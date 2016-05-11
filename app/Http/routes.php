@@ -178,7 +178,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/surveys/form', [
             'as' => 'survey.form', 'uses' => 'SurveysController@showListOfSurveysForm'
             ]);
-        Route::get('/surveyslist', [
+        Route::get('/surveys/list', [
             'as' => 'survey.list', 'uses' => 'SurveysController@showListofSurveys'
             ]);
         Route::get('/surveys/create',[
@@ -201,6 +201,9 @@ Route::group(['middleware' => 'auth'], function() {
             ]);
         Route::post('/surveys/edit/{id}',[
             'as' => 'survey.update', 'uses' => 'SurveysController@updateSurveyForm'
+            ]);
+        Route::get('/surveyRecap',[
+            'as' => 'survey.recap', 'uses' => 'SurveysController@showRecap'
             ]);
         /* feedback */
         Route::get('/createFeedback', 'FeedbackController@index');

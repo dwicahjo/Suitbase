@@ -104,4 +104,8 @@ public function showDetail($id)
     $questions = QuestionsSurvey::where('surveys_form_id',$surveyForm)->get();
     return view('pages.survey.surveyDetails', ['survey' => $survey],['questions' => $questions]);
 }
+public function showRecap()
+{
+    return view('pages.survey.recapSurvey');
+}
 }
