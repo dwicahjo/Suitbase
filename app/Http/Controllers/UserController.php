@@ -64,7 +64,8 @@ class UserController extends Controller
 
         if ($validator->fails()) {
             return redirect('/createAccount')
-                        ->withErrors($validator);
+                        ->withErrors($validator)
+                        ->withInput($request->all());
         }
 
         $user = User::create([

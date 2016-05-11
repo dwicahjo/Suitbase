@@ -21,7 +21,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-9 col-lg-offset-2">
-                                    <form class = "form-horizontal" role="form" method = "post" action = "/updateProcurement">
+                                    <form class = "form-horizontal" role="form" method = "post" action = "{{ route('procurements.postEdit') }}">
                                         <div class="form-group">
                                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                             <input class="form-control" name = "id" type = "hidden" value = "{{ $procurements[0]->id }}">

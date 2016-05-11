@@ -38,7 +38,7 @@ class TrainingController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect('/createTraining')
+            return redirect()->route('trainings.create')
                         ->withErrors($validator)
                         ->withInput($request->all());
         }
@@ -57,7 +57,7 @@ class TrainingController extends Controller
         ]);
 
         Session::flash('success', 'Training request was submitted successfully');
-        return redirect('myTraining');
+        return redirect()->route('trainings.list.current');
     }
 
     // protected function listTraining($trainings)
@@ -79,8 +79,7 @@ class TrainingController extends Controller
 
     public function showListOfMyTraining(){
         $trainings = Training::where('employees_id',Auth::user()->id)->orderBy('created_at','desc')->get();
-        view()->share('isViewMine', true);
-        // return $this->listTraining($trainings);
+        // view()->share('isViewMine', true);
         return view('pages.training.myTraining', ['trainings' => $trainings]);
     }
 
@@ -120,7 +119,7 @@ class TrainingController extends Controller
         $training->save();
 
         Session::flash('success', 'Training request was edited successfully');
-        return back();
+        return redirect()->route('trainings.edit', $request->id);
     }
 
     public function reject ($id)
@@ -132,7 +131,8 @@ class TrainingController extends Controller
 
         $training->save();
 
-        return back();
+        Session::flash('success', 'Training request was successfully rejected');
+        return redirect()->route('trainings.approval', $id);
     }
 
     public function approve ($id)
@@ -144,7 +144,8 @@ class TrainingController extends Controller
 
         $training->save();
 
-        return back();
+        Session::flash('success', 'Training request was successfully approved');
+        return redirect()->route('trainings.approval', $id);
     }
 
     public function cancel ($id)
@@ -154,6 +155,7 @@ class TrainingController extends Controller
 
         $training->save();
 
-        return back();
+        Session::flash('success', 'Training request was successfully approved');
+        return redirect()->route('trainings.list.current');
     }
 }

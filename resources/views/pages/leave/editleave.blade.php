@@ -23,7 +23,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class = "content-form">
-                                    <form class = "form-horizontal" role="form" method = "post" action = "/updateLeave">
+                                    <form class = "form-horizontal" role="form" method = "post" action = "{{ route('leaves.postEdit') }}">
                                         <div class="form-group">
                                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                             <input class="form-control" name = "id" type = "hidden" value = "{{ $leaves[0]->id }}">
@@ -70,7 +70,7 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-6 col-md-offset-4">
-                                                <a href="{{ URL::previous() }}" class="btn btn-default" role="button">Back</a>
+                                                <a href="{{ route('leaves.list.current') }}" class="btn btn-default" role="button">Back</a>
                                                 <button type="submit" class="btn btn-primary">Save</button>
                                             </div>
                                         </div>

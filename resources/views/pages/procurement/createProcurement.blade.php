@@ -16,7 +16,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-9 col-lg-offset-2">
-                                    <form class = "form-horizontal" role="form" method="post" action="/storeProcurement">
+                                    <form class = "form-horizontal" role="form" method="post" action="{{ route('procurements.postCreate') }}">
                                         <div class="form-group">
                                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                             <label class="col-md-4 control-label" style = "{{ $errors->has('title') ? 'color:red' : '' }}">Title</label>

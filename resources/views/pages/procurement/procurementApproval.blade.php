@@ -8,6 +8,11 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (Session::has('success'))
+            <div class = "alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-4">
             </div>
@@ -57,7 +62,7 @@
                             </form>
                             <div class="form-group">
                                 <div class="col-lg-6 col-md-offset-2">
-                                    <a href="listOfProcurement" class="btn btn-default" role="button">Back</a>
+                                    <a href="{{ route('procurements.list.all') }}" class="btn btn-default" role="button">Back</a>
                                 <?php 
                                     $status = explode(" ", $procurements[0]->status);
                                 ?>

@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class = "content-form">
-                                    <form class = "form-horizontal" role="form" method="POST" action="{{ url('/createTraining') }}">
+                                    <form class = "form-horizontal" role="form" method="POST" action="{{ route('trainings.postCreate') }}">
                                         <div class="form-group">
                                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                             <label class="col-md-4 control-label" style = "{{ $errors->has('title') ? 'color:red' : '' }}">Training Title</label>

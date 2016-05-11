@@ -38,7 +38,7 @@
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
                                         <td>{{ $training->created_at }}</td>
-                                        <td><a href="/detailTraining:{{$training->id}}">{{$training->title}}</a></td>
+                                        <td><a href="{{ route('trainings.details', $training->id) }}">{{$training->title}}</a></td>
                                         <td>{{$training->status}}</td>
                                         <?php 
                                                 $status = explode(" ", $training->status);
@@ -49,8 +49,8 @@
                                                 <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                             </th>
                                         @else
-                                            <th><a href="/editTraining:{{ $training->id }}" class="btn btn-default btn-info" role="button">Edit</a>
-                                            <a href="/cancelTraining:{{ $training->id }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
+                                            <th><a href="{{ route('trainings.edit', $training->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                            <a href="{{ route('trainings.cancel', $training->id) }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
                                         @endif
                                     </tr>
                                     <?php $i++; ?>

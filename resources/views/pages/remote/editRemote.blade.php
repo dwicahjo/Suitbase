@@ -22,7 +22,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class = "content-form">
-                                    <form class = "form-horizontal" role="form" method = "post" action = "/updateRemote">
+                                    <form class = "form-horizontal" role="form" method = "post" action = "{{ route('remotes.postEdit') }}">
                                         <div class="form-group">
                                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                             <input class="form-control" name = "id" type = "hidden" value = "{{ $remotes[0]->id }}">

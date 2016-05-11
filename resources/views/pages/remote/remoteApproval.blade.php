@@ -8,6 +8,11 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (Session::has('success'))
+            <div class = "alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-2">
             </div>
@@ -57,7 +62,7 @@
                             </form>
                             <div class="form-group">
                                 <div class="col-lg-6 col-md-offset-2">
-                                    <a href="listOfRemote" class="btn btn-default" role="button">Back</a>
+                                    <a href="{{ route('remotes.list.all') }}" class="btn btn-default" role="button">Back</a>
                                 <?php 
                                     $status = explode(" ", $remotes[0]->status);
                                 ?>
@@ -66,8 +71,8 @@
                                         <button class="btn btn-default" disabled>Reject</button>
                                         <button class="btn btn-default" disabled>Approve</button>
                                 @else   
-                                        <a href="/rejectRemote:{{ $remotes[0]->id }}" class="btn btn-default" role="button">Reject</a>
-                                        <a href="/approveRemote:{{ $remotes[0]->id }}" class="btn btn-default" role="button">Approve</a>
+                                        <a href="{{ route('remotes.approval.reject', $remotes[0]->id) }}" class="btn btn-default" role="button">Reject</a>
+                                        <a href="{{ route('remotes.approval.approve', $remotes[0]->id) }}" class="btn btn-default" role="button">Approve</a>
                                 @endif
                             </div>
                             </div>

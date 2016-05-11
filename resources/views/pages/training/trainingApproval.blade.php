@@ -8,6 +8,11 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (Session::has('success'))
+            <div class = "alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-4">
             </div>
@@ -69,7 +74,7 @@
                             </form>
                             <div class="form-group">
                                 <div class="col-lg-6 col-md-offset-2">
-                                    <a href="listOfTraining" class="btn btn-default" role="button">Back</a>
+                                    <a href="{{ route('trainings.list.all') }}" class="btn btn-default" role="button">Back</a>
                                 <?php 
                                     $status = explode(" ", $training[0]->status);
                                 ?>
@@ -77,8 +82,8 @@
                                         <button class="btn btn-default" disabled>Reject</button>
                                         <button class="btn btn-default" disabled>Approve</button>
                                 @else   
-                                        <a href="/rejectTraining:{{ $training[0]->id }}" class="btn btn-default" role="button">Reject</a>
-                                        <a href="/approveTraining:{{ $training[0]->id }}" class="btn btn-default" role="button">Approve</a>
+                                        <a href="{{ route('trainings.approval.reject', $training[0]->id) }}" class="btn btn-default" role="button">Reject</a>
+                                        <a href="{{ route('trainings.approval.approve', $training[0]->id) }}" class="btn btn-default" role="button">Approve</a>
                                 @endif
                                 </div>
                             </div>

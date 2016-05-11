@@ -41,7 +41,7 @@
                                         <td>Anonymous</td>
                                     <?php } ?>
                                         <td>{{$feedback->division}}</td>
-                                        <td><a href="/detailFeedback:{{$feedback->id}}">{{str_limit($feedback->description, $limit = 20, $end = '...')}}</a></td>
+                                        <td><a href="{{route('feedback.details', $feedback->id)}}">{{str_limit($feedback->description, $limit = 20, $end = '...')}}</a></td>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

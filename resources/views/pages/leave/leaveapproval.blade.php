@@ -8,6 +8,11 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (Session::has('success'))
+            <div class = "alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-2">
             </div>
@@ -63,7 +68,7 @@
                             </form>
                             <div class="form-group">
                                 <div class="col-lg-6 col-md-offset-2">
-                                    <a href="listOfLeave" class="btn btn-default" role="button">Back</a>
+                                    <a href="{{ route('leaves.list.all') }}" class="btn btn-default" role="button">Back</a>
                                 <?php 
                                     $status = explode(" ", $leaves[0]->status);
                                 ?>
@@ -71,8 +76,8 @@
                                         <button class="btn btn-default" disabled>Reject</button>
                                         <button class="btn btn-default" disabled>Approve</button>
                                 @else   
-                                        <a href="/rejectLeave:{{ $leaves[0]->id }}" class="btn btn-default" role="button">Reject</a>
-                                        <a href="/approveLeave:{{ $leaves[0]->id }}" class="btn btn-default" role="button">Approve</a>
+                                        <a href="{{ route('leaves.approval.reject', $leaves[0]->id) }}" class="btn btn-default" role="button">Reject</a>
+                                        <a href="{{ route('leaves.approval.approve', $leaves[0]->id) }}" class="btn btn-default" role="button">Approve</a>
                                 @endif
                             </div>
                             </div>

@@ -153,7 +153,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="home"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                            <a href="{{ route('home') }}"><i class="fa fa-dashboard fa-fw"></i> Home</a>
                         </li>
                         <li>
                             <a href="myProfile"><i class="fa fa-user fa-fw"></i>My Profile</a>
@@ -178,14 +178,14 @@
                              <a href="#"><i class="fa fa-reorder fa-fw"></i> Leave<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createLeave">Create Leave</a>
+                                    <a href="{{route('leaves.create')}}">Create Leave</a>
                                 </li>
                                 <li>
-                                    <a href="myLeave">View My Leave</a>
+                                    <a href="{{route('leaves.list.current')}}">View My Leave</a>
                                 </li>
                                 @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
                                     <li>
-                                        <a href="listOfLeave">View List of Leave</a>
+                                        <a href="{{route('leaves.list.all')}}">View List of Leave</a>
                                     </li>
                                 @endif
                             </ul>
@@ -195,14 +195,14 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Remote <span class="fa arrow"></span></a>
                                <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createRemote">Create Remote</a>
+                                    <a href="{{route('remotes.create')}}">Create Remote</a>
                                 </li>
                                 <li>
-                                    <a href="myRemote">View My Remote</a>
+                                    <a href="{{route('remotes.list.current')}}">View My Remote</a>
                                 </li>
                                 @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
                                     <li>
-                                        <a href="listOfRemote">View List of Remote</a>
+                                        <a href="{{route('remotes.list.all')}}">View List of Remote</a>
                                     </li>
                                 @endif
                             </ul>
@@ -212,15 +212,15 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Training<span class="fa arrow"></span></a>
                                <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createTraining">Create Training</a>
+                                    <a href="{{ route('trainings.create') }}">Create Training</a>
                                 </li>
 
                                 <li>
-                                    <a href="myTraining">View My Training</a>
+                                    <a href="{{ route('trainings.list.current') }}">View My Training</a>
                                 </li>
-                                @if (Auth::user()->type == 'Finance')
+                                @if (Auth::user()->type == 'Finance' || Auth::user()->type == 'HR')
                                     <li>
-                                        <a href="listOfTraining">View List of Training</a>
+                                        <a href="{{ route('trainings.list.all') }}">View List of Training</a>
                                     </li>
                                 @endif
                             </ul>
@@ -230,14 +230,14 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Procurement<span class="fa arrow"></span></a>
                              <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createProcurement">Create Procurement</a>
+                                    <a href="{{ route('procurements.create') }}">Create Procurement</a>
                                 </li>
                                 <li>
-                                    <a href="myProcurement">View My Procurement</a>
+                                    <a href="{{ route('procurements.list.current') }}">View My Procurement</a>
                                 </li>
                                 @if (Auth::user()->type == 'Finance')
                                     <li>
-                                        <a href="listOfProcurement">View List of Procurement</a>
+                                        <a href="{{ route('procurements.list.all') }}">View List of Procurement</a>
                                     </li>
                                 @endif
                             </ul>
@@ -286,11 +286,11 @@
                             <a href="#"><i class="fa fa-pencil fa-fw"></i>Feedback<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createFeedback">Create Feedback</a>
+                                    <a href="{{route('feedback.create')}}">Create Feedback</a>
                                 </li>
                                 @if (Auth::user()->type == 'HR')
                                     <li>
-                                        <a href="listOfFeedback">View Feedbacks</a>
+                                        <a href="{{route('feedback.list')}}">View Feedbacks</a>
                                     </li>
                                 @endif
                             </ul>

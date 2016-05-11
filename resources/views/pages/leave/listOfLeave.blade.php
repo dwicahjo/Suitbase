@@ -41,7 +41,7 @@
                                             <td class="center"> {{ $leave->date_start }}</td>
                                             <td class="center"> {{ $leave->date_end }} </td>
                                             <td>{{ $leave->type }}</td>
-                                            <td><a href="/leaveApproval:{{ $leave->id }}">{{ $leave->status }}</td>
+                                            <td><a href="{{ route('leaves.approval', $leave->id) }}">{{ $leave->status }}</td>
                                         </tr>
                                         <?php $i++; ?>
                                     @endforeach

@@ -31,13 +31,13 @@ class LeavesController extends Controller
             'startdate' => 'required|date|after:yesterday',
             'enddate'   => 'required|date|after:' . $date,
             'leavetype' => 'required',
-            'reason'    => 'required|alpha_dash',
+            'reason'    => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect('/createLeave')
+            return redirect()->route('leaves.create')
                         ->withErrors($validator)
                         ->withInput($request->all());
         }
@@ -54,7 +54,7 @@ class LeavesController extends Controller
         $leave->save();
 
         Session::flash('success', 'Leave request was submitted successfully');
-        return redirect('myLeave');
+        return redirect()->route('leaves.create');
     }
 
     public function viewListof ()
@@ -116,8 +116,8 @@ class LeavesController extends Controller
 
         $leave->save();
 
-        Session::flash('success', 'Leave request was edited successfully');
-        return back();
+        Session::flash('success', 'Leave request was updated successfully');
+        return redirect()->route('leaves.edit', $request->id);
     }
 
     public function reject ($id)
@@ -129,7 +129,8 @@ class LeavesController extends Controller
 
         $leave->save();
 
-        return back();
+        Session::flash('success', 'Leave request was successfully rejected');
+        return redirect()->route('leaves.approval', $id);
     }
 
     public function approve ($id)
@@ -146,7 +147,8 @@ class LeavesController extends Controller
         $leave->employee->save();
         $leave->save();
 
-        return back();
+        Session::flash('success', 'Leave request was successfully approved');
+        return redirect()->route('leaves.approval', $id);
     }
 
     public function cancel ($id)
@@ -156,6 +158,7 @@ class LeavesController extends Controller
 
         $leave->save();
 
-        return back();
+        Session::flash('success', 'Leave request was successfully cancelled');
+        return redirect()->route('leaves.list.current');
     }
 }

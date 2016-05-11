@@ -14,7 +14,7 @@
                     <div class="panel-heading">
                     </div>
                     <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/createFeedback') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('feedback.postCreate') }}">
                         {!! csrf_field() !!}
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
