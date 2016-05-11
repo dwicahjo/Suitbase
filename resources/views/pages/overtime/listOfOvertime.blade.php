@@ -43,7 +43,7 @@
                                         <td>{{$overtime->time_start}}</td>
                                         <td>{{$overtime->time_end}}</td>
                                         <td>{{$overtime->time_end - $overtime->time_start}}</td>
-                                        <td><a href='/overtimeApproval:{{$overtime->id}}'>{{$overtime->status}}</td>
+                                        <td><a href="{{ route('overtime.approval', $overtime->id) }}">{{$overtime->status}}</td>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

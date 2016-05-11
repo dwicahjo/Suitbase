@@ -8,6 +8,11 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (Session::has('success'))
+            <div class = "alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-4">
             </div>
@@ -69,7 +74,7 @@
                             </form>
                             <div class="form-group">
                                 <div class="col-lg-6 col-md-offset-2">
-                                    <a href="listOfOvertime" class="btn btn-default" role="button">Back</a>
+                                    <a href="{{ route('overtime.list.all') }}" class="btn btn-default" role="button">Back</a>
                                 <?php 
                                     $status = explode(" ", $overtimes[0]->status);
                                 ?>
@@ -77,8 +82,8 @@
                                         <button class="btn btn-default" disabled>Reject</button>
                                         <button class="btn btn-default" disabled>Approve</button>
                                 @else   
-                                         <a href="/rejectOvertime:{{ $overtimes[0]->id }}" class="btn btn-default" role="button">Reject</a>
-                                        <a href="/approveOvertime:{{ $overtimes[0]->id }}" class="btn btn-default" role="button">Approve</a>
+                                         <a href="{{ route('overtime.approval.reject', $overtimes[0]->id) }}" class="btn btn-default" role="button">Reject</a>
+                                        <a href="{{ route('overtime.approval.approve', $overtimes[0]->id) }}" class="btn btn-default" role="button">Approve</a>
                                 @endif
                                 </div>
                             </div>

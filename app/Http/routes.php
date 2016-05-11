@@ -233,27 +233,49 @@ Route::group(['middleware' => 'auth'], function() {
             ]);
 
         /* overtime */
-        Route::get('/createOvertime', 'OvertimeController@index');
+        Route::get('/overtime/create', [
+            'as' => 'overtime.create', 'uses' => 'OvertimeController@index'
+            ]);
 
-        Route::post('/createOvertime', 'OvertimeController@postOvertime');
+        Route::post('/overtime/create', [
+            'as' => 'overtime.postCreate', 'uses' => 'OvertimeController@postOvertime'
+            ]);
 
-        Route::get('/overtimeDetails:{id}', 'OvertimeController@showDetails');
+        Route::get('/overtime/list/current', [
+            'as' => 'overtime.list.current', 'uses' => 'OvertimeController@showListOfMyOvertime'
+            ]);
 
-        Route::get('/overtimeApproval:{id}', 'OvertimeController@showApproval');
+        Route::get('/overtime/details/{id}', [
+            'as' => 'overtime.details', 'uses' => 'OvertimeController@showDetails'
+            ]);
 
-        Route::get('/myOvertime', 'OvertimeController@showListOfMyOvertime');
+        Route::get('/overtime/list/all', [
+            'as' => 'overtime.list.all', 'uses' => 'OvertimeController@showListOfOvertime'
+            ]);
 
-        Route::get('/listOfOvertime', 'OvertimeController@showListOfOvertime');
+        Route::get('/overtime/approval/{id}', [
+            'as' => 'overtime.approval', 'uses' => 'OvertimeController@showApproval'
+            ]);
 
-        Route::get('/rejectOvertime:{id}', 'OvertimeController@reject');
+        Route::get('/overtime/approval/reject/{id}', [
+            'as' => 'overtime.approval.reject', 'uses' => 'OvertimeController@reject'
+            ]);
 
-        Route::get('/approveOvertime:{id}', 'OvertimeController@approve');
+        Route::get('/overtime/approval/approve/{id}', [
+            'as' => 'overtime.approval.approve', 'uses' => 'OvertimeController@approve'
+            ]);
 
-        Route::get('/editOvertime:{id}', 'OvertimeController@viewEdit');
+        Route::get('/overtime/edit/{id}', [
+            'as' => 'overtime.edit', 'uses' => 'OvertimeController@viewEdit'
+            ]);
 
-        Route::post('/updateOvertime', 'OvertimeController@update');
+        Route::post('/overtime/edit/post', [
+            'as' => 'overtime.postEdit', 'uses' => 'OvertimeController@update'
+            ]);
 
-        Route::get('/cancelOvertime:{id}', 'OvertimeController@cancel');
+        Route::get('/overtime/cancel/{id}', [
+            'as' => 'overtime.cancel', 'uses' => 'OvertimeController@cancel'
+            ]);
 
         /* survey */
         Route::get('/surveys', [

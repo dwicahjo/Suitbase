@@ -247,14 +247,14 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i>Overtime<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createOvertime">Create Overtime</a>
+                                    <a href="{{ route('overtime.create') }}">Create Overtime</a>
                                 </li>
                                 <li>
-                                    <a href="myOvertime">View My Overtime</a>
+                                    <a href="{{ route('overtime.list.current') }}">View My Overtime</a>
                                 </li>
                                 @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
                                     <li>
-                                        <a href="listOfOvertime">View List of Overtime</a>
+                                        <a href="{{ route('overtime.list.all') }}">View List of Overtime</a>
                                     </li>
                                 @endif
                             </ul>

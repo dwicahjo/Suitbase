@@ -42,13 +42,13 @@
                                     <?php $i=1; ?>
                                     @foreach ($overtimes as $overtime)
                                     <tr class="odd gradeA">
-                                        <td><a href='/overtimeDetails:{{$overtime->id}}'>{{$i}}</td>
+                                        <td>{{$i}}</td>
                                         <td>{{$overtime->created_at}}</td>
                                         <td>{{$overtime->date}}</td>
                                         <td>{{$overtime->time_start}}</td>
                                         <td>{{$overtime->time_end}}</td>
                                         <td>{{$overtime->total_hours}}</td>
-                                        <td>{{$overtime->status}}</td>
+                                        <td><a href="{{ route('overtime.details', $overtime->id) }}">{{$overtime->status}}</td>
                                         <?php 
                                             $status = explode(" ", $overtime->status);
                                         ?>
@@ -58,8 +58,8 @@
                                                 <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                             </th>
                                         @else
-                                            <th><a href="/editOvertime:{{ $overtime->id }}" class="btn btn-default btn-info" role="button">Edit</a>
-                                            <a href="/cancelOvertime:{{ $overtime->id }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
+                                            <th><a href="{{ route('overtime.edit', $overtime->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                            <a href="{{ route('overtime.cancel', $overtime->id) }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
                                         @endif
                                     </tr>
                                     <?php $i++; ?>
