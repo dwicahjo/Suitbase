@@ -26,31 +26,53 @@ Route::group(['middleware' => 'auth'], function() {
             ]);
 
         /*user*/
-        Route::get('/createAccount', 'UserController@index');
+        Route::get('/user/create', [
+            'as' => 'user.create', 'uses' => 'UserController@index'
+            ]);
 
-        Route::post('/createAccount', 'UserController@postCreate');
+        Route::post('/user/create', [
+            'as' => 'user.postCreate', 'uses' => 'UserController@postCreate'
+            ]);
 
-        Route::get('/editProfile', ['as' => 'user.edit.current', 'uses' => 'UserController@viewEdit']);
+        Route::get('/user/edit/current', [
+            'as' => 'user.edit.current', 'uses' => 'UserController@viewEdit'
+            ]);
 
-        Route::get('/editProfile:{id}', 'UserController@viewEditUser');
+        Route::get('/user/edit/{id}', [
+            'as' => 'user.edit', 'uses' => 'UserController@viewEditUser'
+            ]);
 
-        Route::post('/updateProfile', 'UserController@update');
+        Route::post('/user/edit/post', [
+            'as' => 'user.postEdit', 'uses' => 'UserController@update'
+            ]);
 
-        Route::post('/uploadImage', 'UserController@uploadImage');
+        Route::post('/user/edit/post', [
+            'as' => 'user.postImage', 'uses' => 'UserController@uploadImage'
+            ]);
 
-        Route::get('/listOfUser', 'UserController@showListOfUser');
+        Route::get('/user/list', [
+            'as' => 'user.list', 'uses' => 'UserController@showListOfUser'
+            ]);
 
-        Route::get('/myProfile', function () {
-            return view('pages.user.myProfile');
-        });
+        Route::get('/user/details/current', [
+            'as' => 'user.details.current', function () {return view('pages.user.myProfile');}
+            ]);
 
-        Route::get('/userDetails:{id}', 'UserController@showDetail');
+        Route::get('/user/details/{id}', [
+            'as' => 'user.details', 'uses' => 'UserController@showDetail'
+            ]);
 
-        Route::get('/resetUser:{id}', 'UserController@viewReset');
+        Route::get('/user/reset/{id}', [
+            'as' => 'user.reset', 'uses' => 'UserController@viewReset'
+            ]);
 
-        Route::post('/reset:{id}', 'UserController@reset');
+        Route::post('/user/reset:{id}', [
+            'as' => 'user.postReset', 'uses' => 'UserController@reset'
+            ]);
 
-        Route::get('/download:{doc}', 'UserController@download');
+        Route::get('/user/details/download/{doc}', [
+            'as' => 'user.details.download', 'uses' => 'UserController@download'
+            ]);
 
         /* leave */
         Route::get('/leaves/create', [

@@ -156,17 +156,17 @@
                             <a href="{{ route('home') }}"><i class="fa fa-dashboard fa-fw"></i> Home</a>
                         </li>
                         <li>
-                            <a href="myProfile"><i class="fa fa-user fa-fw"></i>My Profile</a>
+                            <a href="{{ route('user.details.current') }}"><i class="fa fa-user fa-fw"></i>My Profile</a>
                         </li>
                         @if (Auth::user()->type == 'HR')
                             <li>
                                 <a href="#"><i class="fa fa-users fa-fw"></i> Users<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createAccount">Create Account</a>
+                                    <a href="{{ route('user.create') }}">Create Account</a>
                                 </li>
                                 <li>
-                                    <a href="listOfUser">View List Of Users</a>
+                                    <a href="{{ route('user.list') }}">View List Of Users</a>
                                 </li>
                             </ul>
                             </li>

@@ -63,7 +63,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect('/createAccount')
+            return redirect()->route('user.create')
                         ->withErrors($validator)
                         ->withInput($request->all());
         }
@@ -118,13 +118,15 @@ class UserController extends Controller
         }
 
         $user->save();
+
         Supervisor::create([
             'supervisors_id' => $request->supervisor,
             'supervisees_id' => $user->id,
             //'gap_level' => '2',
         ]);
+
         Session::flash('success', 'A new account was created successfully');
-        return $this->index();
+        return redirect()->route('user.list');
     }
 
     public function showListOfUser(){
@@ -174,7 +176,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect('/editProfile')
+            return redirect()->back()
                         ->withErrors($validator);
         }
 
@@ -193,7 +195,7 @@ class UserController extends Controller
             $validator = Validator::make($request->all(), $rules, $messages);
 
             if ($validator->fails()) {
-                return redirect('/editProfile' . $request->user_id)
+                return redirect()->back()
                             ->withErrors($validator);
             }
             $user->password = bcrypt($request->password);
@@ -241,7 +243,7 @@ class UserController extends Controller
         $user->save();
 
         Session::flash('success', 'Profile was edited successfully');
-        return back();
+        return redirect()->back();
     }
 
     public function uploadImage (Request $request)

@@ -37,9 +37,9 @@
                                         <td>{{$user->name}} </a></td>
                                         <td>{{ $user->status }}</td>
                                         <th>
-                                            <a href="/userDetails:{{ $user->id }}" class="btn btn-default btn-edit" role="button">Details</a>
-                                            <a href="/editProfile:{{ $user->id }}" class="btn btn-default btn-info" role="button">Edit</a>
-                                            <a href="/resetUser:{{ $user->id }}" class="btn btn-default btn-danger" role="button">Reset</a>
+                                            <a href="{{ route('user.details', $user->id) }}" class="btn btn-default btn-edit" role="button">Details</a>
+                                            <a href="{{ route('user.edit', $user->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                            <a href="{{ route('user.reset', $user->id) }}" class="btn btn-default btn-danger" role="button">Reset</a>
                                         </th>
                                     </tr>
                                     <?php $i++; ?>

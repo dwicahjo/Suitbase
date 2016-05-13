@@ -30,7 +30,7 @@
                     <div class="panel-body">
                         <!-- <div class="row">
                             <div class="col-lg-12"> -->
-                        <form class="form-horizontal" role="form" enctype="multipart/form-data" method="POST" action="{{ url('/createAccount') }}">
+                        <form class="form-horizontal" role="form" enctype="multipart/form-data" method="POST" action="{{ route('user.create') }}">
                         <input name="_token" type="hidden" value="{{ csrf_token() }}">
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

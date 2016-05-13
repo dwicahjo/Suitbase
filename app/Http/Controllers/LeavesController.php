@@ -37,7 +37,7 @@ class LeavesController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect()->route('leaves.create')
+            return redirect()->back()
                         ->withErrors($validator)
                         ->withInput($request->all());
         }
