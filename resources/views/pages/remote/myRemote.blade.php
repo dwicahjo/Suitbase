@@ -52,7 +52,7 @@
                                                 </th>
                                             @else
                                                 <th><a href="{{ route('remotes.edit', $remote->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
-                                                <a href="{{ route('remotes.cancel', $remote->id) }}" class="btn btn-default btn-danger" role="danger">Cancel</a></th>
+                                                <a href="{{ route('remotes.cancel', $remote->id) }}" class="btn btn-default btn-danger cancel" role="danger">Cancel</a></th>
                                             @endif
                                         </tr>
                                         <?php $i++; ?>

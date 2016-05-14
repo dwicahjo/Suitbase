@@ -29,6 +29,13 @@
     <!-- Custom Fonts -->
     <link href="{{asset('assets/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
+    <link href="{{asset('css/sweetalert.css')}}" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
+
+    <script src="{{asset('js/sweetalert.min.js')}}"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -323,9 +330,6 @@
 </div>
 <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="{{asset('assets/plugins/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 
@@ -349,6 +353,32 @@
                 responsive: true
         });
     });
+
+    $('a.cancel').click(function(e) {
+        e.preventDefault(); // Prevent the href from redirecting directly
+        var linkURL = $(this).attr("href");
+        warnBeforeRedirect(linkURL);
+    });
+
+    $('a.approval').click(function(e) {
+        e.preventDefault(); // Prevent the href from redirecting directly
+        var linkURL = $(this).attr("href");
+        warnBeforeRedirect(linkURL);
+    });
+
+    function warnBeforeRedirect(linkURL) {
+        swal({
+            title: "Are you sure?", 
+            text: "If you click 'Yes', you won't be able to reverse the action", 
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes",
+            confirmButtonColor: "#ec6c62"
+        }, function() {
+            // Redirect the user
+            window.location.href = linkURL;
+        });
+    }
     </script>
 </body>
 

@@ -22,7 +22,7 @@
                         <div class="col-lg-5">
                             <div class="row">
                                  <div class="col-lg-12">
-                                    <img alt="image" class="img-responsive" src="upload/photos/{{ $user[0]->photo }}">
+                                    <img alt="image" class="img-responsive" src="{{ asset('/upload/photos/' . $user[0]->photo) }}">
                                 </div>
                             </div>
                         </div> <!--col-lg-6-->
@@ -81,19 +81,35 @@
                                         </tr>
                                         <tr>
                                             <td>Curriculum Vitae</td>
-                                            <td><a href="{{ $user[0]->CV }}">CV</a></td>
+                                            @if ($user[0]->CV == "")
+                                                <td>Not Available</td>
+                                            @else
+                                                <td><a href="{{ route('user.details.download', 1) }}">CV</a></td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <td>KTP</td>
-                                            <td><a href="{{ $user[0]->ktp_id }}">KTP</td>
+                                            @if ($user[0]->KTP == "")
+                                                <td>Not Available</td>
+                                            @else
+                                                <td><a href="{{ route('user.details.download', 2) }}">KTP</td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <td>Ijazah</td>
-                                            <td><a href="{{ $user[0]->ijazah }}">Ijazah</a></td>
+                                            @if ($user[0]->ijazah == "")
+                                                <td>Not Available</td>
+                                            @else
+                                                <td><a href="{{ route('user.details.download', 3) }}">Ijazah</a></td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <td>Kartu Keluarga</td>
-                                            <td><a href="{{ $user[0]->KK }}">KK</a></td>
+                                            @if ($user[0]->KK == "")
+                                                <td>Not Available</td>
+                                            @else
+                                                <td><a href="{{ route('user.details.download', 4) }}">KK</a></td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <td></td>
@@ -104,7 +120,7 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-6">
-                                            <a href="/listOfUser" class="btn btn-default" role="button">Back</a>
+                                            <a href="{{ route('user.list') }}" class="btn btn-default" role="button">Back</a>
                                         </div>
                                     </div>
                                 </div>
@@ -117,4 +133,4 @@
         <div>
     </div>
 </div><!-- /#wrapper -->
-             @endsection
+@endsection

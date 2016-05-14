@@ -25,7 +25,6 @@
                                         <th>Name</th>
                                         <th>Status</th>
                                         <th></th>
-
                                     </tr>
                                 </thead>
                                 <tbody>

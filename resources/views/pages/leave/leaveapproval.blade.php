@@ -73,11 +73,11 @@
                                     $status = explode(" ", $leaves[0]->status);
                                 ?>
                                 @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
-                                        <button class="btn btn-default" disabled>Reject</button>
-                                        <button class="btn btn-default" disabled>Approve</button>
+                                    <button class="btn btn-default btn-danger" disabled>Reject</button>
+                                    <button class="btn btn-default btn-info" disabled>Approve</button>
                                 @else   
-                                        <a href="{{ route('leaves.approval.reject', $leaves[0]->id) }}" class="btn btn-default" role="button">Reject</a>
-                                        <a href="{{ route('leaves.approval.approve', $leaves[0]->id) }}" class="btn btn-default" role="button">Approve</a>
+                                    <a href="{{ route('leaves.approval.reject', $leaves[0]->id) }}" class="btn btn-default btn-danger approval" role="button">Reject</a>
+                                    <a href="{{ route('leaves.approval.approve', $leaves[0]->id) }}" class="btn btn-default btn-info approval" role="button">Approve</a>
                                 @endif
                             </div>
                             </div>

@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\AuthController;
 use DB;
 use Session;
 use Validator;
+use Alert;
 
 class LeavesController extends Controller
 {
@@ -54,7 +55,7 @@ class LeavesController extends Controller
         $leave->save();
 
         Session::flash('success', 'Leave request was submitted successfully');
-        return redirect()->route('leaves.create');
+        return redirect()->route('leaves.list.current');
     }
 
     public function viewListof ()
