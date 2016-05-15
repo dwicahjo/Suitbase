@@ -77,14 +77,10 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-md-6 col-md-offset-4">
-                                                <button type="submit" class="btn btn-primary">
-                                                    Submit
-                                                </button>
-                                            </div>
+                                            <div class="col-lg-6 col-md-offset-4">
+                                                <a href="listOfLeave" class="btn btn-primary btn-left" role="button">Submit</a>
+                                                <a href="listOfLeave" class="btn btn-primary" role="button">Back</a>
                                         </div>
-
-                                    
                                     </form>
                                 </div>
                             </div>
