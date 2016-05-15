@@ -10,7 +10,8 @@
         "doctrine/dbal": "^2.5",
         "ignasbernotas/laravel-model-generator": "^1.1",
         "nwidart/db-exporter": "^1.1",
-        "uxweb/sweet-alert": "^1.1"
+        "uxweb/sweet-alert": "^1.1",
+        "intervention/image": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
