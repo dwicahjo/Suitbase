@@ -37,7 +37,9 @@ class User extends Model
         'KTP',
         'remember_token',
         'departments_id',
-        'divisions_id'
+        'divisions_id',
+        'status',
+        'photo'
     ];
 
     protected $guarded = [];
