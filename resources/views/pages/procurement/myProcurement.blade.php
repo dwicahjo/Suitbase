@@ -29,6 +29,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Created At</th>
                                         <th>Procurement Title</th>
                                         <th>Status</th>
                                         <th></th>
@@ -39,8 +40,9 @@
                                     @foreach ($procurements as $procurement)
                                         <tr class="odd gradeX">
                                             <td class="center">{{ $i }}</td>
+                                            <td>{{ $procurement->created_at }}</td>
                                             <td>{{ $procurement->title }}</td>
-                                            <td><a href="/myProcurements:{{ $procurement->id }}">{{ $procurement->status}}</a></td>
+                                            <td><a href="{{ route('procurements.details', $procurement->id) }}">{{ $procurement->status}}</a></td>
                                             <?php 
                                                 $status = explode(" ", $procurement->status);
                                             ?>
@@ -50,8 +52,8 @@
                                                     <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                                 </th>
                                             @else
-                                                <th><a href="/editProcurement:{{ $procurement->id }}" class="btn btn-default btn-info" role="button">Edit</a>
-                                            <a href="/cancelProcurement:{{ $procurement->id }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
+                                                <th><a href="{{ route('procurements.edit', $procurement->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                                    <a href="{{ route('procurements.cancel', $procurement->id) }}" class="btn btn-default btn-danger cancel" role="button">Cancel</a></th>
                                             @endif
                                         </tr>
                                         <?php $i++; ?>

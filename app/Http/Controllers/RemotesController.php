@@ -24,13 +24,13 @@ class RemotesController extends Controller
         $rules = [
             'startdate'     => 'required|date|after:yesterday',
             'enddate'       => 'required|date|after:' . $date,
-            'description'   => 'required|alpha_dash',
+            'description'   => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect('/createRemote')
+            return redirect()->route('remotes.create')
                         ->withErrors($validator)
                         ->withInput($request->all());
         }
@@ -46,7 +46,7 @@ class RemotesController extends Controller
         $remote->save();
 
         Session::flash('success', 'Remote request was submitted successfully');
-        return redirect('myRemote');
+        return redirect()->route('remotes.list.current');
     }
 
     public function viewListof ()
@@ -96,7 +96,7 @@ class RemotesController extends Controller
         $remote->save();
 
         Session::flash('success', 'Remote request was edited successfully');
-        return back();
+        return redirect()->route('remotes.edit', $request->id);
     }
 
     public function reject ($id)
@@ -108,6 +108,7 @@ class RemotesController extends Controller
 
         $remote->save();
 
+        Session::flash('success', 'Remote request was successfully rejected');
         return back();
     }
 
@@ -120,6 +121,7 @@ class RemotesController extends Controller
 
         $remote->save();
 
+        Session::flash('success', 'Remote request was successfully approved');
         return back();
     }
 
@@ -130,6 +132,7 @@ class RemotesController extends Controller
 
         $remote->save();
 
-        return back();
+        Session::flash('success', 'Remote request was successfully cancelled');
+        return redirect()->route('remotes.list.current');
     }
 }

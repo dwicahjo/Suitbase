@@ -8,20 +8,6 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        @if (Session::has('success'))
-            <div class = "alert alert-success">
-                {{ Session::get('success') }}
-            </div>
-        @endif
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -31,33 +17,53 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class = "content-form">
-                                    <form class = "form-horizontal" role="form" method="POST" action="{{ url('/createTraining') }}">
+                                    <form class = "form-horizontal" role="form" method="POST" action="{{ route('trainings.postCreate') }}">
                                         <div class="form-group">
                                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                                            <label class="col-md-4 control-label">Training Title</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('title') ? 'color:red' : '' }}">Training Title</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "title" type = "text" value = "{{ old('title') }}" required>
+                                                @if ($errors->has('title'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('title') ? 'color:red' : '' }}">{{ $errors->first('title') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">Date</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('date') ? 'color:red' : '' }}">Date</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "date" type = "date" value = "{{ old('date') }}" required>
+                                                @if ($errors->has('date'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('date') ? 'color:red' : '' }}">{{ $errors->first('date') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">Price Estimate</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('price_estimate') ? 'color:red' : '' }}">Price Estimate</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "price_estimate" type = "price_estimate" value = "{{ old('price_estimate') }}" required>
+                                                @if ($errors->has('price_estimate'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('price_estimate') ? 'color:red' : '' }}">{{ $errors->first('price_estimate') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">Description</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('description') ? 'color:red' : '' }}">Description</label>
                                             <div class = "col-md-6">
                                                 <textarea class ="form-control" name = "description" required>{{ old('description') }}</textarea>
+                                                @if ($errors->has('description'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('price_estimate') ? 'color:red' : '' }}">{{ $errors->first('description') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
                                         <input class="form-control" name = "employees_id" type = "hidden" value='{{Auth::user()->id}}'>

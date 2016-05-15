@@ -8,20 +8,6 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        @if (Session::has('success'))
-            <div class = "alert alert-success">
-                {{ Session::get('success') }}
-            </div>
-        @endif
         <div class="row">
             <div class="col-lg-12 ">
                 <div class="panel panel-default">
@@ -31,32 +17,52 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class = "content-form">
-                                <form class = "form-horizontal" role="form" method="POST" action="{{ url('/createOvertime') }}">
+                                <form class = "form-horizontal" role="form" method="POST" action="{{ route('overtime.postCreate') }}">
                                         <div class="form-group">
                                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                                            <label class="col-md-4 control-label">Date</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('date') ? 'color:red' : '' }}">Date</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "date" type = "date" value = "{{ old('date') }}" required>
+                                                @if ($errors->has('date'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('date') ? 'color:red' : '' }}">{{ $errors->first('date') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">Start Time</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('starttime') ? 'color:red' : '' }}">Start Time</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "starttime" type = "time" value = "{{ old('starttime') }}" required>
+                                                @if ($errors->has('starttime'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('starttime') ? 'color:red' : '' }}">{{ $errors->first('starttime') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">End Time</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('endtime') ? 'color:red' : '' }}">End Time</label>
                                             <div class = "col-md-6">
                                                 <input class="form-control" name = "endtime" type = "time" value = "{{ old('endtime') }}" required>
+                                                @if ($errors->has('endtime'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('endtime') ? 'color:red' : '' }}">{{ $errors->first('endtime') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label">Description</label>
+                                            <label class="col-md-4 control-label" style = "{{ $errors->has('description') ? 'color:red' : '' }}">Description</label>
                                             <div class = "col-md-6">
                                                 <textarea class ="form-control" name = "description" required>{{ old('description') }}</textarea>
+                                                @if ($errors->has('description'))
+                                                    <span class="help-block">
+                                                        <strong style = "{{ $errors->has('description') ? 'color:red' : '' }}">{{ $errors->first('description') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
                                         <input class="form-control" name = "employees_id" type = "hidden" value='{{Auth::user()->id}}'>

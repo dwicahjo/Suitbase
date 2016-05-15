@@ -21,6 +21,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Created At</th>
                                         <th>Date </th>
                                         <th>Employee Name </th>
                                         <th>Division</th>
@@ -35,13 +36,14 @@
                                     @foreach ($overtimes as $overtime)
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
+                                        <td>{{$overtime->created_at}}</td>
                                         <td>{{$overtime->date}}</td>
                                         <td>{{$overtime->username}}</td>
                                         <td>{{$overtime->division}}</td>
                                         <td>{{$overtime->time_start}}</td>
                                         <td>{{$overtime->time_end}}</td>
                                         <td>{{$overtime->time_end - $overtime->time_start}}</td>
-                                        <td><a href='/overtimeApproval:{{$overtime->id}}'>{{$overtime->status}}</td>
+                                        <td><a href="{{ route('overtime.approval', $overtime->id) }}">{{$overtime->status}}</td>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

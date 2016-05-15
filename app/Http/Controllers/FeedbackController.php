@@ -18,7 +18,8 @@ class FeedbackController extends Controller
     {
         if(Auth::user()){
             $user = Auth::user()->id;
-            $feedbacks = Feedback::where('employees_id', $user)->orderBy('created_at','desc')->take(10)->get();
+            // $feedbacks = Feedback::where('employees_id', $user)->orderBy('created_at','desc')->take(10)->get();
+            $feedbacks = Feedback::where('employees_id', $user)->orderBy('created_at','desc')->paginate(10);
             return view('pages.feedback.createFeedback',['feedbacks'=>$feedbacks]);
         }
             return view('auth.login');
@@ -31,7 +32,7 @@ class FeedbackController extends Controller
         return $this->create($request->all());
     }
 
-   protected function create(array $data)
+    protected function create(array $data)
     {
         Feedback::create([
             'description' => $data['description'],

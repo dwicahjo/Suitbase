@@ -26,7 +26,7 @@ class ProcurementsController extends Controller
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
-            return redirect('/createProcurement')
+            return redirect()->route('procurements.create')
                         ->withErrors($validator)
                         ->withInput($request->all());
         }
@@ -42,7 +42,7 @@ class ProcurementsController extends Controller
         $procurement->save();
 
         Session::flash('success', 'Procurement request was submitted successfully');
-        return redirect('myProcurement');
+        return redirect()->route('procurements.list.current');
     }
 
     public function viewListof ()
@@ -92,7 +92,7 @@ class ProcurementsController extends Controller
         $procurement->save();
 
         Session::flash('success', 'Procurement request was edited successfully');
-        return back();
+        return redirect()->route('procurements.edit', $request->id);
     }
 
     public function reject ($id)
@@ -104,7 +104,8 @@ class ProcurementsController extends Controller
 
         $procurement->save();
 
-        return back();
+        Session::flash('success', 'Procurement request was successfully rejected');
+        return redirect()->route('procurements.approval', $id);
     }
 
     public function approve ($id)
@@ -116,7 +117,8 @@ class ProcurementsController extends Controller
 
         $procurement->save();
 
-        return back();
+        Session::flash('success', 'Procurement request was successfully approved');
+        return redirect()->route('procurements.approval', $id);
     }
 
     public function cancel ($id)
@@ -126,6 +128,7 @@ class ProcurementsController extends Controller
 
         $procurement->save();
 
-        return back();
+        Session::flash('success', 'Procurement request was successfully cancelled');
+        return redirect()->route('procurements.list.all');
     }
 }

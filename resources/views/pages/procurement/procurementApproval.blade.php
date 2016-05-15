@@ -8,6 +8,11 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (Session::has('success'))
+            <div class = "alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-4">
             </div>
@@ -57,16 +62,16 @@
                             </form>
                             <div class="form-group">
                                 <div class="col-lg-6 col-md-offset-2">
-                                    <a href="listOfProcurement" class="btn btn-default" role="button">Back</a>
+                                    <a href="{{ route('procurements.list.all') }}" class="btn btn-default" role="button">Back</a>
                                 <?php 
                                     $status = explode(" ", $procurements[0]->status);
                                 ?>
                                 @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
-                                        <button class="btn btn-default" disabled>Reject</button>
-                                        <button class="btn btn-default" disabled>Approve</button>
-                                @else   
-                                        <a href="/rejectProcurement:{{ $procurements[0]->id }}" class="btn btn-default" role="button">Reject</a>
-                                        <a href="/approveProcurement:{{ $procurements[0]->id }}" class="btn btn-default" role="button">Approve</a>
+                                    <button class="btn btn-default btn-danger" disabled>Reject</button>
+                                    <button class="btn btn-default btn-info" disabled>Approve</button>
+                                @else
+                                    <a href="/rejectProcurement:{{ $procurements[0]->id }}" class="btn btn-default btn-danger approval" role="button">Reject</a>
+                                    <a href="/approveProcurement:{{ $procurements[0]->id }}" class="btn btn-default btn-info approval" role="button">Approve</a>
                                 @endif
                                 </div>
                             </div>

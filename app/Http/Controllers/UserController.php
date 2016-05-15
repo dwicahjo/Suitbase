@@ -38,18 +38,34 @@ class UserController extends Controller
         ];
 
         $rules = [
-            'CV' => 'mimes:pdf',
-            'KTP' => 'mimes:pdf',
-            'ijazah' => 'mimes:pdf',
-            'KK' => 'mimes:pdf',
-            'password' => 'same:password_confirmation'
+            'name'              => 'required',
+            'email'             => 'required|email',
+            'password'          => 'required|same:password_confirmation',
+            'gender'            => 'required',
+            'religion'          => 'required',
+            'address'           => 'required',
+            'birth_date'        => 'required|date',
+            'birth_place'       => 'required',
+            'phone'             => 'required',
+            'ktp_id'            => 'required',
+            'ktp_address'       => 'required',
+            'NPWP'              => 'required',
+            'departments_id'    => 'required',
+            'divisions_id'      => 'required',
+            'type'              => 'required',
+            'CV'                => 'mimes:pdf',
+            'KTP'               => 'mimes:pdf',
+            'ijazah'            => 'mimes:pdf',
+            'KK'                => 'mimes:pdf',
+
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect('/createAccount')
-                        ->withErrors($validator);
+            return redirect()->route('user.create')
+                        ->withErrors($validator)
+                        ->withInput($request->all());
         }
 
         $user = User::create([
@@ -102,13 +118,15 @@ class UserController extends Controller
         }
 
         $user->save();
+
         Supervisor::create([
             'supervisors_id' => $request->supervisor,
             'supervisees_id' => $user->id,
             //'gap_level' => '2',
         ]);
+
         Session::flash('success', 'A new account was created successfully');
-        return $this->index();
+        return redirect()->route('user.list');
     }
 
     public function showListOfUser(){
@@ -158,7 +176,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect('/editProfile')
+            return redirect()->back()
                         ->withErrors($validator);
         }
 
@@ -177,7 +195,7 @@ class UserController extends Controller
             $validator = Validator::make($request->all(), $rules, $messages);
 
             if ($validator->fails()) {
-                return redirect('/editProfile' . $request->user_id)
+                return redirect()->back()
                             ->withErrors($validator);
             }
             $user->password = bcrypt($request->password);
@@ -225,7 +243,7 @@ class UserController extends Controller
         $user->save();
 
         Session::flash('success', 'Profile was edited successfully');
-        return back();
+        return redirect()->back();
     }
 
     public function uploadImage (Request $request)
@@ -242,7 +260,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect('/editProfile')
+            return redirect()->back()
                         ->withErrors($validator);
         }
 
@@ -255,7 +273,7 @@ class UserController extends Controller
         $user->save();
 
         Session::flash('success', 'Profile photo was changed successfully');
-        return back();
+        return redirect()->back();
     }
 
     public function download ($doc)
@@ -331,6 +349,6 @@ class UserController extends Controller
 
         $user->save();
 
-        return back();
+        return redirect()->back();
     }
 }

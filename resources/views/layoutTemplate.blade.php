@@ -29,6 +29,13 @@
     <!-- Custom Fonts -->
     <link href="{{asset('assets/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
+    <link href="{{asset('css/sweetalert.css')}}" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
+
+    <script src="{{asset('js/sweetalert.min.js')}}"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -153,20 +160,20 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="home"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                            <a href="{{ route('home') }}"><i class="fa fa-dashboard fa-fw"></i> Home</a>
                         </li>
                         <li>
-                            <a href="myProfile"><i class="fa fa-user fa-fw"></i>My Profile</a>
+                            <a href="{{ route('user.details.current') }}"><i class="fa fa-user fa-fw"></i>My Profile</a>
                         </li>
                         @if (Auth::user()->type == 'HR')
                             <li>
                                 <a href="#"><i class="fa fa-users fa-fw"></i> Users<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createAccount">Create Account</a>
+                                    <a href="{{ route('user.create') }}">Create Account</a>
                                 </li>
                                 <li>
-                                    <a href="listOfUser">View List Of Users</a>
+                                    <a href="{{ route('user.list') }}">View List Of Users</a>
                                 </li>
                             </ul>
                             </li>
@@ -178,14 +185,14 @@
                              <a href="#"><i class="fa fa-reorder fa-fw"></i> Leave<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createLeave">Create Leave</a>
+                                    <a href="{{route('leaves.create')}}">Create Leave</a>
                                 </li>
                                 <li>
-                                    <a href="myLeave">View My Leave</a>
+                                    <a href="{{route('leaves.list.current')}}">View My Leave</a>
                                 </li>
                                 @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
                                     <li>
-                                        <a href="listOfLeave">View List of Leave</a>
+                                        <a href="{{route('leaves.list.all')}}">View List of Leave</a>
                                     </li>
                                 @endif
                             </ul>
@@ -195,14 +202,14 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Remote <span class="fa arrow"></span></a>
                                <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createRemote">Create Remote</a>
+                                    <a href="{{route('remotes.create')}}">Create Remote</a>
                                 </li>
                                 <li>
-                                    <a href="myRemote">View My Remote</a>
+                                    <a href="{{route('remotes.list.current')}}">View My Remote</a>
                                 </li>
                                 @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
                                     <li>
-                                        <a href="listOfRemote">View List of Remote</a>
+                                        <a href="{{route('remotes.list.all')}}">View List of Remote</a>
                                     </li>
                                 @endif
                             </ul>
@@ -212,15 +219,15 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Training<span class="fa arrow"></span></a>
                                <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createTraining">Create Training</a>
+                                    <a href="{{ route('trainings.create') }}">Create Training</a>
                                 </li>
 
                                 <li>
-                                    <a href="myTraining">View My Training</a>
+                                    <a href="{{ route('trainings.list.current') }}">View My Training</a>
                                 </li>
-                                @if (Auth::user()->type == 'Finance')
+                                @if (Auth::user()->type == 'Finance' || Auth::user()->type == 'HR')
                                     <li>
-                                        <a href="listOfTraining">View List of Training</a>
+                                        <a href="{{ route('trainings.list.all') }}">View List of Training</a>
                                     </li>
                                 @endif
                             </ul>
@@ -230,14 +237,14 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i> Procurement<span class="fa arrow"></span></a>
                              <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createProcurement">Create Procurement</a>
+                                    <a href="{{ route('procurements.create') }}">Create Procurement</a>
                                 </li>
                                 <li>
-                                    <a href="myProcurement">View My Procurement</a>
+                                    <a href="{{ route('procurements.list.current') }}">View My Procurement</a>
                                 </li>
                                 @if (Auth::user()->type == 'Finance')
                                     <li>
-                                        <a href="listOfProcurement">View List of Procurement</a>
+                                        <a href="{{ route('procurements.list.all') }}">View List of Procurement</a>
                                     </li>
                                 @endif
                             </ul>
@@ -247,14 +254,14 @@
                             <a href="#"><i class="fa fa-reorder fa-fw"></i>Overtime<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createOvertime">Create Overtime</a>
+                                    <a href="{{ route('overtime.create') }}">Create Overtime</a>
                                 </li>
                                 <li>
-                                    <a href="myOvertime">View My Overtime</a>
+                                    <a href="{{ route('overtime.list.current') }}">View My Overtime</a>
                                 </li>
                                 @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
                                     <li>
-                                        <a href="listOfOvertime">View List of Overtime</a>
+                                        <a href="{{ route('overtime.list.all') }}">View List of Overtime</a>
                                     </li>
                                 @endif
                             </ul>
@@ -286,17 +293,16 @@
                             <a href="#"><i class="fa fa-pencil fa-fw"></i>Feedback<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="createFeedback">Create Feedback</a>
+                                    <a href="{{route('feedback.create')}}">Create Feedback</a>
                                 </li>
                                 @if (Auth::user()->type == 'HR')
                                     <li>
-                                        <a href="listOfFeedback">View List of Feedback</a>
+                                        <a href="{{route('feedback.list')}}">View Feedbacks</a>
                                     </li>
                                 @endif
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        @if (Auth::user()->type == 'HR')
                             <li>
                                 <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
@@ -306,7 +312,6 @@
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>
-                        @endif
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -324,9 +329,6 @@
 
 </div>
 <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{asset('assets/plugins/bootstrap/dist/js/bootstrap.min.js')}}"></script>
@@ -351,6 +353,32 @@
                 responsive: true
         });
     });
+
+    $('a.cancel').click(function(e) {
+        e.preventDefault(); // Prevent the href from redirecting directly
+        var linkURL = $(this).attr("href");
+        warnBeforeRedirect(linkURL);
+    });
+
+    $('a.approval').click(function(e) {
+        e.preventDefault(); // Prevent the href from redirecting directly
+        var linkURL = $(this).attr("href");
+        warnBeforeRedirect(linkURL);
+    });
+
+    function warnBeforeRedirect(linkURL) {
+        swal({
+            title: "Are you sure?", 
+            text: "If you click 'Yes', you won't be able to reverse the action", 
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes",
+            confirmButtonColor: "#ec6c62"
+        }, function() {
+            // Redirect the user
+            window.location.href = linkURL;
+        });
+    }
     </script>
 </body>
 

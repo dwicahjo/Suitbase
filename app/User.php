@@ -26,6 +26,6 @@ class User extends Authenticatable
 
     public function getKtpUrl()
     {
-        return asset("/upload/docs/{$this->KTP}");
+        return asset('/upload/docs/{$this->KTP}');
     }
 }

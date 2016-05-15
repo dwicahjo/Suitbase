@@ -4,7 +4,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">LIST OF FEEDBACK</h1>
+                <h1 class="page-header">FEEDBACKS</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -41,7 +41,7 @@
                                         <td>Anonymous</td>
                                     <?php } ?>
                                         <td>{{$feedback->division}}</td>
-                                        <td><a href="/detailFeedback:{{$feedback->id}}">{{str_limit($feedback->description, $limit = 20, $end = '...')}}</a></td>
+                                        <td><a href="{{route('feedback.details', $feedback->id)}}">{{str_limit($feedback->description, $limit = 20, $end = '...')}}</a></td>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

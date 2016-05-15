@@ -33,10 +33,10 @@
                                 <div class="col-lg-6" style= "width:500px">
                                     <div class="col-image">
                                         <span>
-                                            <img alt="image" class="" width= 100% src="upload/photos/{{ $user->photo }}">
+                                            <img alt="image" class="" width= 100% src="{{ asset('/upload/photos/' . $user->photo) }}">
                                         </span>
                                         <br><br>
-                                        <form role = "form" method="post" action="/reset:{{ $user->id }}">
+                                        <form role = "form" method="post" action="{{ route('user.postReset', $user->id) }}">
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                             <input name = "user_id" type = "hidden" value = "{{ $user->id }}">
                                             <select class="form-control" name = "status" style="width: 100%";>
@@ -55,7 +55,7 @@
                                 </div>
 
                             <div class="col-lg-6">
-                                <form role="form" method="post" action="/reset:{{ $user->id }}">
+                                <form role="form" method="post" action="{{ route('user.postReset', $user->id) }}">
                                     <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                     <input name = "user_id" type = "hidden" value = "{{ $user->id }}">
                                     <div class="form-group">

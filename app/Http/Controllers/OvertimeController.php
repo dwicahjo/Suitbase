@@ -39,7 +39,7 @@ class OvertimeController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect('/createOvertime')
+            return redirect()->route('overtime.create')
                         ->withErrors($validator)
                         ->withInput($request->all());
         }
@@ -70,7 +70,7 @@ class OvertimeController extends Controller
             ]);
 
         Session::flash('success', 'Overtime log was submitted successfully');
-        return redirect('/myOvertime');
+        return redirect()->route('overtime.list.current');
     }
 
     public function showListOfOvertime(){
@@ -125,8 +125,8 @@ class OvertimeController extends Controller
 
         $overtime->save();
 
-        Session::flash('success', 'Overtime log was edited successfully');
-        return back();
+        Session::flash('success', 'Overtime log was updated successfully');
+        return redirect()->route('overtime.edit', $request->id);
     }
 
     public function reject ($id)
@@ -138,7 +138,8 @@ class OvertimeController extends Controller
 
         $overtime->save();
 
-        return back();
+        Session::flash('success', 'Overtime log was successfully rejected');
+        return redirect()->route('overtime.approval', $id);
     }
 
     public function approve ($id)
@@ -150,7 +151,8 @@ class OvertimeController extends Controller
 
         $overtime->save();
 
-        return back();
+        Session::flash('success', 'Overtime log was successfully approved');
+        return redirect()->route('overtime.approval', $id);
     }
 
     public function cancel ($id)
@@ -160,6 +162,7 @@ class OvertimeController extends Controller
 
         $overtime->save();
 
-        return back();
+        Session::flash('success', 'Overtime log was successfully cancelled');
+        return redirect()->route('overtime.list.current');
     }
 }

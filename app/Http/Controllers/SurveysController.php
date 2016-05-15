@@ -11,6 +11,7 @@ use App\Models\QuestionsSurvey;
 use App\Models\User;
 use Validator;
 use Session;
+use Auth;
 
 class SurveysController extends Controller
 {
@@ -23,7 +24,11 @@ class SurveysController extends Controller
         return view('pages.survey.createSurvey');
     }
     public function showListofSurveys(){
-        $surveys = Survey::all();
+        if(Auth::user()->type == "HR"){
+            $surveys = Survey::all();
+        }else{
+            $surveys = Survey::where('employees_id',Auth::user()->id)->get();
+        }
         return view('pages.survey.listOfSurvey',['surveys'=>$surveys]);
     }
     protected function create(array $data)
@@ -84,11 +89,23 @@ public function postSurvey(Request $request){
     $validator = Validator::make($request->all(), $rules, $messages);
 
     if ($validator->fails()) {
-        return redirect()->route('appraisal.create')
+        return redirect()->route('survey.create')
         ->withErrors($validator)
         ->withInput($request->all());
     }
 
     return $this->create($request->all());
+}
+
+public function showDetail($id)
+{
+    $survey = Survey::where('id', $id)->get()->first();
+    $surveyForm = $survey->surveyForm->id;
+    $questions = QuestionsSurvey::where('surveys_form_id',$surveyForm)->get();
+    return view('pages.survey.surveyDetails', ['survey' => $survey],['questions' => $questions]);
+}
+public function showRecap()
+{
+    return view('pages.survey.recapSurvey');
 }
 }

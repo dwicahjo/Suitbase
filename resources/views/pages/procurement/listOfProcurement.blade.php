@@ -4,11 +4,16 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">LIST OF REMOTE WORKING REQUESTS</h1>
+                <h1 class="page-header">LIST OF PROCUREMENTS REQUESTS</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (Session::has('success'))
+            <div class = "alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -21,6 +26,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Created At</th>
                                         <th>Employee Name</th>
                                         <th>Division </th>
                                         <th>Title</th>
@@ -32,10 +38,11 @@
                                     @foreach ($procurements as $procurement)
                                     <tr class="odd gradeX">
                                         <td>{{ $i }}</td>
+                                        <td>{{ $procurement->created_at }}</td>
                                         <td>{{ $procurement->employee->name }}</a></td>
                                         <td>{{ $procurement->employee->division->name }}</td>
                                         <td>{{ $procurement->title }}</td>
-                                        <td><a href="/procurementApproval:{{ $procurement->id }}">{{ $procurement->status }}</td>
+                                        <td><a href="{{ route('procurements.approval', $procurement->id) }}">{{ $procurement->status }}</td>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

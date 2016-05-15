@@ -20,22 +20,26 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>No. </th>
-                                        <th>Division </th>
-                                        <th>Name </th>
-                                        <th> </th>
-
+                                        <th>No.</th>
+                                        <th>Division</th>
+                                        <th>Name</th>
+                                        <th>Status</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   <?php $i=1; ?>
+                                    <?php $i=1; ?>
                                     @foreach($users as $user)
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
                                         <td>{{$user->division}}</td>
-                                        <td><a href="/userDetails:{{ $user->id }}"> {{$user->name}} </a></td>
-                                        <th><a href="/editProfile:{{ $user->id }}" class="btn btn-default btn-info" role="button">Edit</a>
-                                            <a href="/resetUser:{{ $user->id }}" class="btn btn-default btn-danger" role="button">Reset</a></th>
+                                        <td>{{$user->name}} </a></td>
+                                        <td>{{ $user->status }}</td>
+                                        <th>
+                                            <a href="{{ route('user.details', $user->id) }}" class="btn btn-default btn-edit" role="button">Details</a>
+                                            <a href="{{ route('user.edit', $user->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                            <a href="{{ route('user.reset', $user->id) }}" class="btn btn-default btn-danger" role="button">Reset</a>
+                                        </th>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

@@ -26,6 +26,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Created At</th>
                                         <th>Start Date</th>
                                         <th>End Date</th>
                                         <th>Status</th>
@@ -37,9 +38,10 @@
                                     @foreach ($remotes as $remote)
                                         <tr class="odd gradeX">
                                             <td>{{ $i }}</td>
+                                            <td>{{ $remote->created_at }}</td>
                                             <td>{{ $remote->date_start }}</td>
                                             <td>{{ $remote->date_end }}</td>
-                                            <td class="center"><a href="/myRemotes:{{ $remote->id }}">{{ $remote->status }}</a></td>
+                                            <td class="center"><a href="{{ route('remotes.details', $remote->id) }}">{{ $remote->status }}</a></td>
                                             <?php 
                                                 $status = explode(" ", $remote->status);
                                             ?>
@@ -49,8 +51,8 @@
                                                     <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                                 </th>
                                             @else
-                                                <th><a href="/editRemote:{{ $remote->id }}" class="btn btn-default btn-info" role="button">Edit</a>
-                                                <a href="/cancelRemote:{{ $remote->id }}" class="btn btn-default btn-danger" role="danger">Cancel</a></th>
+                                                <th><a href="{{ route('remotes.edit', $remote->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                                <a href="{{ route('remotes.cancel', $remote->id) }}" class="btn btn-default btn-danger cancel" role="danger">Cancel</a></th>
                                             @endif
                                         </tr>
                                         <?php $i++; ?>
