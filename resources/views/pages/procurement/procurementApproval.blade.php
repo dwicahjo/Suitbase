@@ -67,11 +67,11 @@
                                     $status = explode(" ", $procurements[0]->status);
                                 ?>
                                 @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
-                                        <button class="btn btn-default" disabled>Reject</button>
-                                        <button class="btn btn-default" disabled>Approve</button>
-                                @else   
-                                        <a href="/rejectProcurement:{{ $procurements[0]->id }}" class="btn btn-default" role="button">Reject</a>
-                                        <a href="/approveProcurement:{{ $procurements[0]->id }}" class="btn btn-default" role="button">Approve</a>
+                                    <button class="btn btn-default btn-danger" disabled>Reject</button>
+                                    <button class="btn btn-default btn-info" disabled>Approve</button>
+                                @else
+                                    <a href="/rejectProcurement:{{ $procurements[0]->id }}" class="btn btn-default btn-danger approval" role="button">Reject</a>
+                                    <a href="/approveProcurement:{{ $procurements[0]->id }}" class="btn btn-default btn-info approval" role="button">Approve</a>
                                 @endif
                                 </div>
                             </div>

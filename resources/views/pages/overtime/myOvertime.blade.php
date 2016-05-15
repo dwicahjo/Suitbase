@@ -59,7 +59,7 @@
                                             </th>
                                         @else
                                             <th><a href="{{ route('overtime.edit', $overtime->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
-                                            <a href="{{ route('overtime.cancel', $overtime->id) }}" class="btn btn-default btn-danger" role="button">Cancel</a></th>
+                                            <a href="{{ route('overtime.cancel', $overtime->id) }}" class="btn btn-default btn-danger cancel" role="button">Cancel</a></th>
                                         @endif
                                     </tr>
                                     <?php $i++; ?>

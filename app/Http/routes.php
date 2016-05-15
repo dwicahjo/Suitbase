@@ -9,6 +9,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
 Route::auth();
 
 Route::get('/', function () {
@@ -42,12 +43,12 @@ Route::group(['middleware' => 'auth'], function() {
             'as' => 'user.edit', 'uses' => 'UserController@viewEditUser'
             ]);
 
-        Route::post('/user/edit/post', [
-            'as' => 'user.postEdit', 'uses' => 'UserController@update'
+        Route::post('/user/edit/postImage', [
+            'as' => 'user.postImage', 'uses' => 'UserController@uploadImage'
             ]);
 
-        Route::post('/user/edit/post', [
-            'as' => 'user.postImage', 'uses' => 'UserController@uploadImage'
+        Route::post('/user/edit/postUpdate', [
+            'as' => 'user.postEdit', 'uses' => 'UserController@update'
             ]);
 
         Route::get('/user/list', [

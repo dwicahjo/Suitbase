@@ -260,7 +260,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect('/editProfile')
+            return redirect()->back()
                         ->withErrors($validator);
         }
 
@@ -273,7 +273,7 @@ class UserController extends Controller
         $user->save();
 
         Session::flash('success', 'Profile photo was changed successfully');
-        return back();
+        return redirect()->back();
     }
 
     public function download ($doc)
@@ -349,6 +349,6 @@ class UserController extends Controller
 
         $user->save();
 
-        return back();
+        return redirect()->back();
     }
 }
