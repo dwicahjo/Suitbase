@@ -23,6 +23,6 @@ class Supervisor extends Model
 
     public function supervisee()
     {
-        return $this->hasMany('App\Models\User', 'id', 'supervisees_id');
+        return $this->hasOne('App\Models\User', 'id', 'supervisees_id');
     }
 }

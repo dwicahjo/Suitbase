@@ -75,8 +75,7 @@ class AppraisalsController extends Controller
                 ]);
           }
           foreach ($users as $user){
-            $supervisor = $user->supervisor()->where('supervisees_id',$user->id)->first();
-            if($supervisor->count() > 0){
+            $supervisor = $user->supervisor;
                 Appraisal::create([
                     'status' => 'Submitted',
                     'employees_id' => $user->id,
@@ -84,7 +83,7 @@ class AppraisalsController extends Controller
                     'appraisals_template_id' => $idAppraisalsTemplate[0]->id,
                     'supervisors_id' => $supervisor->supervisors_id,
                     ]);
-            }
+
         }
         Session::flash('success', 'Appraisal Template request was created successfully');
     }else{
@@ -103,10 +102,12 @@ public function showListOfAppraisalsTemplate()
 
 public function showListOfAppraisals()
 {
-    /*if(Auth::user()->type == "HR"){
+    if(Auth::user()->type == "HR"){
         $appraisals = Appraisal::orderBy('created_at','desc')->get();
-    }*/
-    $appraisals = Appraisal::orderBy('created_at','desc')->get();
+    }else if(Auth::user()->type == "Supervisor"){
+        $appraisals = Appraisal::where('supervisors_id',Auth::user()->id)->orderBy('created_at','desc')->get();
+    }
+
     return view('pages.appraisal.listofAppraisal',['appraisals'=>$appraisals]);
 }
 

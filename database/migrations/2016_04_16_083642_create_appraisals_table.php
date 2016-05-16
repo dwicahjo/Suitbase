@@ -24,7 +24,7 @@ class CreateAppraisalsTable extends Migration
             $table->foreign('employees_id')->references('id')->on('users');
             $table->foreign('divisions_id')->references('id')->on('divisions');
             $table->foreign('appraisals_template_id')->references('id')->on('appraisals_template');
-            $table->foreign('supervisors_id')->references('id')->on('supervisors');
+            $table->foreign('supervisors_id')->references('supervisors_id')->on('supervisors');
             $table->timestamps();
         });
     }
