@@ -43,17 +43,19 @@
                                         <td>{{ $leave->date_start }}</a></td>
                                         <td>{{ $leave->date_end }}</td>
                                         <td>{{ $leave->type }}</td>
-                                        <td><a href="{{ route('leaves.details', $leave->id) }}">{{ $leave->status }}</td>
+                                        <td>{{ $leave->status }}</td>
                                         <?php 
                                             $status = explode(" ", $leave->status);
                                         ?>
                                         @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                             <th>
+                                                <a href="{{ route('leaves.details', $leave->id) }}" class="btn btn-default" role="button">Detail</a>
                                                 <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
                                                 <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                             </th>
                                         @else
-                                            <th><a href="{{ route('leaves.edit', $leave->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                            <th><a href="{{ route('leaves.details', $leave->id) }}" class="btn btn-default" role="button">Detail</a>
+                                                <a href="{{ route('leaves.edit', $leave->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
                                                 <a href="{{ route('leaves.cancel', $leave->id) }}" class="btn btn-default btn-danger cancel" role="button">Cancel</a></th>
                                         @endif
                                     </tr>

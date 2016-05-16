@@ -31,6 +31,7 @@
                                         <th>Division </th>
                                         <th>Title</th>
                                         <th>Status</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -42,7 +43,8 @@
                                         <td>{{ $procurement->employee->name }}</a></td>
                                         <td>{{ $procurement->employee->division->name }}</td>
                                         <td>{{ $procurement->title }}</td>
-                                        <td><a href="{{ route('procurements.approval', $procurement->id) }}">{{ $procurement->status }}</td>
+                                        <td>{{ $procurement->status }}</td>
+                                        <th><a href="{{ route('procurements.approval', $procurement->id) }}" class="btn btn-default" role="button">Detail</a></th>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

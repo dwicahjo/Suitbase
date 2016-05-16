@@ -90,8 +90,9 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="col-lg-6 col-md-offset-4">
-                                                <a href="listOfLeave" class="btn btn-primary btn-left" role="button">Submit</a>
-                                                <a href="listOfLeave" class="btn btn-primary" role="button">Back</a>
+                                                <button type="submit" class="btn btn-primary">
+                                                    Submit
+                                                </button>
                                         </div>
                                     </form>
                                 </div>

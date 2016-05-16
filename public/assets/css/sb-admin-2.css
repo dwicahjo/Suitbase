@@ -414,7 +414,6 @@ table.dataTable thead .sorting:after {
 }
 
 .content-form {
-    margin-left: 20%;
     padding: 2%;
 }
 
@@ -476,7 +475,7 @@ table.dataTable thead .sorting:after {
 }
 
 .add-question{
-    margin-left: 37%;
+    margin-left: 40%;
     margin-bottom: 5%;
 }
 

@@ -28,6 +28,7 @@
                                 <th>End Date </th>
                                 <th>Leave Type</th>
                                 <th>Status</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,7 +42,8 @@
                                     <td class="center"> {{ $leave->date_start }}</td>
                                     <td class="center"> {{ $leave->date_end }} </td>
                                     <td>{{ $leave->type }}</td>
-                                    <td><a href="{{ route('leaves.approval', $leave->id) }}">{{ $leave->status }}</td>
+                                    <td>{{ $leave->status }}</td>
+                                    <th><a href="{{ route('leaves.approval', $leave->id) }}" class="btn btn-default" role="button">Detail</a></th>
                                 </tr>
                                 <?php $i++; ?>
                             @endforeach

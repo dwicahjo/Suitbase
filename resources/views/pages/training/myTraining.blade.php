@@ -38,18 +38,21 @@
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
                                         <td>{{ $training->created_at }}</td>
-                                        <td><a href="{{ route('trainings.details', $training->id) }}">{{$training->title}}</a></td>
+                                        <td>{{$training->title}}</a></td>
                                         <td>{{$training->status}}</td>
                                         <?php 
                                                 $status = explode(" ", $training->status);
                                             ?>
                                         @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                             <th>
+                                                <a href="{{ route('trainings.details', $training->id) }}" class="btn btn-default" role="button">Detail</a>
                                                 <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
                                                 <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                             </th>
                                         @else
-                                            <th><a href="{{ route('trainings.edit', $training->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                            <th>
+                                            <a href="{{ route('trainings.details', $training->id) }}" class="btn btn-default" role="button">Detail</a>
+                                            <a href="{{ route('trainings.edit', $training->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
                                             <a href="{{ route('trainings.cancel', $training->id) }}" class="btn btn-default btn-danger cancel" role="button">Cancel</a></th>
                                         @endif
                                     </tr>

@@ -92,7 +92,7 @@ class ProcurementsController extends Controller
         $procurement->save();
 
         Session::flash('success', 'Procurement request was edited successfully');
-        return redirect()->route('procurements.edit', $request->id);
+        return redirect()->route('procurements.list.current');
     }
 
     public function reject ($id)

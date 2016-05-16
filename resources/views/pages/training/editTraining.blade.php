@@ -52,9 +52,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-md-5 control-label"></div>
-                                            <div class = "col-md-2 col-md-offset-3">
-                                                <button type="submit" class="btn btn-default">Submit</button>
+                                            <div class="col-lg-1 col-md-offset-8">
+                                                <button type="submit" class="btn btn-primary">Submit</button>                                                
+                                                <a href="{{ route('trainings.list.current') }}" class="btn btn-default btn-left" role="button">Back</a>
                                             </div>
                                         </div>
                                     </form>

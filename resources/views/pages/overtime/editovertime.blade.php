@@ -61,10 +61,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-md-6 col-md-offset-4">
-                                                <button type="submit" class="btn btn-primary">
-                                                    Save
-                                                </button>
+                                            <div class="col-lg-1 col-md-offset-8">
+                                                <button type="submit" class="btn btn-primary">Submit</button>                                                
+                                                <a href="{{ route('overtimes.list.current') }}" class="btn btn-default btn-left" role="button">Back</a>
                                             </div>
                                         </div>
                                     </form>
