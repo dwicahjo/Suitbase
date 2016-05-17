@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Models\Leave;
+use App\Models\Requests;
 use App\Http\Controllers\Auth\AuthController;
 use DB;
 use Session;
 use Validator;
-use Alert;
 
 class LeavesController extends Controller
 {
@@ -53,6 +53,8 @@ class LeavesController extends Controller
         $leave->employees_id = $request->user()->id;
 
         $leave->save();
+
+        $request = new Request;
 
         Session::flash('success', 'Leave request was submitted successfully');
         return redirect()->route('leaves.list.current');
