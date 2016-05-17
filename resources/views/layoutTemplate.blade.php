@@ -243,12 +243,16 @@
                                 <ul class="nav nav-second-level">
                                     <li>
                                         <a href="{{route('survey.list')}}">View My Survey</a>                                    
+                                        <a href="{{route('survey.create')}}">Create Survey</a>
                                     </li>
                                     <li>
                                         <a href="{{route('survey.list')}}">View List of Survey</a>
                                     </li>
+                                     <li>
+                                        <a href="{{route('survey.form')}}">View List of Survey Form</a>
+                                    </li>
 
-                                    
+
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>
@@ -308,8 +312,8 @@
 
     function warnBeforeRedirect(linkURL) {
         swal({
-            title: "Are you sure?", 
-            text: "If you click 'Yes', you won't be able to reverse the action", 
+            title: "Are you sure?",
+            text: "If you click 'Yes', you won't be able to reverse the action",
             type: "warning",
             showCancelButton: true,
             confirmButtonText: "Yes",
