@@ -383,6 +383,10 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/appraisals/edit/{id}',[
             'as' => 'appraisal.update', 'uses' => 'AppraisalsController@updateAppraisalTemplate'
             ]);
+        Route::get('/appraisalRecap',[
+            'as' => 'appraisal.recap', 'uses' => 'AppraisalsController@showRecap'
+            ]);
+
 
         /* ini form aslinya guys*/
         Route::get('/forms', function () {

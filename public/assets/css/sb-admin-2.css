@@ -541,3 +541,7 @@ table.dataTable thead .sorting:after {
 .btn-left{
     margin-left: 1em;
 }
+
+.btn-submit{
+    margin-left: 38%;
+}
