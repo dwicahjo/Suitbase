@@ -31,41 +31,25 @@
                                 <label class="col-md-4 control-label">Answer</label>
                                 <div class = "right-side">
                                     <div class="col-md-6">
-                                    @if($question->question_type == 1)
-                                    <input class="form-control" name = "answer">
-                                    @elseif ($question->question_type == 2)
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">Option 1
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Option 2
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Option 3
-                                        </label>
-                                    </div>
-                                    @else
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="">Option 1
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="">Option 2
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="">Option 3
-                                        </label>
-                                    </div>
-                                    @endif
+                                        @if($question->question_type == 1)
+                                        <input class="form-control" name = "answer">
+                                        @elseif ($question->question_type == 2)
+                                        @foreach ($question->option as $option)
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="radio{{$question->id}}" id="optionsRadios1" value="{{$option->option}}">{{$option->option}}
+                                            </label>
+                                        </div>
+                                        @endforeach
+                                        @else
+                                        @foreach ($question->option as $option)
+                                        <div class="checkbox">
+                                            <label>
+                                            <input type="checkbox" name="checkbox{{$question->id}}" value="{{$option->option}}">{{$option->option}}
+                                            </label>
+                                        </div>
+                                        @endforeach
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +58,7 @@
                         <div class="form-group">
                             <div class="col-md-6 control-label"></div>
                             <div class = "col-md-2 col-md-offset-3">
-                                <a href="listOfSurvey" class="btn btn-default" role="button">Back</a>
+                                <a href="{{route('survey.list')}}" class="btn btn-default" role="button">Back</a>
                             </div>
                         </div>
 

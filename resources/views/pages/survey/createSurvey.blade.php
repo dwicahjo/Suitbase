@@ -60,62 +60,63 @@
                                         <label class="col-md-4 control-label">Question</label>
                                         <div class = "col-md-6">
                                             <textarea class ="form-control" name = "question[]" required> </textarea>
+                                            <input type="hidden" name="idOption[]" value="0">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Question Type</label>
                                         <div class = "col-md-6">
-                                            <select class="form-control select_menu" name = "question_type[]" id = "select_menu" onchange = "select(this.value,1);">
+                                            <select class="form-control select_menu" name = "question_type[]" id = "select_menu" onchange = "select(this.value,0);">
                                                 <option value="text">Text</option>
                                                 <option value="multiple-choice">Multiple Choice</option>
                                                 <option value="checkbox">Checkbox</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-group" id="multipleChoice1" style="display:none">
+                                    <div class="form-group" id="multipleChoice0" style="display:none">
                                         <div class = "col-md-4 control-label">
                                         </div>
                                         <div class = "col-md-6 control-label">
                                             <div class="radio">
                                                 <label>
                                                     <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Option
-                                                    <input class="form-control" name = "radio[]">
+                                                    <input class="form-control" name = "radio0[]">
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
                                                     <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Option
-                                                    <input class="form-control" name = "radio[]">
+                                                    <input class="form-control" name = "radio0[]">
                                                 </label>
                                             </div>
                                             <div id="wrapRadio"></div>
                                             <div class="radio">
                                                 <label>
-                                                    <button class="add-question add_field_button btn btn-default" type="button" id="addOptionRadio">Add More Option</button>
+                                                    <button class="add-question add_field_button btn btn-default addOptionRadio" type="button" id="0">Add More Option</button>
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group" id="checkbox1" style="display:none">
+                                    <div class="form-group" id="checkbox0" style="display:none">
                                         <div class = "col-md-4 control-label">
                                         </div>
                                         <div class="col-md-6">
                                             <div class="checkbox">
                                                 <label>
                                                     <input type="checkbox" value="">Checkbox
-                                                    <input class="form-control" name = "checkbox[]">
+                                                    <input class="form-control" name = "checkbox0[]">
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
                                                     <input type="checkbox" value="">Checkbox
-                                                    <input class="form-control" name = "checkbox[]">
+                                                    <input class="form-control" name = "checkbox0[]">
                                                 </label>
                                             </div>
-                                            <div id="wrapCheckbox"></div>
+
                                             <div class="checkbox">
                                                 <label>
-                                                    <button class="add-question add_field_button btn btn-default" type="button" id="addOptionCheckbox">Add More Option</button>
+                                                    <button class="add-question add_field_button btn btn-default addOptionCheckbox" type="button" id="0">Add More Option</button>
                                                 </label>
                                             </div>
                                         </div>
