@@ -25,4 +25,9 @@ class QuestionsSurvey extends Model
     {
         return $this->hasOne('App\Models\SurveysForm', 'id', 'surveys_form_id');
     }
+
+    public function option()
+    {
+        return $this->hasMany('App\Models\OptionsSurvey','question_id');
+    }
 }

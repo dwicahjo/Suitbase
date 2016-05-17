@@ -8,6 +8,11 @@
         </div>
         <!-- /.col-lg-12 -->
     </div>
+    @if (Session::has('success'))
+        <div class = "alert alert-success">
+            {{ Session::get('success') }}
+        </div>
+    @endif
     <!-- /.row -->
     <div class="row">
         <div class="col-lg-12">
@@ -17,7 +22,7 @@
                 <!-- /.panel-heading -->
                 <div class="menu-survey">
                     <a href="{{route('survey.create')}}">
-                        <i class="fa fa-pencil-square-o fa-fw"></i>
+                        <i class="fa fa-plus fa-fw"></i>
                         <label>
                             Create Survey
                         </label>

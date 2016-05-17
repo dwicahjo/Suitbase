@@ -27,6 +27,7 @@
                                         <th>Division </th>
                                         <th>Training Title</th>
                                         <th>Status</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -39,7 +40,8 @@
                                         <td>{{$training->date}}</td>
                                         <td>{{$training->division}}</td>
                                         <td>{{$training->title}}</a></td>
-                                        <td><a href="{{ route('trainings.approval', $training->id) }}">{{$training->status}}</td>
+                                        <td>{{$training->status}}</td>
+                                        <th><a href="{{ route('trainings.approval', $training->id) }}" class="btn btn-default" role="button">Detail</a></th>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

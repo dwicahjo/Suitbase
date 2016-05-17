@@ -96,7 +96,7 @@ class RemotesController extends Controller
         $remote->save();
 
         Session::flash('success', 'Remote request was edited successfully');
-        return redirect()->route('remotes.edit', $request->id);
+        return redirect()->route('remotes.list.current');
     }
 
     public function reject ($id)

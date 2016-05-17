@@ -27,6 +27,7 @@
                                         <th>Start Date </th>
                                         <th>End Date </th>
                                         <th>Status</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -39,7 +40,8 @@
                                             <td>{{ $remote->employee->division->name }}</td>
                                             <td>{{ $remote->date_start }}</td>
                                             <td>{{ $remote->date_end}}</td>
-                                            <td><a href="{{ route('remotes.approval', $remote->id) }}">{{ $remote->status }}</td>
+                                            <td>{{ $remote->status }}</td>
+                                            <th><a href="{{ route('remotes.approval', $remote->id) }}" class="btn btn-default" role="button">Detail</a></th>
                                         </tr>
                                         <?php $i++; ?>
                                     @endforeach

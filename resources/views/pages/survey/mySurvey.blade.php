@@ -4,7 +4,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Recap of Survey</h1>
+            <h1 class="page-header">List of Surveys</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -15,39 +15,39 @@
                 <div class="panel-heading">
                 </div>
                 <!-- /.panel-heading -->
-                {{-- <div class="menu-survey">
-                    <a href="#">
+                <div class="menu-survey">
+                    <a href="{{route('survey.create')}}">
                         <i class="fa fa-plus fa-fw"></i>
                         <label>
                             Create Survey
                         </label>
                     </a>
-                </div> --}}
+                </div>
 
                 <div class="panel-body">
                     <div class="dataTable_wrapper">
-                        <select>
-                        <option>Question 1</option>
-                        </select>
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Division</th>
-                                    <th>Answer</th>
+                                    <th>No</th>
+                                    <th>Date Open </th>
+                                    <th>Date Close</th>
+                                    <th>Survey Title</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i=1; ?>
+                                @foreach ($surveys as $survey)
                                 <tr class="odd gradeA">
-                                    <td>Ali</td>
-                                    <td>IT</td>
-                                    <td>cat</td>
-                                    </tr>
-                                <tr class="odd gradeA">
-                                    <td>Alija</td>
-                                    <td>HR</td>
-                                    <td>test</td>
-                                    </tr>
+                                    <td>{{$i}}</td>
+                                    <td>{{$survey->surveyForm->date_start}}</td>
+                                    <td>{{$survey->surveyForm->date_end}}</td>
+                                    <td><a href="{{route('survey.detail',['id' =>$survey->id])}}">{{$survey->surveyForm->title}}</a></td>
+                                    <th><a href="#" class="btn btn-default" role="button">Fill Survey</a></th>
+                                </tr>
+                                    <?php $i++; ?>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
