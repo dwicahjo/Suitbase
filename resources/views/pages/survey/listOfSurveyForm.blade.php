@@ -38,18 +38,20 @@
                                     <th>Date Open </th>
                                     <th>Date Close</th>
                                     <th>Survey Title</th>
-                                    <th>Employee Name</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $i=1; ?>
-                                @foreach ($surveys as $survey)
+                                @foreach ($surveyForm as $survey)
                                 <tr class="odd gradeA">
                                     <td>{{$i}}</td>
-                                    <td>{{$survey->surveyForm->date_start}}</td>
-                                    <td>{{$survey->surveyForm->date_end}}</td>
-                                    <td><a href="{{route('survey.detail',['id' =>$survey->id])}}">{{$survey->surveyForm->title}}</a></td>
-                                    <td>{{$survey->employee->name}}</td>
+                                    <td>{{$survey->date_start}}</td>
+                                    <td>{{$survey->date_end}}</td>
+                                    <td><a href="{{route('survey.form.detail',['id' =>$survey->id])}}">{{$survey->title}}</a></td>
+                                    <th><a href="#" class="btn btn-default" role="button">Recap</a>
+                                        <a href="#" class="btn btn-default" role="button">Export</a></th>
+                                    </tr>
                                     <?php $i++; ?>
                                     @endforeach
                                 </tbody>
