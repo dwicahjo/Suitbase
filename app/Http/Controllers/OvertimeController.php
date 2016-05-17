@@ -126,7 +126,7 @@ class OvertimeController extends Controller
         $overtime->save();
 
         Session::flash('success', 'Overtime log was updated successfully');
-        return redirect()->route('overtime.edit', $request->id);
+        return redirect()->route('overtime.list.current');
     }
 
     public function reject ($id)

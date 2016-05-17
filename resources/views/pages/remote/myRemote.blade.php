@@ -41,17 +41,20 @@
                                             <td>{{ $remote->created_at }}</td>
                                             <td>{{ $remote->date_start }}</td>
                                             <td>{{ $remote->date_end }}</td>
-                                            <td class="center"><a href="{{ route('remotes.details', $remote->id) }}">{{ $remote->status }}</a></td>
+                                            <td>{{ $remote->status }}</a></td>
                                             <?php 
                                                 $status = explode(" ", $remote->status);
                                             ?>
                                             @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                                 <th>
+                                                    <a href="{{ route('remotes.details', $remote->id) }}" class="btn btn-default" role="button">Detail</a>
                                                     <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
                                                     <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                                 </th>
                                             @else
-                                                <th><a href="{{ route('remotes.edit', $remote->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                                <th>
+                                                <a href="{{ route('remotes.details', $remote->id) }}" class="btn btn-default" role="button">Detail</a>
+                                                <a href="{{ route('remotes.edit', $remote->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
                                                 <a href="{{ route('remotes.cancel', $remote->id) }}" class="btn btn-default btn-danger cancel" role="danger">Cancel</a></th>
                                             @endif
                                         </tr>

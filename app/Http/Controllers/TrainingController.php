@@ -119,7 +119,7 @@ class TrainingController extends Controller
         $training->save();
 
         Session::flash('success', 'Training request was edited successfully');
-        return redirect()->route('trainings.edit', $request->id);
+        return redirect()->route('trainings.list.current');
     }
 
     public function reject ($id)

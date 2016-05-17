@@ -22,7 +22,7 @@
                 <!-- /.panel-heading -->
                 <div class="menu-survey">
                     <a href="{{route('survey.create')}}">
-                        <i class="fa fa-pencil-square-o fa-fw"></i>
+                        <i class="fa fa-plus fa-fw"></i>
                         <label>
                             Create Survey
                         </label>

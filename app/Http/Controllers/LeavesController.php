@@ -118,7 +118,7 @@ class LeavesController extends Controller
         $leave->save();
 
         Session::flash('success', 'Leave request was updated successfully');
-        return redirect()->route('leaves.edit', $request->id);
+        return redirect()->route('leaves.list.current');
     }
 
     public function reject ($id)

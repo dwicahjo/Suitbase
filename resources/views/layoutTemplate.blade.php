@@ -242,7 +242,7 @@
                                 <li>
                                     <a href="{{ route('procurements.list.current') }}">View My Procurement</a>
                                 </li>
-                                @if (Auth::user()->type == 'Finance')
+                                @if (Auth::user()->type == 'Finance' || Auth::user()->type == 'HR')
                                     <li>
                                         <a href="{{ route('procurements.list.all') }}">View List of Procurement</a>
                                     </li>
@@ -307,8 +307,13 @@
                                 <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
+                                        <a href="">View My Survey</a>                                    
+                                    </li>
+                                    <li>
                                         <a href="{{route('survey.list')}}">View List of Survey</a>
                                     </li>
+
+                                    
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>

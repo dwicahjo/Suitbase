@@ -178,4 +178,9 @@ public function postFillAppraisal(Request $request)
 public function showMyAppraisals(){
     return view('pages.appraisal.myAppraisal');
 }
+
+public function showRecap()
+{
+    return view('pages.appraisal.recapAppraisal');
+}
 }
