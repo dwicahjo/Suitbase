@@ -4,7 +4,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Recap of Survey</h1>
+            <h1 class="page-header">Recap of Request</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -14,27 +14,17 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                 </div>
-                <!-- /.panel-heading -->
-                {{-- <div class="menu-survey">
-                    <a href="#">
-                        <i class="fa fa-plus fa-fw"></i>
-                        <label>
-                            Create Survey
-                        </label>
-                    </a>
-                </div> --}}
 
                 <div class="panel-body">
                     <div class="dataTable_wrapper">
-                        <select>
-                        <option>Question 1</option>
-                        </select>
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Division</th>
-                                    <th>Answer</th>
+                                    <th>Department</th>
+                                    <th>Total Leave Request</th>
+                                    <th>Total Training Request</th>
+                                    <th>Total Procurement Request</th>
+                                    <th>Total Remote Working Request</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -47,6 +37,8 @@
                                     <td>Alija</td>
                                     <td>HR</td>
                                     <td>test</td>
+                                    <td>IT</td>
+                                    <td>cat</td>
                                     </tr>
                                 </tbody>
                             </table>

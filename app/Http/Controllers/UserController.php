@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+//require 'vendor/autoload.php';
+use Intervention\Image\ImageManagerStatic as Image;
+
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\Department;
@@ -13,6 +16,7 @@ use Storage;
 use Validator;
 use Response;
 use Session;
+
 
 class UserController extends Controller
 {
@@ -268,7 +272,7 @@ class UserController extends Controller
 
         $fileName = $user->name . '.' . $request->file('image')->getClientOriginalExtension();
         $request->file('image')->move(base_path().'/public/upload/photos', $fileName);
-
+        Image::make(base_path().'/public/upload/photos/'.$fileName)->fit(300, 300)->save();
         $user->photo = $fileName;
         $user->save();
 
