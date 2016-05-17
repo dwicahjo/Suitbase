@@ -310,6 +310,9 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/surveys/list', [
             'as' => 'survey.list', 'uses' => 'SurveysController@showListofSurveys'
             ]);
+        Route::get('/surveys/mysurvey', [
+            'as' => 'survey.my', 'uses' => 'SurveysController@showMySurveys'
+            ]);
         Route::get('/surveys/create',[
             'as' => 'survey.create', 'uses' => 'SurveysController@index'
             ]);

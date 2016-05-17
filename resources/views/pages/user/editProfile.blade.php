@@ -30,7 +30,7 @@
             </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-6" style= "width:50%">
+                        <div class="col-lg-6">
                         <form role="form" enctype="multipart/form-data" method = "post" action = "{{ route('user.postImage') }}">
                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                             <input name="user_id" type="hidden" value="{{ $user->id }}">

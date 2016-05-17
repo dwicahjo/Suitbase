@@ -123,6 +123,11 @@ class SurveysController extends Controller
         $questions = QuestionsSurvey::where('surveys_form_id',$surveyForm)->get();
         return view('pages.survey.surveyDetails', ['survey' => $survey],['questions' => $questions]);
     }
+
+    public function showMySurveys(){
+    return view('pages.survey.mySurvey');
+}
+
     public function showRecap()
     {
         return view('pages.survey.recapSurvey');
