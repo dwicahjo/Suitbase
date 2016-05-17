@@ -36,7 +36,7 @@
                             <input name="user_id" type="hidden" value="{{ $user->id }}">
                             <div class="col-image">
                             <span>
-                                 <img alt="image" class="img-responsive img-circle" src="{{ url('/upload/photos/' . $user->photo) }}">
+                                 <img alt="image" class="img-responsive" src="{{ url('/upload/photos/' . $user->photo) }}">
                              </span>          
                             <input style="margin-top:3%" type="file" class="upload" name = "image" />
                             <br>
@@ -83,9 +83,60 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Religion</label>
-                    <input class="form-control" name = "religion" type = "text" value = "{{ $user->religion }}" required>
-                </div>
+                            <label>Religion</label>
+                                    <select class="form-control" name = "religion">
+                                    @if ($user->religion == 'Islam')
+                                        <option value="Islam" selected>Islam</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Buddha">Buddha</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    @elseif ($user->religion == 'Katolik')
+                                        <option value="Islam">Islam</option>
+                                        <option value="Katolik" selected>Katolik</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Buddha">Buddha</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    @elseif ($user->religion == 'Kristen')
+                                        <option value="Islam">Islam</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Kristen" selected>Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Buddha">Buddha</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    @elseif ($user->religion == 'Hindu')
+                                        <option value="Islam">Islam</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu" selected>Hindu</option>
+                                        <option value="Buddha">Buddha</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    @elseif ($user->religion == 'Buddha')
+                                        <option value="Islam">Islam</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Buddha" selected>Buddha</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    @elseif ($user->religion == 'Lainnya')
+                                        <option value="Islam">Islam</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Buddha">Buddha</option>
+                                        <option value="Lainnya" selected>Lainnya</option>
+                                    @else
+                                        <option value="Islam">Islam</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Buddha">Buddha</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    @endif
+                                </select>
+                        </div>
 
                 <div class="form-group">
                     <label>KTP Number</label>
