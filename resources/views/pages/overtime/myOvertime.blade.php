@@ -54,13 +54,13 @@
                                         ?>
                                         @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
                                             <th>
-                                                <a href="{{ route('overtimes.details', $overtime->id) }}" class="btn btn-default" role="button">Detail</a>
+                                                <a href="{{ route('overtime.details', $overtime->id) }}" class="btn btn-default" role="button">Detail</a>
                                                 <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
                                                 <button type="submit" class="btn btn-default btn-danger" disabled="">Cancel</button>
                                             </th>
                                         @else
                                             <th>
-                                            <a href="{{ route('overtimes.details', $overtime->id) }}" class="btn btn-default" role="button">Detail</a>
+                                            <a href="{{ route('overtime.details', $overtime->id) }}" class="btn btn-default" role="button">Detail</a>
                                             <a href="{{ route('overtime.edit', $overtime->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
                                             <a href="{{ route('overtime.cancel', $overtime->id) }}" class="btn btn-default btn-danger cancel" role="button">Cancel</a></th>
                                         @endif

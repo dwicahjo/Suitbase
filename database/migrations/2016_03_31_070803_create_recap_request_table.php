@@ -14,11 +14,12 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->text('description');
-            $table->string('status', 100);
-            $table->integer('employees_id')->unsigned();
-            $table->foreign('employees_id')->references('id')->on('employees');
-            $table->string('type', 100);
+            $table->string('department');
+            $table->string('total_leaves');
+            $table->string('total_remotes');
+            $table->string('total_trainings');
+            $table->string('total_procurements');
+            $table->string('period');
             $table->timestamps();
         });
     }

@@ -28,16 +28,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="odd gradeA">
-                                    {{ $recap[0]->department }}
-                                    @foreach($recap as $data)
+                                @foreach($recap as $data)
+                                    <tr class="odd gradeA">
                                         <td>{{ $data->department }}</td>
                                         <td>{{ $data->total_leaves }}</td>
                                         <td>{{ $data->total_trainings }}</td>
                                         <td>{{ $data->total_procurements }}</td>
                                         <td>{{ $data->total_remotes }}</td>
-                                    @endforeach
-                                </tr>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Models\Department;
 use App\Models\Remote;
 use App\Models\RecapRequest;
 use Auth;
@@ -123,20 +124,46 @@ class RemotesController extends Controller
 
         $remote->save();
 
-        if(RecapRequest::isExist(Auth::user()->department->name)){
-            RecapRequest::increment('total_remotes');
-        }
-        else{
-            $recap = new RecapRequest;
+        if(RecapRequest::isExistRow('period', date('M Y'))){
+            if(RecapRequest::isExistRow('department', Auth::user()->department->name)){
+                RecapRequest::where('department','=',Auth::user()->department->name)->increment('total_remotes');
+            }
+            else{
+                $recap = new RecapRequest;
 
-            $recap->department = Auth::user()->department->name;
-            $recap->total_leaves = 0;
-            $recap->total_remotes = 1;
-            $recap->total_trainings = 0;
-            $recap->total_procurements = 0;
-            $recap->period = date('M Y');
-            
-            $recap->save();
+                $recap->department = Auth::user()->department->name;
+                $recap->total_leaves = 0;
+                $recap->total_remotes = 1;
+                $recap->total_trainings = 0;
+                $recap->total_procurements = 0;
+                $recap->period = date('M Y');
+                
+                $recap->save();
+            }
+        }        
+        else{
+            $departments = Department::all();
+
+            foreach ($departments as $department){
+                if($department->name != 'Admin'){
+                    $recap = new RecapRequest;
+
+                    $recap->department = $department->name;
+
+                    if($department->name == Auth::user()->department->name){
+                        $recap->total_remotes = 1;
+                    }
+                    else{
+                        $recap->total_remotes = 0;
+                    }
+                    $recap->total_leaves = 0;
+                    $recap->total_trainings = 0;
+                    $recap->total_procurements = 0;
+                    $recap->period = date('M Y');
+                    
+                    $recap->save();
+                }  
+            }
         }
 
         Session::flash('success', 'Remote request was successfully approved');

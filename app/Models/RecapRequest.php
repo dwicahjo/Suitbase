@@ -27,6 +27,6 @@ class RecapRequest extends Model
 
     public static function isExistRow($column, $comparator)
     {
-        return DB::table('recap_request')->where($column,'=',$department)->exists();
+        return DB::table('recap_request')->where($column,'=',$comparator)->exists();
     }
 }
