@@ -265,7 +265,7 @@
                 </div>
                 <!-- /.sidebar-collapse -->
 
-            </div>Q
+            </div>
             <!-- /.sidebar-collapse -->
         </div>
         <!-- /.navbar-static-side -->
