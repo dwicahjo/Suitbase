@@ -15,7 +15,7 @@ class CreateOptionSurveyTable extends Migration
         Schema::create('options_survey', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->integer('question_id')->unsigned();
-            $table->integer('option');
+            $table->string('option');
             $table->foreign('question_id')->references('id')->on('questions_survey');
             $table->timestamps();
         });

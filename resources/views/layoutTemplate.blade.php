@@ -35,6 +35,8 @@
     <script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
 
     <script src="{{asset('js/sweetalert.min.js')}}"></script>
+    <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -64,65 +66,6 @@
                     <li>
                         REMAINING DAY OF LEAVE:  {{ Auth::user()->number_leave }} Days
                     </li>
-                    <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                 </ul>
                 @else
@@ -149,23 +92,17 @@
                                             </span>
                                         </div>
                                         <br>
-                                       {{--  <span class="text-muted text-xs block"> {{ Auth::user()->divisions_id }} </span>
-                                        <span class="text-muted text-xs block"> {{ Auth::user()->departments_id }} </span> --}}
-                                {{-- <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                    <li><a href="pages/myProfile">Profile</a></li>
-                                    <li><a href="pages/login">Logout</a></li>
-                                </ul> --}}
-                            </div>
+                                </div>
                             @endif
                             <!-- /input-group -->
-                        </li>
-                        <li>
-                            <a href="{{ route('home') }}"><i class="fa fa-dashboard fa-fw"></i> Home</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('user.details.current') }}"><i class="fa fa-user fa-fw"></i>My Profile</a>
-                        </li>
-                        @if (Auth::user()->type == 'HR')
+                            </li>
+                            <li>
+                                <a href="{{ route('home') }}"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('user.details.current') }}"><i class="fa fa-user fa-fw"></i>My Profile</a>
+                            </li>
+                            @if (Auth::user()->type == 'HR')
                             <li>
                                 <a href="#"><i class="fa fa-users fa-fw"></i> Users<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
@@ -306,10 +243,11 @@
                             <li>
                                 <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
-                                    {{-- <li>
-                                        <a href="">View My Survey</a>
-                                    </li> --}}
                                     <li>
+                                        <a href="{{route('survey.mylist')}}">View My Survey</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('survey.list')}}">View My Survey</a>                                    
                                         <a href="{{route('survey.create')}}">Create Survey</a>
                                     </li>
                                     <li>
@@ -327,7 +265,7 @@
                 </div>
                 <!-- /.sidebar-collapse -->
 
-            </div>
+            </div>Q
             <!-- /.sidebar-collapse -->
         </div>
         <!-- /.navbar-static-side -->
