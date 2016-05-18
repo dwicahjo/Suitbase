@@ -29,17 +29,15 @@
                             </thead>
                             <tbody>
                                 <tr class="odd gradeA">
-                                    <td>Ali</td>
-                                    <td>IT</td>
-                                    <td>cat</td>
-                                    </tr>
-                                <tr class="odd gradeA">
-                                    <td>Alija</td>
-                                    <td>HR</td>
-                                    <td>test</td>
-                                    <td>IT</td>
-                                    <td>cat</td>
-                                    </tr>
+                                    {{ $recap[0]->department }}
+                                    @foreach($recap as $data)
+                                        <td>{{ $data->department }}</td>
+                                        <td>{{ $data->total_leaves }}</td>
+                                        <td>{{ $data->total_trainings }}</td>
+                                        <td>{{ $data->total_procurements }}</td>
+                                        <td>{{ $data->total_remotes }}</td>
+                                    @endforeach
+                                </tr>
                                 </tbody>
                             </table>
                         </div>

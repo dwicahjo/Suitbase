@@ -178,7 +178,7 @@
                             </ul>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-table fa-fw"></i> Request</a>
+                                <a href="{{ route('recap.request') }}"><i class="fa fa-table fa-fw"></i> Request</a>
                             </li>
                         @endif
                         <li>

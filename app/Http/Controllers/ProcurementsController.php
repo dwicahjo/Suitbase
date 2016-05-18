@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Models\Procurement;
+use App\Models\RecapRequest;
+use Auth;
 use Session;
 use Validator;
 
@@ -61,7 +63,7 @@ class ProcurementsController extends Controller
 
     public function viewMyList ()
     {
-        $user_id = \Auth::user()->id;
+        $user_id = Auth::user()->id;
         $procurements = Procurement::where('employees_id', $user_id)->orderBy('created_at','desc')->paginate(15);
 
         return view('pages.procurement.myProcurement', ['procurements' => $procurements]);
@@ -97,7 +99,7 @@ class ProcurementsController extends Controller
 
     public function reject ($id)
     {
-        $approver = \Auth::user()->name;
+        $approver = Auth::user()->name;
         $procurement = Procurement::where('id', $id)->get()->first();
         $status = "Rejected by " . $approver;
         $procurement->status = $status;
@@ -110,12 +112,28 @@ class ProcurementsController extends Controller
 
     public function approve ($id)
     {
-        $approver = \Auth::user()->name;
+        $approver = Auth::user()->name;
         $procurement = Procurement::where('id', $id)->get()->first();
         $status = "Approved by " . $approver;
         $procurement->status = $status;
 
         $procurement->save();
+
+        if(RecapRequest::isExist(Auth::user()->department->name)){
+            RecapRequest::increment('total_procurements');
+        }
+        else{
+            $recap = new RecapRequest;
+
+            $recap->department = Auth::user()->department->name;
+            $recap->total_leaves = 0;
+            $recap->total_remotes = 0;
+            $recap->total_trainings = 0;
+            $recap->total_procurements = 1;
+            $recap->period = date('M Y');
+            
+            $recap->save();
+        }
 
         Session::flash('success', 'Procurement request was successfully approved');
         return redirect()->route('procurements.approval', $id);

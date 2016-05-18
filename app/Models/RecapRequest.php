@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 /**
- * Class Request
+ * Class RecapRequest
  */
-class Request extends Model
+class RecapRequest extends Model
 {
-    protected $table = 'requests';
+    protected $table = 'recap_request';
 
     public $timestamps = true;
 
@@ -24,5 +25,8 @@ class Request extends Model
 
     protected $guarded = [];
 
-        
+    public static function isExistRow($column, $comparator)
+    {
+        return DB::table('recap_request')->where($column,'=',$department)->exists();
+    }
 }

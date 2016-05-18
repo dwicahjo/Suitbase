@@ -15,9 +15,6 @@ Route::auth();
 Route::get('/', function () {
     return redirect('home');
 });
-Route::get('/template', function () {
-    return view('layoutTemplate');
-});
 
 Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'inactive'], function() {
@@ -73,6 +70,11 @@ Route::group(['middleware' => 'auth'], function() {
 
         Route::get('/user/details/download/{doc}', [
             'as' => 'user.details.download', 'uses' => 'UserController@download'
+            ]);
+
+        /* recap request */
+        Route::get('/recap/request', [
+            'as' => 'recap.request', 'uses' => 'RequestsController@index'
             ]);
 
         /* leave */
@@ -386,17 +388,5 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/appraisalRecap',[
             'as' => 'appraisal.recap', 'uses' => 'AppraisalsController@showRecap'
             ]);
-
-
-        /* ini form aslinya guys*/
-        Route::get('/forms', function () {
-            return view('pages.formsTemplate');
-        });
-        Route::get('/a', function () {
-            return view('pages.coba');
-        });
-        Route::get('/tb', function () {
-            return view('tables');
-        });
     });
 });

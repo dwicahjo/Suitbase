@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Models\Department;
 use App\Models\Leave;
-use App\Models\Requests;
+use App\Models\RecapRequest;
 use App\Http\Controllers\Auth\AuthController;
 use DB;
 use Session;
 use Validator;
+use Auth;
 
 class LeavesController extends Controller
 {
@@ -53,8 +55,6 @@ class LeavesController extends Controller
         $leave->employees_id = $request->user()->id;
 
         $leave->save();
-
-        $request = new Request;
 
         Session::flash('success', 'Leave request was submitted successfully');
         return redirect()->route('leaves.list.current');
@@ -149,6 +149,40 @@ class LeavesController extends Controller
 
         $leave->employee->save();
         $leave->save();
+
+        if(RecapRequest::isExistRow('period', date('M Y'))){
+            if(RecapRequest::isExistRow('department', Auth::user()->department->name)){
+                RecapRequest::increment('total_leaves');
+            }
+            else{
+                $recap = new RecapRequest;
+
+                $recap->department = Auth::user()->department->name;
+                $recap->total_leaves = 1;
+                $recap->total_remotes = 0;
+                $recap->total_trainings = 0;
+                $recap->total_procurements = 0;
+                $recap->period = date('M Y');
+                
+                $recap->save();
+            }
+        }        
+        else{
+            $departments = Department::all();
+
+            foreach ($$departments as $department){
+                $recap = new RecapRequest;
+
+                $recap->department = $department->name;
+                $recap->total_leaves = 1;
+                $recap->total_remotes = 0;
+                $recap->total_trainings = 0;
+                $recap->total_procurements = 0;
+                $recap->period = date('M Y');
+                
+                $recap->save();
+            }
+        }
 
         Session::flash('success', 'Leave request was successfully approved');
         return redirect()->route('leaves.approval', $id);

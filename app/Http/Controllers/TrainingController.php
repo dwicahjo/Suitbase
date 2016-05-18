@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Http\Requests;
 use App\Models\Training;
+use App\Models\RecapRequest;
 use DB;
 use Session;
 use Validator;
@@ -124,7 +125,7 @@ class TrainingController extends Controller
 
     public function reject ($id)
     {
-        $approver = \Auth::user()->name;
+        $approver = Auth::user()->name;
         $training = Training::where('id', $id)->get()->first();
         $status = "Rejected by " . $approver;
         $training->status = $status;
@@ -137,12 +138,28 @@ class TrainingController extends Controller
 
     public function approve ($id)
     {
-        $approver = \Auth::user()->name;
+        $approver = Auth::user()->name;
         $training = Training::where('id', $id)->get()->first();
         $status = "Approved by " . $approver;
         $training->status = $status;
 
         $training->save();
+
+        if(RecapRequest::isExist(Auth::user()->department->name)){
+            RecapRequest::increment('total_trainings');
+        }
+        else{
+            $recap = new RecapRequest;
+
+            $recap->department = Auth::user()->department->name;
+            $recap->total_leaves = 0;
+            $recap->total_remotes = 0;
+            $recap->total_trainings = 1;
+            $recap->total_procurements = 0;
+            $recap->period = date('M Y');
+            
+            $recap->save();
+        }
 
         Session::flash('success', 'Training request was successfully approved');
         return redirect()->route('trainings.approval', $id);
