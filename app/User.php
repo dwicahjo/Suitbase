@@ -24,6 +24,21 @@ class User extends Authenticatable
         'password', 'remember_token','overtime_hours','last_avg_score'
     ];
 
+    public function division()
+    {
+        return $this->hasOne('App\Models\Division', 'id', 'divisions_id');
+    }
+
+    public function department()
+    {
+        return $this->hasOne('App\Models\Department', 'id', 'departments_id');
+    }
+
+    public function supervisor()
+    {
+        return $this->belongsTo('App\Models\Supervisor','id','supervisees_id');
+    }
+
     public function getKtpUrl()
     {
         return asset('/upload/docs/{$this->KTP}');

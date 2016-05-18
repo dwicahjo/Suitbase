@@ -43,9 +43,9 @@
                                         <td>{{$overtime->division}}</td>
                                         <td>{{$overtime->time_start}}</td>
                                         <td>{{$overtime->time_end}}</td>
-                                        <td>{{$overtime->time_end - $overtime->time_start}}</td>
+                                        <td>{{$overtime->total_hours}}</td>
                                         <td>{{$overtime->status}}</td>
-                                        <td><a href="{{ route('overtimes.approval', $overtime->id) }}" class="btn btn-default" role="button">Detail</a></td>
+                                        <td><a href="{{ route('overtime.approval', $overtime->id) }}" class="btn btn-default" role="button">Detail</a></td>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach
