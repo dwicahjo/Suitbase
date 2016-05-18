@@ -3,7 +3,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">EDIT REMOTE REQUEST</h1>
+                <h1 class="page-header">EDIT REMOTE WORKING REQUEST</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -44,7 +44,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-lg-1 col-md-offset-8">
+                                            <div class="col-lg-1 col-md-offset-8 btn-submit-back">
                                                 <button type="submit" class="btn btn-primary">Submit</button>                                                
                                                 <a href="{{ route('remotes.list.current') }}" class="btn btn-default btn-left" role="button">Back</a>
                                             </div>

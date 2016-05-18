@@ -35,6 +35,8 @@
     <script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
 
     <script src="{{asset('js/sweetalert.min.js')}}"></script>
+    <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

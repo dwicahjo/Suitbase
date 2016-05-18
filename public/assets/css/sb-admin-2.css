@@ -551,5 +551,11 @@ table.dataTable thead .sorting:after {
 
 .welcome{
     text-align: center;
-    font-family: 'Pacifico', cursive !important
+    font-family: 'Sigmar One', cursive !important
+}
+
+.name{
+    text-align: center;
+    font-style: italic;
+    font-family: 'Quicksand', sans-serif !important
 }
