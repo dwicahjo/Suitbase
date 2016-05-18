@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 
-class RedirectIfNotHR
+class RedirectIfNotHRorSupervisor
 {
     /**
      * Handle an incoming request.
@@ -21,10 +21,12 @@ class RedirectIfNotHR
             $userType = Auth::user()->type;
             if($userType != 'HR')
             {
-                return redirect()->route('home');
+                if($userType != 'Supervisor')
+                {
+                    return redirect()->route('home');
+                }
             }
         }
-
         return $next($request);
     }
 }
