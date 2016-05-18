@@ -9,6 +9,7 @@ use App\Models\SurveysForm;
 use App\Models\Survey;
 use App\Models\QuestionsSurvey;
 use App\Models\OptionsSurvey;
+use App\Models\AnswersSurvey;
 use App\Models\User;
 use Validator;
 use Session;
@@ -24,6 +25,12 @@ class SurveysController extends Controller
     {
         return view('pages.survey.createSurvey');
     }
+
+    public function showListofMySurveys(){
+        $surveys = Survey::where('employees_id',Auth::user()->id)->orderBy('created_at','desc')->get();
+        return view('pages.survey.mySurvey',['surveys'=>$surveys]);
+    }
+
     public function showListofSurveys(){
         if(Auth::user()->type == "HR"){
             $surveys = Survey::orderBy('created_at','desc')->get();
@@ -143,4 +150,45 @@ class SurveysController extends Controller
     {
         return view('pages.survey.recapSurvey');
     }
+
+    public function fillSurvey($id){
+        $survey = Survey::where('id',$id)->get()->first();
+        $questions = QuestionsSurvey::where('surveys_form_id',$survey->surveys_form_id)->get();
+        $answers = AnswersSurvey::where('surveys_id',$id)->get();
+        return view('pages.survey.fillSurvey')->with(compact('survey','questions','answers'));
+    }
+
+    public function postFillSurvey(Request $request)
+    {
+        print_r($request->idQuestion);
+        foreach ($request->idQuestion as $idQuestion){
+            $question = QuestionsSurvey::where('id',$idQuestion)->get()->first();
+            if($question->question_type == "1"){
+                $name = "text".$idQuestion;
+                AnswersSurvey::create([
+                    'surveys_id' => $request->idSurvey,
+                    'question_id' => $idQuestion,
+                    'answer' =>$request->$name,
+                    ]);
+            }elseif($question->question_type == "2"){
+                $name = "radio".$idQuestion;
+                AnswersSurvey::create([
+                    'surveys_id' => $request->idSurvey,
+                    'question_id' => $idQuestion,
+                    'answer' =>$request->$name,
+                    ]);
+            }else{
+                $name = "checkbox".$idQuestion;
+                foreach($request->$name as $checkbox){
+                    AnswersSurvey::create([
+                    'surveys_id' => $request->idSurvey,
+                    'question_id' => $idQuestion,
+                    'answer' =>$checkbox,
+                    ]);
+                }
+            }
+        }
+       Session::flash('success', 'Survey was filled successfully');
+       return redirect()->route('survey.mylist');
+   }
 }

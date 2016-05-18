@@ -244,6 +244,9 @@
                                 <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
+                                        <a href="{{route('survey.mylist')}}">View My Survey</a>
+                                    </li>
+                                    <li>
                                         <a href="{{route('survey.list')}}">View My Survey</a>                                    
                                         <a href="{{route('survey.create')}}">Create Survey</a>
                                     </li>
