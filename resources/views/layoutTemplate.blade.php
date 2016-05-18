@@ -34,6 +34,7 @@
     <!-- jQuery -->
     <script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
 
+    <!-- SweetAlert -->
     <script src="{{asset('js/sweetalert.min.js')}}"></script>
     <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
