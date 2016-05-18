@@ -139,7 +139,7 @@
                                 @if (Auth::user())
                                 <div class="input-group custom-search-form">
                                     <span>
-                                        <img alt="image" class="img-circle img-responsive" src="{{asset("upload/photos/".Auth::user()->photo)}}">
+                                        <img alt="image" class="img-responsive" src="{{asset("upload/photos/".Auth::user()->photo)}}">
                                     </span>
                                     <br>
                                     <span class="clear">
@@ -306,14 +306,20 @@
                             <li>
                                 <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Survey<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
+                                    {{-- <li>
+                                        <a href="">View My Survey</a>
+                                    </li> --}}
                                     <li>
-                                        <a href="">View My Survey</a>                                    
+                                        <a href="{{route('survey.create')}}">Create Survey</a>
                                     </li>
                                     <li>
                                         <a href="{{route('survey.list')}}">View List of Survey</a>
                                     </li>
+                                     <li>
+                                        <a href="{{route('survey.form')}}">View List of Survey Form</a>
+                                    </li>
 
-                                    
+
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>
@@ -373,8 +379,8 @@
 
     function warnBeforeRedirect(linkURL) {
         swal({
-            title: "Are you sure?", 
-            text: "If you click 'Yes', you won't be able to reverse the action", 
+            title: "Are you sure?",
+            text: "If you click 'Yes', you won't be able to reverse the action",
             type: "warning",
             showCancelButton: true,
             confirmButtonText: "Yes",

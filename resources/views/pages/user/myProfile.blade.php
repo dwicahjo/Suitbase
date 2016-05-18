@@ -18,7 +18,7 @@
                         <div class="col-lg-5">
                             <div class="row">
                                 <div class="col-lg-6 col-lg-offset-4">
-                                    <img alt="image" class="img-circle img-responsive" src="{{ asset('/upload/photos/' . Auth::user()->photo) }}">
+                                    <img alt="image" class="img-responsive" src="{{ asset('/upload/photos/' . Auth::user()->photo) }}">
                                </div>
                             </div> <!--row-->
                         </div> <!--col-lg-6-->

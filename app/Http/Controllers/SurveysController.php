@@ -33,6 +33,11 @@ class SurveysController extends Controller
         return view('pages.survey.listOfSurvey',['surveys'=>$surveys]);
     }
 
+    public function showListofSurveysForm(){
+        $surveysForm = SurveysForm::orderBy('created_at','desc')->get();
+        return view('pages.survey.listOfSurveyForm',['surveyForm'=>$surveysForm]);
+    }
+
     public function postSurvey(Request $request){
         $inputDate = $request->date_start;
         $date = date("Y-m-d", strtotime('-1 day', strtotime($inputDate)));
@@ -123,6 +128,14 @@ class SurveysController extends Controller
         $questions = QuestionsSurvey::where('surveys_form_id',$surveyForm)->get();
         return view('pages.survey.surveyDetails', ['survey' => $survey],['questions' => $questions]);
     }
+
+    public function showDetailForm($id)
+    {
+        $surveyForm = SurveysForm::where('id', $id)->get()->first();
+        $questions = QuestionsSurvey::where('surveys_form_id',$surveyForm->id)->get();
+        return view('pages.survey.surveyFormDetails', ['survey' => $surveyForm],['questions' => $questions]);
+    }
+
     public function showRecap()
     {
         return view('pages.survey.recapSurvey');
