@@ -310,6 +310,9 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/surveys/list', [
             'as' => 'survey.list', 'uses' => 'SurveysController@showListofSurveys'
             ]);
+        Route::get('/surveys/mylist', [
+            'as' => 'survey.mylist', 'uses' => 'SurveysController@showListofMySurveys'
+            ]);
         Route::get('/surveys/create',[
             'as' => 'survey.create', 'uses' => 'SurveysController@index'
             ]);
@@ -326,7 +329,7 @@ Route::group(['middleware' => 'auth'], function() {
             'as' => 'survey.fill', 'uses' => 'SurveysController@fillSurvey'
             ]);
         Route::post('/surveys/fill/{id}', [
-            'as' => 'survey.postFill', 'uses' => 'SurveyssController@postFillSurvey'
+            'as' => 'survey.postFill', 'uses' => 'SurveysController@postFillSurvey'
             ]);
         Route::get('/surveys/edit/{id}',[
             'as' => 'survey.edit', 'uses' => 'SurveysController@editSurveyForm'

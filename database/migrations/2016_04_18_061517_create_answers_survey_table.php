@@ -16,7 +16,7 @@ class CreateAnswersSurveyTable extends Migration
             $table->increments('id')->unique();
             $table->integer('surveys_id')->unsigned();
             $table->integer('question_id')->unsigned();
-            $table->integer('answer');
+            $table->text('answer');
             $table->foreign('surveys_id')->references('id')->on('surveys');
             $table->foreign('question_id')->references('id')->on('questions_survey');
             $table->timestamps();

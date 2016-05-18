@@ -21,5 +21,14 @@ class AnswersSurvey extends Model
 
     protected $guarded = [];
 
-        
+    public function survey()
+    {
+        return $this->hasOne('App\Models\Survey', 'id', 'surveys_id');
+    }
+
+    public function question()
+    {
+        return $this->hasOne('App\Models\QuestionsSurvey', 'id', 'question_id');
+    }
+
 }
