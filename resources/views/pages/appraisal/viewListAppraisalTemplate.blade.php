@@ -8,6 +8,20 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
+        @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    @if (Session::has('success'))
+    <div class = "alert alert-success">
+        {{ Session::get('success') }}
+    </div>
+    @endif
         <!-- /.row -->
         <div class="row">
             <div class="col-lg-12">
@@ -22,7 +36,7 @@
                                 <a href="{{ route('appraisal.create')}}">
                                     <i class="fa fa-plus fa-fw"></i>
                                     <label>
-                                        Create Template
+                                        Create Apprasial Template
                                     </label>
                                 </a>
                                 <thead>
@@ -44,7 +58,14 @@
                                     <td>{{$appraisalTemplate->date_end}}</td>
                                     <td>{{$appraisalTemplate->title}}</td>
                                     <td>{{$appraisalTemplate->division->name}}</td>
-                                    <th><a href="{{ route('appraisal.edit', ['id' => $appraisalTemplate->id]) }}" class="btn btn-default btn-edit" role="button">Edit</a></th>
+                                    <th><a href="{{ route('appraisal.template.detail', ['id' => $appraisalTemplate->id]) }}" class="btn btn-default" role="button">Detail</a>
+                                        <?php
+                                            $today = date("Y-m-d");
+                                        ?>
+                                        @if($appraisalTemplate->date_start > $today)
+                                             <a href="{{ route('appraisal.edit', ['id' => $appraisalTemplate->id]) }}" class="btn btn-default btn-info" role="button">Edit</a></th>
+                                        @endif
+                                        </th>
                                 </tr>
                                 <?php $i++; ?>
                                 @endforeach

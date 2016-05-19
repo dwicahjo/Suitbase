@@ -41,4 +41,9 @@ class Appraisal extends Model
     {
         return $this->hasOne('App\Models\Supervisor', 'supervisors_id', 'supervisors_id');
     }
+
+    public function answer()
+    {
+        return $this->hasMany('App\Models\Answer', 'appraisals_id');
+    }
 }

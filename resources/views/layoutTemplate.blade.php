@@ -249,7 +249,6 @@
                                         <a href="{{route('survey.mylist')}}">View My Survey</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('survey.list')}}">View My Survey</a>                                    
                                         <a href="{{route('survey.create')}}">Create Survey</a>
                                     </li>
                                     <li>

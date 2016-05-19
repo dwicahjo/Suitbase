@@ -67,11 +67,12 @@
                                         </div>
                                         <input class="form-control" name = "employees_id" type = "hidden" value='{{Auth::user()->id}}'>
                                         <input class="form-control" name = "status" type = "hidden" value='Submitted'>
+                                        
                                         <div class="form-group">
-                                            <div class="col-md-5 control-label"></div>
-                                            <div class = "col-md-2 col-md-offset-3">
-                                                <button type="submit" class="btn btn-default">Submit</button>
-                                            </div>
+                                            <div class="col-lg-6 col-md-offset-4 btn-submit">
+                                                <button type="submit" class="btn btn-primary">
+                                                    Submit
+                                                </button>
                                         </div>
 
 

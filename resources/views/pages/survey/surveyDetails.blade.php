@@ -32,12 +32,24 @@
                                 <div class = "right-side">
                                     <div class="col-md-6">
                                         @if($question->question_type == 1)
-                                        <input class="form-control" name = "answer">
+                                        @if($question->answer()->where('surveys_id',$survey->id)->get()->count() > 0)
+                                        <input class="form-control" name = "answer" value="{{$question->answer()->where('surveys_id',$survey->id)->get()->first()->answer}}" disabled>
+                                        @else
+                                        <input class="form-control" name = "answer" value="" disabled>
+                                        @endif
                                         @elseif ($question->question_type == 2)
                                         @foreach ($question->option as $option)
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="radio{{$question->id}}" id="optionsRadios1" value="{{$option->option}}">{{$option->option}}
+                                                @if($question->answer()->where('surveys_id',$survey->id)->get()->count() > 0)
+                                                @if($question->answer()->where('surveys_id',$survey->id)->get()->first()->answer == $option->option)
+                                                <input type="radio" name="radio{{$question->id}}" id="optionsRadios1" value="{{$option->option}}" checked disabled>{{$option->option}}
+                                                @else
+                                                <input type="radio" name="radio{{$question->id}}" id="optionsRadios1" value="{{$option->option}}" disabled>{{$option->option}}
+                                                @endif
+                                                @else
+                                                <input type="radio" name="radio{{$question->id}}" id="optionsRadios1" value="{{$option->option}}" disabled>{{$option->option}}
+                                                @endif
                                             </label>
                                         </div>
                                         @endforeach
@@ -45,7 +57,21 @@
                                         @foreach ($question->option as $option)
                                         <div class="checkbox">
                                             <label>
-                                            <input type="checkbox" name="checkbox{{$question->id}}" value="{{$option->option}}">{{$option->option}}
+                                                @if($question->answer()->where('surveys_id',$survey->id)->get()->count() > 0)
+                                                <?php $x=0 ?>
+                                                @foreach($question->answer()->where('surveys_id',$survey->id)->get() as $answerC)
+                                                @if($answerC->answer == $option->option)
+                                                <?php $x++ ?>
+                                                @endif
+                                                @endforeach
+                                                @if($x > 0)
+                                                <input type="checkbox" name="checkbox{{$question->id}}" value="{{$option->option}}" checked disabled>{{$option->option}}
+                                                @else
+                                                <input type="checkbox" name="checkbox{{$question->id}}" value="{{$option->option}}" disabled>{{$option->option}}
+                                                @endif
+                                                @else
+                                                <input type="checkbox" name="checkbox{{$question->id}}" value="{{$option->option}}" disabled>{{$option->option}}
+                                                @endif
                                             </label>
                                         </div>
                                         @endforeach
@@ -58,7 +84,7 @@
                         <div class="form-group">
                             <div class="col-md-6 control-label"></div>
                             <div class = "col-md-2 col-md-offset-3">
-                                <a href="{{route('survey.list')}}" class="btn btn-default" role="button">Back</a>
+                                <a href="{{ URL::previous() }}" class="btn btn-default" role="button">Back</a>
                             </div>
                         </div>
 

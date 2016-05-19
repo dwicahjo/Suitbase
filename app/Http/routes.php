@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth'], function() {
 
         Route::get('/user/edit/current', [
             'as' => 'user.edit.current', 'uses' => 'UserController@viewEdit'
-            ]);        
+            ]);
 
         Route::post('/user/edit/postImage', [
             'as' => 'user.postImage', 'uses' => 'UserController@uploadImage'
@@ -56,7 +56,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/user/details/download/{doc}', [
             'as' => 'user.details.download', 'uses' => 'UserController@download'
             ]);
-        
+
 
         /* leave */
         Route::get('/leaves/create', [
@@ -247,18 +247,6 @@ Route::group(['middleware' => 'auth'], function() {
             'as' => 'survey.recap', 'uses' => 'SurveysController@showRecap'
             ]);
 
-        Route::get('/surveyE', function () {
-            return view('pages.survey.editSurvey');
-        });
-
-        Route::get('/surveyM', function () {
-            return view('pages.survey.mySurvey');
-        });
-
-        Route::get('/surveyF', function () {
-            return view('pages.survey.fillSurvey');
-        });
-
         /* feedback */
         Route::get('/feedbacks/create', [
             'as' => 'feedback.create', 'uses' => 'FeedbackController@index'
@@ -286,6 +274,12 @@ Route::group(['middleware' => 'auth'], function() {
             ]);
         Route::post('/appraisals/create',[
             'as' => 'appraisal.postCreate', 'uses' => 'AppraisalsController@postAppraisal'
+            ]);
+        Route::get('/appraisals/detail/{id}', [
+            'as' => 'appraisal.detail', 'uses' => 'AppraisalsController@showDetail'
+            ]);
+        Route::get('/appraisals/template/detail/{id}', [
+            'as' => 'appraisal.template.detail', 'uses' => 'AppraisalsController@showDetailTemplate'
             ]);
         Route::get('/appraisals/fill/{id}', [
             'as' => 'appraisal.fill', 'uses' => 'AppraisalsController@fillAppraisal'

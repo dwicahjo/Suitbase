@@ -125,7 +125,7 @@ class SurveysController extends Controller
                 ]);
         }
         Session::flash('success', 'Survey Form request was created successfully');
-        return redirect()->route('survey.list');
+        return redirect()->route('survey.form');
     }
 
     public function showDetail($id)
@@ -133,13 +133,14 @@ class SurveysController extends Controller
         $survey = Survey::where('id', $id)->get()->first();
         $surveyForm = $survey->surveyForm->id;
         $questions = QuestionsSurvey::where('surveys_form_id',$surveyForm)->get();
-        return view('pages.survey.surveyDetails', ['survey' => $survey],['questions' => $questions]);
+        $answers = AnswersSurvey::where('surveys_id',$survey->id);
+        return view('pages.survey.surveyDetails')->with(compact('survey','questions','answers'));
     }
 
     public function showMySurveys(){
     return view('pages.survey.mySurvey');
     }
-    
+
     public function showDetailForm($id)
     {
         $surveyForm = SurveysForm::where('id', $id)->get()->first();
@@ -181,14 +182,142 @@ class SurveysController extends Controller
                 $name = "checkbox".$idQuestion;
                 foreach($request->$name as $checkbox){
                     AnswersSurvey::create([
-                    'surveys_id' => $request->idSurvey,
-                    'question_id' => $idQuestion,
-                    'answer' =>$checkbox,
-                    ]);
+                        'surveys_id' => $request->idSurvey,
+                        'question_id' => $idQuestion,
+                        'answer' =>$checkbox,
+                        ]);
                 }
             }
         }
-       Session::flash('success', 'Survey was filled successfully');
-       return redirect()->route('survey.mylist');
-   }
+        Session::flash('success', 'Survey was filled successfully');
+        return redirect()->route('survey.mylist');
+    }
+
+    public function editSurveyForm($id)
+    {
+        $surveyForm = SurveysForm::where('id', $id)->get()->first();
+        $questions = QuestionsSurvey::where('surveys_form_id',$id)->get();
+        return view('pages.survey.editSurvey', ['surveyForm' => $surveyForm],['questions' => $questions]);
+    }
+
+    public function updateSurveyForm(Request $request)
+    {
+        $inputDate = $request->date_start;
+        $date = date("Y-m-d", strtotime('-1 day', strtotime($inputDate)));
+
+        $messages = [
+        'date_start.after' => "The start date must be later than today",
+        'date_end.after' => "The end date can not be earlier than the start date",
+        ];
+
+        $rules = [
+        'date_start' => 'date|after:today',
+        'date_end' => 'date|after:' . $date,
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->route('survey.edit',['id' => $request->id])
+            ->withErrors($validator)
+            ->withInput($request->all());
+        }
+
+        $surveyForm = SurveysForm::where('id', $request->id)->get()->first();
+        $surveyForm->title = $request->title;
+        $surveyForm->date_start = $request->date_start;
+        $surveyForm->date_end = $request->date_end;
+        $surveyForm->save();
+
+        if($request->oldQuestionId){
+            foreach($request->oldQuestionId as $idQuestion){
+                $questionD = QuestionsSurvey::where('id',$idQuestion)->get()->first();
+                if($questionD->question_type > 1){
+                    $optionsD = $questionD->option()->get();
+                    foreach($optionsD as $optionD){
+                        $deleted = OptionsSurvey::where('id',$optionD->id)->get()->first();
+                        $deleted->delete();
+                    }
+                }
+                $questionD->delete();
+            }
+        }
+
+        if($request->oldQuestion){
+            $i =0;
+            $idSurveysForm = $surveyForm->id;
+            $oldQuestionType = $request->oldQuestionType;
+            $oldIdOption = $request->oldIdOption;
+            foreach($request->oldQuestion as $question){
+                if($oldQuestionType[$i] == "text"){
+                    $type = 1;
+                }else if($oldQuestionType[$i] == "multiple-choice"){
+                    $type = 2;
+                }else{
+                    $type = 3;
+                }
+                $questionInsert =   QuestionsSurvey::create([
+                    'question' => $question,
+                    'question_type' => $type,
+                    'surveys_form_id' => $idSurveysForm,
+                    ]);
+                if($type == 2 || $type == 3){
+                    if($type == 2){
+                        $name = "oldRadio".$oldIdOption[$i];
+                        $option = $request->$name;
+                    }else{
+                        $name = "oldCheckbox".$oldIdOption[$i];
+                        $option = $request->$name;
+                    }
+                    foreach ($option as $o) {
+                        OptionsSurvey::create([
+                            'question_id' => $questionInsert->id,
+                            'option' => $o,
+                            ]);
+                    }
+                }
+                $i++;
+            }
+        }
+
+        if($request->question){
+            $idSurveysForm = $surveyForm->id;
+            $i =0;
+            $questionType = $request->question_type;
+            $idOption = $request->idOption;
+            foreach ($request->question as $question){
+                if($questionType[$i] == "text"){
+                    $type = 1;
+                }else if($questionType[$i] == "multiple-choice"){
+                    $type = 2;
+                }else{
+                    $type = 3;
+                }
+                $questionInsert =   QuestionsSurvey::create([
+                    'question' => $question,
+                    'question_type' => $type,
+                    'surveys_form_id' => $idSurveysForm,
+                    ]);
+                if($type == 2 || $type == 3){
+                    if($type == 2){
+                        $name = "radio".$idOption[$i];
+                        $option = $request->$name;
+                    }else{
+                        $name = "checkbox".$idOption[$i];
+                        $option = $request->$name;
+                    }
+                    foreach ($option as $o) {
+                        OptionsSurvey::create([
+                            'question_id' => $questionInsert->id,
+                            'option' => $o,
+                            ]);
+                    }
+                }
+                $i++;
+            }
+
+      }
+      Session::flash('success', 'Appraisal Template was edited successfully');
+      return back();
+  }
 }
