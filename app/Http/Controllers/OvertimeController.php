@@ -111,17 +111,43 @@ class OvertimeController extends Controller
 
     public function update (Request $request)
     {
-        $this->validate ($request, [
-            'date' => 'required|date|before:tomorrow                '
-            ]);
+        $messages = [
+            'date.before' => "The date can not be later than today",
+        ];
+
+        $rules = [
+            'date'          => 'required|date|before:tomorrow',
+            'description'   => 'required',
+            'starttime'     => 'required',
+            'endtime'       => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput($request->all());
+        }
+
+        $startHour = substr($request->starttime, 0, 2);
+        $startMin = substr($request->starttime, 3, 2);
+        $endHour = substr($request->endtime, 0, 2);
+        $endMin = substr($request->endtime, 3, 2);
+
+        $diffHour = $endHour - $startHour;
+        $diffMin = $endMin - $startMin;
+
+        $totalHours = $diffHour . " hours " . $diffMin . " minutes";
 
         $overtime = Overtime::where('id', $request->id)->get()->first();
 
         $overtime->description = $request->description;
         $overtime->time_start = $request->starttime;
         $overtime->time_end = $request->endtime;
+        $overtime->total_hours = $totalHours;
         $overtime->date = $request->date;
-        $overtime->description = $request->reason;
+        $overtime->description = $request->description;
 
         $overtime->save();
 

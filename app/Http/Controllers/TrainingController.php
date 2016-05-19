@@ -109,12 +109,31 @@ class TrainingController extends Controller
 
     public function update (Request $request)
     {
+        $messages = [
+            'date.after' => "The date must be later than today",
+        ];
+
+        $rules = [
+            'title'             => 'required',
+            'date'              => 'required|date|after:today',
+            'description'       => 'required',
+            'price_estimate'    => 'required|numeric'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput($request->all());
+        }
+
         $training = Training::where('id', $request->id)->get()->first();
 
         $training->title = $request->title;
         $training->date = $request->date;
         $training->estimate_price = $request->price_estimate;
-        $training->description = $request->reason;
+        $training->description = $request->description;
         $training->employees_id = $request->user()->id;
 
         $training->save();

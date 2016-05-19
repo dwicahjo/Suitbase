@@ -27,6 +27,7 @@
                                     <tr>
                                         <th>No. </th>
                                         <th>Created At</th>
+                                        <th>Date</th>
                                         <th>Training Title</th>
                                         <th>Status</th>
                                         <th></th>
@@ -38,6 +39,7 @@
                                     <tr class="odd gradeA">
                                         <td>{{$i}}</td>
                                         <td>{{ $training->created_at }}</td>
+                                        <td>{{ $training->date }}</td>
                                         <td>{{$training->title}}</a></td>
                                         <td>{{$training->status}}</td>
                                         <?php 

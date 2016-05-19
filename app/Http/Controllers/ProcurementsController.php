@@ -84,11 +84,25 @@ class ProcurementsController extends Controller
 
     public function update (Request $request)
     {
+        $rules = [
+            'title'             => 'required',
+            'description'       => 'required',
+            'price_estimate'    => 'required|numeric'
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput($request->all());
+        }
+
         $procurement = Procurement::where('id', $request->id)->get()->first();
 
         $procurement->title = $request->title;
         $procurement->estimate_price = $request->price_estimate;
-        $procurement->description = $request->reason;
+        $procurement->description = $request->description;
         $procurement->employees_id = $request->user()->id;
 
         $procurement->save();
@@ -173,6 +187,6 @@ class ProcurementsController extends Controller
         $procurement->save();
 
         Session::flash('success', 'Procurement request was successfully cancelled');
-        return redirect()->route('procurements.list.all');
+        return redirect()->route('procurements.list.current');
     }
 }

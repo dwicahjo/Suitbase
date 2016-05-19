@@ -26,6 +26,7 @@
                                         <th>Employee Name </th>
                                         <th>Division</th>
                                         <th>Description</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -35,13 +36,14 @@
                                         <td>{{$i}}</td>
                                         <td>{{$feedback->created_at}}</td>
                                     <!--kalo ngga anon-->
-                                    <?php if($feedback->is_anonim==0){ ?>
+                                    @if($feedback->is_anonim==0)
                                         <td>{{$feedback->username}}</td>                                            
-                                    <?php }else{ ?>
+                                    @else
                                         <td>Anonymous</td>
-                                    <?php } ?>
+                                    @endif
                                         <td>{{$feedback->division}}</td>
-                                        <td><a href="{{route('feedback.details', $feedback->id)}}">{{str_limit($feedback->description, $limit = 20, $end = '...')}}</a></td>
+                                        <td>{{str_limit($feedback->description, $limit = 20, $end = '...')}}</a></td>
+                                        <td><a href="{{route('feedback.details', $feedback->id)}}" class="btn btn-default btn-edit" role="button">Details</a></td>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

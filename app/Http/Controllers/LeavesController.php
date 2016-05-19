@@ -108,6 +108,29 @@ class LeavesController extends Controller
 
     public function update (Request $request)
     {
+        $inputDate = $request->startdate;
+        $date = date("Y-m-d", strtotime('-1 day', strtotime($inputDate)));
+
+        $messages = [
+            'startdate.after' => "The start date must be later than today",
+            'enddate.after' => "The end date can not be earlier than the start date",
+        ];
+
+        $rules = [
+            'startdate' => 'required|date|after:yesterday',
+            'enddate'   => 'required|date|after:' . $date,
+            'leavetype' => 'required',
+            'reason'    => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput($request->all());
+        }
+        
         $leave = Leave::where('id', $request->id)->get()->first();
 
         $leave->date_start = $request->startdate;
