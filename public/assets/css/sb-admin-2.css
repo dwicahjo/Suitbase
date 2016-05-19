@@ -543,5 +543,19 @@ table.dataTable thead .sorting:after {
 }
 
 .btn-submit{
-    margin-left: 38%;
+    margin-left: 37%;
+}
+.btn-submit-back{
+    margin-left: 71%;
+}
+
+.welcome{
+    text-align: center;
+    font-family: 'Sigmar One', cursive !important
+}
+
+.name{
+    text-align: center;
+    font-style: italic;
+    font-family: 'Quicksand', sans-serif !important
 }

@@ -137,13 +137,16 @@ class SurveysController extends Controller
         return view('pages.survey.surveyDetails')->with(compact('survey','questions','answers'));
     }
 
+    public function showMySurveys(){
+    return view('pages.survey.mySurvey');
+    }
+    
     public function showDetailForm($id)
     {
         $surveyForm = SurveysForm::where('id', $id)->get()->first();
         $questions = QuestionsSurvey::where('surveys_form_id',$surveyForm->id)->get();
         return view('pages.survey.surveyFormDetails', ['survey' => $surveyForm],['questions' => $questions]);
     }
-
     public function showRecap()
     {
         return view('pages.survey.recapSurvey');

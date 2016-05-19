@@ -50,5 +50,8 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'inactive' => \App\Http\Middleware\LogoutIfNotActiveUser::class,
+        'usertype.hr' => \App\Http\Middleware\RedirectIfNotHR::class,
+        'usertype.hrfinance' => \App\Http\Middleware\RedirectIfNotHRorFinance::class,
+        'usertype.hrsupervisor' => \App\Http\Middleware\RedirectIfNotHRorSupervisor::class,
     ];
 }

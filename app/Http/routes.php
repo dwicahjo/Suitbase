@@ -15,11 +15,9 @@ Route::auth();
 Route::get('/', function () {
     return redirect('home');
 });
-Route::get('/template', function () {
-    return view('layoutTemplate');
-});
 
 Route::group(['middleware' => 'auth'], function() {
+
     Route::group(['middleware' => 'inactive'], function() {
 
         Route::get('/home', [
@@ -35,12 +33,12 @@ Route::group(['middleware' => 'auth'], function() {
             'as' => 'user.postCreate', 'uses' => 'UserController@postCreate'
             ]);
 
-        Route::get('/user/edit/current', [
-            'as' => 'user.edit.current', 'uses' => 'UserController@viewEdit'
+        Route::get('/user/getDivision/{id_dept}', [
+            'as' => 'user.getDivision', 'uses' => 'UserController@indexDivision'
             ]);
 
-        Route::get('/user/edit/{id}', [
-            'as' => 'user.edit', 'uses' => 'UserController@viewEditUser'
+        Route::get('/user/edit/current', [
+            'as' => 'user.edit.current', 'uses' => 'UserController@viewEdit'
             ]);
 
         Route::post('/user/edit/postImage', [
@@ -51,29 +49,14 @@ Route::group(['middleware' => 'auth'], function() {
             'as' => 'user.postEdit', 'uses' => 'UserController@update'
             ]);
 
-        Route::get('/user/list', [
-            'as' => 'user.list', 'uses' => 'UserController@showListOfUser'
-            ]);
-
         Route::get('/user/details/current', [
             'as' => 'user.details.current', function () {return view('pages.user.myProfile');}
-            ]);
-
-        Route::get('/user/details/{id}', [
-            'as' => 'user.details', 'uses' => 'UserController@showDetail'
-            ]);
-
-        Route::get('/user/reset/{id}', [
-            'as' => 'user.reset', 'uses' => 'UserController@viewReset'
-            ]);
-
-        Route::post('/user/reset:{id}', [
-            'as' => 'user.postReset', 'uses' => 'UserController@reset'
             ]);
 
         Route::get('/user/details/download/{doc}', [
             'as' => 'user.details.download', 'uses' => 'UserController@download'
             ]);
+
 
         /* leave */
         Route::get('/leaves/create', [
@@ -90,22 +73,6 @@ Route::group(['middleware' => 'auth'], function() {
 
         Route::get('/leaves/details/{id}', [
             'as' => 'leaves.details', 'uses' => 'LeavesController@viewMyDetails'
-            ]);
-
-        Route::get('/leaves/list/all', [
-            'as' => 'leaves.list.all', 'uses' => 'LeavesController@viewListof'
-            ]);
-
-        Route::get('/leaves/approval/{id}', [
-            'as' => 'leaves.approval', 'uses' => 'LeavesController@viewDetails'
-            ]);
-
-        Route::get('/leaves/approval/reject/{id}', [
-            'as' => 'leaves.approval.reject', 'uses' => 'LeavesController@reject'
-            ]);
-
-        Route::get('/leaves/approval/approve/{id}', [
-            'as' => 'leaves.approval.approve', 'uses' => 'LeavesController@approve'
             ]);
 
         Route::get('/leaves/edit/{id}', [
@@ -137,22 +104,6 @@ Route::group(['middleware' => 'auth'], function() {
             'as' => 'remotes.details', 'uses' => 'RemotesController@viewMyDetails'
             ]);
 
-        Route::get('/remotes/list/all', [
-            'as' => 'remotes.list.all', 'uses' => 'RemotesController@viewListof'
-            ]);
-
-        Route::get('/remotes/approval/{id}', [
-            'as' => 'remotes.approval', 'uses' => 'RemotesController@viewDetails'
-            ]);
-
-        Route::get('/remotes/approval/reject/{id}', [
-            'as' => 'remotes.approval.reject', 'uses' => 'RemotesController@reject'
-            ]);
-
-        Route::get('/remotes/approval/approve/{id}', [
-            'as' => 'remotes.approval.approve', 'uses' => 'RemotesController@approve'
-            ]);
-
         Route::get('/remotes/edit/{id}', [
             'as' => 'remotes.edit', 'uses' => 'RemotesController@viewEdit'
             ]);
@@ -180,22 +131,6 @@ Route::group(['middleware' => 'auth'], function() {
 
         Route::get('/trainings/details/{id}', [
             'as' => 'trainings.details', 'uses' => 'TrainingController@showDetail'
-            ]);
-
-        Route::get('/trainings/list/all', [
-            'as' => 'trainings.list.all', 'uses' => 'TrainingController@showListOfTraining'
-            ]);
-
-        Route::get('/training/approval/{id}', [
-            'as' => 'trainings.approval', 'uses' => 'TrainingController@showApproval'
-            ]);
-
-        Route::get('/trainings/approval/reject/{id}', [
-            'as' => 'trainings.approval.reject', 'uses' => 'TrainingController@reject'
-            ]);
-
-        Route::get('/trainings/approval/approve/{id}', [
-            'as' => 'trainings.approval.approve', 'uses' => 'TrainingController@approve'
             ]);
 
         Route::get('/trainings/edit/{id}', [
@@ -227,22 +162,6 @@ Route::group(['middleware' => 'auth'], function() {
             'as' => 'procurements.details', 'uses' => 'ProcurementsController@viewMyDetails'
             ]);
 
-        Route::get('/procurements/list/all', [
-            'as' => 'procurements.list.all', 'uses' => 'ProcurementsController@viewListof'
-            ]);
-
-        Route::get('/procurements/approval/{id}', [
-            'as' => 'procurements.approval', 'uses' => 'ProcurementsController@viewDetails'
-            ]);
-
-        Route::get('/procurements/approval/reject/{id}', [
-            'as' => 'procurements.approval.reject', 'uses' => 'ProcurementsController@reject'
-            ]);
-
-        Route::get('/procurements/approval/approve/{id}', [
-            'as' => 'procurements.approval.approve', 'uses' => 'ProcurementsController@approve'
-            ]);
-
         Route::get('/procurements/edit/{id}', [
             'as' => 'procurements.edit', 'uses' => 'ProcurementsController@viewEdit'
             ]);
@@ -272,22 +191,6 @@ Route::group(['middleware' => 'auth'], function() {
             'as' => 'overtime.details', 'uses' => 'OvertimeController@showDetails'
             ]);
 
-        Route::get('/overtime/list/all', [
-            'as' => 'overtime.list.all', 'uses' => 'OvertimeController@showListOfOvertime'
-            ]);
-
-        Route::get('/overtime/approval/{id}', [
-            'as' => 'overtime.approval', 'uses' => 'OvertimeController@showApproval'
-            ]);
-
-        Route::get('/overtime/approval/reject/{id}', [
-            'as' => 'overtime.approval.reject', 'uses' => 'OvertimeController@reject'
-            ]);
-
-        Route::get('/overtime/approval/approve/{id}', [
-            'as' => 'overtime.approval.approve', 'uses' => 'OvertimeController@approve'
-            ]);
-
         Route::get('/overtime/edit/{id}', [
             'as' => 'overtime.edit', 'uses' => 'OvertimeController@viewEdit'
             ]);
@@ -309,6 +212,9 @@ Route::group(['middleware' => 'auth'], function() {
             ]);
         Route::get('/surveys/list', [
             'as' => 'survey.list', 'uses' => 'SurveysController@showListofSurveys'
+            ]);
+        Route::get('/surveys/mysurvey', [
+            'as' => 'survey.my', 'uses' => 'SurveysController@showMySurveys'
             ]);
         Route::get('/surveys/mylist', [
             'as' => 'survey.mylist', 'uses' => 'SurveysController@showListofMySurveys'
@@ -350,14 +256,6 @@ Route::group(['middleware' => 'auth'], function() {
             'as' => 'feedback.postCreate', 'uses' => 'FeedbackController@postFeedback'
             ]);
 
-        Route::get('/feedbacks', [
-            'as' => 'feedback.list', 'uses' => 'FeedbackController@showListOfFeedback'
-            ]);
-
-        Route::get('/feedbacks/details/{id}', [
-            'as' => 'feedback.details', 'uses' => 'FeedbackController@showDetail'
-            ]);
-
         /* appraisal */
         Route::get('/appraisals', [
             'as' => 'appraisal.list', 'uses' => 'AppraisalsController@showListofAppraisals'
@@ -393,16 +291,134 @@ Route::group(['middleware' => 'auth'], function() {
             'as' => 'appraisal.recap', 'uses' => 'AppraisalsController@showRecap'
             ]);
 
+        Route::group(['middleware' => 'usertype.hr'], function() {
 
-        /* ini form aslinya guys*/
-        Route::get('/forms', function () {
-            return view('pages.formsTemplate');
+            Route::get('/dashboard', [
+            'as' => 'dasboard', 'uses' => 'HomeController@getChartData'
+            ]);
+
+            /* user */
+            Route::get('/user/list', [
+                'as' => 'user.list', 'uses' => 'UserController@showListOfUser'
+                ]);
+
+            Route::get('/user/edit/{id}', [
+                'as' => 'user.edit', 'uses' => 'UserController@viewEditUser'
+                ]);
+
+            Route::get('/user/details/{id}', [
+                'as' => 'user.details', 'uses' => 'UserController@showDetail'
+                ]);
+
+            Route::get('/user/reset/{id}', [
+                'as' => 'user.reset', 'uses' => 'UserController@viewReset'
+                ]);
+
+            Route::post('/user/reset:{id}', [
+                'as' => 'user.postReset', 'uses' => 'UserController@reset'
+                ]);
+
+            /* recap */
+            Route::get('/recap/request', [
+                'as' => 'recap.request', 'uses' => 'RequestsController@index'
+                ]);
+
+            Route::get('/feedbacks', [
+                'as' => 'feedback.list', 'uses' => 'FeedbackController@showListOfFeedback'
+                ]);
+
+            Route::get('/feedbacks/details/{id}', [
+                'as' => 'feedback.details', 'uses' => 'FeedbackController@showDetail'
+                ]);
         });
-        Route::get('/a', function () {
-            return view('pages.coba');
+
+        Route::group(['middleware' => 'usertype.hrsupervisor'], function() {
+            /* leave */
+            Route::get('/leaves/list/all', [
+                'as' => 'leaves.list.all', 'uses' => 'LeavesController@viewListof'
+                ]);
+
+            Route::get('/leaves/approval/{id}', [
+                'as' => 'leaves.approval', 'uses' => 'LeavesController@viewDetails'
+                ]);
+
+            Route::get('/leaves/approval/reject/{id}', [
+                'as' => 'leaves.approval.reject', 'uses' => 'LeavesController@reject'
+                ]);
+
+            Route::get('/leaves/approval/approve/{id}', [
+                'as' => 'leaves.approval.approve', 'uses' => 'LeavesController@approve'
+                ]);
+
+            /* remote */
+            Route::get('/remotes/list/all', [
+                'as' => 'remotes.list.all', 'uses' => 'RemotesController@viewListof'
+                ]);
+
+            Route::get('/remotes/approval/{id}', [
+                'as' => 'remotes.approval', 'uses' => 'RemotesController@viewDetails'
+                ]);
+
+            Route::get('/remotes/approval/reject/{id}', [
+                'as' => 'remotes.approval.reject', 'uses' => 'RemotesController@reject'
+                ]);
+
+            Route::get('/remotes/approval/approve/{id}', [
+                'as' => 'remotes.approval.approve', 'uses' => 'RemotesController@approve'
+                ]);
+
+            /* overtime */
+            Route::get('/overtime/list/all', [
+                'as' => 'overtime.list.all', 'uses' => 'OvertimeController@showListOfOvertime'
+                ]);
+
+            Route::get('/overtime/approval/{id}', [
+                'as' => 'overtime.approval', 'uses' => 'OvertimeController@showApproval'
+                ]);
+
+            Route::get('/overtime/approval/reject/{id}', [
+                'as' => 'overtime.approval.reject', 'uses' => 'OvertimeController@reject'
+                ]);
+
+            Route::get('/overtime/approval/approve/{id}', [
+                'as' => 'overtime.approval.approve', 'uses' => 'OvertimeController@approve'
+                ]);
         });
-        Route::get('/tb', function () {
-            return view('tables');
+
+        Route::group(['middleware' => 'usertype.hrfinance'], function() {
+            /* training */
+            Route::get('/trainings/list/all', [
+                'as' => 'trainings.list.all', 'uses' => 'TrainingController@showListOfTraining'
+                ]);
+
+            Route::get('/training/approval/{id}', [
+                'as' => 'trainings.approval', 'uses' => 'TrainingController@showApproval'
+                ]);
+
+            Route::get('/trainings/approval/reject/{id}', [
+                'as' => 'trainings.approval.reject', 'uses' => 'TrainingController@reject'
+                ]);
+
+            Route::get('/trainings/approval/approve/{id}', [
+                'as' => 'trainings.approval.approve', 'uses' => 'TrainingController@approve'
+                ]);
+
+            /* procurement */
+            Route::get('/procurements/list/all', [
+                'as' => 'procurements.list.all', 'uses' => 'ProcurementsController@viewListof'
+                ]);
+
+            Route::get('/procurements/approval/{id}', [
+                'as' => 'procurements.approval', 'uses' => 'ProcurementsController@viewDetails'
+                ]);
+
+            Route::get('/procurements/approval/reject/{id}', [
+                'as' => 'procurements.approval.reject', 'uses' => 'ProcurementsController@reject'
+                ]);
+
+            Route::get('/procurements/approval/approve/{id}', [
+                'as' => 'procurements.approval.approve', 'uses' => 'ProcurementsController@approve'
+                ]);
         });
     });
 });

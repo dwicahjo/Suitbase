@@ -70,8 +70,8 @@
                                     <button class="btn btn-default btn-danger" disabled>Reject</button>
                                     <button class="btn btn-default btn-info" disabled>Approve</button>
                                 @else
-                                    <a href="/rejectProcurement:{{ $procurements[0]->id }}" class="btn btn-default btn-danger approval" role="button">Reject</a>
-                                    <a href="/approveProcurement:{{ $procurements[0]->id }}" class="btn btn-default btn-info approval" role="button">Approve</a>
+                                    <a href="{{ route('procurements.approval.reject', $procurements[0]->id) }}" class="btn btn-default btn-danger approval" role="button">Reject</a>
+                                    <a href="{{ route('procurements.approval.approve', $procurements[0]->id) }}" class="btn btn-default btn-info approval" role="button">Approve</a>
                                 @endif
                                 </div>
                             </div>
