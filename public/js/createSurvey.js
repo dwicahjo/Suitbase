@@ -24,6 +24,13 @@ if(value == "text"){
 }
 }
 
+function questionSelect(value){
+document.getElementById('table'+value).style.display = '';
+var id = document.getElementById('previousId').value;
+document.getElementById('table'+id).style.display = 'none';
+document.getElementById('previousId').value = value;
+}
+
 $(document).ready(function() {
 var max_fields = 10; //maximum input boxes allowed
 var wrapper = $("#wrap"); //Fields wrapper
