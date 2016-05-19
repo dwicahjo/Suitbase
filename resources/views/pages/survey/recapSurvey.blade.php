@@ -14,54 +14,60 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                 </div>
-                <!-- /.panel-heading -->
-                {{-- <div class="menu-survey">
-                    <a href="#">
-                        <i class="fa fa-plus fa-fw"></i>
-                        <label>
-                            Create Survey
-                        </label>
-                    </a>
-                </div> --}}
 
                 <div class="panel-body">
                     <div class="dataTable_wrapper">
-                        <select>
-                        <option>Question 1</option>
-                        </select>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" required>Select Question</label>
+                            <div class = "col-md-6">
+                                <select class="form-control select_menu" name = "questionSelect" id = "questionSelect" onchange = "questionSelect(this.value);">
+                                    @foreach ($questions as $question)
+                                    <option value="{{$question->id}}">{{$question->question}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th>Employee Name</th>
                                     <th>Division</th>
                                     <th>Answer</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                                <?php $i=0 ?>
+                                @foreach ($questions as $question)
+                                @if($i==0)
+                                <input type="hidden" name="previousId" id="previousId" value="{{$question->id}}">
+                                 <tbody id="table{{$question->id}}">
+                                 <?php $i++ ?>
+                                 @else
+                                 <tbody id="table{{$question->id}}" style="display:none">
+                                 @endif
+                                    @foreach($question->answer()->get() as $answer)
                                 <tr class="odd gradeA">
-                                    <td>Ali</td>
-                                    <td>IT</td>
-                                    <td>cat</td>
-                                    </tr>
-                                <tr class="odd gradeA">
-                                    <td>Alija</td>
-                                    <td>HR</td>
-                                    <td>test</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- /.table-responsive -->
+                                    <td>{{$answer->survey()->get()->first()->employee()->get()->first()->name}}</td>
+                                    <td>{{$answer->survey()->get()->first()->employee()->get()->first()->division->get()->first()->name}}</td>
+                                    <td>{{$answer->answer}}</td>
+                                </tr>
+                                @endforeach
+                                 </tbody>
+                                @endforeach
 
+                        </table>
                     </div>
-                    <!-- /.panel-body -->
-                </div>
-                <!-- /.panel -->
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
+                    <!-- /.table-responsive -->
 
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
     </div>
-    <!-- /#page-wrapper -->
-    @endsection
+    <!-- /.row -->
+
+</div>
+<!-- /#page-wrapper -->
+@endsection

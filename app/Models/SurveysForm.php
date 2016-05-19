@@ -24,11 +24,16 @@ class SurveysForm extends Model
 
     public function question()
     {
-        return $this->hasMany('App\Models\OptionsSurvey','question_id');
+        return $this->hasMany('App\Models\QuestionsSurvey','surveys_form_id');
     }
 
     public function division()
     {
         return $this->hasOne('App\Models\Division', 'id', 'divisions_id');
+    }
+
+    public function survey()
+    {
+        return $this->hasMany('App\Models\Survey', 'surveys_form_id');
     }
 }

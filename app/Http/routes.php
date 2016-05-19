@@ -243,7 +243,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/surveys/edit/{id}',[
             'as' => 'survey.update', 'uses' => 'SurveysController@updateSurveyForm'
             ]);
-        Route::get('/surveyRecap',[
+        Route::get('/surveys/recap/{id}',[
             'as' => 'survey.recap', 'uses' => 'SurveysController@showRecap'
             ]);
 
