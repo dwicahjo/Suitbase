@@ -59,7 +59,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Question</label>
                                         <div class = "col-md-6">
-                                            <textarea class ="form-control" name = "question[]" required> </textarea>
+                                            <textarea class ="form-control" name = "question[]" required/></textarea>
                                             <input type="hidden" name="idOption[]" value="0">
                                         </div>
                                     </div>

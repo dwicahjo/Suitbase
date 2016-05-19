@@ -140,7 +140,7 @@ class SurveysController extends Controller
     public function showMySurveys(){
     return view('pages.survey.mySurvey');
     }
-    
+
     public function showDetailForm($id)
     {
         $surveyForm = SurveysForm::where('id', $id)->get()->first();
@@ -202,6 +202,27 @@ class SurveysController extends Controller
 
     public function updateSurveyForm(Request $request)
     {
+        $inputDate = $request->date_start;
+        $date = date("Y-m-d", strtotime('-1 day', strtotime($inputDate)));
+
+        $messages = [
+        'date_start.after' => "The start date must be later than today",
+        'date_end.after' => "The end date can not be earlier than the start date",
+        ];
+
+        $rules = [
+        'date_start' => 'date|after:today',
+        'date_end' => 'date|after:' . $date,
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->route('survey.edit',['id' => $request->id])
+            ->withErrors($validator)
+            ->withInput($request->all());
+        }
+
         $surveyForm = SurveysForm::where('id', $request->id)->get()->first();
         $surveyForm->title = $request->title;
         $surveyForm->date_start = $request->date_start;

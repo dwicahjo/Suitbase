@@ -41,7 +41,7 @@
                                         <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                         <label class="col-md-4 control-label">Survey Title</label>
                                         <div class = "col-md-6">
-                                            <input class="form-control" name = "title" value = "{{$surveyForm->title}}">
+                                            <input class="form-control" name = "title" value = "{{$surveyForm->title}}" required>
                                             <input class="form-control" name = "id" type="hidden" value="{{$surveyForm->id}}">
                                         </div>
                                     </div>
@@ -49,13 +49,13 @@
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" required>Date Start</label>
                                         <div class = "col-md-6">
-                                            <input class="form-control"type='date' name = "date_start" value="{{$surveyForm->date_start}}">
+                                            <input class="form-control"type='date' name = "date_start" value="{{$surveyForm->date_start}}" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" required>Date End</label>
                                         <div class = "col-md-6">
-                                            <input class="form-control" type='date' name = "date_end" value="{{$surveyForm->date_end}}">
+                                            <input class="form-control" type='date' name = "date_end" value="{{$surveyForm->date_end}}" required>
                                         </div>
                                     </div>
 
@@ -65,7 +65,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Question</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "oldQuestion[]">{{$question->question}}</textarea>
+                                                <textarea class ="form-control" name = "oldQuestion[]" required>{{$question->question}}</textarea>
                                                 <input type="hidden" name="oldIdOption[]" value="{{$question->id}}">
                                             </div>
                                         </div>
