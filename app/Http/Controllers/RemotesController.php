@@ -89,11 +89,33 @@ class RemotesController extends Controller
 
     public function update (Request $request)
     {
+        $inputDate = $request->startdate;
+        $date = date("Y-m-d", strtotime('-1 day', strtotime($inputDate)));
+
+        $messages = [
+            'startdate.after' => "The start date must be later than today",
+            'enddate.after' => "The end date can not be earlier than the start date",
+        ];
+
+        $rules = [
+            'startdate'     => 'required|date|after:yesterday',
+            'enddate'       => 'required|date|after:' . $date,
+            'description'   => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput($request->all());
+        }
+
         $remote = Remote::where('id', $request->id)->get()->first();
 
         $remote->date_start = $request->startdate;
         $remote->date_end = $request->enddate;
-        $remote->description = $request->reason;
+        $remote->description = $request->description;
         $remote->employees_id = $request->user()->id;
 
         $remote->save();

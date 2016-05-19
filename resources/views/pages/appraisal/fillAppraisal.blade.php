@@ -4,7 +4,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Fill Appraisal</h1>
+                <h1 class="page-header">FILL APPRAISAL</h1>
             </div>
 
             <!-- /.col-lg-12 -->

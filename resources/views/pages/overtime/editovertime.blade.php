@@ -57,11 +57,11 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Reason</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "reason" required>{{ $overtimes[0]->description }}</textarea>
+                                                <textarea class ="form-control" name = "description" required>{{ $overtimes[0]->description }}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-lg-1 col-md-offset-8">
+                                            <div class="col-lg-1 col-md-offset-8 btn-submit-back">
                                                 <button type="submit" class="btn btn-primary">Submit</button>                                                
                                                 <a href="{{ route('overtime.list.current') }}" class="btn btn-default btn-left" role="button">Back</a>
                                             </div>
