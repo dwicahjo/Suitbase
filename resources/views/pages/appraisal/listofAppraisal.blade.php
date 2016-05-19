@@ -21,12 +21,7 @@
                             <div class="row">
                                 <div class="dataTable_wrapper">
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                        <a href="{{ route('appraisal.create')}}">
-                                            <i class="fa fa-plus fa-fw"></i>
-                                            <label>
-                                                Create Appraisal Template
-                                            </label>
-                                        </a>
+
                                         <thead>
                                             <tr>
                                                 <th style="text-align: center">No</th>

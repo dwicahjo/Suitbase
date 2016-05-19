@@ -46,8 +46,10 @@
                                     <td>{{$survey->surveyForm->title}}</td>
                                     @if ($survey->answer->count() > 0)
                                     <th><a href="{{route('survey.detail',['id' =>$survey->id])}}" class="btn btn-default" role="button">View Survey Response</a></th>
-                                    @else
+                                    @elseif($survey->surveyForm->date_end > $today)
                                     <th><a href="{{route('survey.fill',['id' =>$survey->id])}}" class="btn btn-default" role="button">Fill Survey</a></th>
+                                    @else
+                                    <th><button type="button" class="btn btn-default" disabled="">Fill Survey</button></th>
                                     @endif
                                 </tr>
                                     <?php $i++; ?>

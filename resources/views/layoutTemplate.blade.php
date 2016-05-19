@@ -248,6 +248,7 @@
                                     <li>
                                         <a href="{{route('survey.mylist')}}">View My Survey</a>
                                     </li>
+                                     @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Admin')
                                     <li>
                                         <a href="{{route('survey.create')}}">Create Survey</a>
                                     </li>
@@ -257,6 +258,7 @@
                                      <li>
                                         <a href="{{route('survey.form')}}">View List of Survey Form</a>
                                     </li>
+                                    @endif
 
 
                                 </ul>

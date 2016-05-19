@@ -58,7 +58,7 @@
                                             <td>KTP Number</td>
                                             <td>{{ Auth::user()->ktp_id }}</td>
                                         </tr>
-                                        <tr>                                    
+                                        <tr>
                                             <td>NPWP Number</td>
                                             <td>{{ Auth::user()->NPWP }}</td>
                                         </tr>
@@ -79,7 +79,7 @@
                                             @if (Auth::user()->CV == "")
                                                 <td>Not Available</td>
                                             @else
-                                                <td><a href="/download:1">CV</a></td>
+                                                <td><a href="{{route('user.details.download', 1)}}">CV</a></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -87,7 +87,7 @@
                                             @if (Auth::user()->KTP == "")
                                                 <td>Not Available</td>
                                             @else
-                                                <td><a href="{{ Auth::user()->getKtpUrl() }}">KTP</td>
+                                                <td><a href="{{route('user.details.download', 2)}}">KTP</td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -95,7 +95,7 @@
                                             @if (Auth::user()->ijazah == "")
                                                 <td>Not Available</td>
                                             @else
-                                                <td><a href="/download:3">Ijazah</a></td>
+                                                <td><a href="{{route('user.details.download', 3)}}">Ijazah</a></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -103,7 +103,7 @@
                                             @if (Auth::user()->KK == "")
                                                 <td>Not Available</td>
                                             @else
-                                                <td><a href="/download:4">KK</a></td>
+                                                <td><a href="{{route('user.details.download', 4)}}">KK</a></td>
                                             @endif
                                         </tr>
                                         <tr>
