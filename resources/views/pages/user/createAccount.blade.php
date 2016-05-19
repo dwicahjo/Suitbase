@@ -318,7 +318,6 @@
                                     <input name="KK" type="file" class="upload" />
                                 </div>
                         </div>
-                        <input name="type" type="hidden" value="user" />
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

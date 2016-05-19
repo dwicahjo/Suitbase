@@ -31,8 +31,8 @@
                                             <td>{{ Auth::user()->email }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Role</td>
-                                            <td>{{ Auth::user()->divisions_id}}</td>
+                                            <td>Division</td>
+                                            <td>{{ Auth::user()->division->name}}</td>
                                         </tr>
                                         <tr>
                                             <td>Full Name</td>

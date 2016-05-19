@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRequestsTable extends Migration
+class CreateRecapRequestTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,13 @@ class CreateRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('requests', function (Blueprint $table) {
+        Schema::create('recap_request', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->string('department');
-            $table->string('total_leaves');
-            $table->string('total_remotes');
-            $table->string('total_trainings');
-            $table->string('total_procurements');
+            $table->integer('department');
+            $table->integer('total_leaves');
+            $table->integer('total_remotes');
+            $table->integer('total_trainings');
+            $table->integer('total_procurements');
             $table->string('period');
             $table->timestamps();
         });

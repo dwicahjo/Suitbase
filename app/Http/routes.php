@@ -293,7 +293,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/appraisals/edit/{id}',[
             'as' => 'appraisal.update', 'uses' => 'AppraisalsController@updateAppraisalTemplate'
             ]);
-        Route::get('/appraisalRecap',[
+        Route::get('/appraisal/recap/{idDivision}',[
             'as' => 'appraisal.recap', 'uses' => 'AppraisalsController@showRecap'
             ]);
 

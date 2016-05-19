@@ -104,7 +104,7 @@
                             <li>
                                 <a href="{{ route('user.details.current') }}"><i class="fa fa-user fa-fw"></i>My Profile</a>
                             </li>
-                            @if (Auth::user()->type == 'HR')
+                            @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Admin')
                             <li>
                                 <a href="#"><i class="fa fa-users fa-fw"></i> Users<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
@@ -129,7 +129,7 @@
                                 <li>
                                     <a href="{{route('leaves.list.current')}}">View My Leave</a>
                                 </li>
-                                @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
+                                @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor' || Auth::user()->type == 'Admin')
                                     <li>
                                         <a href="{{route('leaves.list.all')}}">View List of Leave</a>
                                     </li>
@@ -146,7 +146,7 @@
                                 <li>
                                     <a href="{{route('remotes.list.current')}}">View My Remote</a>
                                 </li>
-                                @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
+                                @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor' || Auth::user()->type == 'Admin')
                                     <li>
                                         <a href="{{route('remotes.list.all')}}">View List of Remote</a>
                                     </li>
@@ -164,7 +164,7 @@
                                 <li>
                                     <a href="{{ route('trainings.list.current') }}">View My Training</a>
                                 </li>
-                                @if (Auth::user()->type == 'Finance' || Auth::user()->type == 'HR')
+                                @if (Auth::user()->type == 'Finance' || Auth::user()->type == 'HR' || Auth::user()->type == 'Admin')
                                     <li>
                                         <a href="{{ route('trainings.list.all') }}">View List of Training</a>
                                     </li>
@@ -181,7 +181,7 @@
                                 <li>
                                     <a href="{{ route('procurements.list.current') }}">View My Procurement</a>
                                 </li>
-                                @if (Auth::user()->type == 'Finance' || Auth::user()->type == 'HR')
+                                @if (Auth::user()->type == 'Finance' || Auth::user()->type == 'HR' || Auth::user()->type == 'Admin')
                                     <li>
                                         <a href="{{ route('procurements.list.all') }}">View List of Procurement</a>
                                     </li>
@@ -198,7 +198,7 @@
                                 <li>
                                     <a href="{{ route('overtime.list.current') }}">View My Overtime</a>
                                 </li>
-                                @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
+                                @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor' || Auth::user()->type == 'Admin')
                                     <li>
                                         <a href="{{ route('overtime.list.all') }}">View List of Overtime</a>
                                     </li>
@@ -212,11 +212,11 @@
                                 <li>
                                     <a href="{{route('appraisal.my')}}">View My Appraisal</a>
                                 </li>
-                                @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor')
+                                @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Supervisor' || Auth::user()->type == 'Admin')
                                     <li>
                                         <a href="{{route('appraisal.list')}}">View List of Appraisal</a>
                                     </li>
-                                    @if (Auth::user()->type == 'HR')
+                                    @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Admin')
                                         <li>
                                             <a href="{{route('appraisal.create')}}">Create Appraisal Template</a>
                                         </li>
@@ -234,7 +234,7 @@
                                 <li>
                                     <a href="{{route('feedback.create')}}">Create Feedback</a>
                                 </li>
-                                @if (Auth::user()->type == 'HR')
+                                @if (Auth::user()->type == 'HR' || Auth::user()->type == 'Admin')
                                     <li>
                                         <a href="{{route('feedback.list')}}">View Feedbacks</a>
                                     </li>

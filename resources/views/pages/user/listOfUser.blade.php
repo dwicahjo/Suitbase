@@ -9,6 +9,11 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        @if (Session::has('success'))
+            <div class = "alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -30,18 +35,20 @@
                                 <tbody>
                                     <?php $i=1; ?>
                                     @foreach($users as $user)
-                                    <tr class="odd gradeA">
-                                        <td>{{$i}}</td>
-                                        <td>{{$user->division}}</td>
-                                        <td>{{$user->name}} </a></td>
-                                        <td>{{ $user->status }}</td>
-                                        <th>
-                                            <a href="{{ route('user.details', $user->id) }}" class="btn btn-default btn-edit" role="button">Details</a>
-                                            <a href="{{ route('user.edit', $user->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
-                                            <a href="{{ route('user.reset', $user->id) }}" class="btn btn-default btn-danger" role="button">Reset</a>
-                                        </th>
-                                    </tr>
-                                    <?php $i++; ?>
+                                        @if($user->name != 'Admin')
+                                            <tr class="odd gradeA">
+                                            <td>{{$i}}</td>
+                                            <td>{{$user->division}}</td>
+                                            <td>{{$user->name}} </a></td>
+                                            <td>{{ $user->status }}</td>
+                                            <th>
+                                                <a href="{{ route('user.details', $user->id) }}" class="btn btn-default btn-edit" role="button">Details</a>
+                                                <a href="{{ route('user.edit', $user->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                                <a href="{{ route('user.reset', $user->id) }}" class="btn btn-default btn-danger" role="button">Reset</a>
+                                            </th>
+                                        </tr>
+                                        <?php $i++; ?>
+                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>

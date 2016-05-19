@@ -44,7 +44,6 @@
                                             <?php $i=1; ?>
                                             @if (Auth::user()->type == "Supervisor")
                                             @foreach ($appraisals as $appraisal)
-                                            @if($appraisal->appraisalsTemplate->date_start < $today)
                                             <tr class="odd gradeA">
                                                 <td>{{$i}}</td>
                                                 <td>{{$appraisal->appraisalsTemplate->date_start}}</td>
@@ -52,12 +51,9 @@
                                                 <td>{{$appraisal->employee->name}}</a></td>
                                                 <td>{{$appraisal->division->name}}</td>
                                                 <th><a href="{{route('appraisal.detail',['id' =>$appraisal->id])}}" class="btn btn-default" role="button">Detail</a>
-                                                    @if($appraisal->appraisalsTemplate->date_end > $today)
                                                     <a href="{{route('appraisal.fill',['id' =>$appraisal->id])}}" class="btn btn-default btn-info" role="button">Fill Appraisal</a></th>
-                                                    @endif
                                                 </tr>
                                                 <?php $i++; ?>
-                                                @endif
                                                 @endforeach
                                                 @else
                                                 @foreach ($appraisals as $appraisal)

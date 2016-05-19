@@ -23,7 +23,10 @@ class RedirectIfNotHRorFinance
             {
                 if($userType != 'Finance')
                 {
-                    return redirect()->route('home');
+                    if($userType != 'Admin')
+                    {
+                        return redirect()->route('home');
+                    }
                 }
             }
         }
