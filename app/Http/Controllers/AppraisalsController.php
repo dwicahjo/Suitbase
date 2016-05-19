@@ -42,13 +42,13 @@ class AppraisalsController extends Controller
         'date_start' => 'date|after:today',
         'date_end' => 'date|after:' . $date,
         'division_id' => 'exists:divisions,id',
-        'question' => 'required',
+        'question[]' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect()->route('appraisal.create')
+            return redirect()->back()
             ->withErrors($validator)
             ->withInput($request->all());
         }
@@ -180,7 +180,7 @@ public function fillAppraisal($id){
     $appraisal = Appraisal::where('id',$id)->get()->first();
     $questions = Question::where('appraisals_template_id',$appraisal->appraisals_template_id)->get();
     $answers = Answer::where('appraisals_id',$id)->get();
-    
+
     return view('pages.appraisal.fillAppraisal')->with(compact('appraisal','questions','answers'));
 }
 

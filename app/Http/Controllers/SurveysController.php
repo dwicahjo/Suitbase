@@ -57,13 +57,12 @@ class SurveysController extends Controller
         $rules = [
         'date_start' => 'date|after:today',
         'date_end' => 'date|after:' . $date,
-        'question' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect()->route('survey.create')
+            return redirect()->back()
             ->withErrors($validator)
             ->withInput($request->all());
         }
@@ -319,7 +318,7 @@ class SurveysController extends Controller
             }
 
       }
-      Session::flash('success', 'Appraisal Template was edited successfully');
+      Session::flash('success', 'Survey Form was edited successfully');
       return back();
   }
 }

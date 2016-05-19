@@ -41,19 +41,19 @@
                                         <input name="_token" type="hidden" value="{{ csrf_token() }}" >
                                         <label class="col-md-4 control-label">Survey Title</label>
                                         <div class = "col-md-6">
-                                            <input class="form-control" name = "title" required>
+                                            <input class="form-control" name = "title" value = "{{ old('title') }}" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" required>Date Start</label>
                                         <div class = "col-md-6">
-                                            <input class="form-control"type='date' name = "date_start" required>
+                                            <input class="form-control"type='date' name = "date_start" value = "{{ old('date_start') }}" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" required>Date End</label>
                                         <div class = "col-md-6">
-                                            <input class="form-control" type='date' name = "date_end" required>
+                                            <input class="form-control" type='date' name = "date_end" value = "{{ old('date_end') }}" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
