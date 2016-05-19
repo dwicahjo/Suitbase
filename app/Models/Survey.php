@@ -30,4 +30,8 @@ class Survey extends Model
     {
         return $this->hasOne('App\Models\User', 'id', 'employees_id');
     }
+    public function answer()
+    {
+        return $this->hasMany('App\Models\AnswersSurvey', 'surveys_id');
+    }
 }

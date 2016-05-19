@@ -60,18 +60,18 @@ class AppraisalsController extends Controller
     {
         $users=User::where('divisions_id',$data['division_id'])->get();
         if($users->count() > 0){
-            AppraisalsTemplate::create([
+            $appraisalTemplate = AppraisalsTemplate::create([
                 'title' => $data['title'],
                 'divisions_id' => $data['division_id'],
                 'date_start' => $data['date_start'],
                 'date_end' => $data['date_end'],
                 ]);
             $questions = $data['question'];
-            $idAppraisalsTemplate = AppraisalsTemplate::where('title',$data['title'])->get();
+            $idAppraisalsTemplate = $appraisalTemplate->id;
             foreach ($questions as $question){
               Question::create([
                 'question' => $question,
-                'appraisals_template_id' => $idAppraisalsTemplate[0]->id,
+                'appraisals_template_id' => $idAppraisalsTemplate,
                 ]);
           }
           foreach ($users as $user){
@@ -80,7 +80,7 @@ class AppraisalsController extends Controller
                     'status' => 'Submitted',
                     'employees_id' => $user->id,
                     'divisions_id' => $user->divisions_id,
-                    'appraisals_template_id' => $idAppraisalsTemplate[0]->id,
+                    'appraisals_template_id' => $idAppraisalsTemplate,
                     'supervisors_id' => $supervisor->supervisors_id,
                     ]);
 
@@ -91,7 +91,7 @@ class AppraisalsController extends Controller
         $message = 'Appraisal Template request was not created because Division '.$name.' is not have employee';
         Session::flash('fail', $message);
     }
-    return redirect()->route('appraisal.create');
+    return redirect()->route('appraisal.template');
 }
 
 public function showListOfAppraisalsTemplate()

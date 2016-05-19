@@ -32,12 +32,12 @@
                                 <div class = "right-side">
                                     <div class="col-md-6">
                                         @if($question->question_type == 1)
-                                        <input class="form-control" name = "answer">
+                                        <input class="form-control" name = "answer" disabled>
                                         @elseif ($question->question_type == 2)
                                         @foreach ($question->option as $option)
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="radio{{$question->id}}" id="optionsRadios1" value="{{$option->option}}">{{$option->option}}
+                                                <input type="radio" name="radio{{$question->id}}" id="optionsRadios1" value="{{$option->option}}" disabled>{{$option->option}}
                                             </label>
                                         </div>
                                         @endforeach
@@ -45,7 +45,7 @@
                                         @foreach ($question->option as $option)
                                         <div class="checkbox">
                                             <label>
-                                            <input type="checkbox" name="checkbox{{$question->id}}" value="{{$option->option}}">{{$option->option}}
+                                            <input type="checkbox" name="checkbox{{$question->id}}" value="{{$option->option}}" disabled>{{$option->option}}
                                             </label>
                                         </div>
                                         @endforeach

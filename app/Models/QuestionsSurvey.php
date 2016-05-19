@@ -30,4 +30,9 @@ class QuestionsSurvey extends Model
     {
         return $this->hasMany('App\Models\OptionsSurvey','question_id');
     }
+
+    public function answer()
+    {
+        return $this->hasMany('App\Models\AnswersSurvey','question_id');
+    }
 }

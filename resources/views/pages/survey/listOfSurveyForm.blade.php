@@ -48,9 +48,18 @@
                                     <td>{{$i}}</td>
                                     <td>{{$survey->date_start}}</td>
                                     <td>{{$survey->date_end}}</td>
-                                    <td><a href="{{route('survey.form.detail',['id' =>$survey->id])}}">{{$survey->title}}</a></td>
-                                    <th><a href="{{ route('survey.edit', ['id' => $survey->id]) }}" class="btn btn-default btn-edit" role="button">Edit</a>
-                                        <a href="#" class="btn btn-default" role="button">Recap</a></th>
+                                    <td>{{$survey->title}}</td>
+                                    <th><a href="{{route('survey.form.detail',['id' =>$survey->id])}}" class="btn btn-default" role="button">Detail</a>
+                                        <?php
+                                            $today = date("Y-m-d");
+                                        ?>
+                                        @if($survey->date_start > $today)
+                                             <a href="{{ route('survey.edit', ['id' => $survey->id]) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                        @endif
+                                        @if($today > $survey->date_end)
+                                            <a href="#" class="btn btn-default" role="button">Recap</a>
+                                        @endif
+                                        </th>
                                     </tr>
                                     <?php $i++; ?>
                                     @endforeach

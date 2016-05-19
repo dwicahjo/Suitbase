@@ -39,6 +39,7 @@
                                     <th>Date Close</th>
                                     <th>Survey Title</th>
                                     <th>Employee Name</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -48,8 +49,9 @@
                                     <td>{{$i}}</td>
                                     <td>{{$survey->surveyForm->date_start}}</td>
                                     <td>{{$survey->surveyForm->date_end}}</td>
-                                    <td><a href="{{route('survey.detail',['id' =>$survey->id])}}">{{$survey->surveyForm->title}}</a></td>
+                                    <td>{{$survey->surveyForm->title}}</td>
                                     <td>{{$survey->employee->name}}</td>
+                                    <td><a href="{{route('survey.detail',['id' =>$survey->id])}}" class="btn btn-default" role="button">Detail</a></td>
                                     <?php $i++; ?>
                                     @endforeach
                                 </tbody>

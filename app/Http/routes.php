@@ -340,15 +340,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/surveyRecap',[
             'as' => 'survey.recap', 'uses' => 'SurveysController@showRecap'
             ]);
-        Route::get('/surveyE', function () {
-            return view('pages.survey.editSurvey');
-        });
-        Route::get('/surveyM', function () {
-            return view('pages.survey.mySurvey');
-        });
-        Route::get('/surveyF', function () {
-            return view('pages.survey.fillSurvey');
-        });
+
         /* feedback */
         Route::get('/feedbacks/create', [
             'as' => 'feedback.create', 'uses' => 'FeedbackController@index'
