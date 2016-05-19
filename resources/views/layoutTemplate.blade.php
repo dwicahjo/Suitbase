@@ -34,7 +34,9 @@
     <!-- jQuery -->
     <script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
 
+    <!-- SweetAlert -->
     <script src="{{asset('js/sweetalert.min.js')}}"></script>
+
     <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
 
@@ -289,6 +291,9 @@
     <script src="{{asset('assets/plugins/datatables/media/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('assets/plugins/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}}"></script>
 
+    <!-- ChartJS JavaScript -->
+    <script src="{{asset('assets/plugins/chartjs/Chart.js')}}"></script>
+
     <!-- Custom Theme JavaScript -->
     <script src="{{asset('assets/js/sb-admin-2.js')}}"></script>
 
@@ -329,6 +334,8 @@
         });
     }
     </script>
+    @section('scripts')
+    @show
 </body>
 
 </html>
