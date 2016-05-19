@@ -55,9 +55,14 @@
                                         ?>
                                         @if($survey->date_start > $today)
                                              <a href="{{ route('survey.edit', ['id' => $survey->id]) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                        @else
+                                            <button type="submit" class="btn btn-default btn-info" disabled="">Edit</button>
                                         @endif
+
                                         @if($today > $survey->date_end)
                                             <a href="{{ route('survey.recap', ['id' => $survey->id]) }}" class="btn btn-default" role="button">View Recap</a>
+                                        @else
+                                            <button type="submit" class="btn btn-default" disabled="">View Recap</button>
                                         @endif
                                         </th>
                                     </tr>

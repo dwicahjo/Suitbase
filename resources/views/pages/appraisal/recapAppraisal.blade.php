@@ -29,34 +29,23 @@
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th>Periode</th>
-                                    <th>Dept. Rank</th>
-                                    <th>Department</th>
-                                    <th>Average</th>
-                                    <th>Employee Rank</th>
-                                    <th>Name</th>
-                                    <th>Grade</th>
+                                    <th>Employee Name</th>
+                                    <th>Average Score</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="odd gradeA">
-                                    <td>Juni, 2015</td>
-                                    <td>1</td>
-                                    <td>Engineering</td>
-                                    <td>80</td>
-                                    <td>1</td>
-                                    <td>Alisha Alija</td>
-                                    <td>90</td>
-                                </tr>
-                                <tr class="odd gradeA">
-                                    <td>Juni, 2015</td>
-                                    <td>1</td>
-                                    <td>Engineering</td>
-                                    <td>80</td>
-                                    <td>1</td>
-                                    <td>Alisha Alija</td>
-                                    <td>90</td>
-                                </tr>
+                                @foreach($appraisals as $appraisal)
+                                    <tr class="odd gradeA">
+                                        <td>{{ $appraisal->employee->name }}</td>
+                                        @if($appraisal->average_score == 0)
+                                            <td>Not Yet Filled</td>
+                                        @else
+                                            <td>{{ $appraisal->average_score }}</td>
+                                        @endif
+                                        <td><a href="{{route('appraisal.detail',['id' => $appraisal->id])}}" class="btn btn-default" role="button">Detail</a></td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

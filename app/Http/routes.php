@@ -293,7 +293,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/appraisals/edit/{id}',[
             'as' => 'appraisal.update', 'uses' => 'AppraisalsController@updateAppraisalTemplate'
             ]);
-        Route::get('/appraisal/recap/{idDivision}',[
+        Route::get('/appraisal/recap/{idTemplate}',[
             'as' => 'appraisal.recap', 'uses' => 'AppraisalsController@showRecap'
             ]);
 
@@ -324,7 +324,7 @@ Route::group(['middleware' => 'auth'], function() {
                 'as' => 'recap.request', 'uses' => 'RequestsController@index'
                 ]);
 
-            Route::get('/feedbacks', [
+            Route::get('/feedbacks/list', [
                 'as' => 'feedback.list', 'uses' => 'FeedbackController@showListOfFeedback'
                 ]);
 

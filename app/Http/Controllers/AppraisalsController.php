@@ -219,10 +219,10 @@ public function showMyAppraisals(){
     return view('pages.appraisal.myAppraisal', compact('appraisals'));
 }
 
-public function showRecap($idDivision)
+public function showRecap($idTemplate)
 {
-
-    return view('pages.appraisal.recapAppraisal');
+    $appraisals = Appraisal::where('appraisals_template_id',$idTemplate)->get();
+    return view('pages.appraisal.recapAppraisal',compact('appraisals'));
 }
 
 public function showDetail($id){

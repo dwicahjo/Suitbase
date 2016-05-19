@@ -26,4 +26,9 @@ class AppraisalsTemplate extends Model
     {
         return $this->hasOne('App\Models\Division', 'id', 'divisions_id');
     }
+
+    public function appraisals()
+    {
+        return $this->hasMany('App\Models\Appraisal', 'appraisals_template_id');
+    }
 }
