@@ -57,7 +57,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label">Reason</label>
                                             <div class = "col-md-6">
-                                                <textarea class ="form-control" name = "reason" required>{{ $overtimes[0]->description }}</textarea>
+                                                <textarea class ="form-control" name = "description" required>{{ $overtimes[0]->description }}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">

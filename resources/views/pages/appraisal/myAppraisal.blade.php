@@ -21,38 +21,20 @@
                                 <thead>
                                     <tr>
                                         <th style="text-align: center">Period</th>
-                                        <th style="text-align: center">Grade</th>
+                                        <th style="text-align: center">Average Score</th>
                                     </tr>
                                 </thead>
-                                 <tbody style="text-align: center">
-                                    <tr class="odd gradeX">
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                    </tr>
+                                <tbody style="text-align: center">
+                                    @foreach($appraisals as $appraisal)
+                                        <tr class="odd gradeX">
+                                            <td class="center">{{ date('M Y', strtotime($appraisal->appraisalsTemplate->date_start)) }}</td>
+                                            @if($appraisal->average_score != 0)
+                                                <td class="center">{{ $appraisal->average_score }}</td>
+                                            @else
+                                                <td class="center">Not Yet Filled</td>
+                                            @endif
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

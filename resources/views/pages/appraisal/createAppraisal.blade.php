@@ -49,7 +49,9 @@
                                             <div class = "col-md-6">
                                                 <select class="form-control" name = "division_id">
                                                     @foreach ($divisions as $division)
-                                                    <option value="{{$division->id}}"> {{$division->name}} </option>
+                                                        @if ($division->name != 'Admin')
+                                                            <option value="{{$division->id}}"> {{$division->name}} </option>
+                                                        @endif
                                                     @endforeach
                                                 </select>
                                             </div>

@@ -49,8 +49,8 @@ class UserController extends Controller
             'religion'          => 'required',
             'address'           => 'required',
             'birth_date'        => 'required|date',
-            'birth_place'       => 'required|numeric',
-            'phone'             => 'required',
+            'birth_place'       => 'required',
+            'phone'             => 'required|numeric',
             'ktp_id'            => 'required',
             'ktp_address'       => 'required',
             'NPWP'              => 'required',
@@ -71,6 +71,9 @@ class UserController extends Controller
                         ->withErrors($validator)
                         ->withInput($request->all());
         }
+
+        echo $request->type;
+        break;
 
         $user = User::create([
             'name' => $request->name,

@@ -23,7 +23,10 @@ class RedirectIfNotHRorSupervisor
             {
                 if($userType != 'Supervisor')
                 {
-                    return redirect()->route('home');
+                    if($userType != 'Admin')
+                    {
+                        return redirect()->route('home');
+                    }
                 }
             }
         }

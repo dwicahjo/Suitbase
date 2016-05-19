@@ -186,6 +186,9 @@ public function fillAppraisal($id){
 
 public function postFillAppraisal(Request $request)
 {
+    $counter = 0;
+    $total = 0;
+
     if(Answer::where('appraisals_id',$request->appraisal_id)->get()->count() > 0){
         $answers = Answer::where('appraisals_id',$request->appraisal_id)->get();
         foreach($answers as $answer){
@@ -198,22 +201,28 @@ public function postFillAppraisal(Request $request)
             'appraisals_id' => $request->appraisal_id,
             'answer' =>$request->answer[$key],
             ]);
-        $appraisal = Appraisal::find($request->appraisal_id);
-        $appraisal->comment = $request->comment;
-        $appraisal->save();
-   }
+        $total += $request->answer[$key];
+        $counter++;
+    }
 
-   Session::flash('success', 'Appraisal was filled successfully');
-   return back();
+    $appraisal = Appraisal::find($request->appraisal_id);
+    $appraisal->comment = $request->comment;
+    $appraisal->average_score = $total/$counter;
+    $appraisal->save();
+
+    Session::flash('success', 'Appraisal was filled successfully');
+    return back();
 }
 
 public function showMyAppraisals(){
-    return view('pages.appraisal.myAppraisal');
+    $appraisals = Appraisal::where('employees_id', Auth::user()->id)->get();
+    return view('pages.appraisal.myAppraisal', compact('appraisals'));
 }
 
-public function showRecap()
+public function showRecap($idTemplate)
 {
-    return view('pages.appraisal.recapAppraisal');
+    $appraisals = Appraisal::where('appraisals_template_id',$idTemplate)->get();
+    return view('pages.appraisal.recapAppraisal',compact('appraisals'));
 }
 
 public function showDetail($id){

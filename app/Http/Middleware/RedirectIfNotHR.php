@@ -21,7 +21,10 @@ class RedirectIfNotHR
             $userType = Auth::user()->type;
             if($userType != 'HR')
             {
-                return redirect()->route('home');
+                if($userType != 'Admin')
+                {
+                    return redirect()->route('home');   
+                }
             }
         }
 
