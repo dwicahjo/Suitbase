@@ -36,7 +36,7 @@
                                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                                             <label class="col-md-4 control-label" required>Title</label>
                                             <div class = "col-md-6">
-                                                <input class="form-control" name = "title" value="{{$appraisalTemplate[0]->title}}" disabled>
+                                                <input class="form-control" name = "title" value="{{$appraisalTemplate[0]->title}}" required>
                                                 <input class="form-control" name = "id" type="hidden" value="{{$appraisalTemplate[0]->id}}">
                                             </div>
                                         </div>
@@ -64,13 +64,13 @@
                                         <div class="form-group" id="{{$question->id}}">
                                             <label class="col-md-4 control-label">Question </label>
                                             <div class = "col-md-6">
-                                                <input class= "form-control" type="text" name="oldQuestion[]" value="{{$question->question}}">
+                                                <input class= "form-control" type="text" name="oldQuestion[]" value="{{$question->question}}" required>
                                                 <span class = "input-group-btn"><button type="button" class="remove_field2 btn btn-danger" onclick="remove_question({{$question->id}})" >Remove</button></span>
                                            </div>
                                        </div>
                                        @endforeach
                                        <div id="wrap"></div>
-                                       <button class="add-question add_field_button btn btn-default">Add More Question</button>
+                                       <button class="add-question add_field_button btn btn-default" id="addQuestionAppraisal" type="button">Add More Question</button>
                                        <div class="form-group">
                                         <div class="col-md-4"></div>
                                         <div class="col-md-6">

@@ -17,7 +17,7 @@
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-8">
+                        <div class="col-lg-12">
                             <div class="row">
                                 <div class="dataTable_wrapper">
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -51,9 +51,9 @@
                                                 <td>{{$appraisal->appraisalsTemplate->date_end}}</td>
                                                 <td>{{$appraisal->employee->name}}</a></td>
                                                 <td>{{$appraisal->division->name}}</td>
-                                                <th><a href="{{route('appraisal.fill',['id' =>$appraisal->id])}}" class="btn btn-default" role="button">Detail</a>
-                                                    @if($appraisal->appraisalsTemplate->date_end > $today && $appraisal->answer()->get()->count() == 0)
-                                                    <a href="{{route('appraisal.fill',['id' =>$appraisal->id])}}" class="btn btn-default" role="button">Fill Appraisal</a></th>
+                                                <th><a href="{{route('appraisal.detail',['id' =>$appraisal->id])}}" class="btn btn-default" role="button">Detail</a>
+                                                    @if($appraisal->appraisalsTemplate->date_end > $today)
+                                                    <a href="{{route('appraisal.fill',['id' =>$appraisal->id])}}" class="btn btn-default btn-info" role="button">Fill Appraisal</a></th>
                                                     @endif
                                                 </tr>
                                                 <?php $i++; ?>
@@ -67,7 +67,7 @@
                                                     <td>{{$appraisal->appraisalsTemplate->date_end}}</td>
                                                     <td>{{$appraisal->employee->name}}</a></td>
                                                     <td>{{$appraisal->division->name}}</td>
-                                                    <th><a href="{{route('appraisal.fill',['id' =>$appraisal->id])}}" class="btn btn-default" role="button">Detail</a>
+                                                    <th><a href="{{route('appraisal.detail',['id' =>$appraisal->id])}}" class="btn btn-default" role="button">Detail</a>
                                                     </tr>
                                                     <?php $i++; ?>
                                                     @endforeach

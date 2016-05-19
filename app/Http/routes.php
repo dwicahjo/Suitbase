@@ -275,6 +275,12 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/appraisals/create',[
             'as' => 'appraisal.postCreate', 'uses' => 'AppraisalsController@postAppraisal'
             ]);
+        Route::get('/appraisals/detail/{id}', [
+            'as' => 'appraisal.detail', 'uses' => 'AppraisalsController@showDetail'
+            ]);
+        Route::get('/appraisals/template/detail/{id}', [
+            'as' => 'appraisal.template.detail', 'uses' => 'AppraisalsController@showDetailTemplate'
+            ]);
         Route::get('/appraisals/fill/{id}', [
             'as' => 'appraisal.fill', 'uses' => 'AppraisalsController@fillAppraisal'
             ]);

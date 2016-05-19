@@ -58,7 +58,7 @@
                                     <td>{{$appraisalTemplate->date_end}}</td>
                                     <td>{{$appraisalTemplate->title}}</td>
                                     <td>{{$appraisalTemplate->division->name}}</td>
-                                    <th><a href="" class="btn btn-default" role="button">Detail</a>
+                                    <th><a href="{{ route('appraisal.template.detail', ['id' => $appraisalTemplate->id]) }}" class="btn btn-default" role="button">Detail</a>
                                         <?php
                                             $today = date("Y-m-d");
                                         ?>
