@@ -62,10 +62,12 @@
                                         <label>Division</label>
                                         <select class="form-control" name = "division">
                                             @foreach ($divisions as $division)
-                                                @if ($division->id == $user->divisions_id)
-                                                    <option value = "{{ $division->id }}" selected>{{ $division->name }}</option>
-                                                @else
-                                                    <option value = "{{ $division->id }}">{{ $division->name }}</option>
+                                                @if ($division->name != 'Admin')
+                                                    @if ($division->id == old('divisions_id'))
+                                                        <option value = "{{ $division->id }}" selected>{{ $division->name }}</option>
+                                                    @else
+                                                        <option value = "{{ $division->id }}">{{ $division->name }}</option>
+                                                    @endif
                                                 @endif
                                             @endforeach
                                         </select>

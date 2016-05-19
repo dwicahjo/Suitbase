@@ -24,8 +24,8 @@
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center">No</th>>
-                                                    <th style="text-align: center">Date_Start</th>
-                                                    <th style="text-align: center">Date_end</th>
+                                                    <th style="text-align: center">Date Start</th>
+                                                    <th style="text-align: center">Date End</th>
                                                     <th style="text-align: center">Employee Name</th>
                                                     <th style="text-align: center">Division</th>
                                                 </tr>
@@ -44,7 +44,6 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
-
                                     </div>
                                 </div>
                             </div> <!--row-->

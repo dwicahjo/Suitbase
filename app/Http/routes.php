@@ -304,11 +304,6 @@ Route::group(['middleware' => 'auth'], function() {
             ]);
 
         Route::group(['middleware' => 'usertype.hr'], function() {
-
-            Route::get('/dashboard', [
-            'as' => 'dasboard', 'uses' => 'HomeController@getChartData'
-            ]);
-
             /* user */
             Route::get('/user/list', [
                 'as' => 'user.list', 'uses' => 'UserController@showListOfUser'

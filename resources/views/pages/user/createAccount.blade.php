@@ -88,10 +88,12 @@
                                 <div class="col-md-6">
                                     <select class="form-control" name = "departments_id">
                                         @foreach ($departments as $department)
-                                            @if ($department->id == old('departments_id'))
+                                            @if ($department->name != 'Admin')
+                                                @if ($department->id == old('departments_id'))
                                                 <option value = "{{ $department->id }}" selected>{{ $department->name }}</option>
-                                            @else
-                                                <option value = "{{ $department->id }}">{{ $department->name }}</option>
+                                                @else
+                                                    <option value = "{{ $department->id }}">{{ $department->name }}</option>
+                                                @endif
                                             @endif
                                         @endforeach
                                     </select>
@@ -103,10 +105,12 @@
                                 <div class="col-md-6">
                                     <select class="form-control" name = "divisions_id">
                                         @foreach ($divisions as $division)
-                                            @if ($division->id == old('divisions_id'))
-                                                <option value = "{{ $division->id }}" selected>{{ $division->name }}</option>
-                                            @else
-                                                <option value = "{{ $division->id }}">{{ $division->name }}</option>
+                                            @if ($division->name != 'Admin')
+                                                @if ($division->id == old('divisions_id'))
+                                                    <option value = "{{ $division->id }}" selected>{{ $division->name }}</option>
+                                                @else
+                                                    <option value = "{{ $division->id }}">{{ $division->name }}</option>
+                                                @endif
                                             @endif
                                         @endforeach
                                     </select>

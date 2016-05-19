@@ -156,21 +156,23 @@ public function fillAppraisal($id){
     $appraisal = Appraisal::where('id',$id)->get()->first();
     $questions = Question::where('appraisals_template_id',$appraisal->appraisals_template_id)->get();
     $answers = Answer::where('appraisals_id',$id)->get();
+    
     return view('pages.appraisal.fillAppraisal')->with(compact('appraisal','questions','answers'));
 }
 
 public function postFillAppraisal(Request $request)
 {
     foreach ($request->answer as $key => $value){
-       Answer::create([
-        'question_id' => $key,
-        'appraisals_id' => $request->appraisal_id,
-        'answer' =>$request->answer[$key],
-        ]);
-       $appraisal = Appraisal::find($request->appraisal_id);
-       $appraisal->comment = $request->comment;
-       $appraisal->save();
+        Answer::create([
+            'question_id' => $key,
+            'appraisals_id' => $request->appraisal_id,
+            'answer' =>$request->answer[$key],
+            ]);
+        $appraisal = Appraisal::find($request->appraisal_id);
+        $appraisal->comment = $request->comment;
+        $appraisal->save();
    }
+
    Session::flash('success', 'Appraisal was filled successfully');
    return back();
 }
