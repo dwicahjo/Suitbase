@@ -42,7 +42,7 @@
                                             <td class="center">{{ $i }}</td>
                                             <td>{{ $procurement->created_at }}</td>
                                             <td>{{ $procurement->title }}</td>
-                                            <td><a href="{{ route('procurements.details', $procurement->id) }}">{{ $procurement->status}}</a></td>
+                                            <td>{{ $procurement->status}}</a></td>
                                             <?php 
                                                 $status = explode(" ", $procurement->status);
                                             ?>
