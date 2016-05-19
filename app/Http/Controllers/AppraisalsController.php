@@ -42,7 +42,6 @@ class AppraisalsController extends Controller
         'date_start' => 'date|after:today',
         'date_end' => 'date|after:' . $date,
         'division_id' => 'exists:divisions,id',
-        'question[]' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
