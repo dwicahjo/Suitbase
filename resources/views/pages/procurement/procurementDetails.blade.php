@@ -27,7 +27,7 @@
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Price Estimate</label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: Rp {{ $procurements[0]->estimate_price }}</label>
+                                        <label class="col-md-6">: Rp {{ number_format($procurements[0]->estimate_price,2,',','.') }}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">

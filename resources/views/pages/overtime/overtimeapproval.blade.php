@@ -56,7 +56,7 @@
                                 <div class = "form-group">
                                     <label class="col-md-4 control-label">Total Hours </label>
                                     <div class = "right-side">
-                                        <label class="col-md-6">: {{$overtimes[0]->time_end - $overtimes[0]->time_start}}</label>
+                                        <label class="col-md-6">: {{$overtimes[0]->total_hours}}</label>
                                     </div>
                                 </div>
                                 <div class = "form-group">

@@ -43,7 +43,9 @@
                                             <td>{{ $user->status }}</td>
                                             <th>
                                                 <a href="{{ route('user.details', $user->id) }}" class="btn btn-default btn-edit" role="button">Details</a>
-                                                <a href="{{ route('user.edit', $user->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                                @if(Auth::user()->type == 'Admin')
+                                                    <a href="{{ route('user.edit', $user->id) }}" class="btn btn-default btn-info" role="button">Edit</a>
+                                                @endif
                                                 <a href="{{ route('user.reset', $user->id) }}" class="btn btn-default btn-danger" role="button">Reset</a>
                                             </th>
                                         </tr>

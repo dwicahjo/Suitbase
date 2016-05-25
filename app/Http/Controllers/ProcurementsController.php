@@ -134,13 +134,13 @@ class ProcurementsController extends Controller
         $procurement->save();
 
         if(RecapRequest::isExistRow('period', date('M Y'))){
-            if(RecapRequest::isExistRow('department', Auth::user()->department->name)){
-                RecapRequest::where('department','=',Auth::user()->department->name)->increment('total_procurements');
+            if(RecapRequest::isExistRow('department', $procurement->employee->department->name)){
+                RecapRequest::where('department','=',$procurement->employee->department->name)->increment('total_procurements');
             }
             else{
                 $recap = new RecapRequest;
 
-                $recap->department = Auth::user()->department->name;
+                $recap->department = $procurement->employee->department->name;
                 $recap->total_leaves = 0;
                 $recap->total_remotes = 0;
                 $recap->total_trainings = 0;
@@ -159,7 +159,7 @@ class ProcurementsController extends Controller
 
                     $recap->department = $department->name;
 
-                    if($department->name == Auth::user()->department->name){
+                    if($department->name == $procurement->employee->department->name){
                         $recap->total_procurements = 1;
                     }
                     else{

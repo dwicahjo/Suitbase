@@ -147,13 +147,13 @@ class RemotesController extends Controller
         $remote->save();
 
         if(RecapRequest::isExistRow('period', date('M Y'))){
-            if(RecapRequest::isExistRow('department', Auth::user()->department->name)){
-                RecapRequest::where('department','=',Auth::user()->department->name)->increment('total_remotes');
+            if(RecapRequest::isExistRow('department', $remote->employee->department->name)){
+                RecapRequest::where('department','=',$remote->employee->department->name)->increment('total_remotes');
             }
             else{
                 $recap = new RecapRequest;
 
-                $recap->department = Auth::user()->department->name;
+                $recap->department = $remote->employee->department->name;
                 $recap->total_leaves = 0;
                 $recap->total_remotes = 1;
                 $recap->total_trainings = 0;
@@ -172,7 +172,7 @@ class RemotesController extends Controller
 
                     $recap->department = $department->name;
 
-                    if($department->name == Auth::user()->department->name){
+                    if($department->name == $remote->employee->department->name){
                         $recap->total_remotes = 1;
                     }
                     else{

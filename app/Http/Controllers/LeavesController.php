@@ -167,19 +167,22 @@ class LeavesController extends Controller
         $status = "Approved by " . $approver;
         $leave->status = $status;
         $totalLeave = $leave->employee->number_leave;
-        $leave->employee->number_leave = $totalLeave - 1;
+        
+        if($totalLeave > 0){
+            $leave->employee->number_leave = $totalLeave - 1;
+            $leave->employee->save();
+        }
 
-        $leave->employee->save();
         $leave->save();
 
         if(RecapRequest::isExistRow('period', date('M Y'))){
-            if(RecapRequest::isExistRow('department', Auth::user()->department->name)){
-                RecapRequest::where('department','=',Auth::user()->department->name)->increment('total_leaves');
+            if(RecapRequest::isExistRow('department', $leave->employee->department->name)){
+                RecapRequest::where('department','=',$leave->employee->department->name)->increment('total_leaves');
             }
             else{
                 $recap = new RecapRequest;
 
-                $recap->department = Auth::user()->department->name;
+                $recap->department = $leave->employee->department->name;
                 $recap->total_leaves = 1;
                 $recap->total_remotes = 0;
                 $recap->total_trainings = 0;
@@ -198,7 +201,7 @@ class LeavesController extends Controller
 
                     $recap->department = $department->name;
 
-                    if($department->name == Auth::user()->department->name){
+                    if($department->name == $leave->employee->department->name){
                         $recap->total_leaves = 1;
                     }
                     else{
