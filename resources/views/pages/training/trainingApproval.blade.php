@@ -78,7 +78,7 @@
                             <?php 
                                 $status = explode(" ", $training[0]->status);
                             ?>
-                            @if ($status[0] == "Rejected" || $status[0] == "Approved" || $status[0] == "Cancelled")
+                            @if ($status[0] == "Cancelled")
                                     <button class="btn btn-default btn-danger" disabled>Reject</button>
                                     <button class="btn btn-default btn-info" disabled>Approve</button>
                             @else   

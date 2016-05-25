@@ -149,6 +149,15 @@ class LeavesController extends Controller
     {
         $approver = \Auth::user()->name;
         $leave = Leave::where('id', $id)->get()->first();
+
+        $arrStatus = explode(' ', $leave->status);
+        $currentStatus = $arrStatus[0];
+        $totalLeave = $leave->employee->number_leave;
+        if($currentStatus == 'Approved'){
+            $leave->employee->number_leave = $totalLeave + 1;
+            $leave->employee->save();
+        }
+
         $status = "Rejected by " . $approver;
         $leave->status = $status;
 
@@ -164,14 +173,19 @@ class LeavesController extends Controller
 
         $leave = Leave::where('id', $id)->get()->first();
 
-        $status = "Approved by " . $approver;
-        $leave->status = $status;
+        $arrStatus = explode(' ', $leave->status);
+        $currentStatus = $arrStatus[0];
         $totalLeave = $leave->employee->number_leave;
         
-        if($totalLeave > 0){
-            $leave->employee->number_leave = $totalLeave - 1;
-            $leave->employee->save();
+        if($currentStatus != 'Approved'){
+            if($totalLeave > 0){
+                $leave->employee->number_leave = $totalLeave - 1;
+                $leave->employee->save();
+            }
         }
+
+        $status = "Approved by " . $approver;
+        $leave->status = $status;
 
         $leave->save();
 
